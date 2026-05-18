@@ -1,0 +1,11 @@
+# Table of contents for Jupyter Book.
+# Listed chapters appear in the sidebar in this order; the same order drives
+# the auto-generated "previous / next" buttons at the bottom of each page.
+
+format: jb-book
+root: index
+chapters:
+  - file: Video_01/Shannon_Entropy
+    title: "Part 1 — Introduction to Shannon's Information Theory"
+  - file: Video_02/Information_Entropy_Examples
+    title: "Part 2 — Information Entropy: Worked Examples"

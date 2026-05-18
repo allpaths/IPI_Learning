@@ -1,0 +1,61 @@
+# Jupyter Book configuration.
+# Built by GitHub Actions on push to master and deployed to GitHub Pages.
+
+title: "Information Physics & Information Theory"
+author: "Notebooks by Jeff Hampton · Lectures by Dr. Melvin Vopson (University of Portsmouth)"
+copyright: "2026"
+logo: ""
+
+# Force a clean rebuild of every notebook on each deploy.
+# The notebooks are small (numpy + matplotlib) so this is fast and removes
+# any risk of stale outputs.
+execute:
+  execute_notebooks: force
+  timeout: 300
+
+# Skip these files when building. The READMEs are developer-facing
+# (rendered on GitHub) and not part of the published book.
+exclude_patterns:
+  - README.md
+  - "Video_*/README.md"
+  - "**/.ipynb_checkpoints/**"
+  - "_build/**"
+  - "scripts/**"
+  - "RESUME.md"
+  - ".venv/**"
+  - "venv/**"
+  - ".github/**"
+
+# Link "open on GitHub" / "edit" / repository buttons in the top-right.
+repository:
+  url: https://github.com/allpaths/IPI_Learning
+  branch: master
+
+# 🚀 Launch buttons (top-right of each notebook page).
+# Both Binder and Colab build the environment on the fly from this repo.
+launch_buttons:
+  notebook_interface: jupyterlab
+  binderhub_url: https://mybinder.org
+  colab_url: https://colab.research.google.com
+
+html:
+  use_repository_button: true
+  use_issues_button: false
+  use_edit_page_button: false
+  home_page_in_navbar: true
+  favicon: ""
+
+# Render math from LaTeX in markdown cells.
+parse:
+  myst_enable_extensions:
+    - dollarmath
+    - amsmath
+    - colon_fence
+
+sphinx:
+  config:
+    html_show_copyright: true
+    mathjax3_config:
+      tex:
+        macros:
+          "X": "\\mathcal{X}"

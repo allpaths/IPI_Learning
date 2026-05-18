@@ -1,2 +1,7 @@
 numpy
 matplotlib
+jupyter
+ipykernel
+yt-dlp
+imageio-ffmpeg
+faster-whisper

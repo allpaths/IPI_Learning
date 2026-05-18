@@ -1,0 +1,657 @@
+[00:00:02:02 - 00:00:13:11]
+ Okay, following up on lecture number one, the introduction to Shannon information theory,
+
+[00:00:14:13 - 00:00:20:23]
+ we want to do today a couple of examples.
+
+[00:00:20:23 - 00:00:31:17]
+ I think this will crystallize very well the concept of information entropy introduced in lecture one.
+
+[00:00:32:02 - 00:00:39:15]
+ And it helps understanding how to apply this to a real system.
+
+[00:00:41:02 - 00:00:49:05]
+ So to do that, I'm just going to...
+
+[00:00:52:08 - 00:01:02:13]
+ Let's first... I can't see the camera on the screen.
+
+[00:01:02:16 - 00:01:05:07]
+ I need to make some space here.
+
+[00:01:05:29 - 00:01:11:25]
+ There you go. The camera. There you go.
+
+[00:01:11:25 - 00:01:13:25]
+ So I can see what I'm writing.
+
+[00:01:13:25 - 00:01:28:29]
+ So let's refresh, just do a quick refresher and remind ourselves that the function HX is called Shannon information entropy
+
+[00:01:28:29 - 00:01:37:06]
+ and is given by the following relation, J equals 1 U.
+
+[00:01:37:06 - 00:01:43:13]
+ U is the number of unique, if you want, or distinct characters in a given set.
+
+[00:01:43:25 - 00:01:45:22]
+ X is the set of distinct characters.
+
+[00:01:46:22 - 00:01:48:28]
+ HX is Shannon information entropy.
+
+[00:01:49:28 - 00:01:55:14]
+ And this is PJ log...
+
+[00:01:55:14 - 00:01:58:23]
+ I'm going to put here log base 2.
+
+[00:01:59:09 - 00:02:01:14]
+ And we start operating in bits now.
+
+[00:02:02:19 - 00:02:05:23]
+ Units of bits of PJ.
+
+[00:02:06:03 - 00:02:09:11]
+ So this is what we call the Shannon information entropy.
+
+[00:02:10:04 - 00:02:11:24]
+ It has units of bits.
+
+[00:02:12:20 - 00:02:13:14]
+ So I'll just put here...
+
+[00:02:13:25 - 00:02:15:26]
+ Bits in the square brackets.
+
+[00:02:16:29 - 00:02:26:09]
+ And the objective today is to look at some examples, how we use it.
+
+[00:02:28:09 - 00:02:36:01]
+ The first one is calculating the information entropy of a digital data set.
+
+[00:02:36:23 - 00:02:40:28]
+ A digital data set is a string of...
+
+[00:02:40:28 - 00:02:42:09]
+ So you will have...
+
+[00:02:43:01 - 00:02:43:09]
+ X...
+
+[00:02:43:25 - 00:02:47:22]
+ The characters in this set would be 0 and 1.
+
+[00:02:49:24 - 00:02:51:22]
+ That means U equals 2.
+
+[00:02:52:20 - 00:02:54:19]
+ And we can have a number of N.
+
+[00:02:55:16 - 00:02:56:18]
+ I have an example here.
+
+[00:02:56:20 - 00:02:58:08]
+ I think I took 10.
+
+[00:02:58:29 - 00:03:00:28]
+ Just for the simplicity of this.
+
+[00:03:01:04 - 00:03:04:20]
+ Let's take a number of 10 characters in a string of bits.
+
+[00:03:05:15 - 00:03:05:25]
+ Okay.
+
+[00:03:05:27 - 00:03:07:05]
+ And the string is the following.
+
+[00:03:07:28 - 00:03:08:13]
+ 0.
+
+[00:03:09:24 - 00:03:10:10]
+ 1.
+
+[00:03:10:14 - 00:03:11:00]
+ 1.
+
+[00:03:11:04 - 00:03:11:19]
+ 1.
+
+[00:03:11:26 - 00:03:12:08]
+ 1.
+
+[00:03:14:18 - 00:03:15:04]
+ 0.
+
+[00:03:15:10 - 00:03:15:23]
+ 1.
+
+[00:03:15:23 - 00:03:15:27]
+ 1.
+
+[00:03:16:04 - 00:03:18:29]
+ 1.
+
+[00:03:19:05 - 00:03:19:18]
+ 0.
+
+[00:03:19:22 - 00:03:20:01]
+ 1.
+
+[00:03:20:07 - 00:03:21:23]
+ So let's count them.
+
+[00:03:22:00 - 00:03:22:08]
+ 1.
+
+[00:03:22:12 - 00:03:22:20]
+ 2.
+
+[00:03:22:23 - 00:03:23:04]
+ 3.
+
+[00:03:23:07 - 00:03:23:19]
+ 4.
+
+[00:03:23:22 - 00:03:24:04]
+ 5.
+
+[00:03:24:06 - 00:03:24:15]
+ 6.
+
+[00:03:24:17 - 00:03:24:29]
+ 7.
+
+[00:03:25:02 - 00:03:25:11]
+ 8.
+
+[00:03:25:13 - 00:03:25:20]
+ 9.
+
+[00:03:25:22 - 00:03:25:28]
+ 10.
+
+[00:03:25:28 - 00:03:34:11]
+ So we have a message of 10 characters containing two distinct characters, 0 and 1.
+
+[00:03:35:24 - 00:03:40:02]
+ And we want to know what is HX.
+
+[00:03:40:24 - 00:03:43:26]
+ How do we calculate HX for this system?
+
+[00:03:45:07 - 00:03:45:14]
+ Okay.
+
+[00:03:48:11 - 00:03:49:10]
+ Remember that...
+
+[00:03:50:11 - 00:04:06:28]
+ The maximum HX, HX max, is given by log 2 U, okay, and because U is 2, okay, we have
+
+[00:04:06:28 - 00:04:09:21]
+ two possible characters, distinct characters, 0 and 1.
+
+[00:04:09:21 - 00:04:15:07]
+ That means the maximum value for HX is 1 bit.
+
+[00:04:16:25 - 00:04:17:04]
+ Okay.
+
+[00:04:17:07 - 00:04:18:05]
+ That is the maximum value.
+
+[00:04:19:14 - 00:04:19:21]
+ And this would...
+
+[00:04:19:21 - 00:04:28:11]
+ This would be the case if you would have an equal number of 0s and 1s in your data set.
+
+[00:04:29:02 - 00:04:37:13]
+ That means because we have 10, if we have 5 0s and 5 1s, you would have a Shannon information
+
+[00:04:37:13 - 00:04:49:20]
+ entropy of 1 bit per character, and the maximum information, information would be N times
+
+[00:04:49:20 - 00:05:00:17]
+ HX max, which would be 10 bits, 10 bits encoded in the maximum possible information encoded
+
+[00:05:00:17 - 00:05:03:25]
+ in this data set would be 10 bits.
+
+[00:05:03:25 - 00:05:08:05]
+ In reality, things are not quite balanced.
+
+[00:05:08:20 - 00:05:16:10]
+ If we count, we have 1, 2, 3 0s, and we have 7 1s.
+
+[00:05:16:18 - 00:05:18:25]
+ That means the probability distribution...
+
+[00:05:19:20 - 00:05:32:13]
+ The probability distribution is P0 equals 3 over 10, and P1 equals 7 over 10 for this
+
+[00:05:32:13 - 00:05:33:19]
+ specific set.
+
+[00:05:34:09 - 00:05:39:10]
+ How do you apply this to the Shannon information entropy?
+
+[00:05:39:17 - 00:05:41:25]
+ Essentially, you do the summation in this formula.
+
+[00:05:42:16 - 00:05:49:20]
+ You do the summation in here over all the possible probabilities that exist in this formula.
+
+[00:05:49:20 - 00:05:55:13]
+ In this set, in this case, we have only two terms that will do the summation, and that
+
+[00:05:55:13 - 00:05:56:09]
+ becomes the following.
+
+[00:05:57:26 - 00:06:00:22]
+ HX equals...
+
+[00:06:00:22 - 00:06:04:24]
+ We open up the summation, we put the minus in front, let's put a bracket, square bracket
+
+[00:06:04:24 - 00:06:15:26]
+ there, and we have PJ, the first will be P0, so 3 over 10, log 2, 3 over 10, and then is
+
+[00:06:15:26 - 00:06:16:16]
+ plus...
+
+[00:06:16:16 - 00:06:19:20]
+ The second one is P1, 7 over 10.
+
+[00:06:19:20 - 00:06:29:20]
+ 7 over 10, times log 2, 7 over 10, 7 over 10, and if you need to use a computer to do
+
+[00:06:29:20 - 00:06:42:18]
+ this, really I use MatCAD to do my computations, that gives you HX, 0 point, you need to trust
+
+[00:06:42:18 - 00:06:46:01]
+ me on this, 0.881.
+
+[00:06:46:01 - 00:06:47:01]
+ 0.881.
+
+[00:06:47:01 - 00:06:48:01]
+ 0.881.
+
+[00:06:48:01 - 00:06:49:01]
+ 0.881.
+
+[00:06:49:01 - 00:06:49:16]
+ 0.881.
+
+[00:06:49:16 - 00:06:57:08]
+ So if we have the maximum Shannon information entropy of 1 bit, we actually can get away
+
+[00:06:57:08 - 00:07:04:10]
+ with 0.881 bits of information per character for this set.
+
+[00:07:04:10 - 00:07:13:16]
+ That means the total information encoded in the entire set is N times HX, so instead of
+
+[00:07:13:16 - 00:07:17:13]
+ 10 bits, we are going to have 8.81 bits.
+
+[00:07:17:13 - 00:07:18:25]
+ 8.81 bits.
+
+[00:07:18:25 - 00:07:19:10]
+ 8.81 bits.
+
+[00:07:19:10 - 00:07:19:15]
+ 8.81 bits.
+
+[00:07:19:15 - 00:07:31:11]
+ bits encoded in this string of, in this dataset of zeros and ones.
+
+[00:07:31:11 - 00:07:39:28]
+ And this is how one applies, let me get the whole page in, this is how one applies the
+
+[00:07:39:28 - 00:07:46:13]
+ formula for Shannon information entropy to calculate the information content for a given
+
+[00:07:46:13 - 00:07:49:26]
+ asset, for a given message if you want.
+
+[00:07:49:26 - 00:07:53:18]
+ In this case, we are looking at digital bits.
+
+[00:07:53:18 - 00:07:59:19]
+ Of course, in reality these are much larger strings, it has billions and billions of zeros
+
+[00:07:59:19 - 00:08:01:03]
+ and ones.
+
+[00:08:01:03 - 00:08:05:08]
+ If one wants to do this calculation, you really need a computer and the software.
+
+[00:08:05:08 - 00:08:10:13]
+ I've done, I built a software to do exactly this.
+
+[00:08:10:13 - 00:08:16:11]
+ What we did here manually is only for exemplification, like a very small number of characters.
+
+[00:08:16:11 - 00:08:19:04]
+ Let's take another example now.
+
+[00:08:19:04 - 00:08:30:19]
+ The next example is looking at how we apply the same technique to genomic sequences.
+
+[00:08:30:19 - 00:08:36:26]
+ I'm just going to put this aside.
+
+[00:08:36:26 - 00:08:41:11]
+ When we talk about a genome, this could be a DNA or an RNA.
+
+[00:08:41:11 - 00:08:45:05]
+ The difference is one is double helix, one is single helix.
+
+[00:08:45:05 - 00:08:46:05]
+ But the component is single helix.
+
+[00:08:46:05 - 00:08:51:01]
+ The components are, and the encoding is more or less the same.
+
+[00:08:51:01 - 00:08:57:24]
+ They use, these are specific chemicals.
+
+[00:08:57:24 - 00:09:03:12]
+ I'm not going into the details of the nucleotides and the chemistry and the biochemistry of
+
+[00:09:03:12 - 00:09:10:11]
+ these, but essentially any genomic sequence can be simplified.
+
+[00:09:10:11 - 00:09:15:17]
+ All these chemicals that appear in the helix or double helix structure can be simplified
+
+[00:09:15:17 - 00:09:22:12]
+ to a string of characters, A, C, T, G.
+
+[00:09:22:12 - 00:09:29:16]
+ Each one of them stands for adenine, cytosine, and so on.
+
+[00:09:29:16 - 00:09:35:20]
+ They have specific names of these nucleotides.
+
+[00:09:35:20 - 00:09:43:20]
+ In RNA, T is replaced by another chemical is uracil, is symbol U, but the mathematics
+
+[00:09:43:20 - 00:09:44:20]
+ is the same.
+
+[00:09:44:20 - 00:09:51:20]
+ There's no difference in how we approach this.
+
+[00:09:51:20 - 00:10:05:29]
+ Because everything in a genome is encoded using four distinct letters and a very large
+
+[00:10:05:29 - 00:10:12:16]
+ string of these, composing a message and the genetic code, if you want, that means our
+
+[00:10:12:16 - 00:10:13:16]
+ X.
+
+[00:10:13:16 - 00:10:14:16]
+ X.
+
+[00:10:14:16 - 00:10:21:19]
+ X is essentially the set of these letters, X, the set of distinct characters, which gives
+
+[00:10:21:19 - 00:10:25:27]
+ us U equal four.
+
+[00:10:25:27 - 00:10:34:04]
+ Then for a given genome, you are going to have N, a number N of letters or nucleotides,
+
+[00:10:34:04 - 00:10:38:16]
+ which you determine by sequencing the genetic sequence.
+
+[00:10:38:16 - 00:10:43:16]
+ There will be a probability distribution on these characters.
+
+[00:10:43:16 - 00:10:49:13]
+ P, A, P, C, P, T, and P, G.
+
+[00:10:49:13 - 00:10:55:19]
+ So unlike the digital, where you had two states, now we have four letters in the message for
+
+[00:10:55:19 - 00:10:57:17]
+ characters.
+
+[00:10:57:17 - 00:11:05:16]
+ What it means, it means that the maximum information entropy per character in a genomic sequence,
+
+[00:11:05:16 - 00:11:11:23]
+ H, X, max, would be log two.
+
+[00:11:11:23 - 00:11:12:23]
+ Log two.
+
+[00:11:12:23 - 00:11:13:23]
+ Log two.
+
+[00:11:13:23 - 00:11:14:23]
+ Log two.
+
+[00:11:14:23 - 00:11:15:23]
+ Log two of U.
+
+[00:11:15:23 - 00:11:17:16]
+ That's the formula.
+
+[00:11:17:16 - 00:11:25:24]
+ That gives us log two of four, which gives us two bits.
+
+[00:11:25:24 - 00:11:42:23]
+ The maximum information that can be encoded in a single character of a genome is two bits.
+
+[00:11:42:23 - 00:11:43:26]
+ Each character has two bits.
+
+[00:11:43:26 - 00:11:47:27]
+ That means one could digitize the set of characters.
+
+[00:11:47:27 - 00:11:48:27]
+ That's the formula.
+
+[00:11:48:27 - 00:12:00:07]
+ characters let's say a c t g we can allocate we need two bits per character so let's say a
+
+[00:12:00:07 - 00:12:15:07]
+ is zero zero b equals um sorry c um what the hell c equals um zero one t equals one zero
+
+[00:12:15:07 - 00:12:22:24]
+ and g equals one one these are the possible permutations of two letters
+
+[00:12:22:24 - 00:12:31:20]
+ um two two characters two two bits and this is how you would encode these letters using binary
+
+[00:12:31:20 - 00:12:40:12]
+ encoding so that means the the set x could be
+
+[00:12:41:20 - 00:12:43:28]
+ rewritten as zero zero
+
+[00:12:43:28 - 00:12:54:04]
+ it's still four characters but they are not um four single characters they are four
+
+[00:12:54:04 - 00:13:02:12]
+ double characters if you want so zero zero zero one one zero one one and if you
+
+[00:13:02:12 - 00:13:10:00]
+ you take a genomic sequence and you you sequence the the genome you get the string of a c t g's
+
+[00:13:10:00 - 00:13:14:16]
+ everything that makes up that organism and then one can
+
+[00:13:14:16 - 00:13:15:00]
+ um
+
+[00:13:15:05 - 00:13:23:00]
+ replace a with zero zero c with zero one t with one zero g one one and make it a string of digital
+
+[00:13:23:00 - 00:13:28:11]
+ bits and the analysis is exactly what we did previously looking at zeros and ones and you have
+
+[00:13:28:11 - 00:13:34:08]
+ two possible states and work out the information entropy and do your mathematics and statistics
+
+[00:13:34:08 - 00:13:44:08]
+ on zeros and ones but that's not entirely necessary essentially one can work exactly on the four
+
+[00:13:44:08 - 00:13:44:25]
+ letters
+
+[00:13:45:05 - 00:13:53:22]
+ um as they are you don't really need to digitize it and convert it into bits so let's um i'm gonna
+
+[00:13:53:22 - 00:13:59:22]
+ start a new page and let's take an example just like we did previously and this time i'm gonna
+
+[00:13:59:22 - 00:14:13:24]
+ take a another 10 an arbitrary 10 n equal 10 string of nucleotides and these are c a a
+
+[00:14:15:05 - 00:14:30:20]
+ p v d t t t t t g a c okay that's our hypothetical 10 characters
+
+[00:14:31:26 - 00:14:35:29]
+ mini-mini-mini genome segment if you want okay
+
+[00:14:37:17 - 00:14:47:23]
+ um if one would use the encoding that we worked out previously ,where each letter is represented by 2
+
+[00:14:47:23 - 00:14:55:02]
+ bits you will end up with 20 characters of zeros and ones starting 0 0 0 0 0 0 0 and then you have
+
+[00:14:55:02 - 00:15:02:14]
+ many ones and then four zeros one it's replacing every single letter by the corresponding zeros
+
+[00:15:02:14 - 00:15:10:08]
+ and ones a would be 0 0 c would be 0 1 and so on but as i said we don't really need to do that
+
+[00:15:10:08 - 00:15:17:07]
+ okay we can just do our statistics and channel information entropy straight on these letters
+
+[00:15:17:07 - 00:15:23:14]
+ as is as the encoding they place in in the genome so what you do you just start counting
+
+[00:15:23:14 - 00:15:33:29]
+ and you say the probability distribution of this set so we have a set x is a c t g
+
+[00:15:33:29 - 00:15:43:19]
+ okay so the probabilities will be p a equals how many a's we have we have one two three that gives
+
+[00:15:43:19 - 00:15:45:26]
+ us three over ten
+
+[00:15:45:26 - 00:15:55:04]
+ probability of um you how you imagine this you imagine that you close your eyes and you have
+
+[00:15:55:04 - 00:16:01:28]
+ these letters on the table mixed up and you pull randomly one letter what is the probability to
+
+[00:16:01:28 - 00:16:08:20]
+ pull an a you will be free over t what is the probability to pull a c if you don't look um so
+
+[00:16:08:20 - 00:16:15:23]
+ you have one two actually so that would be two over ten what is the probability to pull a
+
+[00:16:15:26 - 00:16:24:25]
+ um uh g it's only one g character so that would be one over ten and p t is one two three four
+
+[00:16:26:22 - 00:16:34:25]
+ four over ten and this is uh the set of probabilities and then we take the formula
+
+[00:16:35:16 - 00:16:44:22]
+ h x one more time is minus summation j from one to four because we have u equals four
+
+[00:16:45:26 - 00:16:57:02]
+ unique characters of p j log two p j so that means it's a summation over four terms and all you need
+
+[00:16:57:02 - 00:17:08:10]
+ to do is to add them up so h x equals and i'm gonna have this minus here let's put a big bracket like
+
+[00:17:08:10 - 00:17:14:15]
+ that and we have three over ten times log two
+
+[00:17:15:26 - 00:17:27:11]
+ over ten plus two over ten log two two over ten plus one over ten it's not gonna be space to finish
+
+[00:17:27:11 - 00:17:36:15]
+ here i need to move down um log two one over ten plus one more term here plus um what is it four
+
+[00:17:36:15 - 00:17:45:23]
+ over ten times log two four over ten and close the bracket and you plug this into a
+
+[00:17:45:26 - 00:17:57:07]
+ um numerical processor and you get what do i have is one point eight four six bits
+
+[00:17:59:09 - 00:18:08:04]
+ bits of data this channel information entropy for this specific genomic segment you have
+
+[00:18:08:25 - 00:18:16:11]
+ exactly 1.846 bits per character the entire information encoded info
+
+[00:18:17:24 - 00:18:31:10]
+ um information encoded in this segment would be n times h x and is 10 h x is uh-huh so you get 18.46
+
+[00:18:31:10 - 00:18:40:04]
+ bits of the information encoded in this little segment okay the maximum the maximum you can get
+
+[00:18:40:28 - 00:18:47:20]
+ is 20. okay because the maximum information entropy for four distinct characters
+
+[00:18:47:24 - 00:18:54:14]
+ be two bits per character and because you have 10 of them it means they are equally spread you
+
+[00:18:54:14 - 00:19:04:28]
+ can't really have um because it's four of them you can only have four um eight is multiples of four
+
+[00:19:05:20 - 00:19:11:00]
+ any multiples of four would possibly give you a maximum information entropy 16 and so on
+
+[00:19:11:00 - 00:19:18:25]
+ um but um is it the 10 it you always will have some kind of imbalance one of the characters
+
+[00:19:18:25 - 00:19:22:25]
+ will not be balanced by by the others they will have a different probability so you can never
+
+[00:19:22:25 - 00:19:28:11]
+ have the maximum with this number of characters that's that's how it is obviously as you go to
+
+[00:19:28:11 - 00:19:35:03]
+ very large numbers this become this is becoming more or less irrelevant so as you go to genomes of
+
+[00:19:35:03 - 00:19:40:06]
+ millions of of characters this is becoming um insignificant this effect but
+
+[00:19:41:00 - 00:19:47:10]
+ for our example here it is significant and this is um essentially this is all i wanted to show
+
+[00:19:48:23 - 00:19:55:03]
+ a few quick examples a digital data set a genomic data set and how you calculate
+
+[00:19:55:22 - 00:20:04:11]
+ information entropy per set it's a very important aspect to understand because the second law of
+
+[00:20:04:11 - 00:20:10:09]
+ information dynamics and the information dynamics and the information physics that i built around
+
+[00:20:10:09 - 00:20:11:00]
+ this concept
+
+[00:20:11:24 - 00:20:16:23]
+ uh it hinges on exactly this this this kind of calculations and the fact that
+
+[00:20:17:20 - 00:20:23:17]
+ there appears to be a governing dynamics of the information entropy of a given system over time
+
+[00:20:24:09 - 00:20:33:00]
+ and we'll get to that later i'm gonna end this second introduction lecture now thank you
+
