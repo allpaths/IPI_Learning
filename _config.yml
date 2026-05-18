@@ -65,6 +65,7 @@ sphinx:
     html_show_copyright: true
     html_static_path: ["_static"]
     html_css_files: ["custom.css"]
+    html_js_files: ["matrix_rain.js"]
     # Suppress the "headings start at H2" warning — the H1 lives inside the
     # custom HTML hero block on index.md, which MyST doesn't see as a
     # markdown heading.

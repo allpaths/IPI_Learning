@@ -66,23 +66,45 @@
 
 .ipi-hero > * { position: relative; z-index: 1; }
 
+/* Live animated digital rain canvas, injected by matrix_rain.js.
+   When present it sits behind the hero text and the dark vignette,
+   covering the static matrix_banner.svg fallback. */
+.ipi-hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}
+
+/* When JS has activated the canvas, hide the static SVG so we
+   don't pay for both. The dark vignette overlay still applies. */
+.ipi-hero--animated {
+  background-image: none;
+}
+
 .ipi-hero h1 {
-  color: var(--ipi-green-bright);
+  color: #ffffff;
   font-size: clamp(1.8rem, 4.5vw, 2.6rem);
   font-weight: 600;
   margin: 0 0 0.5rem 0;
   letter-spacing: -0.01em;
-  text-shadow: 0 0 18px rgba(95, 255, 143, 0.45);
+  /* keep a soft green glow so the title still feels tied to the palette */
+  text-shadow: 0 0 18px rgba(95, 255, 143, 0.45),
+               0 0 8px rgba(0, 0, 0, 0.6);
   border-bottom: none;
 }
 
 .ipi-hero .ipi-hero-subtitle {
-  color: #d6f5df;
+  color: #ffffff;
   font-size: clamp(1rem, 2vw, 1.15rem);
   font-weight: 300;
   margin: 0 auto;
   max-width: 760px;
   line-height: 1.55;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
 
 .ipi-hero .ipi-hero-tag {
