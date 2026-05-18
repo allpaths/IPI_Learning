@@ -27,9 +27,17 @@ exclude_patterns:
   - ".github/**"
 
 # Link "open on GitHub" / "edit" / repository buttons in the top-right.
+#
+# `branch` is also used to build the Binder and Colab launch URLs.
+# Pointing it at a tag (instead of "master") means Binder doesn't need to hit
+# GitHub's API to resolve the ref each time — it serves a cached image keyed
+# by the tag, which avoids the intermittent "503 GitHub rate limit" message
+# during Binder builds. Bump the tag with:
+#     git tag -f v1 && git push -f origin v1
+# to publish a new snapshot to Binder.
 repository:
   url: https://github.com/allpaths/IPI_Learning
-  branch: master
+  branch: v1
 
 # 🚀 Launch buttons (top-right of each notebook page).
 # Both Binder and Colab build the environment on the fly from this repo.

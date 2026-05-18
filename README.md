@@ -46,6 +46,16 @@ jupyter-book build .
 
 The site is rebuilt automatically on every push to `master` by [`.github/workflows/deploy-book.yml`](.github/workflows/deploy-book.yml).
 
+## Publishing a Binder Snapshot
+
+The site's Binder launch buttons point at the `v1` tag (not `master`) so Binder can serve cached images without hitting GitHub's rate limit on every launch. When the master branch has changes you want reflected in Binder, fast-forward the tag:
+
+```bash
+git tag -f v1 && git push -f origin v1
+```
+
+Colab buttons follow the same tag (Colab caches less aggressively, so this matters less there, but the consistency is helpful).
+
 ## Repo Layout
 
 ```
