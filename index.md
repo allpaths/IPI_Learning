@@ -1,14 +1,48 @@
-# Information Physics & Information Theory
+<div class="ipi-hero">
+  <h1>Information Physics &amp; Information Theory</h1>
+  <p class="ipi-hero-subtitle">
+    Interactive lecture notebooks following the video lectures of
+    Dr.&nbsp;Melvin&nbsp;Vopson on Shannon information theory, information entropy,
+    and the physical nature of information.
+  </p>
+  <span class="ipi-hero-tag">study companion · live notebooks · open source</span>
+</div>
 
-A growing collection of interactive Jupyter notebooks following the video lectures of **Dr. Melvin Vopson** on Shannon information theory, information entropy, and information physics.
+<div class="ipi-card">
+  <p class="ipi-card-title">Lecturer</p>
+  <h3>Dr. Melvin Vopson — University of Portsmouth</h3>
+  <p>
+    Associate Professor of Physics whose research explores the
+    <em>physical</em> nature of information, the second law of information dynamics,
+    and the structural parallels between information theory and physics.
+  </p>
+  <p>
+    🎓 <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/melvin-vopson">
+    Faculty profile at the University of Portsmouth →</a>
+  </p>
+</div>
 
----
+<div class="ipi-callout">
+  <div class="ipi-callout-icon" aria-hidden="true"></div>
+  <div class="ipi-callout-body">
+    <strong>Information Physics Institute</strong><br>
+    The institute Dr. Vopson founded to research information physics, the
+    mass–energy–information equivalence principle, and the second law of
+    infodynamics.
+    <br>
+    🔗 <a href="https://www.informationphysicsinstitute.org/">informationphysicsinstitute.org →</a>
+  </div>
+</div>
 
-## About the Lecturer
-
-These notebooks accompany the lecture series by **Dr. Melvin Vopson**, Associate Professor of Physics at the **[University of Portsmouth](https://www.port.ac.uk/)**. Dr. Vopson's research explores the *physical* nature of information, the second law of information dynamics, and the deep structural parallels between information theory and physics.
-
-> 🎓 **[Dr. Melvin Vopson — Faculty profile at the University of Portsmouth →](https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/melvin-vopson)**
+<figure class="ipi-figure">
+  <img src="_static/entangled.avif"
+       alt="Two entangled particles, each resting in a gravity well, connected through the curvature of spacetime">
+  <figcaption>
+    Two entangled particles, each in its own gravity well — the link between them
+    persists across the geometry of spacetime. Information physics treats this
+    correlation as a <em>physical</em> quantity with measurable consequences.
+  </figcaption>
+</figure>
 
 All lecture content, derivations, worked examples, and presenter screenshots in this series originate from Dr. Vopson's video lectures. The notebooks here serve as a **study aid**: they reproduce the mathematics step by step, add executable Python verifications, and embed key moments from the lecture as screenshots. They are not a substitute for watching the originals — please visit the linked YouTube videos for the full lecture experience.
 
@@ -49,7 +83,7 @@ jupyter notebook
 
 ## Source & Contributing
 
-The full source — notebooks, lecture transcripts, screenshots, and supporting scripts — lives at  
+The full source — notebooks, lecture transcripts, screenshots, and supporting scripts — lives at
 **[github.com/allpaths/IPI_Learning](https://github.com/allpaths/IPI_Learning)**.
 
 Found a typo or have a suggestion? Issues and pull requests are welcome.

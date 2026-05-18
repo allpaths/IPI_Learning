@@ -1,0 +1,178 @@
+/* ============================================================
+   Custom styling for the IPI Learning Jupyter Book site.
+   Adds an academic-but-colorful palette built around an
+   "information-physics green" accent.
+   ============================================================ */
+
+:root {
+  --ipi-green:        #1bd169;
+  --ipi-green-bright: #5fff8f;
+  --ipi-green-pale:   #9dff95;
+  --ipi-dark:         #0a1408;
+  --ipi-dark-2:       #02060b;
+}
+
+/* ---------- HERO BANNER ---------- */
+
+.ipi-hero {
+  position: relative;
+  margin: 0 0 2.5rem 0;
+  padding: 3.5rem 1.5rem 3rem;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  background-color: var(--ipi-dark);
+  background-image: url("matrix_banner.svg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* dark vignette so titles always have contrast over the rain */
+.ipi-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.80) 90%
+  );
+  pointer-events: none;
+}
+
+.ipi-hero > * { position: relative; z-index: 1; }
+
+.ipi-hero h1 {
+  color: var(--ipi-green-bright);
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 18px rgba(95, 255, 143, 0.45);
+  border-bottom: none;
+}
+
+.ipi-hero .ipi-hero-subtitle {
+  color: #d6f5df;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 760px;
+  line-height: 1.55;
+}
+
+.ipi-hero .ipi-hero-tag {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.25rem 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ipi-green-pale);
+  border: 1px solid rgba(27, 209, 105, 0.5);
+  border-radius: 999px;
+}
+
+/* ---------- INFO CARDS (lecturer, institute) ---------- */
+
+.ipi-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 1.5rem 0;
+  border-left: 4px solid var(--ipi-green);
+  background: linear-gradient(
+    90deg,
+    rgba(27, 209, 105, 0.07) 0%,
+    rgba(27, 209, 105, 0.02) 50%,
+    transparent 100%
+  );
+  border-radius: 4px;
+}
+
+.ipi-card-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ipi-green);
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.ipi-card h3 { margin: 0; }
+.ipi-card p  { margin: 0.25rem 0 0 0; }
+
+.ipi-card a {
+  font-weight: 500;
+}
+
+/* IPI Institute callout — slightly more prominent */
+.ipi-callout {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2rem 0;
+  border: 1px solid rgba(27, 209, 105, 0.35);
+  background: linear-gradient(
+    135deg,
+    rgba(10, 20, 8, 0.04) 0%,
+    rgba(27, 209, 105, 0.08) 100%
+  );
+  border-radius: 8px;
+}
+
+.ipi-callout .ipi-callout-icon {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--ipi-green-bright) 0%, var(--ipi-green) 60%, var(--ipi-dark) 100%);
+  box-shadow: 0 0 16px rgba(27, 209, 105, 0.5);
+}
+
+.ipi-callout .ipi-callout-body { flex: 1 1 auto; }
+
+.ipi-callout strong {
+  color: var(--ipi-green);
+  font-size: 1.1rem;
+}
+
+/* ---------- FIGURE: entangled particles ---------- */
+
+.ipi-figure {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.ipi-figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.20);
+}
+
+.ipi-figure figcaption {
+  font-size: 0.9rem;
+  color: var(--pst-color-text-muted, #555);
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+
+/* ---------- LECTURE TABLE: tighten and tint header ---------- */
+
+table.colwidths-auto th,
+.bd-content table th {
+  background-color: rgba(27, 209, 105, 0.08);
+  border-bottom: 2px solid var(--ipi-green);
+}
+
+/* ---------- LINK HOVER ---------- */
+
+.bd-content a:hover {
+  color: var(--ipi-green);
+}

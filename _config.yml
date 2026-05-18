@@ -63,6 +63,12 @@ parse:
 sphinx:
   config:
     html_show_copyright: true
+    html_static_path: ["_static"]
+    html_css_files: ["custom.css"]
+    # Suppress the "headings start at H2" warning — the H1 lives inside the
+    # custom HTML hero block on index.md, which MyST doesn't see as a
+    # markdown heading.
+    suppress_warnings: ["myst.header"]
     mathjax3_config:
       tex:
         macros:
