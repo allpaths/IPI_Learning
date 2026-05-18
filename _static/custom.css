@@ -14,6 +14,29 @@
 
 /* ---------- HERO BANNER ---------- */
 
+/* The hero is wrapped in an <a> to make it clickable. Strip default
+   link styling so the colors below win, and add a subtle hover lift. */
+.ipi-hero-link,
+.ipi-hero-link:hover,
+.ipi-hero-link:visited {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.ipi-hero-link .ipi-hero {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ipi-hero-link:hover .ipi-hero {
+  box-shadow: 0 10px 32px rgba(27, 209, 105, 0.35), 0 6px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.ipi-hero-link:hover .ipi-hero h1 {
+  text-shadow: 0 0 24px rgba(95, 255, 143, 0.75);
+}
+
 .ipi-hero {
   position: relative;
   margin: 0 0 2.5rem 0;
@@ -149,11 +172,22 @@
   text-align: center;
 }
 
+.ipi-figure a {
+  display: inline-block;
+  text-decoration: none;
+}
+
 .ipi-figure img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.20);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ipi-figure a:hover img {
+  box-shadow: 0 10px 30px rgba(27, 209, 105, 0.35), 0 6px 18px rgba(0, 0, 0, 0.30);
+  transform: translateY(-2px);
 }
 
 .ipi-figure figcaption {

@@ -1,12 +1,17 @@
-<div class="ipi-hero">
-  <h1>Information Physics &amp; Information Theory</h1>
-  <p class="ipi-hero-subtitle">
-    Interactive lecture notebooks following the video lectures of
-    Dr.&nbsp;Melvin&nbsp;Vopson on Shannon information theory, information entropy,
-    and the physical nature of information.
-  </p>
-  <span class="ipi-hero-tag">study companion · live notebooks · open source</span>
-</div>
+<a class="ipi-hero-link"
+   href="https://www.informationphysicsinstitute.org/"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Visit the Information Physics Institute website">
+  <div class="ipi-hero">
+    <h1>Information Physics &amp; Information Theory</h1>
+    <p class="ipi-hero-subtitle">
+      Interactive lecture notebooks following the video lectures of
+      Dr.&nbsp;Melvin&nbsp;Vopson on Shannon information theory, information entropy,
+      and the physical nature of information.
+    </p>
+    <span class="ipi-hero-tag">study companion · live notebooks · open source</span>
+  </div>
+</a>
 
 <div class="ipi-card">
   <p class="ipi-card-title">Lecturer</p>
@@ -35,12 +40,17 @@
 </div>
 
 <figure class="ipi-figure">
-  <img src="_static/entangled.avif"
-       alt="Two entangled particles, each resting in a gravity well, connected through the curvature of spacetime">
+  <a href="https://www.youtube.com/@informationphysicsinstitute"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Visit the Information Physics Institute YouTube channel">
+    <img src="_static/entangled.avif"
+         alt="Two entangled particles, each resting in a gravity well, connected through the curvature of spacetime">
+  </a>
   <figcaption>
     Two entangled particles, each in its own gravity well — the link between them
     persists across the geometry of spacetime. Information physics treats this
     correlation as a <em>physical</em> quantity with measurable consequences.
+    <br><small>(image links to the <a href="https://www.youtube.com/@informationphysicsinstitute">Information Physics Institute YouTube channel</a>)</small>
   </figcaption>
 </figure>
 
