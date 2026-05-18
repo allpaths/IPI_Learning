@@ -232,3 +232,20 @@ table.colwidths-auto th,
 .bd-content a:hover {
   color: var(--ipi-green);
 }
+
+/* ---------- FOOTER AUTHOR OVERRIDE ----------
+   sphinx-book-theme renders "By {{ author }}" in <p class="component-author">.
+   We want the visible string to be "Notebooks by Jeff Dillon", without the
+   theme's "By " prefix and without re-stating the lecture credit (which is
+   already shown prominently on the landing page). */
+.component-author {
+  font-size: 0;
+  line-height: 0;
+}
+
+.component-author::before {
+  content: "Notebooks by Jeff Dillon";
+  font-size: 0.875rem;
+  line-height: 1.5;
+  display: inline;
+}
