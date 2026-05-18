@@ -97,3 +97,5 @@ The full source — notebooks, lecture transcripts, screenshots, and supporting 
 **[github.com/allpaths/IPI_Learning](https://github.com/allpaths/IPI_Learning)**.
 
 Found a typo or have a suggestion? Issues and pull requests are welcome.
+
+Content authored by **Jeff Dillon**.
