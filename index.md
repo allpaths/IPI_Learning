@@ -74,10 +74,10 @@ All lecture content, derivations, worked examples, and presenter screenshots in 
 Every notebook has been pre-executed; all plots, derivations, and numerical outputs are already rendered inline. Just click any title above and scroll.
 
 ### 🚀 Run interactively
-At the top-right of any notebook page you'll find a **rocket icon (🚀)**. Click it to launch the notebook in a live Jupyter environment built on the fly from this repository:
+At the top right of any Lecture Notebook page (not this page) you'll find a **rocket icon (🚀)**. Click it to launch the notebook in a live Jupyter environment built on the fly from this repository:
 
 - **Binder** — free, no account required. First load takes ~30–60s as the environment builds; subsequent loads are fast.
-- **Colab** — opens the notebook directly in [Google Colab](https://colab.research.google.com). Loads instantly; requires a Google account.
+- **Colab** — opens the notebook directly in Google Colab. Loads instantly; requires a Google account.
 
 Either option lets you edit cells, change parameters, and re-run computations live.
 

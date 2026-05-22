@@ -249,3 +249,21 @@ table.colwidths-auto th,
   line-height: 1.5;
   display: inline;
 }
+
+/* ---------- LAUNCH-BUTTON ROCKET → EMOJI ----------
+   The per-notebook launch dropdown ships with a Font Awesome rocket
+   (`<i class="fas fa-rocket">`), which `_static/scripts/fontawesome.js`
+   swaps at runtime for `<svg class="svg-inline--fa fa-rocket">`.
+   Hide BOTH forms (pre- and post-swap) and inject the same 🚀 emoji
+   used on the landing page via the button's ::before — the button
+   element itself is untouched by FA's swap. */
+.dropdown-launch-buttons > button > i.fa-rocket,
+.dropdown-launch-buttons > button > svg.fa-rocket {
+  display: none;
+}
+
+.dropdown-launch-buttons > button::before {
+  content: "🚀";
+  font-style: normal;
+  line-height: 1;
+}
