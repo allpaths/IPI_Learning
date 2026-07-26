@@ -64,7 +64,8 @@ All lecture content, derivations, worked examples, and presenter screenshots in 
 |---|---|---|---|
 | 1 | [Introduction to Shannon's Information Theory](Video_01/Shannon_Entropy.ipynb) | ~37 min | 📺 [Watch on YouTube →](https://youtu.be/cuCEOOQgCLU) |
 | 2 | [Information Entropy — Worked Examples](Video_02/Information_Entropy_Examples.ipynb) | ~21 min | 📺 [Watch on YouTube →](https://youtu.be/DCQpbssp_Sw) |
-| 3 | _Coming soon_ | | |
+| 3 | [Information Entropy of m-Blocks](Video_03/Information_Entropy_of_m_blocks.ipynb) | ~25 min | 📺 [Watch on YouTube →](https://youtu.be/6Ijdrrp0DeQ) |
+| 4 | _Coming soon_ | | |
 
 ---
 

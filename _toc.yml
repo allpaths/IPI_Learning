@@ -9,3 +9,5 @@ chapters:
     title: "Part 1 — Introduction to Shannon's Information Theory"
   - file: Video_02/Information_Entropy_Examples
     title: "Part 2 — Information Entropy: Worked Examples"
+  - file: Video_03/Information_Entropy_of_m_blocks
+    title: "Part 3 — Information Entropy of m-Blocks"
