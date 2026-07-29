@@ -1,0 +1,1125 @@
+[00:00:02:11 - 00:00:16:17]
+ Hello. In the previous lecture we learned about n-blocks and what are they and how
+
+[00:00:16:17 - 00:00:26:00]
+ to compute information entropy for a set of n-blocks. In this session I would like
+
+[00:00:26:00 - 00:00:34:12]
+ to cover the process of generating a set of n-blocks and I would like to do some
+
+[00:00:34:12 - 00:00:40:18]
+ examples of computing the information entropy of a set of n-blocks. So let's
+
+[00:00:40:18 - 00:00:50:14]
+ start doing just this. Let's remind ourselves that if we have a set of n
+
+[00:00:50:14 - 00:00:57:09]
+ single characters containing a number of u distinct
+
+[00:00:57:09 - 00:00:57:12]
+ characters, then we have a set of n single characters containing a number of u distinct
+
+[00:00:57:12 - 00:00:57:14]
+ characters, then we have a set of n single characters containing a number of u distinct
+
+[00:00:57:14 - 00:01:08:12]
+ characters, and if we group single characters into blocks of m single characters, we call
+
+[00:01:08:12 - 00:01:22:29]
+ them m-blocks, we get this u, the number of distinct single characters becomes another
+
+[00:01:22:29 - 00:01:29:21]
+ number omega of distinct m-blocks.
+
+[00:01:29:21 - 00:01:34:02]
+ And that is given by U to power M.
+
+[00:01:34:14 - 00:01:38:02]
+ And we've done this in part 3.
+
+[00:01:38:23 - 00:01:40:01]
+ So this is part 4.
+
+[00:01:42:07 - 00:01:48:24]
+ Now we are interested in developing a method of generating a set of M blocks from a set of single characters.
+
+[00:01:50:18 - 00:01:58:26]
+ We also want to calculate how many elements in the new set of M blocks we generated, like finding a formula for that.
+
+[00:01:58:26 - 00:02:23:23]
+ So the simplest way of thinking how we generate a set of M blocks is I'm going to take the example of the single character set of 10 characters that we discussed in previous lectures.
+
+[00:02:24:13 - 00:02:27:01]
+ And this is, I'm just going to write it here, 0.
+
+[00:02:27:18 - 00:02:31:16]
+ So there are 10 characters, 0, 1, 1, 1.
+
+[00:02:31:22 - 00:02:43:10]
+ There are 4 1s, 0, 1, 1, 0, 1.
+
+[00:02:43:25 - 00:02:48:00]
+ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.
+
+[00:02:48:03 - 00:02:56:15]
+ So this is our set of, let's say here, N equals 10, U equals 2.
+
+[00:02:58:00 - 00:03:02:13]
+ And these are 0 and 1, the two distinct characters.
+
+[00:03:05:04 - 00:03:06:29]
+ And as an example.
+
+[00:03:07:00 - 00:03:11:12]
+ Well, let's, we need to choose the size of the M block.
+
+[00:03:12:05 - 00:03:20:14]
+ So M, the choice of this we discussed in part 3 is it needs to be minimum 1.
+
+[00:03:24:13 - 00:03:30:09]
+ So M block needs to be at least 1.
+
+[00:03:31:07 - 00:03:39:04]
+ And less or equal than the total number of single characters in the set.
+
+[00:03:39:09 - 00:03:39:27]
+ Okay.
+
+[00:03:41:10 - 00:03:50:17]
+ If M equals 1, then you have the standard set of single characters in a set.
+
+[00:03:51:10 - 00:03:55:28]
+ Omega becomes equals to U because this omega is U to power 1.
+
+[00:03:56:28 - 00:03:58:11]
+ So omega equals U.
+
+[00:03:59:11 - 00:04:00:21]
+ So we are not going to discuss that.
+
+[00:04:00:21 - 00:04:01:21]
+ That's a particular case.
+
+[00:04:02:20 - 00:04:10:17]
+ M block 1 is a particular case of a set of M blocks.
+
+[00:04:10:17 - 00:04:11:17]
+ Where M block is 1.
+
+[00:04:12:10 - 00:04:16:28]
+ So we're going to discuss the case of M equal 2, for example.
+
+[00:04:17:28 - 00:04:18:12]
+ Okay.
+
+[00:04:18:12 - 00:04:21:25]
+ So if we do this, how do you construct the set of M blocks?
+
+[00:04:22:17 - 00:04:36:04]
+ Essentially, you go to the string of single characters and take the first M block that is a 1, the first element to a two single characters.
+
+[00:04:36:23 - 00:04:38:01]
+ First M block is a 1.
+
+[00:04:38:20 - 00:04:39:05]
+ A 1.
+
+[00:04:39:05 - 00:04:56:24]
+ And you slide this segment, M block segment, to the right until you finish the entire string of single characters.
+
+[00:04:57:01 - 00:04:58:01]
+ How much you slide it?
+
+[00:04:58:27 - 00:05:02:12]
+ Well, we usually discuss this in part 3.
+
+[00:05:02:29 - 00:05:05:22]
+ We call this a step size SS.
+
+[00:05:05:22 - 00:05:12:22]
+ And this is equal to this SS has to be...
+
+[00:05:13:04 - 00:05:30:22]
+ So let me put here, at least, has to be at least, it needs to be larger than 1, SS, and it has to be at least, the maximum value, it could be equal, the maximum value is the size of the M block.
+
+[00:05:31:17 - 00:05:36:28]
+ Because if the step size is larger than the size of the M block, then you miss characters in this process.
+
+[00:05:36:28 - 00:05:41:12]
+ So let's take, in our case, SS equals 2.
+
+[00:05:41:12 - 00:05:44:00]
+ So the step size equals 2.
+
+[00:05:44:02 - 00:05:49:09]
+ In other words, SS, SS step size equals the size of the M block.
+
+[00:05:49:19 - 00:05:51:15]
+ That's the condition that we impose.
+
+[00:05:52:05 - 00:05:57:29]
+ So we go back to our set and we took the first M block, 0, 1, happy days.
+
+[00:05:58:25 - 00:06:03:15]
+ And now we need to slide this segment to the right by how much?
+
+[00:06:03:27 - 00:06:05:17]
+ Step size 2, another M block.
+
+[00:06:05:17 - 00:06:08:06]
+ So the next, we land here.
+
+[00:06:09:00 - 00:06:11:11]
+ So the next character in our new set is...
+
+[00:06:11:12 - 00:06:12:05]
+ 1, 1.
+
+[00:06:13:19 - 00:06:22:15]
+ Then we slide again by the size of the M block so that the next character is 1, 0.
+
+[00:06:23:10 - 00:06:27:02]
+ And we slide one more time and the next character is 1, 1.
+
+[00:06:27:23 - 00:06:31:08]
+ And the final character is 0, 1.
+
+[00:06:33:00 - 00:06:42:22]
+ So from what we had before, a set of N equal 10 single characters.
+
+[00:06:42:22 - 00:06:51:11]
+ In our set, we now have a new set of 1, 2, 3, 4, 5 M block characters.
+
+[00:06:51:11 - 00:06:55:21]
+ So we call this the number of elements in the new set N index M.
+
+[00:06:56:17 - 00:06:59:06]
+ And this is equal 5.
+
+[00:06:59:29 - 00:07:01:29]
+ What was before 10.
+
+[00:07:03:02 - 00:07:08:07]
+ For the choice of step size 2 and M block equals 2.
+
+[00:07:09:03 - 00:07:10:17]
+ So this is how you construct.
+
+[00:07:12:06 - 00:07:14:02]
+ And by doing this, we can...
+
+[00:07:14:02 - 00:07:25:01]
+ We captured all the elements in the original set, but we just grouped them by characters of a larger denomination.
+
+[00:07:25:01 - 00:07:28:26]
+ Instead of single characters, we have groups of two characters and we group them like this.
+
+[00:07:28:26 - 00:07:37:26]
+ We discussed in part 3 that the choice of a byte, which is 8 bits, it's essentially an M block of 8 characters.
+
+[00:07:38:03 - 00:07:42:02]
+ This is exactly what we do in digital binary code and all that.
+
+[00:07:43:11 - 00:07:43:27]
+ So...
+
+[00:07:44:02 - 00:07:49:21]
+ The question is now for what is...
+
+[00:07:49:21 - 00:07:52:25]
+ Is there a formula that you can derive for this NM?
+
+[00:07:52:27 - 00:07:53:12]
+ And there is.
+
+[00:07:53:16 - 00:07:54:09]
+ There is a formula.
+
+[00:07:54:09 - 00:08:04:18]
+ So this, the number of elements in a given M block and its relationship to the step size, M block size and N single character elements is the following.
+
+[00:08:05:07 - 00:08:15:07]
+ So N number of elements in a new set of M blocks is 1 plus N minus...
+
+[00:08:16:00 - 00:08:19:16]
+ M divided by the step size.
+
+[00:08:21:13 - 00:08:22:28]
+ This is a very important formula.
+
+[00:08:25:06 - 00:08:31:14]
+ In fact, if you buy my book, Reality Reloaded, the formula looks a little bit different.
+
+[00:08:32:13 - 00:08:43:02]
+ It does work, that formula, up to some extent, but it's not applicable in all instances.
+
+[00:08:43:02 - 00:08:44:05]
+ It has some...
+
+[00:08:44:05 - 00:08:47:20]
+ Limited applicability.
+
+[00:08:48:15 - 00:08:52:15]
+ This new formula works for any combinations, any numbers.
+
+[00:08:52:29 - 00:09:06:27]
+ And it was an improvement that resulted from a collaboration with my friend Simon when we worked together to improve my original patent submission.
+
+[00:09:07:28 - 00:09:10:13]
+ And in that patent, actually, I had the wrong formula.
+
+[00:09:11:14 - 00:09:13:15]
+ And he spotted the...
+
+[00:09:14:05 - 00:09:17:28]
+ Well, the correction, if you want, or the improvement of the formula.
+
+[00:09:18:14 - 00:09:20:15]
+ He came up with this one, which really works.
+
+[00:09:20:17 - 00:09:21:20]
+ So let's test this one.
+
+[00:09:21:20 - 00:09:23:20]
+ We have N.
+
+[00:09:24:21 - 00:09:25:20]
+ N is...
+
+[00:09:26:10 - 00:09:27:25]
+ Initial N was 10.
+
+[00:09:28:26 - 00:09:30:23]
+ The M block, we selected 2.
+
+[00:09:31:09 - 00:09:33:13]
+ And step size, we said, is going to be 2.
+
+[00:09:33:17 - 00:09:35:02]
+ So what is NM?
+
+[00:09:36:07 - 00:09:40:10]
+ It will be 1 plus 10 minus 2 over 2.
+
+[00:09:41:00 - 00:09:44:04]
+ So that is 1 plus 8 divided by 2.
+
+[00:09:44:09 - 00:09:44:16]
+ 4.
+
+[00:09:45:17 - 00:09:47:17]
+ That gives you 5 elements.
+
+[00:09:48:04 - 00:09:50:28]
+ It gives you 5 elements in the new set of M blocks.
+
+[00:09:51:09 - 00:09:53:03]
+ That's exactly what we see here.
+
+[00:09:53:26 - 00:10:04:01]
+ The 5 elements that we reconstructed from the set of single characters.
+
+[00:10:05:08 - 00:10:07:05]
+ M blocks of 2, 5 elements.
+
+[00:10:07:10 - 00:10:12:10]
+ This is the formula that gives you the numbers in the new set.
+
+[00:10:14:04 - 00:10:14:16]
+ Okay, so...
+
+[00:10:15:17 - 00:10:17:26]
+ What else we can do now?
+
+[00:10:18:29 - 00:10:22:11]
+ Let me catch my...
+
+[00:10:22:11 - 00:10:31:17]
+ So, we are still on this constructing set of M blocks.
+
+[00:10:31:17 - 00:10:38:11]
+ So, in this case, we choose the step size equal the M block size.
+
+[00:10:39:14 - 00:10:41:06]
+ And we captured all the elements.
+
+[00:10:41:12 - 00:10:43:20]
+ But let's say we want to go completely crazy.
+
+[00:10:44:09 - 00:10:48:01]
+ And we want to scramble them up and mix them up a little bit more.
+
+[00:10:48:01 - 00:10:51:20]
+ So, I'm going to go to an extreme case.
+
+[00:10:51:26 - 00:11:01:01]
+ Well, not extreme, but another case where for the same set, I'm going to select the step size equal.
+
+[00:11:01:09 - 00:11:10:06]
+ Remember, step size can be at least 1.
+
+[00:11:11:18 - 00:11:11:29]
+ Okay?
+
+[00:11:12:14 - 00:11:15:27]
+ So, it doesn't have to be larger than 1 necessarily.
+
+[00:11:15:27 - 00:11:16:26]
+ It can be 1.
+
+[00:11:16:26 - 00:11:19:07]
+ And this is exactly what I'm going to do now.
+
+[00:11:19:09 - 00:11:24:22]
+ I'm going to say step size equal 1 instead of 2.
+
+[00:11:25:14 - 00:11:29:01]
+ And the 2 is the maximum anyway because our M block is 2.
+
+[00:11:29:14 - 00:11:34:06]
+ We have the choice of selecting an M block larger, maybe 4 or 5.
+
+[00:11:34:27 - 00:11:38:01]
+ And then, yes, you have more choices for the step size.
+
+[00:11:38:17 - 00:11:44:08]
+ But because we choose an M block equal 2, we have only 2 choices for the step size.
+
+[00:11:44:12 - 00:11:45:19]
+ That is 1 or 2.
+
+[00:11:45:19 - 00:11:46:21]
+ So, we've done 2.
+
+[00:11:46:26 - 00:11:47:29]
+ This is what we've done.
+
+[00:11:48:18 - 00:11:51:16]
+ And now, we choose step size 1.
+
+[00:11:52:04 - 00:11:53:14]
+ And you would expect the following.
+
+[00:11:54:01 - 00:12:08:02]
+ And the number of elements in the new set of M blocks would be 1 plus N minus M divided by SS.
+
+[00:12:09:03 - 00:12:11:15]
+ So, that is 1 plus N.
+
+[00:12:11:15 - 00:12:14:00]
+ It's, again, 10 minus M block.
+
+[00:12:14:06 - 00:12:16:26]
+ We keep it 2 divided by SS is 1.
+
+[00:12:16:26 - 00:12:18:27]
+ So, we changed from 2 to 1.
+
+[00:12:19:14 - 00:12:29:10]
+ And that would give us 8 divided by 1 plus 9 elements.
+
+[00:12:30:10 - 00:12:38:10]
+ So, you see, when we selected step size equal 2 or equal the size of the M block, we had 5 elements generated.
+
+[00:12:38:23 - 00:12:46:03]
+ But if we select the step size 1, the formula predicts 9 elements in the new M block.
+
+[00:12:46:03 - 00:12:48:27]
+ And let's have a look.
+
+[00:12:48:28 - 00:12:50:28]
+ One more time.
+
+[00:12:50:28 - 00:13:02:19]
+ We say 0, 1, 1, 1, 1, 0, 1, 1, 0, 1.
+
+[00:13:02:19 - 00:13:06:19]
+ So, that's the single character set of 10 elements.
+
+[00:13:06:19 - 00:13:10:19]
+ And we're going to start sliding from left to right.
+
+[00:13:10:19 - 00:13:12:19]
+ We take the first M block.
+
+[00:13:12:19 - 00:13:14:19]
+ So, let's write the elements here.
+
+[00:13:14:19 - 00:13:16:19]
+ The first one will be 0, 1.
+
+[00:13:16:19 - 00:13:17:19]
+ 2 characters.
+
+[00:13:17:19 - 00:13:18:19]
+ Okay.
+
+[00:13:18:19 - 00:13:20:19]
+ Put a comma here.
+
+[00:13:20:19 - 00:13:26:19]
+ But unlike previously where we slide it by 2 characters and the next one was 1, 1.
+
+[00:13:26:19 - 00:13:32:19]
+ Now, we slide it by 1 character and the next one is going to be this one, 1, 1.
+
+[00:13:32:19 - 00:13:35:19]
+ So, but not...
+
+[00:13:35:19 - 00:13:36:19]
+ Okay.
+
+[00:13:36:19 - 00:13:44:02]
+ Then, we slide another 1 character and we get another 1, 1.
+
+[00:13:44:02 - 00:13:50:02]
+ And then, we slide another 1 character and we get another 1, 1.
+
+[00:13:50:02 - 00:13:51:02]
+ Okay.
+
+[00:13:51:02 - 00:13:52:02]
+ And we continue like this.
+
+[00:13:52:02 - 00:13:53:02]
+ The next element is going to be this one.
+
+[00:13:53:02 - 00:13:54:02]
+ So, it's 1, 0.
+
+[00:13:54:02 - 00:13:55:02]
+ The next one is 0, 1.
+
+[00:13:55:02 - 00:13:56:02]
+ And then, you have 0, 1, 1, 1, 1, 0.
+
+[00:13:56:02 - 00:13:58:13]
+ And the last one is 0, 1.
+
+[00:13:58:13 - 00:13:59:13]
+ So, this is our new set by sliding 1 character from the left to the right, blocks of 2.
+
+[00:13:59:13 - 00:14:00:13]
+ And we have how many?
+
+[00:14:00:13 - 00:14:03:13]
+ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 23, 24,
+
+[00:14:03:13 - 00:14:06:06]
+ 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 41, 42, 42, 43,
+
+[00:14:06:06 - 00:14:10:17]
+ 35, 39, 40, 40, 49, 41, 42, 45, 47, 48, 40, 50, 51, 52, 45, 50, 51, 42, 43, 45, 45,
+
+[00:14:10:17 - 00:14:15:01]
+ 51, 48, 51, 52, 46, 45, 6 ,6, 15, 16, 17, 18, 21, 22, 23, 24, 45, 47, 46, 47, 48, 51,
+
+[00:14:15:01 - 00:14:16:08]
+ 52, 53, 57, 52, 56, 58, مُشتمerap 20 ।
+
+[00:14:16:08 - 00:14:25:10]
+ So, this is how new set by sliding 1 character from the left to the right, blocks of 2.
+
+[00:14:25:10 - 00:14:27:00]
+ And we have how many?
+
+[00:14:27:00 - 00:14:31:17]
+ 1, 2, 3, 4, 5, 6, 7, 8, 9.
+
+[00:14:31:17 - 00:14:34:27]
+ That's exactly what we computed here.
+
+[00:14:34:27 - 00:14:39:01]
+ Nm is predicted to be 9 new characters.
+
+[00:14:39:01 - 00:14:40:01]
+ Hell!
+
+[00:14:40:01 - 00:14:47:02]
+ by the formula, characters of n blocks of two single characters, constructed of two
+
+[00:14:47:02 - 00:14:51:08]
+ single characters, you have nine of them.
+
+[00:14:51:08 - 00:14:59:08]
+ So you see, by deploying this technique, we actually end up with a larger number of n
+
+[00:14:59:08 - 00:15:04:21]
+ block characters in the new set, which is almost equal to the number of single characters
+
+[00:15:04:21 - 00:15:06:17]
+ that we initially had.
+
+[00:15:06:17 - 00:15:08:16]
+ We had ten, now we have nine, and so on.
+
+[00:15:08:16 - 00:15:15:11]
+ So it's quite interesting to make this observation.
+
+[00:15:15:11 - 00:15:20:20]
+ So let's see now what we could do with this.
+
+[00:15:20:20 - 00:15:28:24]
+ So the objective is to calculate the information entropy for a set of n blocks now.
+
+[00:15:28:24 - 00:15:40:04]
+ Because we selected u is two, each time n block is two.
+
+[00:15:40:04 - 00:15:49:02]
+ So that means the maximum possible distinct states will be u to power m, so that means
+
+[00:15:49:02 - 00:15:51:14]
+ it's four possible distinct states.
+
+[00:15:51:14 - 00:15:58:05]
+ So this n block of two elements, it can have four possible distinct states.
+
+[00:15:58:05 - 00:16:00:18]
+ And we call this x.
+
+[00:16:00:18 - 00:16:06:18]
+ These are 0, 0, 0, 1, 1, 0, 1, 1.
+
+[00:16:06:18 - 00:16:09:07]
+ This is the set of distinct n blocks.
+
+[00:16:09:07 - 00:16:10:04]
+ Okay.
+
+[00:16:10:04 - 00:16:24:08]
+ They will have a probability distribution p, 0, 0, p, 0, 1, p, 1, 0, and p, 1, 1, a
+
+[00:16:24:08 - 00:16:27:19]
+ distinct probability distribution.
+
+[00:16:27:19 - 00:16:34:20]
+ And now let's do some 1, 2, 3, 4, 5, 6, 7, 8, 9.
+
+[00:16:34:20 - 00:16:35:20]
+ Okay.
+
+[00:16:35:20 - 00:16:40:28]
+ So let's take the set here of nine elements.
+
+[00:16:40:28 - 00:16:47:08]
+ And compute the probabilities.
+
+[00:16:47:08 - 00:16:50:14]
+ So p, 0, 0.
+
+[00:16:50:14 - 00:16:55:22]
+ You look how many times 0, 0 character appears in the new set.
+
+[00:16:55:22 - 00:16:57:00]
+ And that is 0 times.
+
+[00:16:57:00 - 00:17:00:14]
+ So that is 0.
+
+[00:17:00:14 - 00:17:09:13]
+ p, a 1 equals how many times a 1 appears in the set.
+
+[00:17:09:13 - 00:17:16:06]
+ And that is 1, 2.
+
+[00:17:16:06 - 00:17:18:25]
+ That would be probability 3 over how many of them?
+
+[00:17:18:25 - 00:17:20:14]
+ 3 over 9.
+
+[00:17:20:14 - 00:17:24:05]
+ How many times 1, 0 appears?
+
+[00:17:24:05 - 00:17:28:10]
+ 0, 1, 0, 1.
+
+[00:17:28:10 - 00:17:30:22]
+ So that is 2 over 9.
+
+[00:17:30:22 - 00:17:34:20]
+ And how many times p, 1, 1 appears?
+
+[00:17:34:20 - 00:17:38:26]
+ And this is 1, 2, 3, 4 times.
+
+[00:17:38:26 - 00:17:42:24]
+ So 4 over 9.
+
+[00:17:42:24 - 00:17:46:28]
+ And we close this.
+
+[00:17:46:28 - 00:17:48:28]
+ Sorry about the mess here.
+
+[00:17:48:28 - 00:17:49:28]
+ I crowded it.
+
+[00:17:49:28 - 00:17:50:28]
+ Sorry.
+
+[00:17:50:28 - 00:17:54:01]
+ I crowded a little bit the things.
+
+[00:17:54:01 - 00:17:56:23]
+ But I'll write it one more time here.
+
+[00:17:56:23 - 00:17:59:24]
+ So let's copy this clean and nice.
+
+[00:17:59:24 - 00:18:05:16]
+ So the probability, the strict probability is p, 0, 0 is 0.
+
+[00:18:05:16 - 00:18:10:06]
+ p, 0, 1 is 3 over 9.
+
+[00:18:10:06 - 00:18:14:25]
+ p, 1, 0 is 2 over 9.
+
+[00:18:14:25 - 00:18:19:14]
+ And p, 1, 1 is 4 over 9.
+
+[00:18:19:14 - 00:18:20:14]
+ And close the bracket.
+
+[00:18:20:14 - 00:18:20:29]
+ OK.
+
+[00:18:20:29 - 00:18:23:17]
+ So that's what we have.
+
+[00:18:23:17 - 00:18:32:25]
+ And now we apply the Shannon information entropy where the probabilities now are applied to
+
+[00:18:32:25 - 00:18:37:20]
+ the occurrence of n blocks elements rather than single elements.
+
+[00:18:37:20 - 00:18:39:20]
+ So the formula is the same.
+
+[00:18:39:20 - 00:18:43:18]
+ So we say h, x, n block.
+
+[00:18:43:18 - 00:18:46:14]
+ In this case, n block is 2.
+
+[00:18:46:14 - 00:18:49:14]
+ Equals minus summation.
+
+[00:18:49:14 - 00:18:50:14]
+ OK.
+
+[00:18:50:14 - 00:19:00:16]
+ So from 1 to omega, which is 4 in this case, because omega is 4, we have four distinct
+
+[00:19:00:16 - 00:19:02:16]
+ possible states.
+
+[00:19:02:16 - 00:19:10:12]
+ And then you have p, j, m, log p, j, m.
+
+[00:19:10:12 - 00:19:11:25]
+ And these p, j's are up here.
+
+[00:19:11:25 - 00:19:12:25]
+ OK.
+
+[00:19:12:25 - 00:19:17:14]
+ So what we do, we just introduce the elements in this list of probabilities into the summation.
+
+[00:19:17:14 - 00:19:18:14]
+ OK.
+
+[00:19:18:14 - 00:19:19:14]
+ So what we do?
+
+[00:19:19:14 - 00:19:20:27]
+ We introduce them into the summation.
+
+[00:19:20:27 - 00:19:21:27]
+ And what we get?
+
+[00:19:21:27 - 00:19:22:27]
+ We get the following.
+
+[00:19:22:27 - 00:19:29:27]
+ h, x, m equals, let's put a minus here, and we have 3 over 9.
+
+[00:19:29:27 - 00:19:33:12]
+ The first one is 0, so we omit the first one.
+
+[00:19:33:12 - 00:19:41:16]
+ So it's 3 over 9 log, remember it's log 2, I'm going to omit the number 2 there, 3 over
+
+[00:19:41:16 - 00:19:43:16]
+ 9.
+
+[00:19:43:16 - 00:19:47:16]
+ Plus 2 over 9, 2 over 9 log 2.
+
+[00:19:47:16 - 00:19:48:16]
+ OK.
+
+[00:19:48:16 - 00:19:51:25]
+ Log 2 over 9.
+
+[00:19:51:25 - 00:19:55:09]
+ We dropped the base of the logarithm for now.
+
+[00:19:55:09 - 00:20:03:17]
+ Plus 4 over 9 log 4 over 9.
+
+[00:20:03:17 - 00:20:05:10]
+ And I'm going to close the bracket.
+
+[00:20:05:10 - 00:20:18:01]
+ If you plug this into a calculator or a piece of software like I do, then you get the information
+
+[00:20:18:01 - 00:20:19:01]
+ entropy.
+
+[00:20:19:01 - 00:20:33:22]
+ The number of bits of information per m block character equal exactly 1.53 bits.
+
+[00:20:33:22 - 00:20:42:25]
+ The maximum you would expect, the maximum is 2 bits.
+
+[00:20:42:25 - 00:20:43:25]
+ Maximum possible.
+
+[00:20:43:25 - 00:20:44:25]
+ OK.
+
+[00:20:44:25 - 00:20:47:29]
+ So we get a little bit less than that.
+
+[00:20:47:29 - 00:20:51:17]
+ And for the entire set.
+
+[00:20:51:17 - 00:21:05:23]
+ The information, information for the entire set is number of m block characters times
+
+[00:21:05:23 - 00:21:09:07]
+ the information entropy per m block.
+
+[00:21:09:07 - 00:21:25:26]
+ That would be 9 times 1.53.
+
+[00:21:25:26 - 00:21:32:20]
+ That's 13, 13.77 bits.
+
+[00:21:32:20 - 00:21:36:28]
+ OK.
+
+[00:21:36:28 - 00:21:40:14]
+ And the maximum.
+
+[00:21:40:14 - 00:21:43:01]
+ Inf.
+
+[00:21:43:01 - 00:21:44:01]
+ Max.
+
+[00:21:44:01 - 00:21:59:22]
+ That would be possible is nm times hx max.
+
+[00:21:59:22 - 00:22:13:12]
+ And that is 2 bits times 9 would be 18, 18 bits.
+
+[00:22:13:12 - 00:22:14:21]
+ OK.
+
+[00:22:14:21 - 00:22:17:11]
+ So instead of 18 bits.
+
+[00:22:17:11 - 00:22:19:08]
+ Our set encodes 13 bits.
+
+[00:22:19:08 - 00:22:20:08]
+ OK.
+
+[00:22:20:09 - 00:22:30:04]
+ Instead of 2 bits per character, our set encodes 1.53 bits per character.
+
+[00:22:30:04 - 00:22:41:05]
+ And the final thing is that if we remember that the initial set that we used to construct
+
+[00:22:41:05 - 00:22:51:20]
+ the set of m blocks, so that was 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, this is the initial set.
+
+[00:22:51:20 - 00:22:52:20]
+ For this initial set.
+
+[00:22:52:20 - 00:23:05:27]
+ We computed the information entropy per single character this time, it was 0.881 bits.
+
+[00:23:05:27 - 00:23:21:02]
+ And the entire set had an information content of n times h, which is 10 times 0.881 or 8.81
+
+[00:23:21:02 - 00:23:22:02]
+ bits.
+
+[00:23:22:02 - 00:23:23:02]
+ OK.
+
+[00:23:23:02 - 00:23:25:13]
+ So.
+
+[00:23:25:13 - 00:23:26:13]
+ The maximum.
+
+[00:23:26:13 - 00:23:29:01]
+ The maximum.
+
+[00:23:29:01 - 00:23:38:01]
+ The maximum information content possible would have been n times hx maximum, which is 10
+
+[00:23:38:01 - 00:23:39:01]
+ bits.
+
+[00:23:39:01 - 00:23:42:01]
+ Obviously, it's not there.
+
+[00:23:42:01 - 00:23:43:01]
+ OK.
+
+[00:23:43:01 - 00:23:52:09]
+ So what I wanted to point here and then we wrap up with this example is the fact that
+
+[00:23:52:09 - 00:23:55:08]
+ for this set.
+
+[00:23:55:08 - 00:23:58:06]
+ By constructing another set of.
+
+[00:23:58:06 - 00:24:01:06]
+ M blocks of two characters.
+
+[00:24:01:06 - 00:24:02:06]
+ OK.
+
+[00:24:02:06 - 00:24:11:27]
+ We increased the information entropy per character from 0.881 to 153 bits.
+
+[00:24:11:27 - 00:24:27:17]
+ We increased the information, total information content from what was it 8.81 bits to 13.77
+
+[00:24:27:17 - 00:24:28:17]
+ bits.
+
+[00:24:28:17 - 00:24:29:17]
+ OK.
+
+[00:24:29:17 - 00:24:40:27]
+ So if one would look at ways of optimizing the information content in a message, the
+
+[00:24:40:27 - 00:24:52:04]
+ best way is to actually use the smallest denomination possible of characters or groups of characters.
+
+[00:24:52:04 - 00:25:00:04]
+ In this case, it appears to be the single character, the prime choice instead of creating
+
+[00:25:00:04 - 00:25:01:04]
+ large m blocks.
+
+[00:25:01:04 - 00:25:02:04]
+ But.
+
+[00:25:02:04 - 00:25:06:04]
+ However, when you create, for example, why we use.
+
+[00:25:06:04 - 00:25:16:04]
+ Bytes groups of a bits is because you have a larger number of distinct.
+
+[00:25:16:04 - 00:25:20:04]
+ Permutations of this single character into an m block.
+
+[00:25:20:04 - 00:25:21:04]
+ OK.
+
+[00:25:21:04 - 00:25:22:04]
+ So that is you.
+
+[00:25:22:04 - 00:25:26:04]
+ Where did I write that?
+
+[00:25:26:04 - 00:25:27:04]
+ So you.
+
+[00:25:27:04 - 00:25:29:04]
+ You have.
+
+[00:25:29:04 - 00:25:30:04]
+ A number of distinct characters.
+
+[00:25:30:04 - 00:25:32:16]
+ So.
+
+[00:25:32:16 - 00:25:40:22]
+ number of distinct characters is U to power M so if you have U equal to but
+
+[00:25:40:22 - 00:25:48:13]
+ you select a byte which is 8 bits so that would be an M block of 8 2 to power
+
+[00:25:48:13 - 00:26:15:02]
+ 8 okay so what is it you have 4 8 16 16 the 4 so 2 power 3 4 5 6 1 2 8 2 5 6 okay
+
+[00:26:15:02 - 00:26:22:19]
+ so you what it means it means that you by using a byte or M blocks of 8 bits
+
+[00:26:22:19 - 00:26:25:02]
+ you can generate M blocks of 8 bits you can generate
+
+[00:26:25:02 - 00:26:29:22]
+ 256 distinct combinations each one of
+
+[00:26:29:22 - 00:26:31:20]
+ them being able to encode some kind of
+
+[00:26:31:20 - 00:26:34:01]
+ character like a capital letter from the
+
+[00:26:34:01 - 00:26:35:13]
+ alphabet a small letter from the
+
+[00:26:35:13 - 00:26:38:26]
+ alphabet a question mark a punctuation
+
+[00:26:38:26 - 00:26:42:17]
+ symbol any character any special
+
+[00:26:42:17 - 00:26:45:15]
+ characters that you would use in writing
+
+[00:26:45:15 - 00:26:48:07]
+ and in mathematical language and all
+
+[00:26:48:07 - 00:26:52:11]
+ these things could be encoded in this in
+
+[00:26:52:11 - 00:26:54:19]
+ this set of 256
+
+[00:26:54:19 - 00:26:54:26]
+ uh
+
+[00:26:54:26 - 00:26:58:26]
+ Possibly it's a decent size. Okay, you you will find the distinct
+
+[00:27:00:01 - 00:27:04:04]
+ Representation in binary for all the other characters that you want to use in a language
+
+[00:27:04:15 - 00:27:08:17]
+ so the by choosing an M block a larger M block you a
+
+[00:27:10:00 - 00:27:14:05]
+ Larger M block size you you you give yourself more choices for
+
+[00:27:17:24 - 00:27:20:03]
+ Diversification of your allocation of your
+
+[00:27:20:03 - 00:27:25:16]
+ You know characters or or or or message in terms of distinct states
+
+[00:27:26:10 - 00:27:30:08]
+ But you we need to bear in mind that increases the total information
+
+[00:27:31:03 - 00:27:35:04]
+ content of your message if that makes sense and
+
+[00:27:35:28 - 00:27:38:05]
+ It's interesting to look at the the nature
+
+[00:27:39:23 - 00:27:41:19]
+ Biology God
+
+[00:27:41:19 - 00:27:43:08]
+ evolution
+
+[00:27:43:08 - 00:27:45:08]
+ You call it whatever you want
+
+[00:27:45:21 - 00:27:47:21]
+ choose to encode
+
+[00:27:47:21 - 00:27:50:21]
+ Biological information into a
+
+[00:27:51:25 - 00:27:53:25]
+ code of four letters
+
+[00:27:54:28 - 00:27:56:14]
+ rather than
+
+[00:27:56:14 - 00:28:01:04]
+ The binary the zeros and ones they choose four letters. It didn't
+
+[00:28:02:21 - 00:28:05:09]
+ So it choose two two characters
+
+[00:28:06:05 - 00:28:10:18]
+ two characters pair
+
+[00:28:10:24 - 00:28:23:01]
+ Letter, okay. So it's interesting to to look at
+
+[00:28:23:25 - 00:28:25:25]
+ the trade-offs between
+
+[00:28:26:10 - 00:28:27:15]
+ Why?
+
+[00:28:27:15 - 00:28:28:12]
+ Why this will be?
+
+[00:28:28:12 - 00:28:34:01]
+ It will be more optimal than than a binary for example. Why why would we?
+
+[00:28:35:10 - 00:28:42:21]
+ Maybe it's not intelligent design. Maybe it's just how things clicked into place, but it's an interesting area to look at
+
+[00:28:43:19 - 00:28:47:00]
+ Why why life choose?
+
+[00:28:48:12 - 00:28:50:18]
+ four characters to encode
+
+[00:28:51:08 - 00:28:52:28]
+ so two beats
+
+[00:28:52:28 - 00:28:58:12]
+ You choose an M block of two instead of M block of one which we saw that this is the most optimally seems to?
+
+[00:28:58:12 - 00:29:01:08]
+ in terms of compression of data and block of one I
+
+[00:29:01:25 - 00:29:03:02]
+ reckon
+
+[00:29:03:02 - 00:29:08:25]
+ The M block of two which is four characters in the genome and the genetic sequences
+
+[00:29:09:08 - 00:29:12:00]
+ Is related to the fact that it gives a bit more
+
+[00:29:13:19 - 00:29:17:28]
+ Diversity you have four distinct letters
+
+[00:29:19:24 - 00:29:24:07]
+ M blocks of two four distinct letters so that gives a bit more diversity to express
+
+[00:29:26:04 - 00:29:28:04]
+ This incredible
+
+[00:29:28:12 - 00:29:30:12]
+ biodiversity that we see in
+
+[00:29:31:29 - 00:29:35:01]
+ Living organisms and humans and everything else
+
+[00:29:35:25 - 00:29:41:22]
+ Okay, so that's enough on M blocks next time. We look at some examples into the genomic
+
+[00:29:42:11 - 00:29:49:12]
+ Sequences and how M blocks play into calculating the information entropy of genomic sequences. Thank you
+

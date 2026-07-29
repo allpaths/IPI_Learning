@@ -15,7 +15,7 @@ All lecture content originates with Dr. Vopson; this repository contains noteboo
 | 1 | [Introduction to Shannon's Information Theory](Video_01/) | `Video_01/` | [Watch →](https://youtu.be/cuCEOOQgCLU) |
 | 2 | [Information Entropy — Worked Examples](Video_02/) | `Video_02/` | [Watch →](https://youtu.be/DCQpbssp_Sw) |
 | 3 | [Information Entropy of m-Blocks](Video_03/) | `Video_03/` | [Watch →](https://youtu.be/6Ijdrrp0DeQ) |
-| 4 | _TBD_ | `Video_04/` | |
+| 4 | [m-Blocks — Worked Examples](Video_04/) | `Video_04/` | [Watch →](https://youtu.be/GNV5RXf_uSA) |
 | 5 | _TBD_ | `Video_05/` | |
 | 6 | _TBD_ | `Video_06/` | |
 | 7 | _TBD_ | `Video_07/` | |
