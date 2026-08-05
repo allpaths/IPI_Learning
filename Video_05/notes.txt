@@ -1,0 +1,1062 @@
+[00:00:01:10 - 00:00:09:22]
+ Hello, this is lecture number, or part 5, I should call it, instead of lecture number 5,
+
+[00:00:11:02 - 00:00:21:20]
+ part 5 of this series of lectures on information theory, information physics in general.
+
+[00:00:22:20 - 00:00:28:11]
+ I have to start with a quick apology for part 4.
+
+[00:00:28:11 - 00:00:37:02]
+ Part 4, there was some background noise because of a new camera microphone I've been using.
+
+[00:00:37:08 - 00:00:44:01]
+ I wasn't aware of the sound quality being so poor, so apologies for the background noise.
+
+[00:00:44:08 - 00:00:46:18]
+ It's not too bad, but it's a bit annoying.
+
+[00:00:48:12 - 00:00:53:12]
+ Also, in part 4, I made a small error.
+
+[00:00:53:12 - 00:00:58:00]
+ In fact, it's not a mathematical error.
+
+[00:00:58:11 - 00:00:59:06]
+ It's not a conceptual error.
+
+[00:00:59:10 - 00:01:01:07]
+ It's just more like an interpretation.
+
+[00:01:02:17 - 00:01:09:04]
+ I was comparing the information entropy per a given set,
+
+[00:01:10:01 - 00:01:14:05]
+ where the single characters have been taken into account,
+
+[00:01:15:04 - 00:01:18:10]
+ with the information entropy of the same set,
+
+[00:01:18:10 - 00:01:27:12]
+ when m blocks have been created or generated,
+
+[00:01:28:11 - 00:01:33:09]
+ the information entropy was computed for the new set of m blocks.
+
+[00:01:33:09 - 00:01:40:01]
+ I said it does increase the total information entropy per set, increases when you use m blocks.
+
+[00:01:40:01 - 00:01:50:14]
+ That is a true statement, only if the step size of generating the m blocks is smaller than the m block itself.
+
+[00:01:50:14 - 00:01:56:00]
+ It cannot be bigger than the m block, it can only be the size of the m block, or smaller.
+
+[00:01:56:00 - 00:01:57:23]
+ 1, 2, 3, ta-ta-ta.
+
+[00:01:57:23 - 00:02:01:23]
+ All the way to m, m being the size of the m block.
+
+[00:02:01:23 - 00:02:06:16]
+ Any value smaller than m, between 1 and m, smaller than m,
+
+[00:02:06:16 - 00:02:09:05]
+ or let's say between 1 and m-1,
+
+[00:02:09:05 - 00:02:15:10]
+ will give you possibly a Shannon information entropy of the set,
+
+[00:02:15:10 - 00:02:22:21]
+ that is, a set of m blocks that is larger than the Shannon information entropy of the set of single characters.
+
+[00:02:22:21 - 00:02:27:06]
+ This is because you are overlapping the m blocks and counting.
+
+[00:02:27:23 - 00:02:33:18]
+ a number of uh you're counting many characters uh multiple times because of this overlap so
+
+[00:02:33:18 - 00:02:42:00]
+ the statement was not entirely incorrect but um i had to to to clarify this i uploaded a video
+
+[00:02:42:00 - 00:02:49:23]
+ and i realized i said that right at the end so i had to to make a correction here what we are
+
+[00:02:49:23 - 00:02:57:22]
+ going to do today is we are going to look at this business of m blocks and we're going to
+
+[00:02:57:22 - 00:03:04:04]
+ look at an example in in part four we did an example on digital data sets this time we're
+
+[00:03:04:04 - 00:03:14:06]
+ going to look at a genomic data set okay so let's begin i'm going to do a quick refreshing
+
+[00:03:14:06 - 00:03:22:08]
+ we've we've covered this i believe in lecture in part two or part three but i'm for nevertheless
+
+[00:03:22:08 - 00:03:26:20]
+ i'm going to um just just for
+
+[00:03:26:20 - 00:03:27:08]
+ refreshing
+
+[00:03:27:22 - 00:03:34:22]
+ our memory i'm going to repeat some of the things a dna sequence or an rna sequence one is a double
+
+[00:03:34:22 - 00:03:44:02]
+ helix one is a single helix it can be it is a very very very complex data storage information
+
+[00:03:44:02 - 00:03:52:21]
+ storage device because of that using information theory to study genetic genetic sequences genetic
+
+[00:03:52:21 - 00:03:57:19]
+ data it's a very very powerful tool and the
+
+[00:03:57:22 - 00:04:11:08]
+ coding in a dna and rna sequence is is is being done in a a um a set using a set of four distinct
+
+[00:04:12:01 - 00:04:35:04]
+ characters and these are um four distinct characters and these are um a um c um g
+
+[00:04:36:11 - 00:04:47:08]
+ and t and the way these are grouped um and arranged in in the genomic sequence and what rna or dna or
+
+[00:04:47:08 - 00:04:56:15]
+ rna um it it gives the entire set of characteristics um that make up a given biological organism so
+
+[00:04:56:15 - 00:05:01:23]
+ it's a very very very powerful and interesting technology if you can call it like this
+
+[00:05:01:23 - 00:05:07:05]
+ so this is the set of this thing obviously a genome has many many many of these characters
+
+[00:05:07:05 - 00:05:09:10]
+ but these are the distinct ones so you can call this a set of these things and it's a very very
+
+[00:05:09:10 - 00:05:14:21]
+ You have what we call U4, so it's four distinct characters,
+
+[00:05:15:09 - 00:05:18:06]
+ but the set can be very, very, very much larger than U.
+
+[00:05:18:12 - 00:05:20:00]
+ It can be a very, very large set.
+
+[00:05:20:00 - 00:05:27:00]
+ The entire genome sequence can have many, many nucleotides or characters.
+
+[00:05:28:06 - 00:05:36:18]
+ And we can define a set of probabilities, P, A, P, C, P, G, and P, T.
+
+[00:05:36:18 - 00:05:43:18]
+ So what it means, it means that the probability of having character A
+
+[00:05:43:18 - 00:05:51:14]
+ or nucleotide A in a given genomic sequence is P, A, and so on and so on,
+
+[00:05:51:15 - 00:05:55:03]
+ P, C, P, G, P, T, respectively, for the other nucleotides.
+
+[00:05:57:12 - 00:06:02:21]
+ Because we have four distinct characters,
+
+[00:06:02:21 - 00:06:05:12]
+ the maximum H, X.
+
+[00:06:06:11 - 00:06:06:18]
+ .
+
+[00:06:06:18 - 00:06:06:18]
+ .
+
+[00:06:06:18 - 00:06:17:09]
+ Maximum information entropy that we can have per character, that is,
+
+[00:06:18:01 - 00:06:22:16]
+ is log, using binary, log 2 of U.
+
+[00:06:23:01 - 00:06:25:10]
+ This is the formula we discussed in previous parts.
+
+[00:06:26:08 - 00:06:28:11]
+ U is 4, so that gives us two bits.
+
+[00:06:28:11 - 00:06:38:02]
+ Each letter, each character or nucleotide in a genomic sequence
+
+[00:06:38:02 - 00:06:40:03]
+ encodes two bits of data.
+
+[00:06:43:11 - 00:06:46:06]
+ And the encoding takes place like this.
+
+[00:06:46:07 - 00:06:49:07]
+ We can allocate to A, 0, 0.
+
+[00:06:50:02 - 00:06:51:18]
+ A C can be a 0, 1.
+
+[00:06:52:08 - 00:06:54:02]
+ A G can be a 1, 0.
+
+[00:06:54:11 - 00:06:56:01]
+ And a T can be 1, 1.
+
+[00:06:56:22 - 00:07:02:09]
+ And these are the four possible combinations or permutations of two bits
+
+[00:07:02:09 - 00:07:06:07]
+ because we have two bits per nucleotide.
+
+[00:07:06:07 - 00:07:08:02]
+ That's the maximum we can encode.
+
+[00:07:08:02 - 00:07:10:15]
+ Usually, it's less than that, but that's the maximum.
+
+[00:07:11:20 - 00:07:17:01]
+ So that means if one takes, and I'm going to write an 18 character,
+
+[00:07:17:04 - 00:07:19:23]
+ so let's assume we have N equals 18.
+
+[00:07:20:16 - 00:07:24:16]
+ This is not a genome or a RNA sequence.
+
+[00:07:24:22 - 00:07:27:10]
+ It's just a little segment randomly generated.
+
+[00:07:28:13 - 00:07:33:02]
+ And it's only for the purpose of showing some examples here
+
+[00:07:33:02 - 00:07:36:11]
+ and working out some numerical examples.
+
+[00:07:36:11 - 00:07:38:00]
+ So I'm just going to write here,
+
+[00:07:38:15 - 00:07:40:16]
+ hopefully I'll have enough space, 18.
+
+[00:07:40:16 - 00:08:09:04]
+ So that is a C, A, C, T, T, A, T, A, T, C, A, C, A, T, T, C, T, C, T, G, A, G, A,
+
+[00:08:10:00 - 00:08:14:00]
+ C, T, G, C, T, G.
+
+[00:08:14:15 - 00:08:18:01]
+ Okay, so that's our hypothetical.
+
+[00:08:19:13 - 00:08:20:20]
+ I'm going to change the pen.
+
+[00:08:21:01 - 00:08:25:04]
+ That's our hypothetical genomic sequence, a little segment.
+
+[00:08:25:18 - 00:08:26:20]
+ It's got 18.
+
+[00:08:27:10 - 00:08:34:13]
+ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18.
+
+[00:08:34:17 - 00:08:34:23]
+ Correct.
+
+[00:08:35:11 - 00:08:36:08]
+ 18 characters.
+
+[00:08:36:08 - 00:08:36:16]
+ Okay.
+
+[00:08:37:19 - 00:08:39:08]
+ So if we use the...
+
+[00:08:40:00 - 00:08:50:21]
+ encoding, like if we want to retranslate this into a 0s and 1s binary type of sequence,
+
+[00:08:51:03 - 00:09:00:12]
+ all you do, you just replace each character with the allocated 0s and 1s combinations up here.
+
+[00:09:01:03 - 00:09:04:04]
+ So the C would become 0, 1.
+
+[00:09:04:19 - 00:09:06:10]
+ A would become 0, 0.
+
+[00:09:06:21 - 00:09:08:00]
+ Next is another C.
+
+[00:09:08:02 - 00:09:09:00]
+ That's a 0, 1.
+
+[00:09:09:00 - 00:09:09:13]
+ And so...
+
+[00:09:10:00 - 00:09:15:05]
+ 0, 1 until you replace every single character with the corresponding 2 bits.
+
+[00:09:16:01 - 00:09:23:07]
+ And you generate another set of 2 distinct characters this time, 0, 1.
+
+[00:09:24:03 - 00:09:29:11]
+ And obviously, instead of 18, you're going to have 36 in total.
+
+[00:09:29:14 - 00:09:30:13]
+ You double the number.
+
+[00:09:31:10 - 00:09:36:20]
+ And then to do the computation, the Shannon information entropy and all the statistics on this,
+
+[00:09:36:20 - 00:09:39:12]
+ you apply exactly what we did in part 4.
+
+[00:09:39:12 - 00:09:40:19]
+ The example is in part 4.
+
+[00:09:41:16 - 00:09:43:09]
+ And that's one way of doing it.
+
+[00:09:45:15 - 00:09:50:08]
+ The nice thing is that with the genomes, and actually with anything else,
+
+[00:09:50:17 - 00:09:59:00]
+ one doesn't really need to do this conversion into 0s and 1s.
+
+[00:09:59:01 - 00:10:02:02]
+ You can just do your work straight onto these 4 characters,
+
+[00:10:02:11 - 00:10:05:14]
+ keeping in mind that they each can encode 2 bits and all that.
+
+[00:10:06:05 - 00:10:07:14]
+ So what you do...
+
+[00:10:07:14 - 00:10:10:14]
+ We have the set here.
+
+[00:10:10:14 - 00:10:21:01]
+ And let's define the distribution of the strict probabilities.
+
+[00:10:21:21 - 00:10:25:03]
+ So P, P, A is...
+
+[00:10:25:16 - 00:10:31:22]
+ You simply count how many A's are in this sequence.
+
+[00:10:32:10 - 00:10:34:21]
+ 1, 2, 3, 4.
+
+[00:10:35:10 - 00:10:38:12]
+ And that is for probability of an A.
+
+[00:10:39:03 - 00:10:42:21]
+ To occur is 4 divided by 18.
+
+[00:10:43:06 - 00:10:45:04]
+ Because we have 18 in total characters.
+
+[00:10:45:08 - 00:10:49:13]
+ So the way you should think is that if you scrambled all these letters into,
+
+[00:10:50:13 - 00:10:55:21]
+ let's say like a Lego or some kind of like a game with letters.
+
+[00:10:56:03 - 00:10:56:19]
+ I forgot the name.
+
+[00:10:57:16 - 00:11:02:18]
+ You just scramble them up on the table and you close your eyes and pull one of them.
+
+[00:11:03:05 - 00:11:07:11]
+ What is the probability of taking an A out of all of them is 4 over 18.
+
+[00:11:09:03 - 00:11:16:14]
+ The next one is probability of having a letter C is...
+
+[00:11:16:14 - 00:11:17:14]
+ How many C's we have?
+
+[00:11:17:14 - 00:11:20:23]
+ 1, 2, 3, 4, 5.
+
+[00:11:21:12 - 00:11:23:16]
+ So we have 5 over 18.
+
+[00:11:25:17 - 00:11:28:20]
+ The next one is probability of having a G.
+
+[00:11:29:14 - 00:11:31:23]
+ And that is only 2 of them.
+
+[00:11:32:05 - 00:11:34:01]
+ So it's 2 over 18.
+
+[00:11:34:22 - 00:11:37:06]
+ And probability of having a T is...
+
+[00:11:37:06 - 00:11:41:09]
+ 1, 2, 3, 4, 5, 6, 7.
+
+[00:11:42:02 - 00:11:44:07]
+ So 7 over 18.
+
+[00:11:45:05 - 00:11:46:07]
+ And that's our set.
+
+[00:11:46:07 - 00:11:56:17]
+ We now apply the formula for Shannon information entropy.
+
+[00:11:58:01 - 00:12:07:07]
+ So the formula HX is minus summation over J1 to 4.
+
+[00:12:07:17 - 00:12:09:05]
+ Because this is the number.
+
+[00:12:09:05 - 00:12:10:22]
+ This is the number of distinct characters we have.
+
+[00:12:11:20 - 00:12:15:12]
+ PJ log PJ.
+
+[00:12:16:15 - 00:12:22:00]
+ So this summation is the summation over these four probabilities and logarithm of them.
+
+[00:12:22:14 - 00:12:23:23]
+ You have to trust me on this.
+
+[00:12:23:23 - 00:12:27:05]
+ If you plug in the probabilities into this formula,
+
+[00:12:27:13 - 00:12:34:12]
+ you get HX or Shannon information entropy for this example, this segment of characters.
+
+[00:12:35:00 - 00:12:37:23]
+ It gives you 1.8.
+
+[00:12:37:23 - 00:12:46:09]
+ So this is the number of bits of information encoded per character in this set.
+
+[00:12:46:09 - 00:12:54:14]
+ So the maximum HX max would be...
+
+[00:12:54:14 - 00:12:55:23]
+ It's 2 bits.
+
+[00:12:55:23 - 00:12:58:01]
+ Maximum is 2 bits per character.
+
+[00:12:58:05 - 00:13:00:22]
+ So that would be 2 times 18.
+
+[00:13:01:20 - 00:13:03:04]
+ 36 bits.
+
+[00:13:06:00 - 00:13:12:06]
+ Instead of that, we get the information encoded in bits.
+
+[00:13:12:06 - 00:13:27:18]
+ And this sequence would be 18 times 1.87878, which gives us...
+
+[00:13:27:18 - 00:13:28:23]
+ What did I get?
+
+[00:13:29:02 - 00:13:33:21]
+ 33.8 bits.
+
+[00:13:33:21 - 00:13:40:12]
+ So it's slightly lower than the maximum value expected, 36.
+
+[00:13:40:16 - 00:13:42:12]
+ It's 33.8 bits for this.
+
+[00:13:44:03 - 00:13:50:15]
+ So this is the number of bits of information encoded per character in this sequence.
+
+[00:13:50:15 - 00:13:59:02]
+ If we count or work on single characters probabilities and we take into account only single characters.
+
+[00:13:59:02 - 00:14:05:05]
+ But the topic of this discussion is M blocks.
+
+[00:14:05:05 - 00:14:08:04]
+ So we need to look at this now.
+
+[00:14:08:04 - 00:14:11:02]
+ This is a bit of a repeat of what we've done before.
+
+[00:14:11:02 - 00:14:12:02]
+ Okay.
+
+[00:14:12:02 - 00:14:13:02]
+ And...
+
+[00:14:13:02 - 00:14:14:02]
+ Okay.
+
+[00:14:14:03 - 00:14:18:19]
+ So this business of using M blocks maybe is not very clear.
+
+[00:14:18:19 - 00:14:20:15]
+ Why would you do this in the first place?
+
+[00:14:20:15 - 00:14:25:23]
+ Why would you group more than one character into a set of new characters made up of more
+
+[00:14:25:23 - 00:14:28:17]
+ than one character each?
+
+[00:14:28:17 - 00:14:35:05]
+ And the reason is actually more relevant for genomic sequences and other applications is
+
+[00:14:35:05 - 00:14:42:05]
+ because taking single characters into account, it does not take into account or ignore the
+
+[00:14:42:05 - 00:14:43:05]
+ number of bits.
+
+[00:14:43:05 - 00:14:50:08]
+ It ignores the correlations between individual characters within a given subset.
+
+[00:14:50:08 - 00:14:58:05]
+ So this is to make sure, in order to actually capture more information, including correlations
+
+[00:14:58:05 - 00:15:02:14]
+ between possible correlations between the, and in a genomic sequence there would be some
+
+[00:15:02:14 - 00:15:11:20]
+ kind of logic in these arrangements, you would have to take M blocks, groups of nucleotides,
+
+[00:15:11:20 - 00:15:16:08]
+ rather than single nucleotides, at least that's the idea.
+
+[00:15:16:08 - 00:15:26:19]
+ And a logical choice is M block, an M block, M block of three characters.
+
+[00:15:26:19 - 00:15:27:19]
+ Looking at the M block...
+
+[00:15:27:19 - 00:15:36:14]
+ These are called, there is a name for this, it's called C-O-D-O-N-S, codons in genetics.
+
+[00:15:36:14 - 00:15:37:14]
+ Okay.
+
+[00:15:37:14 - 00:15:41:12]
+ So a codon is essentially is a sequence of...
+
+[00:15:41:12 - 00:15:50:13]
+ A sequence of three consecutive nucleotides in a DNA or RNA, and it has a role to specify
+
+[00:15:50:13 - 00:16:04:02]
+ a particular amino acid or some signals, or signals the end of a protein synthesis during
+
+[00:16:04:02 - 00:16:11:02]
+ translation.
+
+[00:16:11:02 - 00:16:18:03]
+ So if we take M equal three, you can have M any size you want, but the logic of taking
+
+[00:16:18:03 - 00:16:22:04]
+ three is something to do with these codons, okay?
+
+[00:16:22:04 - 00:16:29:16]
+ So if we take equal M equal three, so unique characters in the initial set were four, we
+
+[00:16:29:16 - 00:16:36:22]
+ know that the set of unique characters, if you use M blocks, would be U to power M, okay?
+
+[00:16:36:22 - 00:16:48:08]
+ So that would be four to power three, and it gives us 64 possible states, in other words,
+
+[00:16:48:08 - 00:16:49:11]
+ if you use...
+
+[00:16:49:11 - 00:16:57:15]
+ M blocks of three characters out of four possible letters, is in how many ways, distinct
+
+[00:16:57:15 - 00:17:05:20]
+ ways, one can arrange the three letters, well, the four letters in groups of three, in how
+
+[00:17:05:20 - 00:17:14:16]
+ many distinct ways, and you get 64 different ways of arranging these four nucleotides into
+
+[00:17:14:16 - 00:17:17:10]
+ groups of three, okay?
+
+[00:17:17:10 - 00:17:19:11]
+ So that means the maximum information entry.
+
+[00:17:19:11 - 00:17:32:05]
+ So the entropy HX max is log two U to power M, so that we take M out, so that is three
+
+[00:17:32:05 - 00:17:37:06]
+ times log two four.
+
+[00:17:37:06 - 00:17:40:00]
+ That means it's six bits.
+
+[00:17:40:00 - 00:17:48:10]
+ One gets six bits of data encoded per a new character in the new set, which is made up
+
+[00:17:48:10 - 00:17:49:11]
+ of codons.
+
+[00:17:49:11 - 00:17:53:09]
+ One gets six bits of data encoded per a new set of groups of three nucleotides, three
+
+[00:17:53:09 - 00:17:57:02]
+ by three, okay?
+
+[00:17:57:02 - 00:17:58:10]
+ So it turns out that...
+
+[00:17:58:10 - 00:18:01:09]
+ So you see the motivation of using M blocks.
+
+[00:18:01:09 - 00:18:06:20]
+ It kind of makes sense now, when we look at genomic sequences and their information encoding
+
+[00:18:06:20 - 00:18:09:21]
+ and the functions they have and all this.
+
+[00:18:09:21 - 00:18:18:11]
+ So it turns out that out of the 64 possible combinations of the four nucleotide bases,
+
+[00:18:18:11 - 00:18:19:11]
+ A, C, D, G.
+
+[00:18:19:11 - 00:18:30:11]
+ 61 are actually coding for amino acids, and three of them are just stop codons, okay?
+
+[00:18:30:11 - 00:18:39:21]
+ So let's look at an example now, how you generate the set of M blocks and how you calculate
+
+[00:18:39:21 - 00:18:42:18]
+ the information entropy of this, okay?
+
+[00:18:42:18 - 00:18:46:09]
+ I'm not going to write once again the genomic sequence.
+
+[00:18:46:09 - 00:18:47:09]
+ It's this one here.
+
+[00:18:47:09 - 00:18:48:05]
+ C, A, C, D, T, A, C, D, C, D, A, C, D, A, C, D, A, C, D, A, C, D, A, C, D, A, C, D, A, C, D,
+
+[00:18:48:05 - 00:18:53:20]
+ A, C, D, T, T, A, T, C, A, T, T, C, T, G, A, C, T, G.
+
+[00:18:53:20 - 00:18:54:20]
+ Full stop, okay?
+
+[00:18:54:20 - 00:18:56:22]
+ That's the one.
+
+[00:18:56:22 - 00:19:03:04]
+ But we know that N equals 18.
+
+[00:19:03:04 - 00:19:08:05]
+ We know that M equals 3.
+
+[00:19:08:05 - 00:19:19:10]
+ And we want to generate now from these, we want to generate a full set of M blocks, okay?
+
+[00:19:19:10 - 00:19:23:14]
+ Size 3.
+
+[00:19:23:14 - 00:19:24:14]
+ What is...
+
+[00:19:25:05 - 00:19:30:04]
+ The number of characters, M blocks characters in the new set.
+
+[00:19:30:04 - 00:19:32:04]
+ We need to select a step size.
+
+[00:19:32:04 - 00:19:36:23]
+ How do we slide the M block by how many characters?
+
+[00:19:36:23 - 00:19:42:13]
+ Remember, this can be only 1, 2, and so on, but M minus 1.
+
+[00:19:42:13 - 00:19:43:13]
+ So in that case...
+
+[00:19:43:13 - 00:19:49:05]
+ Oh, sorry, M. It could be all the way to M. So it could be only 1, 2, and 3, okay?
+
+[00:19:49:05 - 00:19:55:00]
+ If it's 3, it means you slide the condom, the M block by itself.
+
+[00:19:55:00 - 00:19:58:17]
+ The same size, and you generate the new set.
+
+[00:19:58:17 - 00:20:03:00]
+ But if you slide by 1 or 2 characters, it means there is a degree of overlapping there,
+
+[00:20:03:00 - 00:20:04:00]
+ okay?
+
+[00:20:04:00 - 00:20:10:16]
+ And this is where you capture possible correlations, interactions, and other kind of informational
+
+[00:20:10:16 - 00:20:13:01]
+ states, maybe encoded in the genome.
+
+[00:20:13:01 - 00:20:15:02]
+ It's a bit more interesting stuff to do.
+
+[00:20:15:02 - 00:20:22:00]
+ So let's take SS1 for the sake of doing an example where it's not simplified by the same
+
+[00:20:22:00 - 00:20:23:23]
+ size as the M block.
+
+[00:20:23:23 - 00:20:24:20]
+ Okay.
+
+[00:20:24:20 - 00:20:27:22]
+ So now from the part 4, there is a formula.
+
+[00:20:27:22 - 00:20:34:03]
+ The number of M blocks elements in the new set should be, there is a relationship, is
+
+[00:20:34:03 - 00:20:41:16]
+ 1 plus, the formula says is N minus, this is N is the number of single characters, initial
+
+[00:20:41:16 - 00:20:49:10]
+ set, minus the size of the M block divided by SS, SS being step size.
+
+[00:20:49:10 - 00:20:54:20]
+ So we plug in these numbers, and we have 1 plus or less of N minus M.
+
+[00:20:54:20 - 00:21:01:02]
+ So that would be 15 divided by SS, that's 1, is 15 plus 1, that's 16.
+
+[00:21:01:02 - 00:21:11:22]
+ We expect 16 elements of 3 letters, characters containing 3 single letters, okay, or 3 single
+
+[00:21:11:22 - 00:21:19:18]
+ characters, M blocks, okay, 16 of them we expect generated from this initial set of
+
+[00:21:19:18 - 00:21:20:23]
+ single characters.
+
+[00:21:20:23 - 00:21:22:14]
+ So let's do this.
+
+[00:21:22:14 - 00:21:23:22]
+ We say the set.
+
+[00:21:23:22 - 00:21:36:06]
+ The set is, we start with the first codon, or M block of 3, this would be C, A, C. C,
+
+[00:21:36:06 - 00:21:39:22]
+ A, C. That's the first element.
+
+[00:21:39:22 - 00:21:41:17]
+ Now we slide this by how much?
+
+[00:21:41:17 - 00:21:46:06]
+ We slide this by 1 step, 1 character.
+
+[00:21:46:06 - 00:21:53:17]
+ That means we move this segment by 1 character, so we move it over C, and it starts at A.
+
+[00:21:53:22 - 00:22:05:08]
+ Now the next element will be E, sorry, A, C, T. The second element will be A, C, T. And
+
+[00:22:05:08 - 00:22:07:00]
+ we move again.
+
+[00:22:07:00 - 00:22:17:16]
+ And the next one will be C, T, T. C, T, T. And this is the logic, you slide by 1 character
+
+[00:22:17:16 - 00:22:21:11]
+ and read the next 3 characters all the time, there is a degree of overlapping, as you can
+
+[00:22:21:11 - 00:22:22:11]
+ see, all the time.
+
+[00:22:22:11 - 00:22:23:11]
+ So I'm just going to copy all of them.
+
+[00:22:23:11 - 00:22:23:13]
+ Okay.
+
+[00:22:23:22 - 00:22:40:03]
+ So I'm going to copy all of them, C, T, T, T, T, A. Next one is T, A, T, A, T, C, A,
+
+[00:22:40:03 - 00:22:59:12]
+ T, C, T, C, A, C, A, T, A, T, T, T, T, C.
+
+[00:22:59:12 - 00:23:17:02]
+ So T, G, A, we are here.
+
+[00:23:17:02 - 00:23:24:17]
+ G, A, C. G, A, C, we are getting close to the end.
+
+[00:23:24:17 - 00:23:29:18]
+ G, A, C. A, C, T. A, C, T. And the last one, C, T, G. The last element.
+
+[00:23:29:18 - 00:23:30:18]
+ Okay.
+
+[00:23:30:18 - 00:23:31:18]
+ Okay.
+
+[00:23:31:18 - 00:23:32:18]
+ Okay.
+
+[00:23:32:18 - 00:23:33:18]
+ Okay.
+
+[00:23:33:18 - 00:23:34:18]
+ Okay.
+
+[00:23:34:18 - 00:23:35:18]
+ Okay.
+
+[00:23:35:18 - 00:23:41:00]
+ And the next one, B, T, N, R, M, N, C, T, G. And that's our new set, by sliding by
+
+[00:23:41:00 - 00:23:46:17]
+ one step, 3 characters at a time and reading the new element, we generated this new set.
+
+[00:23:46:17 - 00:23:52:14]
+ Prediction is that it should have 16 elements, so let's count 1, 2, 3, 4, 5, 6, 7, 8, 9,
+
+[00:23:52:14 - 00:23:57:00]
+ 10, 11, 12, 13, 14, 15, 16.
+
+[00:23:57:00 - 00:23:58:02]
+ Spot on!
+
+[00:23:58:02 - 00:23:59:02]
+ Spot on!
+
+[00:23:59:02 - 00:24:00:02]
+ Spot on!
+
+[00:24:00:02 - 00:24:01:02]
+ Spot on!
+
+[00:24:01:02 - 00:24:02:02]
+ Spot on!
+
+[00:24:02:02 - 00:24:04:05]
+ predicted characters, okay?
+
+[00:24:04:05 - 00:24:05:05]
+ So what do you do now?
+
+[00:24:05:05 - 00:24:12:14]
+ You want to calculate the Shannon information entropy now of this new set.
+
+[00:24:12:14 - 00:24:14:21]
+ So that was our initial genomic sequence.
+
+[00:24:14:21 - 00:24:19:01]
+ We constructed another one that looks like this, okay?
+
+[00:24:19:01 - 00:24:22:16]
+ So what we had initially here, okay?
+
+[00:24:22:16 - 00:24:27:00]
+ We constructed another one which is made up of three characters.
+
+[00:24:27:00 - 00:24:29:17]
+ Each element has three characters, okay?
+
+[00:24:29:17 - 00:24:32:23]
+ And we want to calculate the information entropy per character.
+
+[00:24:32:23 - 00:24:34:23]
+ This time there are three of them actually containing.
+
+[00:24:34:23 - 00:24:39:22]
+ So each character containing three, how much information encodes each and what is the information,
+
+[00:24:39:22 - 00:24:41:14]
+ the total information entropy.
+
+[00:24:41:14 - 00:24:44:09]
+ So the procedure is exactly the same.
+
+[00:24:44:09 - 00:24:53:05]
+ You determine that, you essentially look at each new element and count the number of occurrences
+
+[00:24:53:05 - 00:24:55:00]
+ in the set.
+
+[00:24:55:00 - 00:24:59:17]
+ And you get, I'm not going to write the probability, normally you should say probability of CAC
+
+[00:24:59:17 - 00:25:17:23]
+ is, and you notice that is occurring only once, you inspect the set and you have 1 over
+
+[00:25:17:23 - 00:25:20:14]
+ 16.
+
+[00:25:20:14 - 00:25:26:04]
+ Yeah.
+
+[00:25:26:04 - 00:25:27:09]
+ The next...
+
+[00:25:27:09 - 00:25:28:23]
+ I made an error on my notes.
+
+[00:25:28:23 - 00:25:30:14]
+ I wrote 1 over 18.
+
+[00:25:30:14 - 00:25:32:17]
+ In fact, it's 1 over 16.
+
+[00:25:32:17 - 00:25:35:21]
+ The next one is ACT.
+
+[00:25:35:21 - 00:25:38:19]
+ And if you actually look carefully, ACT appears here.
+
+[00:25:38:19 - 00:25:39:18]
+ ACT appears there.
+
+[00:25:39:18 - 00:25:40:01]
+ Okay?
+
+[00:25:40:11 - 00:25:48:09]
+ so that means you have 2 over 16 the probability next one is ctt and that would be 1 over 16.
+
+[00:25:50:07 - 00:25:56:15]
+ and so one two three four all of them appear once
+
+[00:26:00:21 - 00:26:10:04]
+ one two three four five six seven nine
+
+[00:26:14:02 - 00:26:27:22]
+ one over sixteen ten one over sixteen eleven twelve sixteen so uh let's have a look one two
+
+[00:26:27:22 - 00:26:36:07]
+ three four five six seven eight nine ten eleven twelve one two three four five six seven eight
+
+[00:26:36:07 - 00:26:45:18]
+ nine ten eleven twelve this one is two okay this one is two and it corresponds to i believe
+
+[00:26:55:05 - 00:26:56:08]
+ let's have a look which one is
+
+[00:26:56:10 - 00:27:28:04]
+ which c a g i have ctg twice i have a ct twice so this appears twice this appears twice
+
+[00:27:30:18 - 00:27:42:08]
+ and all the others appear once so one two three four five six seven eight nine ten eleven twelve
+
+[00:27:51:12 - 00:27:58:16]
+ thirteen fourteen fifteen
+
+[00:27:59:11 - 00:28:05:07]
+ and sixteen that's twice okay that's how you do it okay
+
+[00:28:06:16 - 00:28:14:08]
+ so this is one okay not very trivial when you do it manually you will see in a second that
+
+[00:28:15:02 - 00:28:21:04]
+ one has to use software to do this this is why i choose only six um what is it 18 elements okay
+
+[00:28:22:18 - 00:28:31:00]
+ it's um mistakes can be easily made one needs to do a piece of software
+
+[00:28:31:04 - 00:28:33:16]
+ to actually do all the statistics and the counting and everything
+
+[00:28:34:15 - 00:28:38:17]
+ but what you need to observe you need to observe that the sum of all these
+
+[00:28:38:17 - 00:28:47:00]
+ is one so you have to have um one two three four five six seven eight nine ten eleven twelve
+
+[00:28:48:15 - 00:28:56:13]
+ thirteen fourteen fifteen there is one missing isn't it because we have uh two plus two four
+
+[00:28:57:04 - 00:29:00:20]
+ five six seven eight nine ten eleven twelve thirteen fourteen
+
+[00:29:01:12 - 00:29:07:08]
+ fifteen sixteen no it's fine so that's fine now so they need to add up to 16 so when you do the
+
+[00:29:07:08 - 00:29:15:21]
+ summation summation over pj it gives you one which is 16 over 16 okay and i can tell you for sure the
+
+[00:29:15:21 - 00:29:25:08]
+ only ones that appear twice are a ct and ctg the rest are just probability 1 over 16. um so
+
+[00:29:27:10 - 00:29:30:22]
+ what you do now you apply the shannon information entropy formula to this
+
+[00:29:31:21 - 00:29:51:16]
+ set and maybe so i've done it but i've done it but
+
+[00:29:53:14 - 00:30:01:00]
+ my fractions on are over 18 instead of over 16. so there is a mistake in in my fractions here so i
+
+[00:30:01:00 - 00:30:14:06]
+ can do it quickly now i'm just gonna get the piece of software um uploaded and do this quickly where
+
+[00:30:14:20 - 00:30:15:19]
+ i use the correct
+
+[00:30:16:12 - 00:30:26:16]
+ denominator 16 instead of um 18. 18 was the number of single characters 16 is for the new
+
+[00:30:26:16 - 00:30:35:23]
+ m block set so let's do this quickly i loaded a mat cut up here so i have two okay so this is
+
+[00:30:36:18 - 00:30:45:23]
+ um one two three four five six seven eight nine ten eleven twelve twelve and i need to put here
+
+[00:30:46:04 - 00:31:00:18]
+ 16 and then 16 down here and then i have two twice of this and then 16 here and 16 here and what i
+
+[00:31:00:18 - 00:31:14:18]
+ have the hx the shannon information entropy for this set of codons m blocks equal three is 3.75
+
+[00:31:16:12 - 00:31:28:15]
+ of the information per character and that gives us because we have a number of 16
+
+[00:31:30:09 - 00:31:43:23]
+ 16 of them so we say 16 times 3.75 that is exactly so information of the set is exactly 60 bits
+
+[00:31:45:16 - 00:31:50:10]
+ of information okay before
+
+[00:31:52:06 - 00:32:07:20]
+ 16 so 3.75 i'm going to close this now so before we had the total information encoded it was 33.8
+
+[00:32:08:09 - 00:32:16:09]
+ bits when we took into account single characters in this set then we renormalize the set into a
+
+[00:32:16:09 - 00:32:23:00]
+ new set of n blocks grouping three characters by three characters with a step size of one so there
+
+[00:32:23:00 - 00:32:24:05]
+ is a degree of overlapping
+
+[00:32:25:02 - 00:32:30:23]
+ And obviously, it's what I was saying in part 4, the total information increased because
+
+[00:32:30:23 - 00:32:37:22]
+ we count a few more characters actually in this way, is from 33.8 bits to 60 bits of
+
+[00:32:37:22 - 00:32:41:09]
+ information per entire set.
+
+[00:32:41:09 - 00:32:45:04]
+ And per character is 3.75 bits.
+
+[00:32:45:04 - 00:32:51:11]
+ Before we had per character, single character, 1.878 bits, OK?
+
+[00:32:51:11 - 00:32:55:02]
+ So this is what you need to take into account.
+

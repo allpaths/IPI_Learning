@@ -16,7 +16,7 @@ All lecture content originates with Dr. Vopson; this repository contains noteboo
 | 2 | [Information Entropy — Worked Examples](Video_02/) | `Video_02/` | [Watch →](https://youtu.be/DCQpbssp_Sw) |
 | 3 | [Information Entropy of m-Blocks](Video_03/) | `Video_03/` | [Watch →](https://youtu.be/6Ijdrrp0DeQ) |
 | 4 | [m-Blocks — Worked Examples](Video_04/) | `Video_04/` | [Watch →](https://youtu.be/GNV5RXf_uSA) |
-| 5 | _TBD_ | `Video_05/` | |
+| 5 | [Information Entropy of a Genome](Video_05/) | `Video_05/` | [Watch →](https://youtu.be/KuE75212feQ) |
 | 6 | _TBD_ | `Video_06/` | |
 | 7 | _TBD_ | `Video_07/` | |
 | 8 | _TBD_ | `Video_08/` | |

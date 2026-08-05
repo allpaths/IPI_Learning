@@ -13,3 +13,5 @@ chapters:
     title: "Part 3 — Information Entropy of m-Blocks"
   - file: Video_04/Information_Entropy_of_m_blocks_Examples
     title: "Part 4 — m-Blocks: Worked Examples"
+  - file: Video_05/Information_Entropy_of_a_Genome
+    title: "Part 5 — Information Entropy of a Genome"
