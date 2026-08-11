@@ -67,7 +67,8 @@ All lecture content, derivations, worked examples, and presenter screenshots in 
 | 3 | [Information Entropy of m-Blocks](Video_03/Information_Entropy_of_m_blocks.ipynb) | ~25 min | 📺 [Watch on YouTube →](https://youtu.be/6Ijdrrp0DeQ) |
 | 4 | [m-Blocks — Worked Examples](Video_04/Information_Entropy_of_m_blocks_Examples.ipynb) | ~30 min | 📺 [Watch on YouTube →](https://youtu.be/GNV5RXf_uSA) |
 | 5 | [Information Entropy of a Genome](Video_05/Information_Entropy_of_a_Genome.ipynb) | ~33 min | 📺 [Watch on YouTube →](https://youtu.be/KuE75212feQ) |
-| 6 | _Coming soon_ | | |
+| 6 | [The Information Microstates](Video_06/Information_Microstates.ipynb) | ~31 min | 📺 [Watch on YouTube →](https://youtu.be/gaSykBTbfsU) |
+| 7 | _Coming soon_ | | |
 
 ---
 

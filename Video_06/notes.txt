@@ -1,0 +1,1134 @@
+[00:00:01:14 - 00:00:12:02]
+ Hello, welcome to our part 6 of this information physics, information theory lecture series.
+
+[00:00:13:03 - 00:00:25:11]
+ This is my second recording, I've done just an hour earlier the same lecture and there
+
+[00:00:25:11 - 00:00:31:29]
+ was a problem with the sound, I'm watching now the CPU is overloading again.
+
+[00:00:32:22 - 00:00:34:29]
+ So, hopefully this one is going to work.
+
+[00:00:35:24 - 00:00:45:16]
+ Anyway, the title of this lecture is, what I'm going to cover is very important, it's
+
+[00:00:45:16 - 00:00:47:01]
+ called the information microstates.
+
+[00:00:48:04 - 00:00:56:20]
+ So, we are going to attempt to compute the number of microstates in an information system
+
+[00:00:56:20 - 00:00:58:11]
+ or in a message if you want.
+
+[00:00:59:23 - 00:01:02:17]
+ And because I mentioned microstates.
+
+[00:01:02:22 - 00:01:12:02]
+ But we need to specify what is a macrostate, so the macrostate of a system is a specification
+
+[00:01:12:02 - 00:01:18:00]
+ of the system in terms of its macroscopic properties.
+
+[00:01:18:00 - 00:01:25:27]
+ Things like pressure, temperature, volume, mass and so on.
+
+[00:01:25:27 - 00:01:29:26]
+ So in thermodynamics.
+
+[00:01:29:26 - 00:01:31:24]
+ This is important because.
+
+[00:01:31:24 - 00:01:42:02]
+ The entropy of a system is linked to the number of equilibrium microstates that the system
+
+[00:01:42:02 - 00:01:47:11]
+ can have which are compatible with the macrostate.
+
+[00:01:47:11 - 00:01:59:13]
+ So this is equivalent to saying that given a system and with a number of components let's
+
+[00:01:59:13 - 00:02:00:13]
+ say.
+
+[00:02:00:13 - 00:02:07:23]
+ It could be particles, it could be all sorts of components in the system.
+
+[00:02:07:23 - 00:02:17:01]
+ In how many different distinguishable ways could we arrange those components so that
+
+[00:02:17:01 - 00:02:19:11]
+ the system looks macroscopically the same.
+
+[00:02:19:11 - 00:02:26:20]
+ So the number of microstates compatible with the macrostate, that's how you should see
+
+[00:02:26:20 - 00:02:27:20]
+ this.
+
+[00:02:27:20 - 00:02:37:16]
+ And this is linked to what Boltzmann made the groundbreaking connection between entropy
+
+[00:02:37:16 - 00:02:41:06]
+ and statistical mechanics.
+
+[00:02:41:06 - 00:02:42:06]
+ Attention entropy.
+
+[00:02:42:06 - 00:02:43:11]
+ There are two entropies.
+
+[00:02:43:11 - 00:02:48:06]
+ One is a thermodynamic entropy and one is the Boltzmann entropy.
+
+[00:02:48:06 - 00:02:50:09]
+ This connection to statistical mechanics.
+
+[00:02:50:09 - 00:02:55:20]
+ They are actually the same, especially for systems of large number of particles.
+
+[00:02:55:20 - 00:02:56:20]
+ They become.
+
+[00:02:56:20 - 00:02:57:20]
+ It can be short.
+
+[00:02:57:20 - 00:03:07:21]
+ known that they are the same, but Boltzmann linked the entropy of a system to the number
+
+[00:03:07:21 - 00:03:14:26]
+ of microstates that the system can have.
+
+[00:03:14:26 - 00:03:20:03]
+ I'm going to switch now, hopefully the CPU is not going to die on me, I'm going to switch
+
+[00:03:20:03 - 00:03:25:17]
+ to this camera view.
+
+[00:03:25:17 - 00:03:38:00]
+ If we call and we've done this before, if we call omega, so let's say omega, omega is
+
+[00:03:38:00 - 00:03:46:07]
+ the number of microstates of a system and the S is the entropy of a system, then Boltzmann
+
+[00:03:46:07 - 00:03:55:04]
+ showed that S is Kb log omega.
+
+[00:03:55:04 - 00:03:57:26]
+ Right?
+
+[00:03:57:26 - 00:03:58:23]
+ Right?
+
+[00:03:58:23 - 00:03:58:23]
+ Right?
+
+[00:03:58:23 - 00:04:08:08]
+ Kb stands for Boltzmann constant, it's units of joules per Kelvin, and it's the range of
+
+[00:04:08:08 - 00:04:15:25]
+ 10 to the minus 23 joules per Kelvin, and the log can be any base, usually this is represented
+
+[00:04:15:25 - 00:04:22:05]
+ in a natural logarithm base, so it's ln omega, but I left it intentionally like this, you'll
+
+[00:04:22:05 - 00:04:23:27]
+ see why.
+
+[00:04:23:27 - 00:04:36:12]
+ So our objective is to determine the number of information microstates of an information
+
+[00:04:36:12 - 00:04:39:03]
+ system or a message if you want.
+
+[00:04:39:03 - 00:04:53:06]
+ So this is very important because it will allow the creation of a link between information
+
+[00:04:53:06 - 00:04:53:24]
+ theory and theory.
+
+[00:04:53:27 - 00:05:22:04]
+ So let's assume that there is a set of n letters or characters.
+
+[00:05:22:04 - 00:05:23:06]
+ Let's assume that there is a set of n letters or characters, and we need to determine the
+
+[00:05:23:06 - 00:05:29:08]
+ There is a number of unique letters or characters in that set, U, number U.
+
+[00:05:29:28 - 00:05:33:15]
+ N has to be equal or larger than U.
+
+[00:05:34:19 - 00:05:36:05]
+ OK, so that's the condition.
+
+[00:05:37:05 - 00:05:46:12]
+ So then we can define a set of these characters, X1, X2, XU, all these unique characters.
+
+[00:05:46:12 - 00:05:54:16]
+ And we use them to construct a message of N characters.
+
+[00:05:54:18 - 00:05:57:23]
+ These are the unique ones and have N of them, could be larger than U.
+
+[00:05:58:01 - 00:06:01:19]
+ We construct a set of a message of these.
+
+[00:06:03:03 - 00:06:11:02]
+ And we can define a probability distribution on this set, P1, P2, PU.
+
+[00:06:11:25 - 00:06:12:18]
+ OK.
+
+[00:06:16:09 - 00:06:17:14]
+ All these probabilities.
+
+[00:06:18:08 - 00:06:21:07]
+ P, Js have to be positive or zero.
+
+[00:06:22:12 - 00:06:28:11]
+ Obviously, the summation over J of P, Js must be normalized to 1.
+
+[00:06:28:17 - 00:06:30:05]
+ So they must add up to 1.
+
+[00:06:31:29 - 00:06:42:22]
+ And essentially, P, probability P, J, it means is probability of X, J, character X, J.
+
+[00:06:45:06 - 00:06:47:00]
+ Probability that X, J occurs.
+
+[00:06:47:24 - 00:06:48:09]
+ OK.
+
+[00:06:52:17 - 00:06:55:03]
+ Probability of X, J of occurring, if you want.
+
+[00:06:55:07 - 00:06:55:11]
+ OK.
+
+[00:06:56:07 - 00:07:05:26]
+ And that gives us a way of working out the number of occurrences per each character in an N letters message.
+
+[00:07:05:26 - 00:07:06:06]
+ OK.
+
+[00:07:06:10 - 00:07:24:04]
+ So that means if we have P1 times N, that will be equal to a little n, so capital N, little n, occurrences of X1.
+
+[00:07:24:22 - 00:07:32:27]
+ So, and N1 times X1 character appears in the message of n characters.
+
+[00:07:33:04 - 00:07:42:15]
+ P2N equals N2 occurrences of X2.
+
+[00:07:43:29 - 00:07:50:08]
+ And you can do this all the way to PUN and work out all the number of occurrences.
+
+[00:07:50:16 - 00:07:54:21]
+ So now the question that we are interested in is,
+
+[00:07:54:21 - 00:08:08:16]
+ is given the set of N letters that forms a message, how many distinct messages could
+
+[00:08:08:16 - 00:08:15:21]
+ we form out of those N letters?
+
+[00:08:15:21 - 00:08:23:22]
+ How many distinct ways we can combine them to form an N letter message, but each one
+
+[00:08:23:22 - 00:08:27:09]
+ of them distinct to each other?
+
+[00:08:27:09 - 00:08:33:17]
+ The ways of combining these in a unique, distinctive way to form an N letter message.
+
+[00:08:33:17 - 00:08:51:06]
+ This is very important because it allows us to see these information states or these different
+
+[00:08:51:06 - 00:08:59:13]
+ ways of combining N letters message in distinct ways, it allows us to see this essentially
+
+[00:08:59:13 - 00:09:01:18]
+ as information microstates.
+
+[00:09:01:18 - 00:09:14:28]
+ In analogy to the physical microstates in a thermodynamic system or physical system.
+
+[00:09:14:28 - 00:09:21:26]
+ This would formalize, by doing this you can formalize the link between information states
+
+[00:09:21:26 - 00:09:27:17]
+ and physical entropy eventually using the Boltzmann relationship.
+
+[00:09:27:17 - 00:09:31:17]
+ This is very powerful, very important to understand this and see where this comes from.
+
+[00:09:31:18 - 00:09:39:01]
+ I'm going to call the number of distinct messages, this is the postulate we are going
+
+[00:09:39:01 - 00:09:56:15]
+ to make now, the number of distinct messages, I'm going to call it omega, and I'm going
+
+[00:09:56:15 - 00:10:01:23]
+ to say this is equivalent to the number of microstates compatible with the macrostate.
+
+[00:10:01:23 - 00:10:09:22]
+ The message has an omega ways of being transmitted using the same set of letters.
+
+[00:10:09:22 - 00:10:09:26]
+ Okay? The message has an omega ways of being transmitted using the same set of letters.
+
+[00:10:09:27 - 00:10:10:27]
+ Okay?
+
+[00:10:10:27 - 00:10:11:27]
+ The message has an omega ways of being transmitted using the same set of letters.
+
+[00:10:11:27 - 00:10:12:27]
+ Okay?
+
+[00:10:12:27 - 00:10:13:27]
+ And these are distinct ways.
+
+[00:10:13:27 - 00:10:21:03]
+ How do you compute for our set of N characters, how do you compute this omega?
+
+[00:10:21:03 - 00:10:27:28]
+ We are going to use, this is the branch of mathematics called combinatorics or combinatorial
+
+[00:10:27:28 - 00:10:33:00]
+ mathematics and we are going to use something called the multinomial coefficient.
+
+[00:10:33:00 - 00:10:43:16]
+ So multinomial coefficient.
+
+[00:10:43:16 - 00:10:50:28]
+ This is the stuff we are going to use and this gives a count of how many ways we can
+
+[00:10:50:28 - 00:10:54:14]
+ compute to achieve a specific macrostate.
+
+[00:10:54:14 - 00:11:01:08]
+ So let's have a look at this more specifically now.
+
+[00:11:01:08 - 00:11:12:16]
+ So the formula for this is we are going to put again number of distinct messages, we
+
+[00:11:12:16 - 00:11:27:00]
+ call it omega and this is equal according to this multinomial coefficient equal to N
+
+[00:11:27:00 - 00:11:28:00]
+ factorial.
+
+[00:11:28:00 - 00:11:33:14]
+ So this is the number of characters in our message, how many characters the message contains
+
+[00:11:33:14 - 00:11:42:12]
+ and then you have P1 N factorial P2 N factorial PUN factorial.
+
+[00:11:42:12 - 00:11:44:12]
+ Okay?
+
+[00:11:44:12 - 00:11:46:00]
+ Okay.
+
+[00:11:46:00 - 00:11:47:00]
+ Okay.
+
+[00:11:47:00 - 00:11:51:29]
+ What are these P1n, P2n?
+
+[00:11:51:29 - 00:11:54:19]
+ Well, we define them here.
+
+[00:11:54:19 - 00:12:04:11]
+ We said P1n, probability of character 1 occurring, X1, times all characters, the number of all
+
+[00:12:04:11 - 00:12:10:28]
+ characters, gives you the number of occurrences of character X1, or character 1 if you want.
+
+[00:12:10:28 - 00:12:18:11]
+ So that means we can write this number of distinct messages, or microstates we call
+
+[00:12:18:11 - 00:12:30:08]
+ it now, as n factorial, and instead of these bracket terms, factorial product of brackets,
+
+[00:12:30:08 - 00:12:36:25]
+ we can call them n1 factorial, the number of occurrences of X1, times n2 factorial,
+
+[00:12:36:25 - 00:12:42:22]
+ number of occurrences of X2, times nU factorial.
+
+[00:12:42:22 - 00:12:43:22]
+ And this is...
+
+[00:12:43:22 - 00:12:48:04]
+ Oh, I need to mention that the summation over...
+
+[00:12:48:04 - 00:12:48:07]
+ .
+
+[00:12:48:11 - 00:12:59:13]
+ J of nJs, all these occurrences, they have to sum up to n, so this is the condition imposed
+
+[00:12:59:13 - 00:13:04:05]
+ on them, they have to fulfill this condition.
+
+[00:13:04:05 - 00:13:09:28]
+ So that's the formula, and we're going to do some examples to clarify how this works
+
+[00:13:09:28 - 00:13:13:10]
+ and convince you that this is true.
+
+[00:13:13:10 - 00:13:19:16]
+ But the question is now...
+
+[00:13:19:16 - 00:13:26:11]
+ We have a specific distribution here, we have a specific set of occurrences and so on.
+
+[00:13:26:11 - 00:13:37:23]
+ But the question is now, if you have n letters and U distinct characters, how many possible
+
+[00:13:37:23 - 00:13:48:25]
+ ways one could form a message out of these letters and unique characters, by taking into
+
+[00:13:48:25 - 00:13:52:04]
+ account all the possible permutations of these occurrences.
+
+[00:13:52:04 - 00:14:00:15]
+ So all the possible ns, not just one set of probabilities and occurrences, so all of them.
+
+[00:14:00:15 - 00:14:08:27]
+ And so this is to say, what is the maximum possible number of distinct microstates for
+
+[00:14:08:27 - 00:14:16:25]
+ a given set of n letters where U, a number of U of them, U capital, are unique.
+
+[00:14:16:25 - 00:14:17:25]
+ Okay?
+
+[00:14:17:25 - 00:14:20:07]
+ So...
+
+[00:14:20:07 - 00:14:23:17]
+ This is given by something called the Multinomial Theorem.
+
+[00:14:23:17 - 00:14:36:20]
+ So Multinomial Theorem.
+
+[00:14:36:20 - 00:14:45:29]
+ And it says that, essentially it says that we need to do a summation over all these multinomial
+
+[00:14:45:29 - 00:14:49:05]
+ coefficients, okay?
+
+[00:14:49:05 - 00:14:51:26]
+ And that will give us all the possible states.
+
+[00:14:51:26 - 00:14:56:28]
+ So what it says, it says that this omega dot tot.
+
+[00:14:56:28 - 00:15:04:29]
+ If you want omega total, okay, the maximum omega dot, maximum of possible states that
+
+[00:15:04:29 - 00:15:13:25]
+ one can construct from this set of n characters and U unique characters, is given by the summation
+
+[00:15:13:25 - 00:15:26:08]
+ over all ns, n1, n2, nu, okay, over all the coefficients, multinomial coefficients, n1,
+
+[00:15:26:08 - 00:15:36:03]
+ factorial, n2, factorial, nu, factorial.
+
+[00:15:36:03 - 00:15:38:14]
+ And this summation has...
+
+[00:15:38:14 - 00:15:43:03]
+ You can do the summations, you can calculate all the possible permutations of these multinomial
+
+[00:15:43:03 - 00:15:49:11]
+ coefficients and then you can sum them up and get a number that is omega tot.
+
+[00:15:49:11 - 00:15:56:15]
+ But it turns out that this can be computed very quickly as U to power n.
+
+[00:15:56:15 - 00:15:58:16]
+ So U is the number of unique characters.
+
+[00:15:58:16 - 00:16:01:19]
+ n is the number of all the characters in the system.
+
+[00:16:01:19 - 00:16:05:21]
+ So instead of doing all this messy stuff, you can just do U to power n and that gives
+
+[00:16:05:21 - 00:16:17:04]
+ you omega tot, total number of unique distinct messages that you can form or total number
+
+[00:16:17:04 - 00:16:24:22]
+ of possible microstates as we kind of postulate it, okay?
+
+[00:16:24:22 - 00:16:26:18]
+ So the CPU still behaves.
+
+[00:16:26:18 - 00:16:27:18]
+ It's not...
+
+[00:16:27:18 - 00:16:28:16]
+ Okay.
+
+[00:16:28:16 - 00:16:29:16]
+ Too much overloading.
+
+[00:16:29:16 - 00:16:38:03]
+ Hopefully, I'm going to have this successfully recorded.
+
+[00:16:38:03 - 00:16:40:21]
+ What I would like to do now is to do some examples.
+
+[00:16:40:21 - 00:16:48:16]
+ So example, let's do an example to understand how this works, okay?
+
+[00:16:48:16 - 00:16:54:03]
+ And for this example, I'm going to take a very, very, very simple information system,
+
+[00:16:54:03 - 00:16:57:15]
+ a message that contains only three letters.
+
+[00:16:57:15 - 00:16:58:12]
+ Only because I want to do this much.
+
+[00:16:58:12 - 00:16:59:12]
+ I want to do this manually.
+
+[00:16:59:12 - 00:17:02:19]
+ We don't need to do computation or other complicated things.
+
+[00:17:02:19 - 00:17:09:21]
+ And I want to show this example using what we've learned up to this point.
+
+[00:17:09:21 - 00:17:10:21]
+ So let's take...
+
+[00:17:10:21 - 00:17:15:03]
+ I'm going to write with a different color.
+
+[00:17:15:03 - 00:17:25:24]
+ Let's say the message or the system, our system is A, A, B. A, A, B. So let's put...
+
+[00:17:25:24 - 00:17:29:11]
+ That's our message.
+
+[00:17:29:11 - 00:17:30:29]
+ So what can we say about this message?
+
+[00:17:30:29 - 00:17:31:29]
+ Okay.
+
+[00:17:31:29 - 00:17:32:29]
+ System, system.
+
+[00:17:32:29 - 00:17:38:14]
+ We can say that N equals three, it has three characters.
+
+[00:17:38:14 - 00:17:43:23]
+ It's got U equals two, two unique characters.
+
+[00:17:43:23 - 00:17:54:08]
+ So the set is A and B, a set of unique characters, A and B. We can say that the occurrences NA
+
+[00:17:54:08 - 00:17:59:23]
+ is two, NB equals one.
+
+[00:17:59:23 - 00:18:00:23]
+ So this is...
+
+[00:18:00:23 - 00:18:01:23]
+ Okay.
+
+[00:18:01:23 - 00:18:02:23]
+ That's what we have.
+
+[00:18:02:23 - 00:18:03:23]
+ So it will be...
+
+[00:18:03:23 - 00:18:08:23]
+ Probability will be two over three and this one over three, if you want to think it like
+
+[00:18:08:23 - 00:18:12:22]
+ this.
+
+[00:18:12:22 - 00:18:23:29]
+ How many distinct ways we could arrange this message is given by the multinomial coefficient.
+
+[00:18:23:29 - 00:18:33:27]
+ So the number of distinct messages, so distinct messages, let's call it omega, is N factorial
+
+[00:18:33:27 - 00:18:34:18]
+ over...
+
+[00:18:34:22 - 00:18:41:22]
+ N1 factorial to NU factorial.
+
+[00:18:41:22 - 00:18:42:22]
+ Okay.
+
+[00:18:42:22 - 00:18:44:22]
+ And for our particular system, what is this?
+
+[00:18:44:22 - 00:18:55:22]
+ N is three factorial divided by N. We have only two Ns, NA and B, so N1, N2, as it would
+
+[00:18:55:22 - 00:18:56:22]
+ be.
+
+[00:18:56:22 - 00:19:02:22]
+ So then we have two factorial, NA two factorial times one factorial.
+
+[00:19:02:22 - 00:19:08:22]
+ If we calculate here, we get a number of three possible microstates, three possible distinct
+
+[00:19:08:22 - 00:19:18:22]
+ ways we can arrange these letters in a three-letter message containing A and B, twice A, once B.
+
+[00:19:18:22 - 00:19:20:22]
+ It can only be in three different ways.
+
+[00:19:20:22 - 00:19:25:22]
+ And these are the microstates I've been trying to link up.
+
+[00:19:25:22 - 00:19:30:22]
+ This is a form of entropy of this system, if you want.
+
+[00:19:30:22 - 00:19:31:22]
+ Okay.
+
+[00:19:31:22 - 00:19:43:22]
+ So this is a very powerful concept of bringing the idea of microstates of information, microstates,
+
+[00:19:43:22 - 00:19:48:22]
+ and being able to compute them because it allows us to link it to entropy.
+
+[00:19:48:22 - 00:19:49:22]
+ So very, very powerful.
+
+[00:19:49:22 - 00:19:50:22]
+ So we have three.
+
+[00:19:50:22 - 00:19:51:22]
+ What are they?
+
+[00:19:51:22 - 00:19:55:22]
+ They would be A, A, B, which is the initial state.
+
+[00:19:55:22 - 00:20:00:22]
+ It will be A, B, A, and B, A, A.
+
+[00:20:00:22 - 00:20:12:22]
+ These are the possible microstates that we can form, and the multinomial coefficient
+
+[00:20:12:22 - 00:20:13:22]
+ gave us the number.
+
+[00:20:13:22 - 00:20:14:22]
+ It's three of them.
+
+[00:20:14:22 - 00:20:15:22]
+ Okay.
+
+[00:20:15:22 - 00:20:23:26]
+ And these are the states as we construct it based on permutations of these letters.
+
+[00:20:23:26 - 00:20:29:26]
+ So the question is now, what is the total number of possible combinations for all possible
+
+[00:20:29:26 - 00:20:33:26]
+ distributions according to the multinomial theorem?
+
+[00:20:33:26 - 00:20:36:26]
+ So let's take another piece of paper.
+
+[00:20:36:26 - 00:20:45:26]
+ Remember, that is given by the summation over all multinomial coefficients, or simply U
+
+[00:20:45:26 - 00:20:54:27]
+ to power N. So let's have a look what is that.
+
+[00:20:54:27 - 00:21:02:27]
+ So, we call this omega tot, like total number.
+
+[00:21:02:27 - 00:21:08:27]
+ And let's take first the easy route we say is U to power N. What is U?
+
+[00:21:08:27 - 00:21:10:27]
+ In our case, U is two.
+
+[00:21:10:27 - 00:21:14:27]
+ Here is U. Two to power N. N is three.
+
+[00:21:14:27 - 00:21:21:27]
+ And that gives us a number of eight total number of possible microstates that we can
+
+[00:21:21:27 - 00:21:31:27]
+ construct for this three-letter message containing two unique distinct letters, A and B. Eight
+
+[00:21:31:27 - 00:21:36:06]
+ possible microstates.
+
+[00:21:36:06 - 00:21:38:06]
+ So what are they?
+
+[00:21:38:06 - 00:21:39:06]
+ They will be...
+
+[00:21:39:06 - 00:21:48:06]
+ Remember, all the possible permutations are allowed now, so you can have A A A, A A B,
+
+[00:21:48:06 - 00:22:04:29]
+ A B A, B A A, B B A, B A B, A B B.
+
+[00:22:06:29 - 00:22:12:08]
+ And B B B.
+
+[00:22:12:08 - 00:22:13:08]
+ Is this eight?
+
+[00:22:13:08 - 00:22:17:08]
+ One, two, three, four, five, six, seven, eight.
+
+[00:22:17:08 - 00:22:27:23]
+ So this is the number of possible microstates, which is exactly what the multinomial theorem
+
+[00:22:27:23 - 00:22:34:23]
+ gave us, U to power N. And this is how you construct it, your set of microstates, if you
+
+[00:22:34:23 - 00:22:37:13]
+ want.
+
+[00:22:37:13 - 00:22:41:13]
+ But how can we do the same thing using this route?
+
+[00:22:41:13 - 00:22:46:13]
+ The summation over all multinomial coefficients.
+
+[00:22:46:13 - 00:22:48:13]
+ Let me just get the page.
+
+[00:22:48:13 - 00:22:54:13]
+ Summation over these coefficients using this formula here, rather than using the shortcut
+
+[00:22:54:13 - 00:22:58:13]
+ U to power N, which is the most convenient anyway.
+
+[00:22:58:13 - 00:23:07:08]
+ To do that, I am going to draw a little table now.
+
+[00:23:07:08 - 00:23:12:08]
+ I think the best is to do a little table.
+
+[00:23:12:08 - 00:23:13:08]
+ So...
+
+[00:23:14:08 - 00:23:25:24]
+ So let's have, say here, N A, the number of occurrences, possible occurrences of A.
+
+[00:23:25:24 - 00:23:30:24]
+ N B, number of occurrences of character B.
+
+[00:23:30:24 - 00:23:34:24]
+ I am going to put another column here and call it microstates.
+
+[00:23:34:24 - 00:23:39:20]
+ These are the microstates.
+
+[00:23:39:20 - 00:23:47:20]
+ And here is the multinomial coefficient, N factorial divided by N A factorial times
+
+[00:23:47:20 - 00:23:49:20]
+ N B factorial.
+
+[00:23:49:20 - 00:23:51:20]
+ And let's put some...
+
+[00:23:51:20 - 00:24:05:27]
+ There you go.
+
+[00:24:05:27 - 00:24:10:16]
+ So we make a little table here.
+
+[00:24:10:16 - 00:24:17:16]
+ And now we need to remind ourselves that N equals 3.
+
+[00:24:17:16 - 00:24:26:25]
+ We need to remind that N A plus N B must equal N, which is 3.
+
+[00:24:26:25 - 00:24:31:25]
+ So before we had N A was 2, N B was 1.
+
+[00:24:31:25 - 00:24:33:25]
+ Their sum is 3.
+
+[00:24:33:25 - 00:24:35:25]
+ We need to fulfill the condition.
+
+[00:24:35:25 - 00:24:43:25]
+ But now we take into account all the possible occurrences of N A and N B.
+
+[00:24:43:25 - 00:24:47:25]
+ So N A can be 0.
+
+[00:24:47:25 - 00:24:49:25]
+ That means N B must be 3.
+
+[00:24:49:25 - 00:24:52:25]
+ Their sum has to be 3, equal N.
+
+[00:24:52:25 - 00:24:53:25]
+ OK?
+
+[00:24:53:25 - 00:24:58:25]
+ So what is the multinomial coefficient telling us?
+
+[00:24:58:25 - 00:25:01:25]
+ It tells us that we have how many microstates?
+
+[00:25:01:25 - 00:25:08:25]
+ We have 3 factorial divided by N A 0 factorial times 3 factorial.
+
+[00:25:08:25 - 00:25:10:25]
+ 0 factorial is 1.
+
+[00:25:10:25 - 00:25:13:25]
+ 3 factorial divided by 3 factorial is 1.
+
+[00:25:13:25 - 00:25:16:25]
+ So we have one possible microstate.
+
+[00:25:16:25 - 00:25:19:25]
+ And that possible microstate contains only B.
+
+[00:25:19:25 - 00:25:22:25]
+ So that would be B, B, B.
+
+[00:25:22:25 - 00:25:27:25]
+ Which is obvious since you have no occurrences of A.
+
+[00:25:27:25 - 00:25:28:25]
+ And you have a three letter message.
+
+[00:25:28:25 - 00:25:30:25]
+ It has to be all Bs.
+
+[00:25:31:25 - 00:25:34:25]
+ Now let's close this.
+
+[00:25:34:25 - 00:25:36:25]
+ What other situation we can have?
+
+[00:25:36:25 - 00:25:42:25]
+ We can have N A 1 and we can have N B must be 2.
+
+[00:25:42:25 - 00:25:44:25]
+ Because their sum is 3.
+
+[00:25:44:25 - 00:25:49:25]
+ So what is the multinomial coefficient telling us now?
+
+[00:25:49:25 - 00:25:53:25]
+ It tells us that we need to have 3 factorial divided by what is that?
+
+[00:25:53:25 - 00:25:57:25]
+ 1 factorial times 2 factorial.
+
+[00:25:57:25 - 00:25:59:25]
+ And that gives us
+
+[00:25:59:25 - 00:26:02:25]
+ 3 possible microstates.
+
+[00:26:02:25 - 00:26:05:25]
+ If you calculate here you get 3.
+
+[00:26:05:25 - 00:26:07:25]
+ So let's do them.
+
+[00:26:07:25 - 00:26:10:25]
+ They will be, you need to have occurrences.
+
+[00:26:10:25 - 00:26:11:25]
+ A is only once.
+
+[00:26:11:25 - 00:26:18:26]
+ So let's do A, B, B.
+
+[00:26:18:26 - 00:26:21:26]
+ B, A, B.
+
+[00:26:21:26 - 00:26:26:26]
+ And B, B, A.
+
+[00:26:26:26 - 00:26:30:26]
+ There is no other way of combining these 3 letters
+
+[00:26:30:26 - 00:26:32:26]
+ to fulfill this condition.
+
+[00:26:32:26 - 00:26:36:26]
+ But these 3 possible arrangements
+
+[00:26:36:26 - 00:26:39:26]
+ exactly what the multinomial coefficient dictates.
+
+[00:26:39:26 - 00:26:41:26]
+ And this is how you do it.
+
+[00:26:41:26 - 00:26:44:26]
+ So let's close this.
+
+[00:26:44:26 - 00:26:46:26]
+ So we had N A 0, 1.
+
+[00:26:46:26 - 00:26:48:26]
+ Let's go to N A 2.
+
+[00:26:48:26 - 00:26:51:26]
+ That means N B must be 1.
+
+[00:26:51:26 - 00:26:58:26]
+ So this is a very similar situation to the case above.
+
+[00:26:58:26 - 00:27:02:26]
+ Because we are going to have the multinomial coefficient is 3 factorial
+
+[00:27:02:26 - 00:27:05:26]
+ over this time is 2 factorial times 1 factorial.
+
+[00:27:05:26 - 00:27:08:26]
+ It's just an inversion of the denominator.
+
+[00:27:08:26 - 00:27:11:26]
+ But it doesn't change anything in the maths.
+
+[00:27:11:26 - 00:27:12:26]
+ They are commutative.
+
+[00:27:12:26 - 00:27:15:26]
+ So you get a number of 3 microstates.
+
+[00:27:15:26 - 00:27:17:26]
+ This time B is once.
+
+[00:27:17:26 - 00:27:21:26]
+ So let's call them A, A, B.
+
+[00:27:21:26 - 00:27:24:26]
+ A, B, A.
+
+[00:27:24:26 - 00:27:27:26]
+ And B, A, A.
+
+[00:27:28:26 - 00:27:31:26]
+ These are the 3 possible microstates
+
+[00:27:31:26 - 00:27:34:26]
+ for that specific case.
+
+[00:27:34:26 - 00:27:36:26]
+ Let's close the table.
+
+[00:27:36:26 - 00:27:42:26]
+ And the final state is N A 3 and N B 0.
+
+[00:27:42:26 - 00:27:44:26]
+ Attention, there is no other possible combination
+
+[00:27:44:26 - 00:27:46:26]
+ that you can come up with.
+
+[00:27:46:26 - 00:27:48:26]
+ These are all the possible combinations
+
+[00:27:48:26 - 00:27:53:26]
+ that you can form in our case.
+
+[00:27:53:26 - 00:27:54:26]
+ So what is this?
+
+[00:27:54:26 - 00:27:56:26]
+ It's just like up there.
+
+[00:27:56:26 - 00:27:58:26]
+ You are going to have 3 factorial
+
+[00:27:58:26 - 00:28:02:26]
+ over 3 factorial times 0 factorial equals 1.
+
+[00:28:02:26 - 00:28:06:26]
+ And that is A, A, A.
+
+[00:28:06:26 - 00:28:12:26]
+ If you look at the microstates that we constructed here,
+
+[00:28:12:26 - 00:28:14:26]
+ it's exactly what we have up in the set here.
+
+[00:28:14:26 - 00:28:16:26]
+ Obviously they match.
+
+[00:28:16:26 - 00:28:26:26]
+ But this time we did it using the global formula.
+
+[00:28:26:26 - 00:28:27:26]
+ U to power N.
+
+[00:28:27:26 - 00:28:29:26]
+ We got A possible combinations.
+
+[00:28:29:26 - 00:28:31:26]
+ We identified them like this.
+
+[00:28:31:26 - 00:28:33:26]
+ But there is another way of doing it.
+
+[00:28:33:26 - 00:28:36:26]
+ It's by calculating multinomial coefficients
+
+[00:28:36:26 - 00:28:41:26]
+ for each possible combination of occurrences
+
+[00:28:41:26 - 00:28:44:26]
+ for N A and N B or the characters in your set.
+
+[00:28:44:26 - 00:28:46:26]
+ And this is what you get.
+
+[00:28:46:26 - 00:28:48:26]
+ And what is the formula now?
+
+[00:28:48:26 - 00:28:50:26]
+ The formula is that the summation
+
+[00:28:50:26 - 00:28:52:26]
+ over all these multinomial coefficients
+
+[00:28:52:26 - 00:28:55:26]
+ should give you a number that equals U to power N.
+
+[00:28:55:26 - 00:28:57:26]
+ So that number is 8.
+
+[00:28:57:26 - 00:29:05:26]
+ So the summation of these coefficients
+
+[00:29:05:26 - 00:29:08:26]
+ you just sum up everything in this column
+
+[00:29:08:26 - 00:29:14:26]
+ and that gives you 1 plus 3 plus 3 plus 1.
+
+[00:29:14:26 - 00:29:17:26]
+ And that gives you exactly 8
+
+[00:29:17:26 - 00:29:22:26]
+ which is a total match to the number
+
+[00:29:22:26 - 00:29:26:26]
+ calculated by the other method.
+
+[00:29:27:26 - 00:29:29:26]
+ Obviously this is easier.
+
+[00:29:29:26 - 00:29:31:26]
+ You do U to power N
+
+[00:29:31:26 - 00:29:35:26]
+ and you get a free lunch.
+
+[00:29:35:26 - 00:29:37:26]
+ It's much easier than doing all this stuff.
+
+[00:29:37:26 - 00:29:41:26]
+ But I can't emphasize enough
+
+[00:29:41:26 - 00:29:43:26]
+ how important this is
+
+[00:29:43:26 - 00:29:46:26]
+ because it gives us a tool
+
+[00:29:46:26 - 00:29:52:27]
+ to calculate all these possible arrangements
+
+[00:29:52:27 - 00:29:54:27]
+ of an information system
+
+[00:29:54:27 - 00:29:57:27]
+ or a message or whatever
+
+[00:29:57:27 - 00:29:59:27]
+ which could be seen as information
+
+[00:29:59:27 - 00:30:02:27]
+ microstates or simply microstates
+
+[00:30:02:27 - 00:30:05:27]
+ physical microstates in thermodynamics
+
+[00:30:05:27 - 00:30:06:27]
+ if you want.
+
+[00:30:06:27 - 00:30:10:27]
+ And by doing so we can create a link
+
+[00:30:10:27 - 00:30:14:27]
+ between information theory and physics.
+
+[00:30:14:27 - 00:30:18:27]
+ Between information theory and entropy.
+
+[00:30:18:27 - 00:30:21:27]
+ And this is super essential
+
+[00:30:21:27 - 00:30:23:27]
+ for what comes next
+
+[00:30:23:27 - 00:30:25:27]
+ when I cover mass energy information
+
+[00:30:25:27 - 00:30:27:27]
+ equivalence principle
+
+[00:30:27:27 - 00:30:29:27]
+ the second law of information dynamics
+
+[00:30:29:27 - 00:30:32:27]
+ and all these info dynamics
+
+[00:30:32:27 - 00:30:35:27]
+ aspects and information physics aspects.
+
+[00:30:35:27 - 00:30:41:27]
+ They kind of emanate from these principles.
+
+[00:30:41:27 - 00:30:43:27]
+ And if you understand this
+
+[00:30:43:27 - 00:30:45:27]
+ this is a great deal
+
+[00:30:45:27 - 00:30:47:27]
+ if this is understood.
+
+[00:30:47:27 - 00:30:49:27]
+ So that's all for today.
+
+[00:30:49:27 - 00:30:50:27]
+ Thank you very much.
+
+[00:30:50:27 - 00:30:54:27]
+ Hopefully the video recorded properly this time.
+
+[00:30:54:27 - 00:30:55:27]
+ Thank you.
+
