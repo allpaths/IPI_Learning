@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(& \"C:\\\\Users\\\\JeffD\\\\Documents\\\\GitHub\\\\venv\\\\Scripts\\\\python.exe\" \"c:\\\\Users\\\\JeffD\\\\Documents\\\\GitHub\\\\IPI_Learning\\\\scripts\\\\process_video.py\" *)",
+      "PowerShell(& \"C:\\\\Users\\\\JeffD\\\\Documents\\\\GitHub\\\\venv\\\\Scripts\\\\python.exe\" -m yt_dlp *)",
+      "PowerShell(& \"C:\\\\Users\\\\JeffD\\\\Documents\\\\GitHub\\\\venv\\\\Scripts\\\\python.exe\" \"c:\\\\Users\\\\JeffD\\\\Documents\\\\GitHub\\\\IPI_Learning\\\\Video_02\\\\transcribe.py\" *)",
+      "PowerShell(& \"C:\\\\Users\\\\JeffD\\\\Documents\\\\GitHub\\\\venv\\\\Scripts\\\\python.exe\" \"c:\\\\Users\\\\JeffD\\\\Documents\\\\GitHub\\\\IPI_Learning\\\\scripts\\\\grab_screenshots.py\" *)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(Get-Content *)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(Get-Process *)",
+      "PowerShell(Test-Path *)",
+      "WebFetch(domain:youtube.com)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:youtu.be)",
+      "mcp__open-brain__search_thoughts",
+      "mcp__open-brain__list_thoughts",
+      "mcp__open-brain__thought_stats"
+    ]
+  }
+}
