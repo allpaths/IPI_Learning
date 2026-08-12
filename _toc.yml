@@ -17,3 +17,5 @@ chapters:
     title: "Part 5 — Information Entropy of a Genome"
   - file: Video_06/Information_Microstates
     title: "Part 6 — The Information Microstates"
+  - file: Video_07/Shannon_and_Boltzmann
+    title: "Part 7 — Link Between Shannon and Boltzmann Entropies"
