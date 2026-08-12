@@ -21,3 +21,5 @@ chapters:
     title: "Part 7 — Link Between Shannon and Boltzmann Entropies"
   - file: Video_08/Shannon_vs_Boltzmann
     title: "Part 8 — Shannon vs Boltzmann Entropy"
+  - file: Video_09/Landauer_and_MEI
+    title: "Part 9 — Landauer's Principle and M/E/I Equivalence"

@@ -1,0 +1,3936 @@
+[00:00:02:26 - 00:00:18:02]
+ Hi guys, in this video I'm planning to discuss Landauer's principle, mass-energy information equivalence principle and information as the fifth state of matter.
+
+[00:00:18:02 - 00:00:35:02]
+ So, this is a topic very close to my heart and is the bedrock of information physics, so very important, I'm trying my best to explain as clear as possible.
+
+[00:00:35:02 - 00:00:46:02]
+ This video is interlinked with previous videos, so if there are concepts that are not clear or you don't understand,
+
+[00:00:46:02 - 00:00:48:02]
+ it's a good idea to revisit it.
+
+[00:00:48:02 - 00:00:58:02]
+ So, let's begin with this Landauer principle.
+
+[00:00:58:02 - 00:01:12:02]
+ So, Landauer proposed in 1961 the idea that information, or a digital bit of information, is actually a physical entity.
+
+[00:01:12:02 - 00:01:18:02]
+ It has a well-defined energy associated to it.
+
+[00:01:18:02 - 00:01:28:02]
+ So, information is physical, although he was talking about digital information at that point.
+
+[00:01:28:02 - 00:01:32:02]
+ And this is known as Landauer's principle.
+
+[00:01:32:02 - 00:01:47:27]
+ And this is deeply grounded in this profound understanding that computational processes
+
+[00:01:47:27 - 00:01:53:27]
+ are also governed by the physical processes.
+
+[00:01:53:27 - 00:02:03:27]
+ In other words, if you have a computer or any digital operating device,
+
+[00:02:03:27 - 00:02:07:27]
+ it's not some kind of entity that is separated from our universe.
+
+[00:02:07:27 - 00:02:11:27]
+ It's part of the universe.
+
+[00:02:11:27 - 00:02:13:27]
+ It's part of...
+
+[00:02:13:27 - 00:02:15:27]
+ It's subjected to the same rules
+
+[00:02:15:27 - 00:02:17:27]
+ and the same laws of physics
+
+[00:02:17:27 - 00:02:19:27]
+ like everything else,
+
+[00:02:19:27 - 00:02:21:27]
+ whether it's this cup of coffee here
+
+[00:02:21:27 - 00:02:23:27]
+ or the computer I'm using right now.
+
+[00:02:23:27 - 00:02:25:27]
+ They all should obey the laws of physics
+
+[00:02:25:27 - 00:02:27:27]
+ and they're governed by the physics
+
+[00:02:27:27 - 00:02:29:27]
+ and the laws of nature.
+
+[00:02:29:27 - 00:02:31:27]
+ And this is what Landauer realized.
+
+[00:02:31:27 - 00:02:43:27]
+ And it means that the principles of physics and thermodynamics
+
+[00:02:43:27 - 00:02:47:27]
+ are in the domain of computational operations, really.
+
+[00:02:47:27 - 00:02:51:27]
+ So, essentially, just like you would have
+
+[00:02:51:27 - 00:02:55:27]
+ the law of conservation of energy, for example, in a physical system,
+
+[00:02:55:27 - 00:03:03:27]
+ or the principle of irreversibility of a certain process in thermodynamics,
+
+[00:03:03:27 - 00:03:11:27]
+ these are also applicable to computational operations.
+
+[00:03:11:27 - 00:03:13:27]
+ And...
+
+[00:03:13:27 - 00:03:15:27]
+ anything to do with computing
+
+[00:03:15:27 - 00:03:17:27]
+ or information.
+
+[00:03:17:27 - 00:03:19:27]
+ And this is something that Landauer
+
+[00:03:19:27 - 00:03:21:27]
+ proposed first in
+
+[00:03:21:27 - 00:03:23:27]
+ 1961, and he actually
+
+[00:03:23:27 - 00:03:25:27]
+ formulated a
+
+[00:03:25:27 - 00:03:27:27]
+ thermodynamic link and limit
+
+[00:03:27:27 - 00:03:29:27]
+ to the computational
+
+[00:03:29:27 - 00:03:31:27]
+ processes.
+
+[00:03:31:27 - 00:03:33:27]
+ This is
+
+[00:03:33:27 - 00:03:35:27]
+ based on
+
+[00:03:35:27 - 00:03:37:27]
+ the fundamental postulate
+
+[00:03:37:27 - 00:03:39:27]
+ that Landauer made,
+
+[00:03:39:27 - 00:03:41:27]
+ essentially
+
+[00:03:41:27 - 00:03:43:27]
+ putting an equal sign between
+
+[00:03:43:27 - 00:03:45:27]
+ logical irreversibility
+
+[00:03:45:27 - 00:03:47:27]
+ and
+
+[00:03:47:27 - 00:03:49:27]
+ physical irreversibility.
+
+[00:03:49:27 - 00:03:51:27]
+ So, essentially, he suggested
+
+[00:03:51:27 - 00:03:53:27]
+ that
+
+[00:03:53:27 - 00:03:55:27]
+ logical irreversibility of a computational
+
+[00:03:55:27 - 00:03:57:27]
+ process implies
+
+[00:03:57:27 - 00:03:59:27]
+ physical irreversibility.
+
+[00:03:59:27 - 00:04:03:19]
+ So,
+
+[00:04:03:19 - 00:04:05:19]
+ let's go back to this coffee,
+
+[00:04:05:19 - 00:04:07:19]
+ I just got a hot cup of
+
+[00:04:07:19 - 00:04:09:19]
+ coffee now, and
+
+[00:04:09:19 - 00:04:11:19]
+ what does it mean a physical
+
+[00:04:11:19 - 00:04:13:19]
+ irreversible process?
+
+[00:04:13:19 - 00:04:15:19]
+ This hot cup of coffee is now going through
+
+[00:04:15:19 - 00:04:17:19]
+ a process of
+
+[00:04:17:19 - 00:04:19:19]
+ reaching thermal equilibrium with the
+
+[00:04:19:19 - 00:04:21:19]
+ room temperature and the environment
+
+[00:04:21:19 - 00:04:23:19]
+ I'm sitting now,
+
+[00:04:23:19 - 00:04:25:19]
+ and it will cool down
+
+[00:04:25:19 - 00:04:27:19]
+ up to a point at equilibrium
+
+[00:04:27:19 - 00:04:29:19]
+ where the temperature of the coffee equalizes
+
+[00:04:29:19 - 00:04:31:19]
+ the temperature of the air,
+
+[00:04:31:19 - 00:04:33:19]
+ molecules and everything,
+
+[00:04:33:19 - 00:04:35:19]
+ the temperature of the room.
+
+[00:04:35:19 - 00:04:37:19]
+ And this process is, we call this process
+
+[00:04:37:19 - 00:04:39:19]
+ irreversible, because there is nothing I can do
+
+[00:04:39:19 - 00:04:41:19]
+ to get the coffee back up
+
+[00:04:41:19 - 00:04:43:19]
+ to the initial state,
+
+[00:04:43:19 - 00:04:45:19]
+ hot and nice.
+
+[00:04:45:19 - 00:04:47:19]
+ Unless I consume energy,
+
+[00:04:47:19 - 00:04:49:19]
+ unless I put some energy back
+
+[00:04:49:19 - 00:04:51:19]
+ into it, but this will not
+
+[00:04:51:19 - 00:04:53:19]
+ happen by itself
+
+[00:04:53:19 - 00:04:55:19]
+ irreversibly.
+
+[00:04:55:19 - 00:04:57:19]
+ What does he mean irreversibility in terms
+
+[00:04:57:19 - 00:04:59:19]
+ of
+
+[00:04:59:19 - 00:05:01:19]
+ like logical irreversibility
+
+[00:05:01:19 - 00:05:03:19]
+ of a computational process?
+
+[00:05:03:19 - 00:05:05:19]
+ So, in information theory and
+
+[00:05:05:19 - 00:05:07:19]
+ computer science,
+
+[00:05:07:19 - 00:05:09:19]
+ a logical operation is irreversible
+
+[00:05:09:19 - 00:05:11:19]
+ if one cannot determine
+
+[00:05:11:19 - 00:05:13:19]
+ the original inputs based on
+
+[00:05:13:19 - 00:05:15:19]
+ the output.
+
+[00:05:15:19 - 00:05:17:19]
+ So, a little bit
+
+[00:05:17:19 - 00:05:19:19]
+ is like saying
+
+[00:05:19:19 - 00:05:21:19]
+ I cannot reconstruct
+
+[00:05:21:19 - 00:05:23:19]
+ the initial state of my coffee
+
+[00:05:23:19 - 00:05:25:19]
+ molecules and everything
+
+[00:05:25:19 - 00:05:27:19]
+ from the final
+
+[00:05:27:19 - 00:05:29:19]
+ state at equilibrium. This is maybe
+
+[00:05:29:19 - 00:05:31:19]
+ a bit of a stretch, but this is how
+
+[00:05:31:19 - 00:05:33:19]
+ you should see it.
+
+[00:05:33:19 - 00:05:35:19]
+ So,
+
+[00:05:35:19 - 00:05:37:19]
+ what
+
+[00:05:37:19 - 00:05:39:19]
+ we keep saying about computer
+
+[00:05:41:19 - 00:05:43:19]
+ computational processes and irreversibility,
+
+[00:05:43:19 - 00:05:45:19]
+ so examples of this,
+
+[00:05:45:19 - 00:05:47:19]
+ would be logic gates
+
+[00:05:47:19 - 00:05:49:19]
+ that we use in
+
+[00:05:49:19 - 00:05:51:19]
+ digital computing and
+
+[00:05:51:19 - 00:05:53:19]
+ let me just
+
+[00:05:53:19 - 00:05:55:19]
+ go to
+
+[00:05:55:19 - 00:05:59:08]
+ let me just bring the
+
+[00:05:59:08 - 00:06:07:11]
+ screen here.
+
+[00:06:07:11 - 00:06:09:11]
+ So, logic
+
+[00:06:09:11 - 00:06:11:11]
+ gate, there are a number of logic
+
+[00:06:11:11 - 00:06:13:11]
+ gates that we use to do digital
+
+[00:06:13:11 - 00:06:15:11]
+ computing and complicated things.
+
+[00:06:15:11 - 00:06:17:11]
+ It's how computers work.
+
+[00:06:17:11 - 00:06:19:11]
+ We have
+
+[00:06:19:11 - 00:06:21:11]
+ logic gates like AND, OR,
+
+[00:06:21:11 - 00:06:23:11]
+ XOR, NAND and so on.
+
+[00:06:23:11 - 00:06:25:11]
+ So, I'm just going to pick one.
+
+[00:06:25:11 - 00:06:27:11]
+ I'm just going to say, so
+
+[00:06:27:11 - 00:06:29:11]
+ these are
+
+[00:06:29:11 - 00:06:31:11]
+ typically they have multiple inputs
+
+[00:06:31:11 - 00:06:33:11]
+ and or combination of
+
+[00:06:33:11 - 00:06:35:11]
+ inputs and they have one output state.
+
+[00:06:35:11 - 00:06:37:11]
+ So, the idea is that
+
+[00:06:37:11 - 00:06:39:11]
+ you cannot determine the inputs
+
+[00:06:39:11 - 00:06:41:11]
+ from the output. That's irreversible.
+
+[00:06:41:11 - 00:06:43:11]
+ So, an example of an irreversible
+
+[00:06:43:11 - 00:06:45:11]
+ logic
+
+[00:06:45:11 - 00:06:47:11]
+ gate
+
+[00:06:47:11 - 00:06:49:11]
+ would be AND.
+
+[00:06:49:11 - 00:06:51:11]
+ So, just going to write here
+
+[00:06:51:11 - 00:06:53:11]
+ an AND.
+
+[00:06:53:11 - 00:06:55:11]
+ The camera is a little bit off
+
+[00:06:55:11 - 00:06:57:11]
+ so I'm just going to center it nicely.
+
+[00:06:57:11 - 00:06:59:11]
+ And
+
+[00:06:59:11 - 00:07:01:11]
+ logic gate
+
+[00:07:01:11 - 00:07:03:11]
+ the symbol would be something
+
+[00:07:03:11 - 00:07:05:11]
+ like this. We have two inputs
+
+[00:07:05:11 - 00:07:07:11]
+ let's say A B
+
+[00:07:07:11 - 00:07:09:11]
+ and we have an output X
+
+[00:07:09:11 - 00:07:11:11]
+ and
+
+[00:07:11:11 - 00:07:13:11]
+ so this A is not very clear
+
+[00:07:13:11 - 00:07:15:11]
+ is A and B and output X
+
+[00:07:15:11 - 00:07:17:11]
+ and if we make a little table here
+
+[00:07:17:11 - 00:07:19:11]
+ we can say
+
+[00:07:19:11 - 00:07:21:11]
+ A B
+
+[00:07:21:11 - 00:07:23:11]
+ X and we can have
+
+[00:07:23:11 - 00:07:25:11]
+ a combination of things.
+
+[00:07:25:11 - 00:07:27:11]
+ 0 0
+
+[00:07:27:11 - 00:07:29:11]
+ 1 0
+
+[00:07:29:11 - 00:07:31:11]
+ 0 1
+
+[00:07:31:11 - 00:07:33:11]
+ and 1 1.
+
+[00:07:33:11 - 00:07:35:11]
+ So, these are the possible
+
+[00:07:35:11 - 00:07:37:11]
+ permutation inputs.
+
+[00:07:37:11 - 00:07:39:11]
+ It turns out that
+
+[00:07:39:11 - 00:07:41:11]
+ for an AND gate
+
+[00:07:41:11 - 00:07:43:11]
+ you get
+
+[00:07:43:11 - 00:07:45:11]
+ if you have a 0
+
+[00:07:45:11 - 00:07:47:11]
+ in any of the inputs
+
+[00:07:47:11 - 00:07:51:22]
+ if you have a 0 then you get a 0 out.
+
+[00:07:51:22 - 00:07:53:22]
+ You get a 0 out and if both inputs
+
+[00:07:53:22 - 00:07:55:22]
+ are 1 you get a 1.
+
+[00:07:55:22 - 00:07:57:22]
+ This is a typical AND
+
+[00:07:57:22 - 00:07:59:22]
+ gate. There is an AND
+
+[00:07:59:22 - 00:08:01:22]
+ there are other gates. It's irreversible
+
+[00:08:01:22 - 00:08:03:22]
+ because you cannot determine
+
+[00:08:03:22 - 00:08:05:22]
+ which one is which based on the output.
+
+[00:08:05:22 - 00:08:07:22]
+ So, we call this process
+
+[00:08:07:22 - 00:08:09:22]
+ irreversible. An example
+
+[00:08:09:22 - 00:08:11:22]
+ of, there are also
+
+[00:08:15:22 - 00:08:17:22]
+ reversible logic gates.
+
+[00:08:17:22 - 00:08:19:22]
+ One example is the
+
+[00:08:19:22 - 00:08:23:09]
+ gate NOT. So, this gate
+
+[00:08:23:09 - 00:08:25:09]
+ has one
+
+[00:08:25:09 - 00:08:27:09]
+ input
+
+[00:08:27:09 - 00:08:29:09]
+ and one output.
+
+[00:08:29:09 - 00:08:31:09]
+ So, let's say A and output
+
+[00:08:31:09 - 00:08:33:09]
+ X and
+
+[00:08:33:09 - 00:08:35:09]
+ the table would be A X
+
+[00:08:35:09 - 00:08:39:23]
+ you can have
+
+[00:08:39:23 - 00:08:41:23]
+ a 0 and a 1
+
+[00:08:41:23 - 00:08:43:23]
+ these are two possible inputs in
+
+[00:08:43:23 - 00:08:45:23]
+ digital binary code
+
+[00:08:45:23 - 00:08:47:23]
+ and you do a NOT of
+
+[00:08:47:23 - 00:08:49:23]
+ this so that would be
+
+[00:08:49:23 - 00:08:51:23]
+ you negate it. So, you invert
+
+[00:08:51:23 - 00:08:53:23]
+ the value of your
+
+[00:08:53:23 - 00:08:55:23]
+ input. But this is
+
+[00:08:55:23 - 00:08:57:23]
+ deterministic. This is
+
+[00:08:57:23 - 00:08:59:23]
+ what we call
+
+[00:08:59:23 - 00:09:01:23]
+ reversible because
+
+[00:09:01:23 - 00:09:03:23]
+ based on the output you can
+
+[00:09:03:23 - 00:09:05:23]
+ pinpoint exactly what the input was.
+
+[00:09:05:23 - 00:09:07:23]
+ So, this is an example of a logic
+
+[00:09:09:23 - 00:09:11:23]
+ reversible logic gate.
+
+[00:09:11:23 - 00:09:13:23]
+ But one interesting
+
+[00:09:13:23 - 00:09:15:23]
+ example is the erase
+
+[00:09:15:23 - 00:09:17:23]
+ gate. So, I'm just going to
+
+[00:09:17:23 - 00:09:19:23]
+ erase
+
+[00:09:19:23 - 00:09:21:23]
+ and
+
+[00:09:21:23 - 00:09:23:23]
+ it looks just like
+
+[00:09:23:23 - 00:09:25:23]
+ the NOT. It has one input
+
+[00:09:25:23 - 00:09:27:23]
+ one output. So, A
+
+[00:09:27:23 - 00:09:31:12]
+ and X. So,
+
+[00:09:31:12 - 00:09:33:12]
+ let's write here A
+
+[00:09:33:12 - 00:09:35:12]
+ X and
+
+[00:09:35:12 - 00:09:37:12]
+ you've got 0 and
+
+[00:09:37:12 - 00:09:39:12]
+ 1 possible inputs and
+
+[00:09:39:12 - 00:09:41:12]
+ erase it means
+
+[00:09:41:12 - 00:09:43:12]
+ setting
+
+[00:09:43:12 - 00:09:45:12]
+ all the bits
+
+[00:09:45:12 - 00:09:47:12]
+ into a
+
+[00:09:47:12 - 00:09:49:12]
+ predetermined state. That could be a 1 or
+
+[00:09:49:12 - 00:09:51:12]
+ a 0. So, if we pick a 0 it means
+
+[00:09:51:12 - 00:09:53:12]
+ to reset everything to 0
+
+[00:09:53:12 - 00:09:55:12]
+ and this is
+
+[00:09:55:12 - 00:09:57:12]
+ irreversible.
+
+[00:09:57:12 - 00:09:59:12]
+ This one is irreversible.
+
+[00:09:59:12 - 00:10:01:12]
+ This one is reversible.
+
+[00:10:01:12 - 00:10:03:12]
+ This one is irreversible because
+
+[00:10:03:12 - 00:10:05:12]
+ based on the output there is no way
+
+[00:10:05:12 - 00:10:07:12]
+ to determine which one was exactly
+
+[00:10:07:12 - 00:10:09:12]
+ the input
+
+[00:10:09:12 - 00:10:11:12]
+ character.
+
+[00:10:11:12 - 00:10:13:12]
+ So, erase operation
+
+[00:10:13:12 - 00:10:15:12]
+ is fundamentally
+
+[00:10:15:12 - 00:10:17:12]
+ a
+
+[00:10:17:12 - 00:10:19:12]
+ irreversible transformation
+
+[00:10:19:12 - 00:10:21:12]
+ and
+
+[00:10:23:12 - 00:10:25:12]
+ the idea is to make
+
+[00:10:25:12 - 00:10:27:12]
+ a move now to
+
+[00:10:27:12 - 00:10:29:12]
+ the thermodynamic aspects
+
+[00:10:29:12 - 00:10:31:12]
+ because I start
+
+[00:10:31:12 - 00:10:33:12]
+ talking about this cup of coffee
+
+[00:10:33:12 - 00:10:35:12]
+ and I said the thermodynamic
+
+[00:10:35:12 - 00:10:37:12]
+ processes taking place in my
+
+[00:10:37:12 - 00:10:39:12]
+ coffee are irreversible
+
+[00:10:39:12 - 00:10:41:12]
+ and in thermodynamics
+
+[00:10:41:12 - 00:10:43:12]
+ we know that irreversible
+
+[00:10:43:12 - 00:10:45:12]
+ processes
+
+[00:10:45:12 - 00:10:47:12]
+ are dissipative.
+
+[00:10:47:12 - 00:10:49:12]
+ What dissipative means, it means that
+
+[00:10:49:12 - 00:10:51:12]
+ they
+
+[00:10:51:12 - 00:10:53:12]
+ dissipate energy.
+
+[00:10:53:12 - 00:10:55:12]
+ So, if a
+
+[00:10:55:12 - 00:10:57:12]
+ logical
+
+[00:10:57:12 - 00:10:59:12]
+ irreversible process
+
+[00:10:59:12 - 00:11:01:12]
+ if a
+
+[00:11:01:12 - 00:11:03:12]
+ computational process is
+
+[00:11:03:12 - 00:11:05:12]
+ logical gate or erase
+
+[00:11:05:12 - 00:11:07:12]
+ operation or any computational process
+
+[00:11:07:12 - 00:11:09:12]
+ is irreversible then
+
+[00:11:09:12 - 00:11:11:12]
+ we should assume that
+
+[00:11:11:12 - 00:11:13:12]
+ it should normally
+
+[00:11:13:12 - 00:11:15:12]
+ based on the laws of physics it should also be a
+
+[00:11:15:12 - 00:11:17:12]
+ dissipative process. In other words it should
+
+[00:11:17:12 - 00:11:19:12]
+ dissipate
+
+[00:11:19:12 - 00:11:21:12]
+ there is a computational
+
+[00:11:21:12 - 00:11:23:12]
+ cost of anything you do that
+
+[00:11:23:12 - 00:11:25:12]
+ is irreversible.
+
+[00:11:25:12 - 00:11:27:12]
+ Very, very important concept and this is what
+
+[00:11:27:12 - 00:11:29:12]
+ Landauer actually did
+
+[00:11:29:12 - 00:11:31:12]
+ in 1960s.
+
+[00:11:31:12 - 00:11:33:12]
+ So, if we take now the
+
+[00:11:33:12 - 00:11:35:12]
+ logical operation
+
+[00:11:35:12 - 00:11:37:12]
+ erase of a bit of
+
+[00:11:37:12 - 00:11:39:12]
+ digital information
+
+[00:11:39:12 - 00:11:41:12]
+ and we know now that this is irreversible
+
+[00:11:41:12 - 00:11:43:12]
+ then what Landauer
+
+[00:11:43:12 - 00:11:45:12]
+ said, he said that it must be
+
+[00:11:45:12 - 00:11:47:12]
+ some kind of small
+
+[00:11:47:12 - 00:11:49:12]
+ energy that dissipates at erasure
+
+[00:11:49:12 - 00:11:51:12]
+ and this energy comes from
+
+[00:11:51:12 - 00:11:53:12]
+ the information itself
+
+[00:11:53:12 - 00:11:55:12]
+ from the bit itself
+
+[00:11:55:12 - 00:11:57:12]
+ so by extrapolation he said
+
+[00:11:57:12 - 00:11:59:12]
+ that information must be physical
+
+[00:11:59:12 - 00:12:01:12]
+ it's not a
+
+[00:12:01:12 - 00:12:03:12]
+ mathematical abstract or human
+
+[00:12:03:12 - 00:12:05:12]
+ construct
+
+[00:12:05:12 - 00:12:07:12]
+ it actually has a physical
+
+[00:12:07:12 - 00:12:09:12]
+ value
+
+[00:12:09:12 - 00:12:11:12]
+ or a physical substrate
+
+[00:12:11:12 - 00:12:13:12]
+ no substrate is wrong
+
+[00:12:13:12 - 00:12:15:12]
+ it's a physical entity
+
+[00:12:15:12 - 00:12:17:12]
+ according to Landauer
+
+[00:12:17:12 - 00:12:19:12]
+ so what I want to do is
+
+[00:12:19:12 - 00:12:21:12]
+ I want to examine this
+
+[00:12:21:12 - 00:12:23:12]
+ argument in a bit more detail now
+
+[00:12:23:12 - 00:12:25:12]
+ so
+
+[00:12:25:12 - 00:12:27:12]
+ we know that digital information
+
+[00:12:27:12 - 00:12:29:12]
+ and I am going to focus on digital information
+
+[00:12:29:12 - 00:12:31:12]
+ and I am going to focus on
+
+[00:12:31:12 - 00:12:33:12]
+ the irreversible process
+
+[00:12:33:12 - 00:12:35:12]
+ operation
+
+[00:12:35:12 - 00:12:37:12]
+ computational process
+
+[00:12:37:12 - 00:12:39:12]
+ of erasure
+
+[00:12:39:12 - 00:12:41:12]
+ and so what we know
+
+[00:12:41:12 - 00:12:43:12]
+ we know that digital information is stored
+
+[00:12:43:12 - 00:12:45:12]
+ in memory devices
+
+[00:12:45:12 - 00:12:47:12]
+ as distinct
+
+[00:12:47:12 - 00:12:49:12]
+ finite array
+
+[00:12:49:12 - 00:12:51:12]
+ of n
+
+[00:12:51:12 - 00:12:53:12]
+ binary states
+
+[00:12:53:12 - 00:12:55:12]
+ or I call them information states
+
+[00:12:55:12 - 00:12:57:12]
+ if you want
+
+[00:12:57:12 - 00:12:59:12]
+ and they can hold information without dissipation
+
+[00:12:59:12 - 00:13:01:12]
+ and this is how we store the data
+
+[00:13:01:12 - 00:13:03:12]
+ so if you have a
+
+[00:13:03:12 - 00:13:05:12]
+ DVD
+
+[00:13:05:12 - 00:13:07:12]
+ a flash drive
+
+[00:13:07:12 - 00:13:12:03]
+ or whatever
+
+[00:13:12:03 - 00:13:14:03]
+ there is some kind of physical process
+
+[00:13:14:03 - 00:13:16:03]
+ that is
+
+[00:13:16:03 - 00:13:18:03]
+ one can
+
+[00:13:18:03 - 00:13:20:03]
+ apply, read and write
+
+[00:13:20:03 - 00:13:22:03]
+ of the information
+
+[00:13:22:03 - 00:13:24:03]
+ from that
+
+[00:13:24:03 - 00:13:26:03]
+ substrate or that device
+
+[00:13:26:03 - 00:13:28:03]
+ and there is some kind of physical state
+
+[00:13:28:03 - 00:13:30:03]
+ that stores binary states
+
+[00:13:30:03 - 00:13:32:03]
+ of zeros and ones
+
+[00:13:32:03 - 00:13:34:03]
+ so let me
+
+[00:13:34:03 - 00:13:36:03]
+ get another piece of paper
+
+[00:13:36:03 - 00:13:41:16]
+ change the screen now
+
+[00:13:41:16 - 00:13:43:16]
+ so let's
+
+[00:13:43:16 - 00:13:45:16]
+ what is
+
+[00:13:45:16 - 00:13:47:16]
+ essentially a digital file
+
+[00:13:47:16 - 00:13:49:16]
+ so when you take a digital file
+
+[00:13:49:16 - 00:13:51:16]
+ it doesn't matter what
+
+[00:13:51:16 - 00:13:53:16]
+ the file contains
+
+[00:13:53:16 - 00:13:55:16]
+ pictures, documents, PDFs
+
+[00:13:55:16 - 00:13:57:16]
+ movies, software
+
+[00:13:57:16 - 00:13:59:16]
+ whatever
+
+[00:13:59:16 - 00:14:01:16]
+ if you break it down deep down
+
+[00:14:01:16 - 00:14:03:16]
+ into machine code representation
+
+[00:14:03:16 - 00:14:05:16]
+ and binary representation
+
+[00:14:05:16 - 00:14:07:16]
+ your file is going to be
+
+[00:14:07:16 - 00:14:09:16]
+ composed of zeros
+
+[00:14:09:16 - 00:14:11:16]
+ and ones
+
+[00:14:11:16 - 00:14:13:16]
+ it's going to be a string of zeros and ones
+
+[00:14:13:16 - 00:14:15:16]
+ they are arranged in bytes
+
+[00:14:15:16 - 00:14:17:16]
+ and so on and so on
+
+[00:14:17:16 - 00:14:19:16]
+ so this is the machine code binary language
+
+[00:14:19:16 - 00:14:21:16]
+ so now we apply
+
+[00:14:21:16 - 00:14:23:16]
+ Shannon's information theory
+
+[00:14:23:16 - 00:14:25:16]
+ to
+
+[00:14:25:16 - 00:14:27:16]
+ this
+
+[00:14:27:16 - 00:14:29:16]
+ string of digital bits
+
+[00:14:29:16 - 00:14:31:16]
+ so you have
+
+[00:14:31:16 - 00:14:33:16]
+ n characters
+
+[00:14:33:16 - 00:14:35:16]
+ in your digital file
+
+[00:14:35:16 - 00:14:37:16]
+ storage device
+
+[00:14:37:16 - 00:14:39:16]
+ they can be
+
+[00:14:39:16 - 00:14:41:16]
+ so you have how many unique characters
+
+[00:14:41:16 - 00:14:43:16]
+ you have two unique characters
+
+[00:14:43:16 - 00:14:45:16]
+ these are zero and one
+
+[00:14:45:16 - 00:14:47:16]
+ we just
+
+[00:14:47:16 - 00:14:49:16]
+ reframed the Shannon formalism
+
+[00:14:49:16 - 00:14:51:16]
+ here
+
+[00:14:51:16 - 00:14:53:16]
+ this will be an X
+
+[00:14:53:16 - 00:14:55:16]
+ and they will have some probability
+
+[00:14:55:16 - 00:14:57:16]
+ of occupation
+
+[00:14:57:16 - 00:14:59:16]
+ that's the probability distribution
+
+[00:14:59:16 - 00:15:01:16]
+ distinct probabilities
+
+[00:15:01:16 - 00:15:03:16]
+ of these zeros and ones to occur
+
+[00:15:03:16 - 00:15:05:16]
+ in your string that
+
+[00:15:05:16 - 00:15:07:16]
+ makes up a digital file
+
+[00:15:07:16 - 00:15:09:16]
+ or a memory device
+
+[00:15:09:16 - 00:15:11:16]
+ and it's important to understand
+
+[00:15:11:16 - 00:15:13:16]
+ any digital file can be decomposed
+
+[00:15:13:16 - 00:15:15:16]
+ into these zeros and ones
+
+[00:15:15:16 - 00:15:17:16]
+ and you can look at it
+
+[00:15:17:16 - 00:15:19:16]
+ you can't read it, you can't do anything
+
+[00:15:19:16 - 00:15:21:16]
+ you need to convert it into something
+
+[00:15:21:16 - 00:15:23:16]
+ that we understand in our everyday language
+
+[00:15:23:16 - 00:15:25:16]
+ but deep down it's only zeros and ones
+
+[00:15:25:16 - 00:15:27:16]
+ but what we can do
+
+[00:15:27:16 - 00:15:29:16]
+ once we do this
+
+[00:15:29:16 - 00:15:31:16]
+ we can compute the
+
+[00:15:31:16 - 00:15:33:16]
+ Shannon information entropy HX
+
+[00:15:33:16 - 00:15:35:16]
+ of the file
+
+[00:15:35:16 - 00:15:37:16]
+ in other words of the digital data
+
+[00:15:37:16 - 00:15:39:16]
+ contained in the file
+
+[00:15:39:16 - 00:15:41:16]
+ the distribution of these zeros and ones
+
+[00:15:41:16 - 00:15:43:16]
+ we can do some mathematics on that
+
+[00:15:43:16 - 00:15:45:16]
+ we've done in the previous
+
+[00:15:45:16 - 00:15:47:16]
+ sessions
+
+[00:15:47:16 - 00:15:49:16]
+ we've done this in detail
+
+[00:15:49:16 - 00:15:51:16]
+ so that would be
+
+[00:15:51:16 - 00:15:53:16]
+ J1 to U
+
+[00:15:53:16 - 00:15:55:16]
+ PJ log
+
+[00:15:55:16 - 00:15:57:16]
+ of some base
+
+[00:15:57:16 - 00:15:59:16]
+ of PJ
+
+[00:15:59:16 - 00:16:01:16]
+ so we can take this
+
+[00:16:01:16 - 00:16:03:16]
+ Shannon information entropy function
+
+[00:16:03:16 - 00:16:05:16]
+ and for any digital file
+
+[00:16:05:16 - 00:16:07:16]
+ we can compute its value
+
+[00:16:07:16 - 00:16:09:16]
+ it's around 1
+
+[00:16:09:16 - 00:16:11:16]
+ but it could be less
+
+[00:16:11:16 - 00:16:13:16]
+ less than 1
+
+[00:16:13:16 - 00:16:15:16]
+ maximum is 1
+
+[00:16:15:16 - 00:16:17:16]
+ but it could be less than 1 occasionally
+
+[00:16:17:16 - 00:16:19:16]
+ it could be even 0
+
+[00:16:19:16 - 00:16:21:16]
+ so when you erase everything
+
+[00:16:21:16 - 00:16:23:16]
+ essentially
+
+[00:16:23:16 - 00:16:25:16]
+ so we've done in the previous lectures
+
+[00:16:25:16 - 00:16:27:16]
+ that we can also
+
+[00:16:27:16 - 00:16:29:16]
+ compute the number of
+
+[00:16:29:16 - 00:16:31:16]
+ possible microstates
+
+[00:16:31:16 - 00:16:33:16]
+ of this set of
+
+[00:16:33:16 - 00:16:35:16]
+ n bits
+
+[00:16:35:16 - 00:16:37:16]
+ and this
+
+[00:16:37:16 - 00:16:39:16]
+ we showed in the previous
+
+[00:16:39:16 - 00:16:41:16]
+ videos
+
+[00:16:41:16 - 00:16:43:16]
+ that this is 2 to the power
+
+[00:16:43:16 - 00:16:45:16]
+ n times HX
+
+[00:16:45:16 - 00:16:47:16]
+ HX is this function
+
+[00:16:47:16 - 00:16:49:16]
+ n is the number of
+
+[00:16:49:16 - 00:16:51:16]
+ information states
+
+[00:16:51:16 - 00:16:53:16]
+ in your memory device
+
+[00:16:53:16 - 00:16:55:16]
+ or in your digital file
+
+[00:16:55:16 - 00:16:57:16]
+ whatever you are testing or probing
+
+[00:16:57:16 - 00:16:59:16]
+ and this is the number
+
+[00:16:59:16 - 00:17:01:16]
+ of microstates
+
+[00:17:01:16 - 00:17:03:16]
+ so in the previous videos
+
+[00:17:03:16 - 00:17:05:16]
+ we linked this to
+
+[00:17:05:16 - 00:17:07:16]
+ the entropy of the information
+
+[00:17:07:16 - 00:17:09:16]
+ bearing states
+
+[00:17:09:16 - 00:17:11:16]
+ of your material
+
+[00:17:11:16 - 00:17:13:16]
+ to store information you need
+
+[00:17:13:16 - 00:17:15:16]
+ some kind of material substrate obviously
+
+[00:17:15:16 - 00:17:17:16]
+ so that
+
+[00:17:17:16 - 00:17:19:16]
+ that material substrate
+
+[00:17:19:16 - 00:17:21:16]
+ will have
+
+[00:17:21:16 - 00:17:23:16]
+ an information
+
+[00:17:23:16 - 00:17:25:16]
+ a physical information
+
+[00:17:25:16 - 00:17:27:16]
+ sorry we will have a physical entropy
+
+[00:17:27:16 - 00:17:29:16]
+ contained in
+
+[00:17:29:16 - 00:17:31:16]
+ all the microstates of the material itself
+
+[00:17:31:16 - 00:17:33:16]
+ and then superimposed on that
+
+[00:17:33:16 - 00:17:35:16]
+ you will have
+
+[00:17:35:16 - 00:17:37:16]
+ an entropy of the information
+
+[00:17:37:16 - 00:17:39:16]
+ bearing states
+
+[00:17:39:16 - 00:17:41:16]
+ and that is
+
+[00:17:41:16 - 00:17:43:16]
+ given by s
+
+[00:17:43:16 - 00:17:46:26]
+ let's call it s info
+
+[00:17:46:26 - 00:17:48:26]
+ we said we used Boltzmann
+
+[00:17:48:26 - 00:17:50:26]
+ and please go back to
+
+[00:17:50:26 - 00:17:52:26]
+ previous videos
+
+[00:17:52:26 - 00:17:54:26]
+ we derived that as
+
+[00:17:54:26 - 00:17:56:26]
+ n Boltzmann constant
+
+[00:17:56:26 - 00:17:58:26]
+ kb
+
+[00:17:58:26 - 00:18:00:26]
+ ln2
+
+[00:18:00:26 - 00:18:02:26]
+ and then the function
+
+[00:18:02:26 - 00:18:04:26]
+ HX
+
+[00:18:04:26 - 00:18:06:26]
+ which is this function here
+
+[00:18:06:26 - 00:18:08:26]
+ so that is the
+
+[00:18:08:26 - 00:18:10:26]
+ let's call this the initial state
+
+[00:18:10:26 - 00:18:12:26]
+ we call this information
+
+[00:18:12:26 - 00:18:14:26]
+ entropy the initial information
+
+[00:18:14:26 - 00:18:16:26]
+ entropy
+
+[00:18:16:26 - 00:18:18:26]
+ state so do not confuse
+
+[00:18:18:26 - 00:18:20:26]
+ this Shannon information entropy with
+
+[00:18:20:26 - 00:18:22:26]
+ this one they are quite different
+
+[00:18:22:26 - 00:18:24:26]
+ they are linked to each other by this
+
+[00:18:24:26 - 00:18:26:26]
+ equation but that's
+
+[00:18:26:26 - 00:18:28:26]
+ the
+
+[00:18:28:26 - 00:18:30:26]
+ if you want the Boltzmann physical
+
+[00:18:30:26 - 00:18:32:26]
+ entropy of the information bearing states
+
+[00:18:32:26 - 00:18:34:26]
+ ok linked to the information
+
+[00:18:34:26 - 00:18:36:26]
+ microstates so that's what we have
+
+[00:18:36:26 - 00:18:38:26]
+ ok
+
+[00:18:38:26 - 00:18:40:26]
+ so now let's
+
+[00:18:40:26 - 00:18:42:26]
+ simplify the argument a little bit and say
+
+[00:18:42:26 - 00:18:44:26]
+ we don't have a digital
+
+[00:18:44:26 - 00:18:46:26]
+ file or memory device containing
+
+[00:18:46:26 - 00:18:48:26]
+ n bits
+
+[00:18:48:26 - 00:18:50:26]
+ n information states
+
+[00:18:50:26 - 00:18:52:26]
+ we have only one
+
+[00:18:52:26 - 00:18:54:26]
+ information state so
+
+[00:18:54:26 - 00:18:56:26]
+ 1 bit as it would be
+
+[00:18:56:26 - 00:18:58:26]
+ we make n 1
+
+[00:18:58:26 - 00:19:00:26]
+ for simplification
+
+[00:19:00:26 - 00:19:02:26]
+ and
+
+[00:19:02:26 - 00:19:04:26]
+ if we do that then
+
+[00:19:04:26 - 00:19:06:26]
+ our probability
+
+[00:19:06:26 - 00:19:11:09]
+ will become
+
+[00:19:11:09 - 00:19:13:09]
+ P0 is 1 over 2
+
+[00:19:13:09 - 00:19:15:09]
+ and P1 is
+
+[00:19:15:09 - 00:19:17:09]
+ 1 over 2 we have only
+
+[00:19:17:09 - 00:19:19:09]
+ two possible states
+
+[00:19:19:09 - 00:19:21:09]
+ one single
+
+[00:19:21:09 - 00:19:23:09]
+ memory
+
+[00:19:23:09 - 00:19:25:09]
+ location can only be
+
+[00:19:25:09 - 00:19:27:09]
+ 0 or 1 so it's like flipping a coin
+
+[00:19:27:09 - 00:19:29:09]
+ they will have 50 50 probability
+
+[00:19:29:09 - 00:19:31:09]
+ of occupation
+
+[00:19:31:09 - 00:19:33:09]
+ and when you do this you feed
+
+[00:19:33:09 - 00:19:35:09]
+ into this formula
+
+[00:19:35:09 - 00:19:37:09]
+ these probabilities and for one
+
+[00:19:37:09 - 00:19:39:09]
+ information state the
+
+[00:19:39:09 - 00:19:41:09]
+ HX
+
+[00:19:41:09 - 00:19:43:09]
+ becomes and I'm just
+
+[00:19:43:09 - 00:19:45:09]
+ going to write this summation
+
+[00:19:45:09 - 00:19:47:09]
+ for the two states
+
+[00:19:47:09 - 00:19:49:09]
+ here is 1 over 2 let's put
+
+[00:19:49:09 - 00:19:51:09]
+ a big bracket 1 over 2 times
+
+[00:19:51:09 - 00:19:53:09]
+ log and I'm going to use
+
+[00:19:53:09 - 00:19:55:09]
+ binary so I'm
+
+[00:19:55:09 - 00:19:57:09]
+ going to use B
+
+[00:19:57:09 - 00:19:59:09]
+ B equal 2 into the
+
+[00:19:59:09 - 00:20:03:16]
+ base of the logarithm
+
+[00:20:03:16 - 00:20:05:16]
+ so that gives you log
+
+[00:20:05:16 - 00:20:07:16]
+ 2 of 1 over 2
+
+[00:20:07:16 - 00:20:09:16]
+ plus
+
+[00:20:09:16 - 00:20:11:16]
+ 1 over 2
+
+[00:20:11:16 - 00:20:13:16]
+ again the same term log 2
+
+[00:20:13:16 - 00:20:15:16]
+ 1 over 2 and if you do
+
+[00:20:15:16 - 00:20:17:16]
+ the math here you get
+
+[00:20:17:16 - 00:20:19:16]
+ log 2 2 which
+
+[00:20:19:16 - 00:20:21:16]
+ is 1
+
+[00:20:21:16 - 00:20:23:16]
+ so what does it mean HX
+
+[00:20:23:16 - 00:20:25:16]
+ for one memory
+
+[00:20:25:16 - 00:20:27:16]
+ one information state HX is 1
+
+[00:20:27:16 - 00:20:29:16]
+ it means
+
+[00:20:29:16 - 00:20:31:16]
+ essentially that one it means
+
+[00:20:31:16 - 00:20:33:16]
+ one bit it
+
+[00:20:33:16 - 00:20:35:16]
+ means that
+
+[00:20:35:16 - 00:20:37:16]
+ one bit of
+
+[00:20:37:16 - 00:20:39:16]
+ information is required to encode
+
+[00:20:39:16 - 00:20:41:16]
+ a one letter message or
+
+[00:20:41:16 - 00:20:43:16]
+ one information state
+
+[00:20:43:16 - 00:20:45:16]
+ or conversely
+
+[00:20:45:16 - 00:20:47:16]
+ observing the above
+
+[00:20:47:16 - 00:20:49:16]
+ event generates one bit
+
+[00:20:49:16 - 00:20:51:16]
+ of information so reading out
+
+[00:20:51:16 - 00:20:53:16]
+ if you want or observing
+
+[00:20:53:16 - 00:20:55:16]
+ that possible state
+
+[00:20:55:16 - 00:20:57:16]
+ it generates
+
+[00:20:57:16 - 00:20:59:16]
+ the amount of information generated is equal
+
+[00:20:59:16 - 00:21:01:16]
+ to one bit so this
+
+[00:21:01:16 - 00:21:03:16]
+ is the meaning of this
+
+[00:21:03:16 - 00:21:05:16]
+ so
+
+[00:21:05:16 - 00:21:07:16]
+ but what does it mean because we
+
+[00:21:07:16 - 00:21:09:16]
+ had N1
+
+[00:21:09:16 - 00:21:11:16]
+ HX is 1 and number of
+
+[00:21:11:16 - 00:21:13:16]
+ microstates is 2 so that
+
+[00:21:13:16 - 00:21:15:16]
+ means 2 to power
+
+[00:21:15:16 - 00:21:17:16]
+ 1 that would be 2 so that
+
+[00:21:17:16 - 00:21:19:16]
+ means we have two possible states
+
+[00:21:19:16 - 00:21:21:16]
+ and these states are obviously
+
+[00:21:21:16 - 00:21:23:16]
+ 0 and 1
+
+[00:21:23:16 - 00:21:25:16]
+ we know that
+
+[00:21:25:16 - 00:21:27:16]
+ but what does it mean it means that
+
+[00:21:27:16 - 00:21:29:16]
+ we can now go to
+
+[00:21:29:16 - 00:21:31:16]
+ the
+
+[00:21:31:16 - 00:21:33:16]
+ initial information
+
+[00:21:33:16 - 00:21:35:16]
+ entropy this formula
+
+[00:21:35:16 - 00:21:37:16]
+ and feed the new values
+
+[00:21:37:16 - 00:21:39:16]
+ the specific case for one
+
+[00:21:39:16 - 00:21:41:16]
+ information states so that
+
+[00:21:41:16 - 00:21:43:16]
+ info
+
+[00:21:43:16 - 00:21:45:16]
+ initial state for one
+
+[00:21:45:16 - 00:21:47:16]
+ information state one bit if you want
+
+[00:21:47:16 - 00:21:49:16]
+ is
+
+[00:21:49:16 - 00:21:51:16]
+ KB Boltzmann
+
+[00:21:51:16 - 00:21:53:16]
+ LN2
+
+[00:21:53:16 - 00:21:55:16]
+ that is the information
+
+[00:21:55:16 - 00:21:57:16]
+ the entropy
+
+[00:21:57:16 - 00:21:59:16]
+ of the information bearing
+
+[00:21:59:16 - 00:22:01:16]
+ state for one
+
+[00:22:03:16 - 00:22:05:16]
+ one single information state
+
+[00:22:05:16 - 00:22:07:16]
+ ok what we do
+
+[00:22:07:16 - 00:22:09:16]
+ now we apply an irreversible
+
+[00:22:09:16 - 00:22:11:16]
+ logic operation
+
+[00:22:11:16 - 00:22:13:16]
+ and that is the operation
+
+[00:22:13:16 - 00:22:15:16]
+ erase
+
+[00:22:15:16 - 00:22:17:16]
+ how you can do this you can
+
+[00:22:17:16 - 00:22:19:16]
+ physically remove
+
+[00:22:19:16 - 00:22:21:16]
+ so you can physically
+
+[00:22:21:16 - 00:22:23:16]
+ remove there are a few ways you can
+
+[00:22:25:16 - 00:22:29:18]
+ basically in this
+
+[00:22:29:18 - 00:22:31:18]
+ formula here you can
+
+[00:22:31:18 - 00:22:33:18]
+ either make this
+
+[00:22:33:18 - 00:22:35:18]
+ N0 so you
+
+[00:22:35:18 - 00:22:37:18]
+ remove all the information states and
+
+[00:22:37:18 - 00:22:39:18]
+ make this initial state
+
+[00:22:39:18 - 00:22:41:18]
+ as info
+
+[00:22:41:18 - 00:22:43:18]
+ well as info
+
+[00:22:43:18 - 00:22:45:18]
+ you make it 0 because N is 0
+
+[00:22:45:18 - 00:22:47:18]
+ you remove all the information states
+
+[00:22:47:18 - 00:22:49:18]
+ or you have an N that is non-zero
+
+[00:22:49:18 - 00:22:51:18]
+ it could be 1 as in our
+
+[00:22:51:18 - 00:22:53:18]
+ case or some other value but
+
+[00:22:53:18 - 00:22:55:18]
+ you make Hx
+
+[00:22:55:18 - 00:22:57:18]
+ 0 you make
+
+[00:22:57:18 - 00:22:59:18]
+ the Shannon information
+
+[00:22:59:18 - 00:23:01:18]
+ entropy this time 0
+
+[00:23:01:18 - 00:23:03:18]
+ in other words
+
+[00:23:03:18 - 00:23:05:18]
+ you learn nothing new by observing that
+
+[00:23:05:18 - 00:23:07:18]
+ event you extract no information because
+
+[00:23:07:18 - 00:23:09:18]
+ you know already what it is
+
+[00:23:09:18 - 00:23:11:18]
+ so how we do that is by
+
+[00:23:11:18 - 00:23:13:18]
+ deleting intentionally
+
+[00:23:13:18 - 00:23:15:18]
+ all the bits into a predefined
+
+[00:23:15:18 - 00:23:17:18]
+ state so
+
+[00:23:17:18 - 00:23:19:18]
+ the definition of I like to define
+
+[00:23:19:18 - 00:23:21:18]
+ erasure of information as
+
+[00:23:21:18 - 00:23:23:18]
+ removing all the information
+
+[00:23:23:18 - 00:23:25:18]
+ states so there are
+
+[00:23:25:18 - 00:23:27:18]
+ no information states at all N becomes
+
+[00:23:27:18 - 00:23:29:18]
+ 0 but another way
+
+[00:23:29:18 - 00:23:31:18]
+ and this is how LambdaWare defined it
+
+[00:23:31:18 - 00:23:33:18]
+ is to apply an erasure
+
+[00:23:33:18 - 00:23:35:18]
+ which is a reset operation to 0
+
+[00:23:35:18 - 00:23:37:18]
+ or 1 of all the bits
+
+[00:23:37:18 - 00:23:39:18]
+ the probability of being in that state
+
+[00:23:39:18 - 00:23:41:18]
+ will be 1 and that gives you
+
+[00:23:41:18 - 00:23:43:18]
+ Hx
+
+[00:23:43:18 - 00:23:45:18]
+ Hx it gives you Hx 0
+
+[00:23:45:18 - 00:23:47:18]
+ when you apply to
+
+[00:23:47:18 - 00:23:49:18]
+ this
+
+[00:23:49:18 - 00:23:51:18]
+ so
+
+[00:23:51:18 - 00:23:53:18]
+ if we start with one bit of
+
+[00:23:53:18 - 00:23:55:18]
+ information and we have
+
+[00:23:55:18 - 00:23:57:18]
+ the initial state
+
+[00:23:57:18 - 00:23:59:18]
+ Sinfo
+
+[00:23:59:18 - 00:24:01:18]
+ the initial state is KB
+
+[00:24:01:18 - 00:24:03:18]
+ LN2
+
+[00:24:03:18 - 00:24:05:18]
+ and the final state
+
+[00:24:05:18 - 00:24:07:18]
+ Sinfo
+
+[00:24:07:18 - 00:24:09:18]
+ final state is
+
+[00:24:09:18 - 00:24:11:18]
+ 0
+
+[00:24:11:18 - 00:24:13:18]
+ because we apply the
+
+[00:24:13:18 - 00:24:15:18]
+ raise logic
+
+[00:24:15:18 - 00:24:17:18]
+ operation is irreversible
+
+[00:24:17:18 - 00:24:19:18]
+ so that means
+
+[00:24:19:18 - 00:24:21:18]
+ the change Delta S
+
+[00:24:21:18 - 00:24:23:18]
+ Info
+
+[00:24:23:18 - 00:24:25:18]
+ is
+
+[00:24:25:18 - 00:24:27:18]
+ Sinfo
+
+[00:24:27:18 - 00:24:29:18]
+ final
+
+[00:24:29:18 - 00:24:31:18]
+ minus Sinfo
+
+[00:24:31:18 - 00:24:33:18]
+ initial
+
+[00:24:33:18 - 00:24:35:18]
+ so the Delta S
+
+[00:24:35:18 - 00:24:37:18]
+ Info
+
+[00:24:37:18 - 00:24:39:18]
+ is minus
+
+[00:24:39:18 - 00:24:41:18]
+ KB
+
+[00:24:41:18 - 00:24:43:18]
+ LN2
+
+[00:24:43:18 - 00:24:45:18]
+ attention minus
+
+[00:24:45:18 - 00:24:52:02]
+ and there is
+
+[00:24:52:02 - 00:24:54:02]
+ a problem now
+
+[00:24:54:02 - 00:24:56:02]
+ because the second law of thermodynamics
+
+[00:24:56:02 - 00:24:58:02]
+ states that
+
+[00:24:58:02 - 00:25:00:02]
+ the total entropy change
+
+[00:25:00:02 - 00:25:02:02]
+ cannot decrease over time
+
+[00:25:02:02 - 00:25:04:02]
+ it can be 0 or
+
+[00:25:04:02 - 00:25:06:02]
+ it can increase in an isolated
+
+[00:25:06:02 - 00:25:08:02]
+ system so we assume the system here is
+
+[00:25:08:02 - 00:25:10:02]
+ isolated and all that
+
+[00:25:10:02 - 00:25:12:02]
+ so that's the second law of thermodynamics guys
+
+[00:25:12:02 - 00:25:14:02]
+ this is what we are recalling
+
+[00:25:14:02 - 00:25:16:02]
+ so the total
+
+[00:25:16:02 - 00:25:18:02]
+ entropy change
+
+[00:25:18:02 - 00:25:20:02]
+ is given by the
+
+[00:25:20:02 - 00:25:23:24]
+ change in S
+
+[00:25:23:24 - 00:25:25:24]
+ physical entropy so you imagine
+
+[00:25:25:24 - 00:25:27:24]
+ you have your memory device
+
+[00:25:27:24 - 00:25:29:24]
+ let's say it's a hard disk drive
+
+[00:25:29:24 - 00:25:31:24]
+ it's made of magnetic films all sorts of things
+
+[00:25:31:24 - 00:25:33:24]
+ in there very complicated
+
+[00:25:33:24 - 00:25:35:24]
+ structures and
+
+[00:25:35:24 - 00:25:37:24]
+ it has a physical
+
+[00:25:37:24 - 00:25:41:11]
+ entropy
+
+[00:25:41:11 - 00:25:43:11]
+ we call it S-Phys
+
+[00:25:43:11 - 00:25:45:11]
+ and then you put data on it
+
+[00:25:45:11 - 00:25:47:11]
+ you are going to
+
+[00:25:47:11 - 00:25:49:11]
+ increase that
+
+[00:25:49:11 - 00:25:51:11]
+ entropy by
+
+[00:25:51:11 - 00:25:53:11]
+ adding additional microstates
+
+[00:25:53:11 - 00:25:55:11]
+ those are the information bearing microstates
+
+[00:25:55:11 - 00:25:57:11]
+ so that the total
+
+[00:25:57:11 - 00:25:59:11]
+ entropy will be
+
+[00:25:59:11 - 00:26:01:11]
+ Delta S Info
+
+[00:26:03:11 - 00:26:05:11]
+ and this needs to be
+
+[00:26:05:11 - 00:26:07:11]
+ at
+
+[00:26:07:11 - 00:26:09:11]
+ least
+
+[00:26:09:11 - 00:26:11:11]
+ 0
+
+[00:26:11:11 - 00:26:13:11]
+ or positive
+
+[00:26:13:11 - 00:26:15:11]
+ the total change of
+
+[00:26:15:11 - 00:26:17:11]
+ entropy in the system has to
+
+[00:26:17:11 - 00:26:19:11]
+ stay constant
+
+[00:26:19:11 - 00:26:21:11]
+ or increase
+
+[00:26:21:11 - 00:26:23:11]
+ but when we apply the
+
+[00:26:23:11 - 00:26:25:11]
+ RAISE operation
+
+[00:26:25:11 - 00:26:27:11]
+ the
+
+[00:26:27:11 - 00:26:29:11]
+ Delta S Info
+
+[00:26:29:11 - 00:26:32:20]
+ became minus
+
+[00:26:32:20 - 00:26:34:20]
+ KB
+
+[00:26:34:20 - 00:26:36:20]
+ LN2
+
+[00:26:36:20 - 00:26:38:20]
+ so if we combine
+
+[00:26:38:20 - 00:26:40:20]
+ these you get
+
+[00:26:40:20 - 00:26:42:20]
+ Delta S
+
+[00:26:42:20 - 00:26:44:20]
+ Phys minus
+
+[00:26:44:20 - 00:26:46:20]
+ KB LN2
+
+[00:26:46:20 - 00:26:48:20]
+ needs to be
+
+[00:26:48:20 - 00:26:50:20]
+ positive
+
+[00:26:50:20 - 00:26:52:20]
+ or zero
+
+[00:26:52:20 - 00:26:54:20]
+ so that means
+
+[00:26:54:20 - 00:26:56:20]
+ that Delta
+
+[00:26:56:20 - 00:26:58:20]
+ S
+
+[00:26:58:20 - 00:27:00:20]
+ Phys
+
+[00:27:00:20 - 00:27:02:20]
+ needs to be
+
+[00:27:02:20 - 00:27:04:20]
+ at least or larger
+
+[00:27:04:20 - 00:27:06:20]
+ than KB
+
+[00:27:06:20 - 00:27:08:20]
+ LN2
+
+[00:27:08:20 - 00:27:10:20]
+ ok
+
+[00:27:10:20 - 00:27:12:20]
+ let's put a box around this
+
+[00:27:12:20 - 00:27:16:15]
+ this is so we don't violate
+
+[00:27:16:15 - 00:27:18:15]
+ the second law of thermodynamics
+
+[00:27:18:15 - 00:27:20:15]
+ so in other words the
+
+[00:27:20:15 - 00:27:22:15]
+ irreversible computer
+
+[00:27:22:15 - 00:27:24:15]
+ computation
+
+[00:27:24:15 - 00:27:26:15]
+ it
+
+[00:27:26:15 - 00:27:28:15]
+ can only reduce the information
+
+[00:27:28:15 - 00:27:30:15]
+ entropy this term here
+
+[00:27:30:15 - 00:27:32:15]
+ ok
+
+[00:27:32:15 - 00:27:34:15]
+ of the information bearing states
+
+[00:27:34:15 - 00:27:36:15]
+ by increasing
+
+[00:27:36:15 - 00:27:38:15]
+ the entropy of the non information
+
+[00:27:38:15 - 00:27:40:15]
+ bearing states the physical entropy
+
+[00:27:40:15 - 00:27:42:15]
+ via some kind
+
+[00:27:42:15 - 00:27:44:15]
+ of thermal dissipation of
+
+[00:27:44:15 - 00:27:46:15]
+ energy so
+
+[00:27:46:15 - 00:27:48:15]
+ this reduction the
+
+[00:27:48:15 - 00:27:50:15]
+ RAISE operation produces a reduction
+
+[00:27:50:15 - 00:27:52:15]
+ of information entropy
+
+[00:27:52:15 - 00:27:54:15]
+ at the expense of
+
+[00:27:54:15 - 00:27:56:15]
+ because you cannot
+
+[00:27:56:15 - 00:27:58:15]
+ reduce the entropy
+
+[00:27:58:15 - 00:28:00:15]
+ overall entropy that is
+
+[00:28:00:15 - 00:28:02:15]
+ at the expense of increasing
+
+[00:28:02:15 - 00:28:04:15]
+ the overall entropy the physical entropy
+
+[00:28:04:15 - 00:28:06:15]
+ of the system itself and this is
+
+[00:28:06:15 - 00:28:08:15]
+ done via
+
+[00:28:08:15 - 00:28:10:15]
+ a
+
+[00:28:10:15 - 00:28:12:15]
+ dissipation
+
+[00:28:12:15 - 00:28:14:15]
+ because it's an irreversible process
+
+[00:28:14:15 - 00:28:16:15]
+ it will be a dissipation of energy
+
+[00:28:16:15 - 00:28:18:15]
+ associated to this
+
+[00:28:18:15 - 00:28:20:15]
+ RAISE operation
+
+[00:28:20:15 - 00:28:22:15]
+ and that goes
+
+[00:28:22:15 - 00:28:24:15]
+ to increase the physical entropy of the
+
+[00:28:24:15 - 00:28:26:15]
+ system by that amount
+
+[00:28:26:15 - 00:28:28:15]
+ sorry the
+
+[00:28:28:15 - 00:28:30:15]
+ KB times
+
+[00:28:30:15 - 00:28:32:15]
+ LN2
+
+[00:28:32:15 - 00:28:34:15]
+ so
+
+[00:28:34:15 - 00:28:36:15]
+ we know that
+
+[00:28:36:15 - 00:28:38:15]
+ from thermodynamics we know that
+
+[00:28:38:15 - 00:28:40:15]
+ delta Q
+
+[00:28:40:15 - 00:28:42:15]
+ the change in energy or heat
+
+[00:28:42:15 - 00:28:44:15]
+ if you want over
+
+[00:28:44:15 - 00:28:46:15]
+ T
+
+[00:28:46:15 - 00:28:48:15]
+ equals delta S
+
+[00:28:48:15 - 00:28:53:11]
+ V
+
+[00:28:53:11 - 00:28:57:10]
+ but
+
+[00:28:57:10 - 00:28:59:10]
+ this needs to be at least
+
+[00:28:59:10 - 00:29:01:10]
+ KB
+
+[00:29:01:10 - 00:29:04:26]
+ LN2
+
+[00:29:04:26 - 00:29:08:08]
+ so what we do
+
+[00:29:08:08 - 00:29:10:08]
+ we say that delta Q
+
+[00:29:10:08 - 00:29:12:08]
+ will multiply by T
+
+[00:29:12:08 - 00:29:14:08]
+ to the left and to the right we say that delta Q
+
+[00:29:14:08 - 00:29:18:17]
+ is larger
+
+[00:29:18:17 - 00:29:20:17]
+ or equal
+
+[00:29:20:17 - 00:29:22:17]
+ than KB
+
+[00:29:22:17 - 00:29:24:17]
+ T
+
+[00:29:24:17 - 00:29:26:17]
+ LN2
+
+[00:29:26:17 - 00:29:33:16]
+ so for one bit of information
+
+[00:29:33:16 - 00:29:35:16]
+ lost irreversibly
+
+[00:29:35:16 - 00:29:37:16]
+ the end
+
+[00:29:37:16 - 00:29:39:16]
+ entropy of the system must
+
+[00:29:39:16 - 00:29:43:01]
+ increase and
+
+[00:29:43:01 - 00:29:45:01]
+ the absolute value
+
+[00:29:45:01 - 00:29:47:01]
+ of heat
+
+[00:29:47:01 - 00:29:49:01]
+ per bit lost
+
+[00:29:49:01 - 00:29:51:01]
+ is given by this
+
+[00:29:51:01 - 00:29:53:01]
+ energy by this
+
+[00:29:53:01 - 00:29:55:01]
+ KB T LN2
+
+[00:29:55:01 - 00:29:57:01]
+ and in most of the
+
+[00:29:59:01 - 00:30:01:01]
+ this is called the
+
+[00:30:01:01 - 00:30:03:01]
+ Landauer bound
+
+[00:30:03:01 - 00:30:05:01]
+ where the minimum amount of energy
+
+[00:30:05:01 - 00:30:07:01]
+ required to erase one bit of information
+
+[00:30:07:01 - 00:30:09:01]
+ so in many textbooks
+
+[00:30:09:01 - 00:30:11:01]
+ and many theoretical approaches
+
+[00:30:11:01 - 00:30:13:01]
+ you are going to find this as
+
+[00:30:13:01 - 00:30:15:01]
+ KB T
+
+[00:30:15:01 - 00:30:17:01]
+ LN2
+
+[00:30:17:01 - 00:30:19:01]
+ which is called the Landauer bound
+
+[00:30:19:01 - 00:30:21:01]
+ and is the minimum energy
+
+[00:30:21:01 - 00:30:23:01]
+ that
+
+[00:30:23:01 - 00:30:25:01]
+ is produced
+
+[00:30:25:01 - 00:30:27:01]
+ when a bit of information
+
+[00:30:27:01 - 00:30:29:01]
+ is irreversibly erased
+
+[00:30:29:01 - 00:30:31:01]
+ this is called
+
+[00:30:31:01 - 00:30:33:01]
+ Landauer bound
+
+[00:30:33:01 - 00:30:35:01]
+ this is essentially the Landauer principle
+
+[00:30:35:01 - 00:30:37:01]
+ it gives
+
+[00:30:37:01 - 00:30:39:01]
+ a physical unit
+
+[00:30:39:01 - 00:30:41:01]
+ a physical value
+
+[00:30:41:01 - 00:30:43:01]
+ to information itself
+
+[00:30:43:01 - 00:30:45:01]
+ it is a very very powerful concept
+
+[00:30:45:01 - 00:30:47:01]
+ it states that information is not just
+
+[00:30:47:01 - 00:30:49:01]
+ a mathematical construct but also
+
+[00:30:49:01 - 00:30:51:01]
+ physical quantity
+
+[00:30:51:01 - 00:30:53:01]
+ and it has a minimum energy associated to it
+
+[00:30:53:01 - 00:30:55:01]
+ if you have N bits of information
+
+[00:30:55:01 - 00:30:57:01]
+ you multiply this by N
+
+[00:30:57:01 - 00:30:59:01]
+ so you see how you can now
+
+[00:30:59:01 - 00:31:01:01]
+ work out
+
+[00:31:01:01 - 00:31:03:01]
+ the cost of computation
+
+[00:31:03:01 - 00:31:05:01]
+ the cost of writing data
+
+[00:31:05:01 - 00:31:07:01]
+ the cost of energetic cost of
+
+[00:31:07:01 - 00:31:09:01]
+ erasing data and so on and so on
+
+[00:31:09:01 - 00:31:11:01]
+ very powerful principle
+
+[00:31:11:01 - 00:31:13:01]
+ especially for big data science
+
+[00:31:13:01 - 00:31:15:01]
+ for data servers the AI
+
+[00:31:15:01 - 00:31:17:01]
+ all the things we are doing now
+
+[00:31:17:01 - 00:31:19:01]
+ consuming huge amounts of energy
+
+[00:31:19:01 - 00:31:21:01]
+ we have some minimum
+
+[00:31:21:01 - 00:31:23:01]
+ cost
+
+[00:31:23:01 - 00:31:25:01]
+ the most effective way of doing it
+
+[00:31:25:01 - 00:31:27:01]
+ is this value
+
+[00:31:27:01 - 00:31:29:01]
+ more than this is possible
+
+[00:31:29:01 - 00:31:31:01]
+ less than this you cannot do it
+
+[00:31:31:01 - 00:31:34:08]
+ with less energy than this
+
+[00:31:34:08 - 00:31:39:00]
+ Landauer bound
+
+[00:31:39:00 - 00:31:41:00]
+ so when Landauer published this
+
+[00:31:41:00 - 00:31:43:00]
+ obviously to come up with this
+
+[00:31:43:00 - 00:31:45:00]
+ in 1960s
+
+[00:31:45:00 - 00:31:47:00]
+ there was a lot of resistance
+
+[00:31:47:00 - 00:31:49:00]
+ a lot of controversy
+
+[00:31:49:00 - 00:31:51:00]
+ around this but
+
+[00:31:51:00 - 00:31:53:00]
+ since it took a long
+
+[00:31:53:00 - 00:31:55:00]
+ time but since 1960s
+
+[00:31:55:00 - 00:31:57:00]
+ there have been many
+
+[00:31:57:00 - 00:31:59:00]
+ many attempts at
+
+[00:31:59:00 - 00:32:01:00]
+ experimentally
+
+[00:32:01:00 - 00:32:03:00]
+ validating Landauer's
+
+[00:32:03:00 - 00:32:05:00]
+ bound Landauer's principle
+
+[00:32:05:00 - 00:32:07:00]
+ and to
+
+[00:32:07:00 - 00:32:09:00]
+ my understanding this is now accepted by
+
+[00:32:09:00 - 00:32:11:00]
+ the wider community
+
+[00:32:11:00 - 00:32:13:00]
+ as a fact
+
+[00:32:13:00 - 00:32:15:00]
+ and I would like to maybe
+
+[00:32:15:00 - 00:32:17:00]
+ let me see if I can
+
+[00:32:17:00 - 00:32:19:00]
+ I selected a couple of
+
+[00:32:19:00 - 00:32:21:00]
+ examples here
+
+[00:32:21:00 - 00:32:23:00]
+ one of them is
+
+[00:32:23:00 - 00:32:27:05]
+ these are
+
+[00:32:27:05 - 00:32:29:05]
+ examples where the Landauer's
+
+[00:32:29:05 - 00:32:31:05]
+ principle has been
+
+[00:32:31:05 - 00:32:33:05]
+ experimentally confirmed
+
+[00:32:33:05 - 00:32:35:05]
+ and I picked some of the solid
+
+[00:32:35:05 - 00:32:37:05]
+ articles, strong journals
+
+[00:32:37:05 - 00:32:39:05]
+ where this has been published
+
+[00:32:39:05 - 00:32:41:05]
+ this is a FISREV letters article
+
+[00:32:41:05 - 00:32:43:05]
+ published in
+
+[00:32:43:05 - 00:32:45:05]
+ 2014
+
+[00:32:45:05 - 00:32:47:05]
+ you see a test of Landauer's principle
+
+[00:32:47:05 - 00:32:49:05]
+ in a feedback
+
+[00:32:49:05 - 00:32:51:05]
+ trap
+
+[00:32:51:05 - 00:32:53:05]
+ another one
+
+[00:32:53:05 - 00:32:55:05]
+ is
+
+[00:32:55:05 - 00:32:57:05]
+ the experimental
+
+[00:32:57:05 - 00:32:59:05]
+ verification of Landauer's principle
+
+[00:32:59:05 - 00:33:01:05]
+ linking information and thermodynamics
+
+[00:33:01:05 - 00:33:03:05]
+ this one is published in
+
+[00:33:03:05 - 00:33:05:05]
+ 2012 so a bit
+
+[00:33:05:05 - 00:33:07:05]
+ earlier but this one
+
+[00:33:07:05 - 00:33:09:05]
+ is a Nature article
+
+[00:33:09:05 - 00:33:11:05]
+ so pay attention to the
+
+[00:33:11:05 - 00:33:15:22]
+ the caliber
+
+[00:33:15:22 - 00:33:17:22]
+ of the journals these studies
+
+[00:33:17:22 - 00:33:19:22]
+ have been published
+
+[00:33:19:22 - 00:33:21:22]
+ here is another example from science
+
+[00:33:21:22 - 00:33:23:22]
+ well science advances
+
+[00:33:23:22 - 00:33:25:22]
+ experimental test of Landauer's principle
+
+[00:33:25:22 - 00:33:27:22]
+ in single bit operation
+
+[00:33:27:22 - 00:33:29:22]
+ on nanomagnetic memory bits
+
+[00:33:29:22 - 00:33:31:22]
+ so this is very specific how they've done it
+
+[00:33:31:22 - 00:33:33:22]
+ I recommend you guys
+
+[00:33:33:22 - 00:33:35:22]
+ look up these papers
+
+[00:33:35:22 - 00:33:37:22]
+ and read them
+
+[00:33:37:22 - 00:33:39:22]
+ very convincing work
+
+[00:33:39:22 - 00:33:41:22]
+ this one is published in 2016
+
+[00:33:41:22 - 00:33:43:22]
+ I believe
+
+[00:33:43:22 - 00:33:45:22]
+ so it's a bit more recent but there are many other articles
+
+[00:33:45:22 - 00:33:47:22]
+ detailing this
+
+[00:33:47:22 - 00:33:49:22]
+ Landauer's principle
+
+[00:33:49:22 - 00:33:51:22]
+ and
+
+[00:33:51:22 - 00:33:55:02]
+ how
+
+[00:33:55:02 - 00:33:57:02]
+ very convincing work that actually
+
+[00:33:57:02 - 00:33:59:02]
+ this is real and it has been
+
+[00:33:59:02 - 00:34:01:02]
+ verified
+
+[00:34:01:02 - 00:34:03:02]
+ experimentally so let's take
+
+[00:34:03:02 - 00:34:05:02]
+ as a face value of this
+
+[00:34:05:02 - 00:34:07:02]
+ let's accept
+
+[00:34:07:02 - 00:34:09:02]
+ this is an established
+
+[00:34:09:02 - 00:34:11:02]
+ fact
+
+[00:34:11:02 - 00:34:14:25]
+ and
+
+[00:34:14:25 - 00:34:16:25]
+ I came across
+
+[00:34:16:25 - 00:34:18:25]
+ this
+
+[00:34:18:25 - 00:34:20:25]
+ came across
+
+[00:34:20:25 - 00:34:22:25]
+ these scientific
+
+[00:34:22:25 - 00:34:24:25]
+ studies in 2018
+
+[00:34:24:25 - 00:34:26:25]
+ more or less by accident
+
+[00:34:26:25 - 00:34:28:25]
+ and
+
+[00:34:28:25 - 00:34:30:25]
+ I was immediately hooked up and fascinated
+
+[00:34:30:25 - 00:34:32:25]
+ by the idea that
+
+[00:34:32:25 - 00:34:34:25]
+ information
+
+[00:34:34:25 - 00:34:36:25]
+ however abstract it sounds
+
+[00:34:36:25 - 00:34:38:25]
+ although we are talking about digital
+
+[00:34:38:25 - 00:34:40:25]
+ information but
+
+[00:34:40:25 - 00:34:42:25]
+ when I derived my work I derived
+
+[00:34:42:25 - 00:34:44:25]
+ essentially I re-derived Landauer's
+
+[00:34:44:25 - 00:34:46:25]
+ principle from
+
+[00:34:46:25 - 00:34:48:25]
+ Shannon information theory using
+
+[00:34:48:25 - 00:34:50:25]
+ Shannon information theory so
+
+[00:34:50:25 - 00:34:52:25]
+ then what you can do you can
+
+[00:34:52:25 - 00:34:54:25]
+ extrapolate this concept of
+
+[00:34:54:25 - 00:34:56:25]
+ information from digital to anything
+
+[00:34:56:25 - 00:34:58:25]
+ else using Shannon information
+
+[00:34:58:25 - 00:35:00:25]
+ entropy so
+
+[00:35:00:25 - 00:35:02:25]
+ if information is physical as in
+
+[00:35:02:25 - 00:35:04:25]
+ digital information as Landauer
+
+[00:35:04:25 - 00:35:06:25]
+ proved
+
+[00:35:06:25 - 00:35:08:25]
+ and it was confirmed experimentally and so on
+
+[00:35:08:25 - 00:35:10:25]
+ maybe we can extrapolate
+
+[00:35:10:25 - 00:35:12:25]
+ this concept to
+
+[00:35:12:25 - 00:35:14:25]
+ all forms of information within
+
+[00:35:14:25 - 00:35:16:25]
+ Shannon information entropy
+
+[00:35:16:25 - 00:35:18:25]
+ framework
+
+[00:35:18:25 - 00:35:20:25]
+ information theory
+
+[00:35:20:25 - 00:35:22:25]
+ framework and when you do that
+
+[00:35:22:25 - 00:35:24:25]
+ it's
+
+[00:35:24:25 - 00:35:26:25]
+ some very interesting
+
+[00:35:26:25 - 00:35:28:25]
+ concepts kick in
+
+[00:35:28:25 - 00:35:30:25]
+ and
+
+[00:35:30:25 - 00:35:32:25]
+ let me go through some of the
+
+[00:35:32:25 - 00:35:34:25]
+ details of what I've done
+
+[00:35:34:25 - 00:35:36:25]
+ back in 2018 2019 so
+
+[00:35:36:25 - 00:35:38:25]
+ once you create
+
+[00:35:38:25 - 00:35:40:25]
+ a bit of information
+
+[00:35:40:25 - 00:35:42:25]
+ if you assume that there are no external
+
+[00:35:42:25 - 00:35:44:25]
+ perturbations on the
+
+[00:35:44:25 - 00:35:46:25]
+ system it's isolated and all that and it
+
+[00:35:46:25 - 00:35:48:25]
+ stays at rest it's a
+
+[00:35:48:25 - 00:35:50:25]
+ classical system it will stay like this
+
+[00:35:50:25 - 00:35:52:25]
+ indefinitely without any energy
+
+[00:35:52:25 - 00:35:54:25]
+ dissipation so
+
+[00:35:54:25 - 00:35:56:25]
+ the process of holding information
+
+[00:35:56:25 - 00:35:58:25]
+ indefinitely
+
+[00:35:58:25 - 00:36:00:25]
+ without energy dissipation
+
+[00:36:02:25 - 00:36:04:25]
+ how exactly
+
+[00:36:04:25 - 00:36:06:25]
+ can you can we explain that when we
+
+[00:36:06:25 - 00:36:08:25]
+ know that information has
+
+[00:36:08:25 - 00:36:10:25]
+ an energy
+
+[00:36:10:25 - 00:36:12:25]
+ minimum energy content associated to it
+
+[00:36:12:25 - 00:36:14:25]
+ where that energy goes
+
+[00:36:14:25 - 00:36:16:25]
+ when information is at rest
+
+[00:36:16:25 - 00:36:18:25]
+ stored in a storage media
+
+[00:36:18:25 - 00:36:20:25]
+ medium and
+
+[00:36:20:25 - 00:36:24:04]
+ the idea
+
+[00:36:24:04 - 00:36:26:04]
+ that I proposed in 2019
+
+[00:36:26:04 - 00:36:28:04]
+ is that that
+
+[00:36:28:04 - 00:36:30:04]
+ small amount of
+
+[00:36:30:04 - 00:36:32:04]
+ energy condenses
+
+[00:36:32:04 - 00:36:34:04]
+ into
+
+[00:36:34:04 - 00:36:36:04]
+ a mass
+
+[00:36:36:04 - 00:36:38:04]
+ okay the process is
+
+[00:36:38:04 - 00:36:40:04]
+ from Einstein's
+
+[00:36:40:04 - 00:36:42:04]
+ special relativity the
+
+[00:36:42:04 - 00:36:44:04]
+ energy mass equivalence principle
+
+[00:36:44:04 - 00:36:46:04]
+ so essentially the
+
+[00:36:46:04 - 00:36:48:04]
+ bit of information
+
+[00:36:48:04 - 00:36:50:04]
+ at rest
+
+[00:36:50:04 - 00:36:52:04]
+ and when stores information
+
+[00:36:52:04 - 00:36:54:04]
+ indefinitely
+
+[00:36:54:04 - 00:36:56:04]
+ it does so because it acquires a bit
+
+[00:36:56:04 - 00:36:58:04]
+ of
+
+[00:36:58:04 - 00:37:00:04]
+ mass by converting
+
+[00:37:00:04 - 00:37:02:04]
+ the energy contained in the bit
+
+[00:37:02:04 - 00:37:04:04]
+ into a
+
+[00:37:04:04 - 00:37:06:04]
+ small mass if you erase that
+
+[00:37:06:04 - 00:37:08:04]
+ information that mass
+
+[00:37:08:04 - 00:37:10:04]
+ that small mass of the bit
+
+[00:37:10:04 - 00:37:12:04]
+ gets reconverted back into energy
+
+[00:37:12:04 - 00:37:14:04]
+ and is dissipated as
+
+[00:37:14:04 - 00:37:16:04]
+ heat in the system
+
+[00:37:16:04 - 00:37:18:04]
+ at a value exactly
+
+[00:37:18:04 - 00:37:20:04]
+ as given by the land hour bound
+
+[00:37:20:04 - 00:37:22:04]
+ or the land hour principle
+
+[00:37:22:04 - 00:37:24:04]
+ so this
+
+[00:37:26:04 - 00:37:28:04]
+ how do we
+
+[00:37:28:04 - 00:37:31:17]
+ how do we do this
+
+[00:37:31:17 - 00:37:33:17]
+ essentially you just say that
+
+[00:37:33:17 - 00:37:35:17]
+ you say
+
+[00:37:35:17 - 00:37:37:17]
+ the bit of information
+
+[00:37:37:17 - 00:37:39:17]
+ the bit of information
+
+[00:37:39:17 - 00:37:43:20]
+ m bit has a mass
+
+[00:37:43:20 - 00:37:45:20]
+ we call it m bit
+
+[00:37:45:20 - 00:37:47:20]
+ the total energy of that
+
+[00:37:47:20 - 00:37:49:20]
+ would be m c square
+
+[00:37:49:20 - 00:37:51:20]
+ okay at rest
+
+[00:37:51:20 - 00:37:53:20]
+ and that should be
+
+[00:37:53:20 - 00:37:55:20]
+ equal to
+
+[00:37:55:20 - 00:37:57:20]
+ exactly what is dissipated
+
+[00:37:57:20 - 00:37:59:20]
+ when the bit is erased
+
+[00:37:59:20 - 00:38:01:20]
+ so it should be equal to k b
+
+[00:38:01:20 - 00:38:03:20]
+ t l n 2
+
+[00:38:03:20 - 00:38:05:20]
+ and from this
+
+[00:38:05:20 - 00:38:07:20]
+ one can
+
+[00:38:07:20 - 00:38:09:20]
+ easily
+
+[00:38:09:20 - 00:38:11:20]
+ derive
+
+[00:38:11:20 - 00:38:13:20]
+ the mass of a bit
+
+[00:38:13:20 - 00:38:18:05]
+ of information c square
+
+[00:38:18:05 - 00:38:20:05]
+ so that is what we
+
+[00:38:20:05 - 00:38:22:05]
+ call the mass of a bit of information
+
+[00:38:22:05 - 00:38:24:05]
+ when
+
+[00:38:24:05 - 00:38:26:05]
+ this information is stored
+
+[00:38:26:05 - 00:38:28:05]
+ at temperature
+
+[00:38:28:05 - 00:38:30:05]
+ temperature t
+
+[00:38:30:05 - 00:38:32:05]
+ in a system
+
+[00:38:32:05 - 00:38:34:05]
+ and it stores information
+
+[00:38:34:05 - 00:38:36:05]
+ at equilibrium
+
+[00:38:36:05 - 00:38:38:05]
+ there is nothing quantum
+
+[00:38:38:05 - 00:38:40:05]
+ there is a classical state
+
+[00:38:40:05 - 00:38:42:05]
+ equilibrium is at rest
+
+[00:38:42:05 - 00:38:44:05]
+ it is not moving
+
+[00:38:44:05 - 00:38:46:05]
+ it is not relativistic
+
+[00:38:46:05 - 00:38:48:05]
+ it just stores information
+
+[00:38:48:05 - 00:38:50:05]
+ and it has
+
+[00:38:50:05 - 00:38:52:05]
+ it must have a mass
+
+[00:38:52:05 - 00:38:54:05]
+ equal to this value
+
+[00:38:54:05 - 00:38:58:05]
+ so
+
+[00:38:58:05 - 00:39:00:05]
+ and I explain what happens if you raise it
+
+[00:39:00:05 - 00:39:02:05]
+ you dissipate all that energy back
+
+[00:39:02:05 - 00:39:04:05]
+ and you get this out
+
+[00:39:04:05 - 00:39:06:05]
+ okay so
+
+[00:39:06:05 - 00:39:08:05]
+ I call
+
+[00:39:08:05 - 00:39:10:05]
+ this mass
+
+[00:39:10:05 - 00:39:12:05]
+ mass
+
+[00:39:12:05 - 00:39:15:28]
+ energy information
+
+[00:39:15:28 - 00:39:17:28]
+ or
+
+[00:39:17:28 - 00:39:19:28]
+ m
+
+[00:39:19:28 - 00:39:21:28]
+ m e
+
+[00:39:21:28 - 00:39:23:28]
+ i equivalence principle
+
+[00:39:23:28 - 00:39:25:28]
+ mass energy information equivalence principle
+
+[00:39:25:28 - 00:39:27:28]
+ and essentially
+
+[00:39:27:28 - 00:39:29:28]
+ states that
+
+[00:39:29:28 - 00:39:31:28]
+ just like mass
+
+[00:39:31:28 - 00:39:33:28]
+ e m c square
+
+[00:39:33:28 - 00:39:35:28]
+ so let's say
+
+[00:39:35:28 - 00:39:37:28]
+ e m c square
+
+[00:39:37:28 - 00:39:39:28]
+ energy and mass are
+
+[00:39:39:28 - 00:39:41:28]
+ equivalent from
+
+[00:39:41:28 - 00:39:43:28]
+ special relativity we know this
+
+[00:39:43:28 - 00:39:45:28]
+ the mass energy equivalence principle
+
+[00:39:45:28 - 00:39:47:28]
+ given by Einstein
+
+[00:39:47:28 - 00:39:49:28]
+ Landauer gave us
+
+[00:39:49:28 - 00:39:51:28]
+ the information energy equivalence
+
+[00:39:51:28 - 00:39:53:28]
+ principle which is this
+
+[00:39:53:28 - 00:39:55:28]
+ this bit here
+
+[00:39:55:28 - 00:39:57:28]
+ and what I did
+
+[00:39:57:28 - 00:39:59:28]
+ I just connected the dots
+
+[00:39:59:28 - 00:40:01:28]
+ and I said
+
+[00:40:01:28 - 00:40:03:28]
+ well if
+
+[00:40:03:28 - 00:40:05:28]
+ x equals y
+
+[00:40:05:28 - 00:40:07:28]
+ and if y equals z
+
+[00:40:07:28 - 00:40:09:28]
+ then
+
+[00:40:09:28 - 00:40:11:28]
+ x equals y equals z
+
+[00:40:11:28 - 00:40:13:28]
+ so it's the logical conclusion
+
+[00:40:13:28 - 00:40:15:28]
+ so if
+
+[00:40:15:28 - 00:40:17:28]
+ if energy is mass
+
+[00:40:17:28 - 00:40:19:28]
+ and if information is energy
+
+[00:40:19:28 - 00:40:21:28]
+ then mass energy and information are
+
+[00:40:21:28 - 00:40:23:28]
+ it's a triad of
+
+[00:40:23:28 - 00:40:25:28]
+ is the same
+
+[00:40:25:28 - 00:40:27:28]
+ entity
+
+[00:40:27:28 - 00:40:29:28]
+ that can shape shift if you want
+
+[00:40:29:28 - 00:40:31:28]
+ into pure energy
+
+[00:40:31:28 - 00:40:33:28]
+ mass energy or
+
+[00:40:33:28 - 00:40:35:28]
+ information
+
+[00:40:35:28 - 00:40:37:28]
+ energy or information itself
+
+[00:40:37:28 - 00:40:39:28]
+ depending on the state
+
+[00:40:39:28 - 00:40:41:28]
+ that
+
+[00:40:41:28 - 00:40:43:28]
+ piece of
+
+[00:40:43:28 - 00:40:45:28]
+ matter I call it matter
+
+[00:40:45:28 - 00:40:47:28]
+ is residing
+
+[00:40:47:28 - 00:40:49:28]
+ if
+
+[00:40:49:28 - 00:40:51:28]
+ if it resides as pure information
+
+[00:40:51:28 - 00:40:53:28]
+ it will be just information
+
+[00:40:53:28 - 00:40:55:28]
+ but it will have some kind of condensed
+
+[00:40:55:28 - 00:40:57:28]
+ value
+
+[00:40:57:28 - 00:40:59:28]
+ of mass material
+
+[00:40:59:28 - 00:41:01:28]
+ mass
+
+[00:41:01:28 - 00:41:03:28]
+ if it's just
+
+[00:41:03:28 - 00:41:05:28]
+ energy
+
+[00:41:05:28 - 00:41:07:28]
+ mass energy information
+
+[00:41:07:28 - 00:41:09:28]
+ so
+
+[00:41:09:28 - 00:41:11:28]
+ when you erase it
+
+[00:41:11:28 - 00:41:13:28]
+ it will be just a bit of heat energy
+
+[00:41:13:28 - 00:41:15:28]
+ given by the Landauer bound
+
+[00:41:15:28 - 00:41:17:28]
+ so by
+
+[00:41:17:28 - 00:41:19:28]
+ doing this
+
+[00:41:19:28 - 00:41:21:28]
+ one can
+
+[00:41:21:28 - 00:41:23:28]
+ notice that
+
+[00:41:23:28 - 00:41:25:28]
+ at t equals
+
+[00:41:25:28 - 00:41:27:28]
+ zero kelvin
+
+[00:41:27:28 - 00:41:29:28]
+ which is something that is prohibited by
+
+[00:41:29:28 - 00:41:31:28]
+ thermodynamics
+
+[00:41:31:28 - 00:41:33:28]
+ the mass of a bit
+
+[00:41:33:28 - 00:41:35:28]
+ also becomes zero
+
+[00:41:35:28 - 00:41:37:28]
+ zero kg
+
+[00:41:37:28 - 00:41:39:28]
+ and the
+
+[00:41:39:28 - 00:41:41:28]
+ interpretation of this is that
+
+[00:41:41:28 - 00:41:43:28]
+ at zero kelvin
+
+[00:41:43:28 - 00:41:45:28]
+ information cannot exist
+
+[00:41:45:28 - 00:41:47:28]
+ so it's fully aligned
+
+[00:41:47:28 - 00:41:49:28]
+ to what we do in
+
+[00:41:49:28 - 00:41:51:28]
+ physics and thermodynamics
+
+[00:41:51:28 - 00:41:53:28]
+ zero kelvin
+
+[00:41:53:28 - 00:41:55:28]
+ is prohibited
+
+[00:41:55:28 - 00:41:57:28]
+ and no information can exist
+
+[00:41:57:28 - 00:41:59:28]
+ at zero kelvin so that's fine
+
+[00:41:59:28 - 00:42:01:28]
+ but if you impose
+
+[00:42:01:28 - 00:42:03:28]
+ if
+
+[00:42:03:28 - 00:42:05:28]
+ one imposes a temperature
+
+[00:42:05:28 - 00:42:07:28]
+ let's say room temperature let's say
+
+[00:42:07:28 - 00:42:11:10]
+ 300 kelvin then
+
+[00:42:11:10 - 00:42:13:10]
+ the mass of a bit of
+
+[00:42:13:10 - 00:42:15:10]
+ information becomes
+
+[00:42:15:10 - 00:42:17:10]
+ you can calculate it using this formula
+
+[00:42:17:10 - 00:42:19:10]
+ here you plug in everything you calculate it
+
+[00:42:19:10 - 00:42:21:10]
+ it becomes something like
+
+[00:42:21:10 - 00:42:23:10]
+ 3.19
+
+[00:42:23:10 - 00:42:25:10]
+ 10 to the minus
+
+[00:42:25:10 - 00:42:27:10]
+ 38 kg
+
+[00:42:27:10 - 00:42:32:21]
+ okay
+
+[00:42:32:21 - 00:42:34:21]
+ so this is extremely
+
+[00:42:34:21 - 00:42:36:21]
+ powerful because
+
+[00:42:36:21 - 00:42:38:21]
+ it gives us
+
+[00:42:38:21 - 00:42:40:21]
+ an avenue for
+
+[00:42:40:21 - 00:42:42:21]
+ empirical testing
+
+[00:42:42:21 - 00:42:44:21]
+ of these ideas
+
+[00:42:44:21 - 00:42:46:21]
+ and this theory
+
+[00:42:46:21 - 00:42:48:21]
+ we have a value
+
+[00:42:48:21 - 00:42:50:21]
+ that
+
+[00:42:50:21 - 00:42:52:21]
+ a bit of information should
+
+[00:42:52:21 - 00:42:54:21]
+ acquire in terms of mass
+
+[00:42:54:21 - 00:42:56:21]
+ of course you can have many many
+
+[00:42:56:21 - 00:42:58:21]
+ bits and
+
+[00:42:58:21 - 00:43:00:21]
+ that multiplies by the number of bits
+
+[00:43:00:21 - 00:43:02:21]
+ you can have a huge amount of bits
+
+[00:43:02:21 - 00:43:04:21]
+ and yes
+
+[00:43:04:21 - 00:43:06:21]
+ this number 10 to the minus 38 is
+
+[00:43:06:21 - 00:43:08:21]
+ extremely small so
+
+[00:43:08:21 - 00:43:10:21]
+ 10 to the minus 31
+
+[00:43:10:21 - 00:43:12:21]
+ kg that is
+
+[00:43:12:21 - 00:43:14:21]
+ roughly like
+
+[00:43:14:21 - 00:43:16:21]
+ on this range is the mass of an electron
+
+[00:43:16:21 - 00:43:18:21]
+ so this is millions of times
+
+[00:43:18:21 - 00:43:20:21]
+ lighter
+
+[00:43:20:21 - 00:43:22:21]
+ smaller mass than an electron
+
+[00:43:22:21 - 00:43:24:21]
+ so the mass of a bit at room temperature
+
+[00:43:24:21 - 00:43:26:21]
+ so we are looking at very very very small
+
+[00:43:26:21 - 00:43:28:21]
+ amounts of
+
+[00:43:28:21 - 00:43:30:21]
+ mass
+
+[00:43:30:21 - 00:43:32:21]
+ so it's
+
+[00:43:32:21 - 00:43:34:21]
+ I said this
+
+[00:43:34:21 - 00:43:36:21]
+ technically opens up avenues for
+
+[00:43:36:21 - 00:43:38:21]
+ testing this
+
+[00:43:38:21 - 00:43:40:21]
+ in reality today we don't really
+
+[00:43:40:21 - 00:43:42:21]
+ have I believe
+
+[00:43:42:21 - 00:43:44:21]
+ a
+
+[00:43:44:21 - 00:43:46:21]
+ workbench system
+
+[00:43:46:21 - 00:43:48:21]
+ or something off the shelf that we can actually
+
+[00:43:48:21 - 00:43:50:21]
+ test that kind of
+
+[00:43:50:21 - 00:43:52:21]
+ mass resolution and
+
+[00:43:52:21 - 00:43:54:21]
+ verify this
+
+[00:43:54:21 - 00:43:56:21]
+ but
+
+[00:43:56:21 - 00:43:58:21]
+ it doesn't mean in the future we can't do it
+
+[00:43:58:21 - 00:44:00:21]
+ or we can't come up with novel ideas
+
+[00:44:00:21 - 00:44:02:21]
+ or other experimental maybe indirect
+
+[00:44:02:21 - 00:44:04:21]
+ experimental protocols
+
+[00:44:04:21 - 00:44:06:21]
+ and indeed I published some work
+
+[00:44:06:21 - 00:44:08:21]
+ in 2023 proposing
+
+[00:44:08:21 - 00:44:10:21]
+ some other ways of testing this
+
+[00:44:10:21 - 00:44:12:21]
+ I know there are other people working
+
+[00:44:12:21 - 00:44:14:21]
+ on various other protocols
+
+[00:44:14:21 - 00:44:16:21]
+ and ideas
+
+[00:44:16:21 - 00:44:18:21]
+ but
+
+[00:44:18:21 - 00:44:20:21]
+ what is interesting is that
+
+[00:44:20:21 - 00:44:22:21]
+ what this
+
+[00:44:22:21 - 00:44:24:21]
+ work shows it shows that
+
+[00:44:24:21 - 00:44:26:21]
+ we know we define matter as
+
+[00:44:26:21 - 00:44:28:21]
+ four main states of matter
+
+[00:44:28:21 - 00:44:30:21]
+ solid state
+
+[00:44:30:21 - 00:44:32:21]
+ liquid gas and plasma
+
+[00:44:32:21 - 00:44:34:21]
+ the universe is
+
+[00:44:34:21 - 00:44:36:21]
+ dominated by plasma
+
+[00:44:36:21 - 00:44:38:21]
+ gases and this kind of
+
+[00:44:38:21 - 00:44:40:21]
+ states but
+
+[00:44:40:21 - 00:44:42:21]
+ obviously there is solid state there is gas
+
+[00:44:42:21 - 00:44:44:21]
+ and so on but what this work shows
+
+[00:44:44:21 - 00:44:46:21]
+ it shows that there is a fifth state
+
+[00:44:46:21 - 00:44:48:21]
+ or a fifth element if you want
+
+[00:44:48:21 - 00:44:50:21]
+ and that the fifth state of
+
+[00:44:50:21 - 00:44:52:21]
+ matter is
+
+[00:44:52:21 - 00:44:54:21]
+ information
+
+[00:44:54:21 - 00:44:56:21]
+ and it might just be
+
+[00:44:56:21 - 00:44:58:21]
+ the most fundamental
+
+[00:44:58:21 - 00:45:00:21]
+ component of the universe
+
+[00:45:00:21 - 00:45:02:21]
+ it might just be
+
+[00:45:02:21 - 00:45:04:21]
+ more important than
+
+[00:45:04:21 - 00:45:06:21]
+ anything else in the universe
+
+[00:45:06:21 - 00:45:08:21]
+ in other words
+
+[00:45:08:21 - 00:45:10:21]
+ the substrate that
+
+[00:45:10:21 - 00:45:12:21]
+ from which everything else emanates
+
+[00:45:12:21 - 00:45:14:21]
+ things like
+
+[00:45:14:21 - 00:45:16:21]
+ the particles
+
+[00:45:16:21 - 00:45:18:21]
+ the rendered matter
+
+[00:45:18:21 - 00:45:20:21]
+ physical matter that we can touch
+
+[00:45:20:21 - 00:45:22:21]
+ and feel
+
+[00:45:22:21 - 00:45:24:21]
+ coming actually from
+
+[00:45:24:21 - 00:45:26:21]
+ information
+
+[00:45:26:21 - 00:45:28:21]
+ and
+
+[00:45:28:21 - 00:45:30:21]
+ imprint
+
+[00:45:30:21 - 00:45:32:21]
+ it's very hard to explain this but
+
+[00:45:32:21 - 00:45:34:21]
+ it links and we are going to get
+
+[00:45:34:21 - 00:45:36:21]
+ there very soon I'm not going to
+
+[00:45:36:21 - 00:45:38:21]
+ run before
+
+[00:45:38:21 - 00:45:40:21]
+ we walk but it links
+
+[00:45:40:21 - 00:45:42:21]
+ with this idea of a
+
+[00:45:42:21 - 00:45:44:21]
+ simulated
+
+[00:45:44:21 - 00:45:46:21]
+ let's not call it
+
+[00:45:46:21 - 00:45:48:21]
+ simulated computational
+
+[00:45:48:21 - 00:45:50:21]
+ construct or computational
+
+[00:45:50:21 - 00:45:52:21]
+ universe it
+
+[00:45:52:21 - 00:45:54:21]
+ kind of underpins this idea that
+
+[00:45:54:21 - 00:45:56:21]
+ the universe
+
+[00:45:56:21 - 00:45:58:21]
+ might be
+
+[00:45:58:21 - 00:46:00:21]
+ the product of some kind of computational
+
+[00:46:00:21 - 00:46:02:21]
+ process and information
+
+[00:46:02:21 - 00:46:04:21]
+ is
+
+[00:46:04:21 - 00:46:06:21]
+ a fundamental part of it and maybe the
+
+[00:46:06:21 - 00:46:08:21]
+ dominant part of the universe
+
+[00:46:08:21 - 00:46:13:13]
+ and
+
+[00:46:13:13 - 00:46:15:13]
+ I'm going to stop here but we continue
+
+[00:46:15:13 - 00:46:17:13]
+ this because there is more to
+
+[00:46:17:13 - 00:46:19:13]
+ discuss on this
+
+[00:46:19:13 - 00:46:21:13]
+ matter it's much more
+
+[00:46:21:13 - 00:46:23:13]
+ to discuss
+
+[00:46:23:13 - 00:46:25:13]
+ it's a fascinating topic because
+
+[00:46:25:13 - 00:46:27:13]
+ it touches on aspects of
+
+[00:46:27:13 - 00:46:29:13]
+ cosmology astrophysics
+
+[00:46:29:13 - 00:46:31:13]
+ I don't know the dark matter all
+
+[00:46:31:13 - 00:46:33:13]
+ these things one can
+
+[00:46:33:13 - 00:46:35:13]
+ gravity one can revisit
+
+[00:46:35:13 - 00:46:37:13]
+ all these
+
+[00:46:37:13 - 00:46:39:13]
+ puzzles in
+
+[00:46:39:13 - 00:46:41:13]
+ physics and
+
+[00:46:41:13 - 00:46:43:13]
+ look at them from this new angle where
+
+[00:46:43:13 - 00:46:45:13]
+ there is something that
+
+[00:46:45:13 - 00:46:47:13]
+ was not considered before
+
+[00:46:47:13 - 00:46:49:13]
+ information as the fifth state of matter
+
+[00:46:49:13 - 00:46:51:13]
+ and information as a physical
+
+[00:46:51:13 - 00:46:53:13]
+ entity and maybe
+
+[00:46:53:13 - 00:46:55:13]
+ when you plug this in into
+
+[00:46:55:13 - 00:46:57:13]
+ everything that we
+
+[00:46:57:13 - 00:46:59:13]
+ do in physics and you
+
+[00:46:59:13 - 00:47:01:13]
+ revisit everything maybe some of
+
+[00:47:01:13 - 00:47:03:13]
+ these puzzles can be resolved
+
+[00:47:03:13 - 00:47:05:13]
+ using this idea
+
+[00:47:05:13 - 00:47:07:13]
+ and
+
+[00:47:07:13 - 00:47:09:13]
+ so far I've been
+
+[00:47:09:13 - 00:47:11:13]
+ quite lucky to produce
+
+[00:47:11:13 - 00:47:13:13]
+ some interesting results the latest
+
+[00:47:13:13 - 00:47:15:13]
+ article was
+
+[00:47:15:13 - 00:47:17:13]
+ reproducing the classical
+
+[00:47:17:13 - 00:47:19:13]
+ Newton's law of gravity itself
+
+[00:47:19:13 - 00:47:21:13]
+ using just information
+
+[00:47:21:13 - 00:47:23:13]
+ dynamics and these kind of concepts
+
+[00:47:23:13 - 00:47:25:13]
+ mass energy information equivalence
+
+[00:47:25:13 - 00:47:27:13]
+ principle and the second law of
+
+[00:47:27:13 - 00:47:29:13]
+ information dynamics we are going to discuss this
+
+[00:47:29:13 - 00:47:31:13]
+ in future videos I'm not
+
+[00:47:31:13 - 00:47:33:13]
+ there yet so
+
+[00:47:33:13 - 00:47:35:13]
+ stay with me stay tuned
+
+[00:47:35:13 - 00:47:37:13]
+ subscribe to the channel if
+
+[00:47:37:13 - 00:47:39:13]
+ you are not a subscriber yet
+
+[00:47:39:13 - 00:47:41:13]
+ to get notifications
+
+[00:47:41:13 - 00:47:43:13]
+ when new content is being added
+
+[00:47:43:13 - 00:47:45:13]
+ thank you and I'll see you guys
+
+[00:47:45:13 - 00:47:47:13]
+ next time
+

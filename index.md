@@ -70,7 +70,7 @@ All lecture content, derivations, worked examples, and presenter screenshots in 
 | 6 | [The Information Microstates](Video_06/Information_Microstates.ipynb) | ~31 min | 📺 [Watch on YouTube →](https://youtu.be/gaSykBTbfsU) |
 | 7 | [Link Between Shannon and Boltzmann Entropies](Video_07/Shannon_and_Boltzmann.ipynb) | ~51 min | 📺 [Watch on YouTube →](https://youtu.be/GFM3X5EClfY) |
 | 8 | [Shannon vs Boltzmann Entropy](Video_08/Shannon_vs_Boltzmann.ipynb) | ~48 min | 📺 [Watch on YouTube →](https://youtu.be/nPj7nbQQUtU) |
-| 9 | _Coming soon_ | | |
+| 9 | [Landauer's Principle and M/E/I Equivalence](Video_09/Landauer_and_MEI.ipynb) | ~48 min | 📺 [Watch on YouTube →](https://youtu.be/7UcpUISMxtQ) |
 
 ---
 
