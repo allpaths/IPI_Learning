@@ -185,7 +185,87 @@ details.cyu > summary:hover { background: rgba(27, 209, 105, 0.10); }
 /* Once JS takes over, the static fallback is redundant. */
 .cyu-live .cyu-fallback { display: none; }
 
+/* --- explorer (ungraded, drag-and-watch) -------------------------------- */
+
+details.cyu--explore { border-left-color: var(--cyu-warn); }
+details.cyu--explore > summary::before { color: var(--cyu-warn); }
+
+.cyux { margin-top: 0.4rem; }
+
+.cyux-controls { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.9rem; }
+
+.cyux-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+
+.cyux-key {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  opacity: 0.75;
+  min-width: 7.5rem;
+}
+
+.cyux-slider {
+  flex: 1 1 14rem;
+  accent-color: var(--ipi-green, #1bd169);
+  cursor: pointer;
+  min-width: 10rem;
+}
+
+.cyux-base {
+  font: inherit;
+  font-size: 0.82em;
+  font-weight: 600;
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--cyu-line);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.cyux-base:hover { background: rgba(127, 127, 127, 0.12); }
+.cyux-base.is-on {
+  border-color: var(--ipi-green, #1bd169);
+  background: var(--ipi-green, #1bd169);
+  color: #04240f;
+}
+
+.cyux-readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: baseline;
+  padding: 0.6rem 0.75rem;
+  border-radius: 5px;
+  background: rgba(127, 127, 127, 0.09);
+  margin-bottom: 0.9rem;
+}
+
+.cyux-cell { display: flex; gap: 0.45rem; align-items: baseline; }
+.cyux-cell-key {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82em;
+  opacity: 0.7;
+}
+.cyux-cell-val {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 700;
+  font-size: 0.95em;
+}
+
+.cyux-note {
+  flex: 1 0 100%;
+  margin: 0.15rem 0 0 0;
+  font-size: 0.88em;
+  opacity: 0.85;
+}
+
+.cyux-canvas-wrap { width: 100%; overflow-x: auto; }
+.cyux-canvas { display: block; max-width: 100%; }
+
+/* Static description, replaced once the explorer is live. */
+.cyux-live .cyux-fallback { display: none; }
+
 @media print {
   details.cyu { break-inside: avoid; }
   details.cyu[open] .cyu-fallback { display: block; }
+  .cyux-live .cyux-fallback { display: block; }
 }
