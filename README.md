@@ -19,7 +19,7 @@ All lecture content originates with Dr. Vopson; this repository contains noteboo
 | 5 | [Information Entropy of a Genome](Video_05/) | `Video_05/` | [Watch →](https://youtu.be/KuE75212feQ) |
 | 6 | [The Information Microstates](Video_06/) | `Video_06/` | [Watch →](https://youtu.be/gaSykBTbfsU) |
 | 7 | [Link Between Shannon and Boltzmann Entropies](Video_07/) | `Video_07/` | [Watch →](https://youtu.be/GFM3X5EClfY) |
-| 8 | _TBD_ | `Video_08/` | |
+| 8 | [Shannon vs Boltzmann Entropy](Video_08/) | `Video_08/` | [Watch →](https://youtu.be/nPj7nbQQUtU) |
 | 9 | _TBD_ | `Video_09/` | |
 
 ## Running Locally

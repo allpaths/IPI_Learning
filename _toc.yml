@@ -19,3 +19,5 @@ chapters:
     title: "Part 6 — The Information Microstates"
   - file: Video_07/Shannon_and_Boltzmann
     title: "Part 7 — Link Between Shannon and Boltzmann Entropies"
+  - file: Video_08/Shannon_vs_Boltzmann
+    title: "Part 8 — Shannon vs Boltzmann Entropy"

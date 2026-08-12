@@ -1,0 +1,2769 @@
+[00:00:01:12 - 00:00:18:24]
+ Hello. In part, lecture part 7, we derived a relationship between Shannon information entropy and Boltzmann entropy, or if you want, thermodynamic entropy.
+
+[00:00:18:24 - 00:00:46:07]
+ So, in this part 8, what I would like to do is to go back a little bit deeper into Boltzmann thermodynamic entropy and highlight the clear differences between Shannon information entropy and Boltzmann entropy and the relationship between them.
+
+[00:00:47:10 - 00:00:48:07]
+ We've done...
+
+[00:00:48:07 - 00:00:48:26]
+ We've done...
+
+[00:00:48:26 - 00:00:50:04]
+ We've done...
+
+[00:00:50:04 - 00:01:07:06]
+ Some of this work in part 7, but I would like to nail it completely and just close this topic, clarify all aspects that are still unclarified and move on.
+
+[00:01:08:04 - 00:01:17:15]
+ So, before I do that, I'd like to do a quick refreshing of what we covered in the last lecture.
+
+[00:01:17:15 - 00:01:19:15]
+ So, again, we...
+
+[00:01:20:05 - 00:01:22:08]
+ Let me just change the scene.
+
+[00:01:22:16 - 00:01:30:21]
+ So, what we covered, we covered the relationship between Shannon information entropy and Boltzmann entropy.
+
+[00:01:30:21 - 00:01:33:24]
+ So, we derived a relation that looks like this.
+
+[00:01:35:02 - 00:01:43:00]
+ We said S, S, info.
+
+[00:01:43:14 - 00:01:51:05]
+ So, entropy of information states, if you want, equals Boltzmann.
+
+[00:01:51:19 - 00:01:53:17]
+ Boltzmann constant times...
+
+[00:01:53:17 - 00:02:10:04]
+ Normally is ln, but I use a log here without any base, like a general log of omega info, where omega info stands for the number of information microstate.
+
+[00:02:10:04 - 00:02:15:14]
+ And then we derived this as being KB, Boltzmann constant times n times hX times ln.
+
+[00:02:15:14 - 00:02:19:05]
+ Also, it's homogenous and we will divide it into two parts as we go on.
+
+[00:02:19:05 - 00:02:20:01]
+ What we have all are real.
+
+[00:02:20:01 - 00:02:20:13]
+ There's the zero, the单uc inbot.
+
+[00:02:20:13 - 00:02:20:27]
+ No entrant inbot crashing.
+
+[00:02:20:27 - 00:02:21:15]
+ That's pretty easy.
+
+[00:02:21:15 - 00:02:36:22]
+ log 2. And N is the number of information states. KB is Boltzmann constant. And HX,
+
+[00:02:36:22 - 00:02:46:15]
+ we define this as Shannon information entropy or the information content per character in
+
+[00:02:46:15 - 00:03:00:18]
+ a given message, that is summation over JPJ log B, PJ. So this is what we've done last
+
+[00:03:00:18 - 00:03:16:14]
+ week and so N is again, what is N? N is a set of information states or letters in a
+
+[00:03:16:14 - 00:03:26:20]
+ Shannon information theory formalism. They contain j equal 1 to u. They contain u number
+
+[00:03:26:20 - 00:03:36:04]
+ of unique characters and the probability that a character xj occurs is given by the probability
+
+[00:03:36:04 - 00:03:46:20]
+ pj of xj. So this is what we kind of discussed last week. And then we established that we can
+
+[00:03:46:20 - 00:03:56:17]
+ use this set of letters, n letters, with u distinct letters so that you could have duplicates
+
+[00:03:56:17 - 00:04:04:04]
+ in there and multiplicities. We can use this to construct messages. Each message will contain
+
+[00:04:04:04 - 00:04:05:13]
+ all n characters.
+
+[00:04:06:04 - 00:04:17:11]
+ And the key was to find out, we did this in part 7, the key was to find out how many possible
+
+[00:04:17:11 - 00:04:31:00]
+ distinct messages are equivalent for a given set of n letters, how many distinct n letter
+
+[00:04:31:00 - 00:04:36:04]
+ messages can we construct, which we discussed.
+
+[00:04:36:09 - 00:04:37:00]
+ This is actually...
+
+[00:04:37:11 - 00:04:44:29]
+ This is what we call the number of information microstates of the system. So the number of
+
+[00:04:44:29 - 00:05:01:05]
+ distinct messages, so number of distinct messages, number of distinct messages, we said is the
+
+[00:05:01:05 - 00:05:12:05]
+ number of microstates, information microstates, and we derived this to be b to power n h x,
+
+[00:05:12:19 - 00:05:22:03]
+ where b is the base of the logarithm used to compute the Shannon information entropy.
+
+[00:05:22:03 - 00:05:23:15]
+ Okay?
+
+[00:05:23:15 - 00:05:37:06]
+ If we take b2, which is quite a standard choice for binary units of bits, then we get that
+
+[00:05:37:06 - 00:05:42:11]
+ this information, number of information microstates, is 2 to power n h x.
+
+[00:05:42:11 - 00:05:42:17]
+ Okay?
+
+[00:05:42:17 - 00:05:42:19]
+ Okay.
+
+[00:05:42:19 - 00:05:42:22]
+ Okay.
+
+[00:05:42:22 - 00:05:42:27]
+ Okay.
+
+[00:05:42:27 - 00:05:43:01]
+ Okay.
+
+[00:05:43:01 - 00:05:43:06]
+ Okay.
+
+[00:05:43:06 - 00:05:43:08]
+ Okay.
+
+[00:05:43:08 - 00:05:43:12]
+ Okay.
+
+[00:05:43:12 - 00:05:43:13]
+ Okay.
+
+[00:05:43:13 - 00:05:43:17]
+ Okay.
+
+[00:05:43:17 - 00:05:43:19]
+ Okay.
+
+[00:05:43:19 - 00:05:43:20]
+ Okay.
+
+[00:05:43:20 - 00:05:43:21]
+ Okay.
+
+[00:05:43:21 - 00:05:43:25]
+ Okay.
+
+[00:05:43:25 - 00:05:43:26]
+ Okay.
+
+[00:05:43:26 - 00:05:43:27]
+ Okay.
+
+[00:05:43:27 - 00:05:46:12]
+ Okay.
+
+[00:05:46:12 - 00:05:46:15]
+ Okay.
+
+[00:05:46:15 - 00:05:46:17]
+ Okay.
+
+[00:05:46:17 - 00:05:46:18]
+ Okay.
+
+[00:05:46:18 - 00:05:46:21]
+ Okay.
+
+[00:05:46:21 - 00:05:46:22]
+ Okay.
+
+[00:05:46:22 - 00:05:46:24]
+ Okay.
+
+[00:05:46:29 - 00:05:47:00]
+ Okay.
+
+[00:05:47:00 - 00:05:47:03]
+ Okay.
+
+[00:05:47:03 - 00:05:47:04]
+ Okay.
+
+[00:05:47:04 - 00:05:47:10]
+ Okay.
+
+[00:05:47:10 - 00:05:47:19]
+ Okay.
+
+[00:05:47:19 - 00:05:49:02]
+ Okay.
+
+[00:05:49:02 - 00:05:56:00]
+ So that means there are 2 to the power n h x distinct messages containing n letters that
+
+[00:05:56:00 - 00:06:08:21]
+ one can construct, and clearly the two entropies, the Boltzmann entropy, kb, log of microstates,
+
+[00:06:08:21 - 00:06:13:19]
+ and the Shannon information entropy, which is this h x, they are not the same thing.
+
+[00:06:13:19 - 00:06:17:02]
+ We established this last lecture.
+
+[00:06:17:02 - 00:06:17:17]
+ Okay.
+
+[00:06:17:17 - 00:06:20:14]
+ But they are related to each other by this relation.
+
+[00:06:20:14 - 00:06:36:01]
+ So what I want to discuss now is, again, to look at the differences between Boltzmann and Shannon a bit deeper.
+
+[00:06:37:10 - 00:06:46:08]
+ And particularly to explore a bit closer the Boltzmann information entropy and the entropy in thermodynamic systems in general.
+
+[00:06:46:08 - 00:06:51:14]
+ And to do that, so let me see what I have here.
+
+[00:06:51:20 - 00:06:53:28]
+ So I'm just going to go to this diagram.
+
+[00:06:55:02 - 00:07:07:11]
+ And the question is that we have a system A that contains identical particles.
+
+[00:07:07:16 - 00:07:13:01]
+ So you see the diagram on the left-hand side on the screen.
+
+[00:07:13:16 - 00:07:16:01]
+ And this is in contact with another system.
+
+[00:07:16:08 - 00:07:16:22]
+ System B.
+
+[00:07:17:10 - 00:07:22:10]
+ The two systems are isolated, but they can interact with each other.
+
+[00:07:22:13 - 00:07:23:06]
+ They are in contact.
+
+[00:07:23:27 - 00:07:29:13]
+ And they form a larger system, A plus B, which is also overall isolated.
+
+[00:07:30:02 - 00:07:34:06]
+ So the total system cannot exchange energy with anything else.
+
+[00:07:34:10 - 00:07:37:19]
+ But they can exchange, they can interact with each other.
+
+[00:07:38:14 - 00:07:46:08]
+ Because the total energy is conserved, then we can say that energy of system A is conserved.
+
+[00:07:46:11 - 00:07:51:02]
+ So the total energy of system A plus energy of system B equals the total energy E.
+
+[00:07:51:06 - 00:07:55:16]
+ And that is a conserved quantity because everything is isolated.
+
+[00:07:57:03 - 00:07:57:13]
+ Okay.
+
+[00:07:58:27 - 00:08:05:22]
+ But the time evolution, the time evolution of this system is the way you see it.
+
+[00:08:06:26 - 00:08:14:09]
+ Assume there is a little opening in, there is a little opening here in between, there is a barrier.
+
+[00:08:14:09 - 00:08:16:03]
+ And there is some kind of opening between.
+
+[00:08:16:11 - 00:08:17:11]
+ System A and System B.
+
+[00:08:18:23 - 00:08:22:02]
+ System B is empty of any particles.
+
+[00:08:22:11 - 00:08:24:01]
+ System A is full.
+
+[00:08:24:12 - 00:08:29:10]
+ And you have this little opening and the particles will start to migrate from A to B.
+
+[00:08:30:16 - 00:08:37:05]
+ And the time evolution is such that you start with the state, initial state on the left.
+
+[00:08:37:05 - 00:08:46:05]
+ And you end up with the final state on the right where the two systems, A and B,
+
+[00:08:46:08 - 00:09:09:24]
+ they are equally populated with particles, distributed randomly and occupying most of the possible microstates, if you want, is the maximum, we call this the maximum disorder of the system.
+
+[00:09:09:24 - 00:09:16:00]
+ So the question is, why does the system prefer to be, that's the equilibrium.
+
+[00:09:16:13 - 00:09:17:18]
+ So that state is the final state.
+
+[00:09:17:19 - 00:09:19:04]
+ And the state is the equilibrium.
+
+[00:09:20:00 - 00:09:30:29]
+ So why does the system prefer, prefers to be at equilibrium in the last state, we call it the Macrostate A plus B where it's fully mixing and maximum disorder, that's the question.
+
+[00:09:30:29 - 00:09:35:26]
+ And that's the error of time and the time evolution, you know, thermodynamics.
+
+[00:09:35:26 - 00:09:41:23]
+ And the answer is that, A system approaches equilibrium.
+
+[00:09:41:23 - 00:09:45:23]
+ Because it evolves from a state of lower probability to steady state.
+
+[00:09:45:23 - 00:09:46:17]
+ Thanks for watching.
+
+[00:09:46:18 - 00:09:47:02]
+ Remember i should be in line for the next segment.
+
+[00:09:47:02 - 00:09:47:17]
+ See you next time.
+
+[00:09:47:17 - 00:09:55:28]
+ states of higher probability and equilibrium corresponds to the state of the highest probability
+
+[00:09:55:28 - 00:10:04:11]
+ why is that and this is because the equilibrium macrostate is always larger than any other
+
+[00:10:04:11 - 00:10:11:28]
+ macrostate so the larger the micro the macrostate the the higher is the probability of finding a
+
+[00:10:11:28 - 00:10:18:13]
+ microstate in it okay so it's more probable the system is more probable so the system
+
+[00:10:18:13 - 00:10:30:02]
+ we have to clarify that the macrostate is not always entirely equilibrium macrostate
+
+[00:10:30:02 - 00:10:38:05]
+ it will always a system will always contain a small number or a small size of macrostates that
+
+[00:10:38:05 - 00:10:43:18]
+ are non-equilibrium macrostates equilibrium is actually is an idealization
+
+[00:10:43:18 - 00:10:48:23]
+ in physics is it's it's not truly
+
+[00:10:48:23 - 00:10:55:29]
+ accurate to describe equilibrium state in reality everything is non-equilibrium but
+
+[00:10:55:29 - 00:11:01:04]
+ it's a good approximation to use equilibrium states
+
+[00:11:01:04 - 00:11:08:17]
+ and we need to bear in mind there are always non-equilibrium macrostates in any system
+
+[00:11:08:17 - 00:11:12:14]
+ but they they are all typically very small and they can be
+
+[00:11:12:14 - 00:11:12:22]
+ uh
+
+[00:11:12:22 - 00:11:13:16]
+ uh
+
+[00:11:13:16 - 00:11:13:17]
+ uh
+
+[00:11:13:17 - 00:11:13:18]
+ uh
+
+[00:11:13:18 - 00:11:14:25]
+ uh
+
+[00:11:14:25 - 00:11:24:10]
+ negligible or or just ignored okay so this is um what is happening uh with the the evolution in
+
+[00:11:24:10 - 00:11:32:11]
+ a in a physical system or thermodynamics and we mentioned here a few concepts like
+
+[00:11:32:11 - 00:11:43:11]
+ macrostate and macrostate and microstates so i think i discussed them in part seven but i think
+
+[00:11:43:11 - 00:11:43:17]
+ it's
+
+[00:11:43:17 - 00:11:50:25]
+ um quite useful to um refresh our memory um and um rediscuss what what these are
+
+[00:11:50:25 - 00:11:57:12]
+ what's important is to understand that there are two when i say macrostate there are two kinds of
+
+[00:11:57:12 - 00:11:59:28]
+ macrostates there is a thermodynamic
+
+[00:11:59:28 - 00:12:16:01]
+ thermodynamic macro macrostate that's a thermodynamic macrostate and this is defined as a
+
+[00:12:16:01 - 00:12:25:03]
+ specification of a system in terms of macroscopic quantities or properties such as temperature
+
+[00:12:25:03 - 00:12:35:11]
+ volume pressure energy number of particles and so on okay that's a thermodynamic macro state
+
+[00:12:35:11 - 00:12:42:23]
+ and this is a rough description of a system using bulk quantities and macroscopic
+
+[00:12:42:23 - 00:12:47:12]
+ properties physical properties like temperature volume pressure and so on
+
+[00:12:47:12 - 00:13:04:28]
+ there is also a Boltzmann did I spell correct Boltzmann Boltzmann macro state so this one is
+
+[00:13:04:28 - 00:13:11:27]
+ a rough description of a system the Boltzmann macro state it's a fine description if you want a more
+
+[00:13:13:09 - 00:13:21:12]
+ better denomination if you want a more more detailed description of a system and the Boltzmann
+
+[00:13:21:12 - 00:13:22:00]
+ macro state
+
+[00:13:22:00 - 00:13:36:18]
+ is a distribution that corresponds to n1 n2 nL okay where these n's describe how many particles
+
+[00:13:36:18 - 00:13:50:16]
+ are in each phase space cell so the system is split into cells w1 w2 wL and these n's are the
+
+[00:13:50:16 - 00:13:51:11]
+ number of particles
+
+[00:13:52:00 - 00:14:03:27]
+ contained in each of these cells this is they are part of a phase space okay where you have
+
+[00:14:03:27 - 00:14:11:13]
+ a system of n identical particles so what is this phase space if you have n identical particles
+
+[00:14:13:19 - 00:14:19:01]
+ to fully describe the system you need to know three positions
+
+[00:14:21:04 - 00:14:21:27]
+ coordinates
+
+[00:14:22:00 - 00:14:47:22]
+ So three position coordinates. You need to know three momentum for each particle. And because you have n of them, that gives you a space of 6n dimensions.
+
+[00:14:47:22 - 00:15:04:10]
+ And we call this a phase space of 6n dimensions. What Boltzmann did, he partitioned this space into cells. And essentially he's counting how many particles are in each of these cells.
+
+[00:15:04:10 - 00:15:17:21]
+ Obviously the number of particles add up these individual populations.
+
+[00:15:17:22 - 00:15:21:22]
+ These little n's, they add up to the total number of particles.
+
+[00:15:21:22 - 00:15:26:22]
+ And let's take another piece of paper.
+
+[00:15:26:22 - 00:15:40:22]
+ So how Boltzmann calculates the number of microstates compatible to a macrostate in Boltzmann's description.
+
+[00:15:40:22 - 00:15:45:22]
+ So for an i-th macrostate.
+
+[00:15:45:22 - 00:15:47:22]
+ Macro.
+
+[00:15:47:22 - 00:15:49:22]
+ State.
+
+[00:15:49:22 - 00:16:00:22]
+ So you have a distribution d i would be n 1, n 2, n l.
+
+[00:16:00:22 - 00:16:06:22]
+ They will correspond an omega i.
+
+[00:16:06:22 - 00:16:15:22]
+ We put here energy because this is for a system at a given energy e.
+
+[00:16:15:22 - 00:16:17:22]
+ And that, this omega i.
+
+[00:16:17:22 - 00:16:24:22]
+ Describes the number of microstates compatible with a macrostate, a Boltzmann macrostate.
+
+[00:16:24:22 - 00:16:30:22]
+ Which is this distribution, a given distribution of particle populations.
+
+[00:16:30:22 - 00:16:38:22]
+ And this represents a finite omega i function of energy.
+
+[00:16:38:22 - 00:16:43:22]
+ It's a finite number of configurations corresponding to this.
+
+[00:16:43:22 - 00:16:46:22]
+ To this.
+
+[00:16:46:22 - 00:16:48:22]
+ Macrostate.
+
+[00:16:48:22 - 00:16:51:22]
+ To a given macrostate.
+
+[00:16:51:22 - 00:16:52:22]
+ Okay.
+
+[00:16:52:22 - 00:16:54:22]
+ What is the, what is the value?
+
+[00:16:54:22 - 00:16:58:22]
+ How do you compute this omega, omega or the number of microstates?
+
+[00:16:58:22 - 00:17:03:22]
+ So number of microstates.
+
+[00:17:03:22 - 00:17:10:05]
+ This is omega i.
+
+[00:17:10:05 - 00:17:12:05]
+ For a system at energy i.
+
+[00:17:12:05 - 00:17:18:05]
+ This is nothing else but the multinomial coefficient.
+
+[00:17:18:05 - 00:17:19:05]
+ N factorial.
+
+[00:17:19:05 - 00:17:21:05]
+ This is for a system of n particles.
+
+[00:17:21:05 - 00:17:22:05]
+ Identical.
+
+[00:17:22:05 - 00:17:24:05]
+ N 1 factorial.
+
+[00:17:24:05 - 00:17:26:05]
+ N 2 factorial.
+
+[00:17:26:05 - 00:17:30:05]
+ Product n l factorial.
+
+[00:17:30:05 - 00:17:43:05]
+ And this is the number of microstates that correspond to a Boltzmann macrostate.
+
+[00:17:43:05 - 00:17:44:05]
+ Now.
+
+[00:17:44:05 - 00:17:47:05]
+ So this is very important because.
+
+[00:17:47:05 - 00:17:50:05]
+ And I was making this mistake myself.
+
+[00:17:50:05 - 00:17:51:05]
+ Okay.
+
+[00:17:51:05 - 00:17:59:05]
+ So I assume that a thermodynamic macrostate described roughly by macroscopic properties
+
+[00:17:59:05 - 00:18:07:05]
+ like temperature, volume, pressure, energy and so on, would have a number of microstates.
+
+[00:18:07:05 - 00:18:12:05]
+ And we need to count those microstates and we get Boltzmann entropy from those microstates.
+
+[00:18:12:05 - 00:18:15:05]
+ That picture is quite inaccurate.
+
+[00:18:15:05 - 00:18:19:05]
+ The way you should see this is the following.
+
+[00:18:19:05 - 00:18:32:28]
+ The thermodynamic, thermodynamic, thermodynamic macrostate.
+
+[00:18:32:28 - 00:18:48:21]
+ So a thermodynamic macrostate can have many, has many Boltzmann macrostates.
+
+[00:18:48:21 - 00:19:04:06]
+ Attention, the thermodynamic macrostate has many Boltzmann macrostates.
+
+[00:19:04:06 - 00:19:05:06]
+ Okay.
+
+[00:19:05:06 - 00:19:07:06]
+ Which are those distributions.
+
+[00:19:07:06 - 00:19:08:06]
+ Yeah.
+
+[00:19:08:06 - 00:19:11:06]
+ And a Boltzmann macrostate.
+
+[00:19:11:06 - 00:19:16:06]
+ Each Boltzmann macrostate can have many microstates.
+
+[00:19:16:06 - 00:19:18:06]
+ So.
+
+[00:19:18:06 - 00:19:30:19]
+ Each Boltzmann macrostate can have.
+
+[00:19:30:19 - 00:19:46:02]
+ Can have many omega i microstates.
+
+[00:19:46:02 - 00:19:48:02]
+ That's how they feed into each other.
+
+[00:19:48:02 - 00:19:52:02]
+ So how do you calculate for a given Boltzmann macrostate, which is this distribution?
+
+[00:19:52:02 - 00:19:57:02]
+ Then you calculate the number of microstates using multinomial coefficient.
+
+[00:19:57:02 - 00:19:59:02]
+ And that's what you have.
+
+[00:19:59:02 - 00:20:01:02]
+ This is a fine description.
+
+[00:20:01:02 - 00:20:02:02]
+ This is a rough description.
+
+[00:20:02:02 - 00:20:07:02]
+ It has many, many Boltzmann macrostates.
+
+[00:20:07:02 - 00:20:12:02]
+ And each Boltzmann macrostate has many, many microstates in it.
+
+[00:20:12:02 - 00:20:20:02]
+ To understand this, let me just go to this slide.
+
+[00:20:20:02 - 00:20:27:02]
+ And let's examine this slide together because it will take me too long to draw the whole bloody thing.
+
+[00:20:27:02 - 00:20:30:02]
+ So I thought I'll just get the digital image.
+
+[00:20:30:02 - 00:20:35:02]
+ And we discuss the image rather than me drawing it.
+
+[00:20:35:02 - 00:20:36:02]
+ Here is an example.
+
+[00:20:36:02 - 00:20:40:02]
+ So what I just described, fine.
+
+[00:20:40:02 - 00:20:47:02]
+ But it's best to see some graphical examples, some real examples to understand how this works.
+
+[00:20:47:02 - 00:20:51:02]
+ Let's assume we have a system of only six particles.
+
+[00:20:51:02 - 00:20:52:02]
+ This is only for simplicity.
+
+[00:20:52:02 - 00:20:54:02]
+ I choose a small number of particles.
+
+[00:20:54:02 - 00:20:58:02]
+ Obviously, the real systems are very large.
+
+[00:20:58:02 - 00:21:00:02]
+ Avogadro number type of things.
+
+[00:21:00:02 - 00:21:04:02]
+ Type of particles.
+
+[00:21:04:02 - 00:21:05:02]
+ Type of numbers.
+
+[00:21:05:02 - 00:21:15:02]
+ So let's say we have six particles and we have only four cells.
+
+[00:21:15:02 - 00:21:19:02]
+ We split our phase space in only four cells.
+
+[00:21:19:02 - 00:21:21:02]
+ So these four squares.
+
+[00:21:21:02 - 00:21:29:02]
+ That means the distribution or the Boltzmann macrostate that corresponds to a given distribution
+
+[00:21:29:02 - 00:21:34:02]
+ is only N1, N2, N3, N4, meaning how many particles are in each cell.
+
+[00:21:34:02 - 00:21:38:02]
+ Cell 1, cell 2, cell 3, cell 4.
+
+[00:21:38:02 - 00:21:42:02]
+ The first example, you have one particle here, two particles there, two there, two there.
+
+[00:21:42:02 - 00:21:47:02]
+ The distribution, D1, would be 1, 2, 2, 1.
+
+[00:21:47:02 - 00:21:50:02]
+ That's the Boltzmann macrostate.
+
+[00:21:50:02 - 00:21:53:02]
+ And it's got omega 1 microstates.
+
+[00:21:53:02 - 00:21:55:02]
+ How do you calculate them?
+
+[00:21:55:02 - 00:21:57:02]
+ They will be 6 factorial divided by 100.
+
+[00:21:57:02 - 00:22:07:02]
+ 6 factorial divided by 1 factorial times 2 factorial times 2 factorial times 1 factorial.
+
+[00:22:07:02 - 00:22:10:02]
+ Because you can interchange these particles.
+
+[00:22:10:02 - 00:22:11:02]
+ This could be there.
+
+[00:22:11:02 - 00:22:12:02]
+ This could be there.
+
+[00:22:12:02 - 00:22:15:02]
+ You can interchange.
+
+[00:22:15:02 - 00:22:22:02]
+ The distribution doesn't care about which particle is where.
+
+[00:22:22:02 - 00:22:26:02]
+ It cares about how many particles are in each cell.
+
+[00:22:26:02 - 00:22:31:02]
+ You compute using multinomial coefficient the number of microstates for this distribution.
+
+[00:22:31:02 - 00:22:36:02]
+ Another example is you have 0, 1, 2, and 3.
+
+[00:22:36:02 - 00:22:39:02]
+ You can compute the number of microstates here.
+
+[00:22:39:02 - 00:22:41:02]
+ Here is another example.
+
+[00:22:41:02 - 00:22:44:02]
+ You can do all the permutations you can imagine possible.
+
+[00:22:44:02 - 00:22:48:02]
+ And you get many, many, many Boltzmann macrostates.
+
+[00:22:48:02 - 00:22:52:02]
+ And they all correspond, you see I made these arrows,
+
+[00:22:52:02 - 00:22:55:02]
+ to the system that has
+
+[00:22:55:02 - 00:22:58:02]
+ one thermodynamic macrostate.
+
+[00:22:58:02 - 00:23:01:02]
+ A single thermodynamic macrostate
+
+[00:23:01:02 - 00:23:05:02]
+ contains many, many, many Boltzmann macrostates.
+
+[00:23:05:02 - 00:23:11:02]
+ And each Boltzmann macrostate contains a number of microstates.
+
+[00:23:11:02 - 00:23:20:02]
+ And this is how we compute the Boltzmann entropy.
+
+[00:23:20:02 - 00:23:24:02]
+ So let's have a look now
+
+[00:23:24:02 - 00:23:27:02]
+ where this relation comes from.
+
+[00:23:27:02 - 00:23:30:02]
+ I'm going to do a very basic derivation of this.
+
+[00:23:30:02 - 00:23:34:02]
+ So where are we?
+
+[00:23:34:02 - 00:23:35:02]
+ So here.
+
+[00:23:35:02 - 00:23:38:02]
+ I'm just going to move this up here.
+
+[00:23:38:02 - 00:23:46:26]
+ I'll do a very basic derivation of Boltzmann entropy relation.
+
+[00:23:46:26 - 00:23:50:26]
+ It's not the most sophisticated one.
+
+[00:23:50:26 - 00:23:54:26]
+ But let's consider that we have again a system,
+
+[00:23:55:26 - 00:23:58:26]
+ I'm going to draw here, this time I'll draw it.
+
+[00:23:58:26 - 00:24:04:20]
+ Let's say we have a system A
+
+[00:24:04:20 - 00:24:09:20]
+ that has energy Ea, temperature Ta.
+
+[00:24:09:20 - 00:24:11:20]
+ We have a system B
+
+[00:24:11:20 - 00:24:16:20]
+ that has energy Eb, temperature Tb.
+
+[00:24:16:20 - 00:24:21:20]
+ And these, let's put some particles,
+
+[00:24:21:20 - 00:24:24:20]
+ I'm going to make them red,
+
+[00:24:24:20 - 00:24:26:20]
+ populate the system.
+
+[00:24:26:20 - 00:24:34:19]
+ They evolved to some equilibrium.
+
+[00:24:34:19 - 00:24:37:19]
+ It's fully mixing here.
+
+[00:24:37:19 - 00:24:41:19]
+ State of maximum mixing, maximum entropy.
+
+[00:24:41:19 - 00:24:45:19]
+ And the largest macrostate possible and so on.
+
+[00:24:45:19 - 00:24:48:19]
+ It's all the things we discussed.
+
+[00:24:48:19 - 00:24:50:19]
+ So they are in contact with each other,
+
+[00:24:50:19 - 00:24:52:19]
+ they can exchange, they are isolated,
+
+[00:24:52:19 - 00:24:55:19]
+ they can exchange,
+
+[00:24:55:19 - 00:24:57:19]
+ they can interact quickly with each other.
+
+[00:24:57:19 - 00:24:59:19]
+ The bigger system A plus B,
+
+[00:24:59:19 - 00:25:04:19]
+ so we have the system A plus B
+
+[00:25:04:19 - 00:25:06:19]
+ will have an energy E,
+
+[00:25:06:19 - 00:25:10:19]
+ which is Ea plus Eb.
+
+[00:25:10:19 - 00:25:12:19]
+ Attention, this is constant
+
+[00:25:12:19 - 00:25:15:19]
+ because we keep the system isolated
+
+[00:25:15:19 - 00:25:20:19]
+ and we force this system to,
+
+[00:25:20:19 - 00:25:22:19]
+ we put a constraint,
+
+[00:25:22:19 - 00:25:25:19]
+ the total energy is conserved,
+
+[00:25:25:19 - 00:25:33:14]
+ so it will stay constant over time.
+
+[00:25:33:14 - 00:25:35:14]
+ So what can we say now?
+
+[00:25:35:14 - 00:25:38:14]
+ We can say that the system A
+
+[00:25:38:14 - 00:25:42:14]
+ would have a number of microstates
+
+[00:25:42:14 - 00:25:47:11]
+ corresponding to the system A.
+
+[00:25:47:11 - 00:25:50:11]
+ The system B will have a number of microstates
+
+[00:25:50:11 - 00:25:53:11]
+ corresponding to system B,
+
+[00:25:53:11 - 00:25:55:11]
+ of the system B.
+
+[00:25:55:11 - 00:25:58:11]
+ The total system A plus B,
+
+[00:25:58:11 - 00:26:03:11]
+ would have a number of microstates omega,
+
+[00:26:03:11 - 00:26:09:11]
+ that is the product omega A to omega B.
+
+[00:26:09:11 - 00:26:14:11]
+ And this is because for each microstate in A,
+
+[00:26:14:11 - 00:26:17:11]
+ it can be, each microstate in A
+
+[00:26:17:11 - 00:26:20:11]
+ can be paired with each microstate in B.
+
+[00:26:20:11 - 00:26:22:11]
+ So you get the product of them
+
+[00:26:22:11 - 00:26:24:11]
+ giving you the final,
+
+[00:26:24:11 - 00:26:26:11]
+ the total number of microstates
+
+[00:26:26:11 - 00:26:28:11]
+ of the combined system.
+
+[00:26:33:20 - 00:26:36:20]
+ The equilibrium corresponds to,
+
+[00:26:36:20 - 00:26:39:20]
+ we need to find the extreme,
+
+[00:26:39:20 - 00:26:41:20]
+ minimum or maximum,
+
+[00:26:41:20 - 00:26:45:20]
+ when you apply the derivative condition
+
+[00:26:45:20 - 00:26:48:20]
+ to find the extreme of a function.
+
+[00:26:48:20 - 00:26:50:20]
+ In this case,
+
+[00:26:50:20 - 00:26:56:20]
+ it's the maximum number of microstates,
+
+[00:26:56:20 - 00:26:59:20]
+ so we impose this equilibrium condition
+
+[00:26:59:20 - 00:27:02:20]
+ that we need to find the extreme of omega
+
+[00:27:02:20 - 00:27:05:20]
+ or the maximum value of this omega.
+
+[00:27:05:20 - 00:27:08:20]
+ And we do this by differentiating
+
+[00:27:08:20 - 00:27:10:20]
+ and minimizing this function
+
+[00:27:10:20 - 00:27:12:20]
+ in respect with the energy.
+
+[00:27:12:20 - 00:27:14:20]
+ So we say,
+
+[00:27:14:20 - 00:27:17:20]
+ d omega 2,
+
+[00:27:17:20 - 00:27:20:20]
+ d E equals 0.
+
+[00:27:20:20 - 00:27:21:20]
+ Attention!
+
+[00:27:21:20 - 00:27:24:20]
+ What energy we are using?
+
+[00:27:24:20 - 00:27:26:20]
+ Because,
+
+[00:27:26:20 - 00:27:29:20]
+ if we use total energy,
+
+[00:27:29:20 - 00:27:31:20]
+ that is a fallacy.
+
+[00:27:31:20 - 00:27:33:20]
+ Total energy is not a variable.
+
+[00:27:33:20 - 00:27:35:20]
+ Total energy is fixed.
+
+[00:27:35:20 - 00:27:37:20]
+ It's a constant.
+
+[00:27:37:20 - 00:27:39:20]
+ So we have to use
+
+[00:27:39:20 - 00:27:42:20]
+ one of E A or E B.
+
+[00:27:42:20 - 00:27:44:20]
+ So we say,
+
+[00:27:44:20 - 00:27:55:20]
+ E A equals E minus E B.
+
+[00:27:55:20 - 00:27:56:20]
+ So we express,
+
+[00:27:56:20 - 00:27:57:20]
+ E A,
+
+[00:27:57:20 - 00:27:59:20]
+ like this.
+
+[00:27:59:20 - 00:28:01:20]
+ And we are going to
+
+[00:28:01:20 - 00:28:03:20]
+ impose this
+
+[00:28:03:20 - 00:28:05:20]
+ maximum condition
+
+[00:28:05:20 - 00:28:07:20]
+ by differentiating
+
+[00:28:07:20 - 00:28:10:20]
+ omega in respect with E A.
+
+[00:28:10:20 - 00:28:12:20]
+ This is because
+
+[00:28:12:20 - 00:28:15:20]
+ E is not a variable.
+
+[00:28:15:20 - 00:28:17:20]
+ Now,
+
+[00:28:17:20 - 00:28:20:20]
+ we observe that we have a product here
+
+[00:28:20:20 - 00:28:23:20]
+ and it turns out that it's actually
+
+[00:28:23:20 - 00:28:25:20]
+ more convenient to
+
+[00:28:25:20 - 00:28:26:20]
+ apply
+
+[00:28:26:20 - 00:28:28:20]
+ the maximization condition
+
+[00:28:28:20 - 00:28:29:20]
+ to the logarithm
+
+[00:28:29:20 - 00:28:30:20]
+ rather than
+
+[00:28:30:20 - 00:28:32:20]
+ the microstates themselves.
+
+[00:28:32:20 - 00:28:33:20]
+ So first,
+
+[00:28:33:20 - 00:28:34:20]
+ we say,
+
+[00:28:34:20 - 00:28:35:20]
+ omega equals
+
+[00:28:35:20 - 00:28:36:20]
+ omega A
+
+[00:28:36:20 - 00:28:37:20]
+ times
+
+[00:28:37:20 - 00:28:38:20]
+ omega B.
+
+[00:28:38:20 - 00:28:39:20]
+ And we apply
+
+[00:28:39:20 - 00:28:40:20]
+ ln
+
+[00:28:40:20 - 00:28:41:20]
+ to the left
+
+[00:28:41:20 - 00:28:42:20]
+ and to the right.
+
+[00:28:42:20 - 00:28:44:20]
+ And we end up with
+
+[00:28:44:20 - 00:28:45:20]
+ ln
+
+[00:28:45:20 - 00:28:46:20]
+ omega
+
+[00:28:46:20 - 00:28:47:20]
+ equals
+
+[00:28:47:20 - 00:28:49:20]
+ ln.
+
+[00:28:49:20 - 00:28:50:20]
+ And then we split this into
+
+[00:28:50:20 - 00:28:51:20]
+ the sum
+
+[00:28:51:20 - 00:28:52:20]
+ omega A
+
+[00:28:52:20 - 00:28:53:20]
+ plus
+
+[00:28:53:20 - 00:28:54:20]
+ ln
+
+[00:28:54:20 - 00:28:55:20]
+ omega B.
+
+[00:28:56:20 - 00:28:58:20]
+ This is from
+
+[00:28:58:20 - 00:29:00:20]
+ logarithmic
+
+[00:29:00:20 - 00:29:01:20]
+ functions.
+
+[00:29:01:20 - 00:29:02:20]
+ Now we do
+
+[00:29:02:20 - 00:29:04:20]
+ D to D E A
+
+[00:29:04:20 - 00:29:06:20]
+ on both sides.
+
+[00:29:06:20 - 00:29:08:20]
+ I need another piece of paper.
+
+[00:29:08:20 - 00:29:11:20]
+ Let's put this up here.
+
+[00:29:11:20 - 00:29:13:20]
+ And
+
+[00:29:13:20 - 00:29:15:20]
+ we impose
+
+[00:29:15:20 - 00:29:17:20]
+ dln
+
+[00:29:17:20 - 00:29:18:20]
+ omega to
+
+[00:29:18:20 - 00:29:20:20]
+ D E A
+
+[00:29:20:20 - 00:29:22:20]
+ equals zero.
+
+[00:29:22:20 - 00:29:24:20]
+ We impose this condition.
+
+[00:29:24:20 - 00:29:26:20]
+ That gives us
+
+[00:29:26:20 - 00:29:29:20]
+ dln
+
+[00:29:29:20 - 00:29:31:20]
+ omega A
+
+[00:29:31:20 - 00:29:34:20]
+ to D E A
+
+[00:29:34:20 - 00:29:35:20]
+ plus
+
+[00:29:35:20 - 00:29:37:20]
+ D to D
+
+[00:29:37:20 - 00:29:39:20]
+ E A
+
+[00:29:39:20 - 00:29:40:20]
+ of
+
+[00:29:40:20 - 00:29:41:20]
+ ln
+
+[00:29:41:20 - 00:29:42:20]
+ omega
+
+[00:29:42:20 - 00:29:43:20]
+ B.
+
+[00:29:45:20 - 00:29:46:20]
+ And now
+
+[00:29:47:20 - 00:29:48:20]
+ omega B is
+
+[00:29:48:20 - 00:29:49:20]
+ function of
+
+[00:29:49:20 - 00:29:52:14]
+ E B.
+
+[00:29:52:14 - 00:29:55:26]
+ But
+
+[00:29:55:26 - 00:29:56:26]
+ I wrote here
+
+[00:29:56:26 - 00:29:57:26]
+ E A is
+
+[00:29:57:26 - 00:29:58:26]
+ E minus E B.
+
+[00:29:58:26 - 00:29:59:26]
+ Um
+
+[00:29:59:26 - 00:30:00:26]
+ I think
+
+[00:30:00:26 - 00:30:01:26]
+ what I meant
+
+[00:30:01:26 - 00:30:02:26]
+ is
+
+[00:30:02:26 - 00:30:03:26]
+ E B
+
+[00:30:03:26 - 00:30:05:26]
+ is
+
+[00:30:05:26 - 00:30:06:26]
+ E minus
+
+[00:30:06:26 - 00:30:08:26]
+ E A.
+
+[00:30:08:26 - 00:30:09:26]
+ They both mean the same.
+
+[00:30:09:26 - 00:30:10:26]
+ But I choose
+
+[00:30:10:26 - 00:30:11:26]
+ E A
+
+[00:30:11:26 - 00:30:12:26]
+ as
+
+[00:30:12:26 - 00:30:13:26]
+ um
+
+[00:30:13:26 - 00:30:14:26]
+ the
+
+[00:30:14:26 - 00:30:15:26]
+ the
+
+[00:30:15:26 - 00:30:16:26]
+ for the derivative
+
+[00:30:16:26 - 00:30:17:26]
+ I choose
+
+[00:30:17:26 - 00:30:18:26]
+ E A as variable.
+
+[00:30:18:26 - 00:30:19:26]
+ So it's
+
+[00:30:19:26 - 00:30:20:26]
+ it's better to use this
+
+[00:30:20:26 - 00:30:21:26]
+ um
+
+[00:30:21:26 - 00:30:23:26]
+ convention.
+
+[00:30:23:26 - 00:30:24:26]
+ So omega
+
+[00:30:24:26 - 00:30:25:26]
+ omega B
+
+[00:30:25:26 - 00:30:26:26]
+ would be
+
+[00:30:26:26 - 00:30:27:26]
+ function of
+
+[00:30:27:26 - 00:30:28:26]
+ E B
+
+[00:30:28:26 - 00:30:29:26]
+ obviously.
+
+[00:30:29:26 - 00:30:30:26]
+ But E B
+
+[00:30:31:26 - 00:30:32:26]
+ E B is
+
+[00:30:32:26 - 00:30:33:26]
+ E
+
+[00:30:33:26 - 00:30:34:26]
+ minus
+
+[00:30:34:26 - 00:30:35:26]
+ E A.
+
+[00:30:35:26 - 00:30:36:26]
+ So
+
+[00:30:37:26 - 00:30:39:26]
+ we feed that back in here.
+
+[00:30:39:26 - 00:30:42:16]
+ OK.
+
+[00:30:43:16 - 00:30:45:16]
+ And this needs to be zero.
+
+[00:30:45:16 - 00:30:46:16]
+ So that gives us
+
+[00:30:46:16 - 00:30:47:16]
+ dln
+
+[00:30:47:16 - 00:30:48:16]
+ omega
+
+[00:30:48:16 - 00:30:49:16]
+ A
+
+[00:30:49:16 - 00:30:50:16]
+ to
+
+[00:30:50:16 - 00:30:51:16]
+ D E A
+
+[00:30:52:16 - 00:30:53:16]
+ plus
+
+[00:30:54:16 - 00:30:55:16]
+ Now we use the
+
+[00:30:56:16 - 00:30:57:16]
+ in this
+
+[00:30:57:16 - 00:30:58:16]
+ um
+
+[00:30:58:16 - 00:30:59:16]
+ let's write it first.
+
+[00:30:59:16 - 00:31:02:16]
+ E A
+
+[00:31:02:16 - 00:31:03:16]
+ ln
+
+[00:31:03:16 - 00:31:04:16]
+ omega
+
+[00:31:04:16 - 00:31:05:16]
+ B
+
+[00:31:05:16 - 00:31:06:16]
+ E minus
+
+[00:31:06:16 - 00:31:08:16]
+ E A
+
+[00:31:08:16 - 00:31:09:16]
+ like this
+
+[00:31:09:16 - 00:31:11:16]
+ equals zero.
+
+[00:31:11:16 - 00:31:14:16]
+ Now because this is a derivative
+
+[00:31:14:16 - 00:31:15:16]
+ um
+
+[00:31:15:16 - 00:31:21:16]
+ we can use the
+
+[00:31:21:16 - 00:31:22:16]
+ the chain rule here
+
+[00:31:22:16 - 00:31:24:16]
+ in this derivative.
+
+[00:31:24:16 - 00:31:25:16]
+ And if we do that
+
+[00:31:25:16 - 00:31:29:10]
+ we should have done that before.
+
+[00:31:29:10 - 00:31:31:26]
+ Um
+
+[00:31:31:26 - 00:31:32:26]
+ we should have done that before.
+
+[00:31:32:26 - 00:31:33:26]
+ OK.
+
+[00:31:33:26 - 00:31:34:26]
+ So let's
+
+[00:31:34:26 - 00:31:35:26]
+ let's do the chain rule here.
+
+[00:31:35:26 - 00:31:36:26]
+ So that is
+
+[00:31:36:26 - 00:31:37:26]
+ we take this
+
+[00:31:37:26 - 00:31:38:26]
+ derivative here
+
+[00:31:38:26 - 00:31:39:26]
+ and say
+
+[00:31:39:26 - 00:31:41:26]
+ D to D E A
+
+[00:31:41:26 - 00:31:43:26]
+ ln
+
+[00:31:43:26 - 00:31:44:26]
+ omega
+
+[00:31:44:26 - 00:31:45:26]
+ B
+
+[00:31:45:26 - 00:31:46:26]
+ E B
+
+[00:31:46:26 - 00:31:48:26]
+ equals
+
+[00:31:48:26 - 00:31:49:26]
+ and we
+
+[00:31:49:26 - 00:31:51:26]
+ write this as
+
+[00:31:51:26 - 00:32:00:17]
+ um
+
+[00:32:00:17 - 00:32:01:17]
+ ln
+
+[00:32:01:17 - 00:32:02:17]
+ omega
+
+[00:32:02:17 - 00:32:03:17]
+ B
+
+[00:32:03:17 - 00:32:04:17]
+ to
+
+[00:32:04:17 - 00:32:05:17]
+ D
+
+[00:32:05:17 - 00:32:06:17]
+ E
+
+[00:32:06:17 - 00:32:07:17]
+ B
+
+[00:32:07:17 - 00:32:08:17]
+ times
+
+[00:32:08:17 - 00:32:09:17]
+ D
+
+[00:32:09:17 - 00:32:10:17]
+ E
+
+[00:32:10:17 - 00:32:11:17]
+ E
+
+[00:32:11:17 - 00:32:12:17]
+ B
+
+[00:32:12:17 - 00:32:13:17]
+ to D
+
+[00:32:13:17 - 00:32:14:17]
+ E
+
+[00:32:14:17 - 00:32:15:17]
+ A.
+
+[00:32:15:17 - 00:32:16:17]
+ We use the chain rule.
+
+[00:32:16:17 - 00:32:18:27]
+ And
+
+[00:32:20:27 - 00:32:22:27]
+ we can't do anything about this term
+
+[00:32:22:27 - 00:32:24:27]
+ but we can do something about this term
+
+[00:32:24:27 - 00:32:27:20]
+ because
+
+[00:32:27:20 - 00:32:28:20]
+ D
+
+[00:32:28:20 - 00:32:29:20]
+ E B
+
+[00:32:29:20 - 00:32:30:20]
+ to D
+
+[00:32:30:20 - 00:32:31:20]
+ E A
+
+[00:32:31:20 - 00:32:32:20]
+ is
+
+[00:32:32:20 - 00:32:33:20]
+ D
+
+[00:32:33:20 - 00:32:34:20]
+ E minus
+
+[00:32:34:20 - 00:32:37:25]
+ E A
+
+[00:32:37:25 - 00:32:38:25]
+ to D
+
+[00:32:38:25 - 00:32:39:25]
+ E A
+
+[00:32:39:25 - 00:32:40:25]
+ or
+
+[00:32:40:25 - 00:32:41:25]
+ minus one.
+
+[00:32:42:25 - 00:32:43:25]
+ OK.
+
+[00:32:43:25 - 00:32:44:25]
+ So
+
+[00:32:44:25 - 00:32:45:25]
+ this guy
+
+[00:32:45:25 - 00:32:46:25]
+ becomes
+
+[00:32:46:25 - 00:32:48:25]
+ minus one.
+
+[00:32:48:25 - 00:32:49:25]
+ OK.
+
+[00:32:49:25 - 00:32:51:25]
+ And then this
+
+[00:32:51:25 - 00:32:52:25]
+ gets
+
+[00:32:52:25 - 00:32:54:25]
+ fed back in there.
+
+[00:32:54:25 - 00:32:58:02]
+ So let's see what we have left.
+
+[00:32:58:02 - 00:33:00:02]
+ We end up with the following.
+
+[00:33:00:02 - 00:33:02:02]
+ We end up with
+
+[00:33:02:02 - 00:33:03:02]
+ D
+
+[00:33:03:02 - 00:33:04:02]
+ ln
+
+[00:33:04:02 - 00:33:05:02]
+ omega
+
+[00:33:05:02 - 00:33:06:02]
+ E
+
+[00:33:06:02 - 00:33:07:02]
+ to D
+
+[00:33:07:02 - 00:33:08:02]
+ E
+
+[00:33:08:02 - 00:33:09:02]
+ A
+
+[00:33:09:02 - 00:33:10:02]
+ minus
+
+[00:33:10:02 - 00:33:11:02]
+ D
+
+[00:33:11:02 - 00:33:12:02]
+ ln
+
+[00:33:12:02 - 00:33:13:02]
+ omega
+
+[00:33:13:02 - 00:33:14:02]
+ B
+
+[00:33:14:02 - 00:33:15:02]
+ to D
+
+[00:33:15:02 - 00:33:16:02]
+ E
+
+[00:33:16:02 - 00:33:17:02]
+ B.
+
+[00:33:17:02 - 00:33:19:02]
+ And this must be zero.
+
+[00:33:19:02 - 00:33:22:02]
+ That is our imposed
+
+[00:33:22:02 - 00:33:24:02]
+ maximization condition
+
+[00:33:24:02 - 00:33:26:02]
+ for the microstates.
+
+[00:33:26:02 - 00:33:29:02]
+ So what we do, we just move this to the right
+
+[00:33:29:02 - 00:33:31:02]
+ and we have a beautiful relation.
+
+[00:33:31:02 - 00:33:32:02]
+ D ln
+
+[00:33:32:02 - 00:33:33:02]
+ omega
+
+[00:33:33:02 - 00:33:34:02]
+ A
+
+[00:33:34:02 - 00:33:35:02]
+ D
+
+[00:33:35:02 - 00:33:36:02]
+ E
+
+[00:33:36:02 - 00:33:37:02]
+ A
+
+[00:33:37:02 - 00:33:38:02]
+ equals
+
+[00:33:38:02 - 00:33:39:02]
+ D
+
+[00:33:39:02 - 00:33:40:02]
+ ln
+
+[00:33:40:02 - 00:33:41:02]
+ omega
+
+[00:33:41:02 - 00:33:42:02]
+ B
+
+[00:33:42:02 - 00:33:43:02]
+ D
+
+[00:33:43:02 - 00:33:44:02]
+ E
+
+[00:33:44:02 - 00:33:46:02]
+ and there must be
+
+[00:33:46:02 - 00:33:48:02]
+ attained
+
+[00:33:48:02 - 00:33:50:02]
+ at equilibrium
+
+[00:33:50:02 - 00:33:52:02]
+ and that corresponds to the maximum
+
+[00:33:52:02 - 00:33:54:02]
+ number of microstates.
+
+[00:33:54:02 - 00:33:56:16]
+ OK.
+
+[00:33:56:16 - 00:33:57:16]
+ So
+
+[00:33:57:16 - 00:33:58:16]
+ now we
+
+[00:33:58:16 - 00:34:01:16]
+ make appeal to
+
+[00:34:01:16 - 00:34:02:16]
+ so because this
+
+[00:34:02:16 - 00:34:03:16]
+ this is omega
+
+[00:34:03:16 - 00:34:04:16]
+ A
+
+[00:34:04:16 - 00:34:05:16]
+ E A
+
+[00:34:05:16 - 00:34:06:16]
+ omega B
+
+[00:34:06:16 - 00:34:07:16]
+ E B
+
+[00:34:07:16 - 00:34:09:16]
+ we can extrapolate and say this is further equal to
+
+[00:34:09:16 - 00:34:11:16]
+ a general D ln
+
+[00:34:11:16 - 00:34:13:16]
+ omega
+
+[00:34:13:16 - 00:34:14:16]
+ to D E.
+
+[00:34:15:16 - 00:34:16:16]
+ Something like this.
+
+[00:34:16:16 - 00:34:17:16]
+ OK.
+
+[00:34:17:16 - 00:34:20:21]
+ Now we
+
+[00:34:20:21 - 00:34:21:21]
+ recall
+
+[00:34:21:21 - 00:34:22:21]
+ from thermodynamics
+
+[00:34:22:21 - 00:34:23:21]
+ that
+
+[00:34:23:21 - 00:34:24:21]
+ D
+
+[00:34:24:21 - 00:34:25:21]
+ S
+
+[00:34:25:21 - 00:34:26:21]
+ to D
+
+[00:34:26:21 - 00:34:27:21]
+ E
+
+[00:34:27:21 - 00:34:28:21]
+ equals
+
+[00:34:28:21 - 00:34:29:21]
+ 1 over T.
+
+[00:34:29:21 - 00:34:33:03]
+ OK.
+
+[00:34:33:03 - 00:34:34:03]
+ We also
+
+[00:34:34:03 - 00:34:35:03]
+ recall
+
+[00:34:35:03 - 00:34:36:03]
+ the fact that
+
+[00:34:36:03 - 00:34:37:03]
+ at equilibrium
+
+[00:34:37:03 - 00:34:38:03]
+ our
+
+[00:34:38:03 - 00:34:39:03]
+ two
+
+[00:34:39:03 - 00:34:40:03]
+ where is the diagram
+
+[00:34:40:03 - 00:34:42:03]
+ at equilibrium
+
+[00:34:42:03 - 00:34:43:03]
+ these two
+
+[00:34:43:03 - 00:34:46:12]
+ would have
+
+[00:34:46:12 - 00:34:47:12]
+ to have
+
+[00:34:47:12 - 00:34:48:12]
+ T
+
+[00:34:48:12 - 00:34:49:12]
+ A
+
+[00:34:49:12 - 00:34:50:12]
+ equal
+
+[00:34:50:12 - 00:34:51:12]
+ T B
+
+[00:34:51:12 - 00:34:52:12]
+ equal
+
+[00:34:52:12 - 00:34:53:12]
+ T
+
+[00:34:53:12 - 00:34:54:12]
+ in other words
+
+[00:34:54:12 - 00:34:55:12]
+ the combined system
+
+[00:34:55:12 - 00:34:56:12]
+ A
+
+[00:34:56:12 - 00:34:57:12]
+ plus B
+
+[00:34:57:12 - 00:34:59:12]
+ must have
+
+[00:34:59:12 - 00:35:00:12]
+ temperature
+
+[00:35:00:12 - 00:35:01:12]
+ T
+
+[00:35:01:12 - 00:35:02:12]
+ that
+
+[00:35:02:12 - 00:35:03:12]
+ is equal to temperature
+
+[00:35:03:12 - 00:35:04:12]
+ T A and T B
+
+[00:35:04:12 - 00:35:05:12]
+ at equilibrium.
+
+[00:35:05:12 - 00:35:06:12]
+ OK.
+
+[00:35:06:12 - 00:35:09:23]
+ So if we impose
+
+[00:35:09:23 - 00:35:10:23]
+ if we recall
+
+[00:35:10:23 - 00:35:12:23]
+ this thermodynamic relation
+
+[00:35:12:23 - 00:35:15:23]
+ and we also
+
+[00:35:15:23 - 00:35:16:23]
+ impose the fact that
+
+[00:35:16:23 - 00:35:17:23]
+ T A and T B
+
+[00:35:17:23 - 00:35:18:23]
+ are
+
+[00:35:18:23 - 00:35:19:23]
+ are the same
+
+[00:35:19:23 - 00:35:21:23]
+ equal T
+
+[00:35:21:23 - 00:35:22:23]
+ and then we
+
+[00:35:23:23 - 00:35:25:23]
+ look at
+
+[00:35:25:23 - 00:35:28:23]
+ this above relation
+
+[00:35:28:23 - 00:35:30:23]
+ where we have
+
+[00:35:30:23 - 00:35:31:23]
+ the derivative of
+
+[00:35:31:23 - 00:35:33:23]
+ L N
+
+[00:35:33:23 - 00:35:34:23]
+ of microstates
+
+[00:35:34:23 - 00:35:35:23]
+ in respect with
+
+[00:35:35:23 - 00:35:37:23]
+ energy
+
+[00:35:37:23 - 00:35:38:23]
+ and then
+
+[00:35:38:23 - 00:35:40:23]
+ we have
+
+[00:35:40:23 - 00:35:41:23]
+ the derivative of
+
+[00:35:41:23 - 00:35:42:23]
+ entropy
+
+[00:35:42:23 - 00:35:43:23]
+ in respect with energy
+
+[00:35:43:23 - 00:35:44:23]
+ is 1 over T
+
+[00:35:44:23 - 00:35:45:23]
+ so
+
+[00:35:45:23 - 00:35:46:23]
+ we can say that
+
+[00:35:46:23 - 00:35:48:23]
+ this
+
+[00:35:48:23 - 00:35:49:23]
+ is
+
+[00:35:49:23 - 00:35:51:23]
+ of a similar nature
+
+[00:35:51:23 - 00:35:52:23]
+ to this one
+
+[00:35:52:23 - 00:35:53:23]
+ we can
+
+[00:35:53:23 - 00:35:54:23]
+ say is proportional
+
+[00:35:54:23 - 00:35:55:23]
+ to 1 over T.
+
+[00:35:55:23 - 00:35:56:23]
+ OK.
+
+[00:35:56:23 - 00:36:02:02]
+ So let's
+
+[00:36:02:02 - 00:36:03:02]
+ rewrite again
+
+[00:36:03:02 - 00:36:04:02]
+ D L N
+
+[00:36:04:02 - 00:36:05:02]
+ omega
+
+[00:36:05:02 - 00:36:06:02]
+ to D E
+
+[00:36:06:02 - 00:36:09:13]
+ we said proportional
+
+[00:36:09:13 - 00:36:10:13]
+ 1 over T
+
+[00:36:10:13 - 00:36:11:13]
+ OK.
+
+[00:36:11:13 - 00:36:12:13]
+ Let's put equal now
+
+[00:36:12:13 - 00:36:14:13]
+ and put a proportionality factor
+
+[00:36:14:13 - 00:36:16:13]
+ over there.
+
+[00:36:16:13 - 00:36:17:13]
+ So it's some kind of
+
+[00:36:17:13 - 00:36:18:13]
+ K
+
+[00:36:18:13 - 00:36:19:13]
+ constant
+
+[00:36:19:13 - 00:36:20:13]
+ times
+
+[00:36:20:13 - 00:36:21:13]
+ derivative of
+
+[00:36:21:13 - 00:36:22:13]
+ L N
+
+[00:36:22:13 - 00:36:23:13]
+ omega
+
+[00:36:23:13 - 00:36:24:13]
+ to D E
+
+[00:36:24:13 - 00:36:25:13]
+ and that equals
+
+[00:36:25:13 - 00:36:26:13]
+ 1 over T.
+
+[00:36:27:13 - 00:36:29:13]
+ Because this
+
+[00:36:29:13 - 00:36:30:13]
+ equals to
+
+[00:36:30:13 - 00:36:31:13]
+ this
+
+[00:36:31:13 - 00:36:32:13]
+ that means
+
+[00:36:32:13 - 00:36:33:13]
+ this
+
+[00:36:33:13 - 00:36:34:13]
+ equals
+
+[00:36:34:13 - 00:36:36:23]
+ this
+
+[00:36:36:23 - 00:36:38:23]
+ so that means
+
+[00:36:38:23 - 00:36:39:23]
+ that
+
+[00:36:39:23 - 00:36:40:23]
+ S
+
+[00:36:40:23 - 00:36:42:23]
+ equals
+
+[00:36:42:23 - 00:36:43:23]
+ K
+
+[00:36:43:23 - 00:36:44:23]
+ L
+
+[00:36:44:23 - 00:36:45:23]
+ N
+
+[00:36:45:23 - 00:36:46:23]
+ omega.
+
+[00:36:46:23 - 00:36:49:03]
+ What is this
+
+[00:36:49:03 - 00:36:50:03]
+ K?
+
+[00:36:50:03 - 00:36:51:03]
+ K can be
+
+[00:36:51:03 - 00:36:52:03]
+ fixed
+
+[00:36:52:03 - 00:36:53:03]
+ by the
+
+[00:36:53:03 - 00:36:54:03]
+ experiment
+
+[00:36:54:03 - 00:36:55:03]
+ and we
+
+[00:36:55:03 - 00:36:56:03]
+ call K
+
+[00:36:56:03 - 00:36:57:03]
+ Boltzmann
+
+[00:36:57:03 - 00:36:58:03]
+ constant.
+
+[00:36:58:03 - 00:36:59:03]
+ There is
+
+[00:36:59:03 - 00:37:01:19]
+ a
+
+[00:37:01:19 - 00:37:02:19]
+ this is
+
+[00:37:02:19 - 00:37:03:19]
+ a universal
+
+[00:37:03:19 - 00:37:04:19]
+ constant
+
+[00:37:04:19 - 00:37:05:19]
+ is determined
+
+[00:37:05:19 - 00:37:06:19]
+ by experiment
+
+[00:37:06:19 - 00:37:07:19]
+ K B
+
+[00:37:07:19 - 00:37:08:19]
+ is
+
+[00:37:08:19 - 00:37:09:19]
+ 1.38
+
+[00:37:09:19 - 00:37:10:19]
+ there are
+
+[00:37:10:19 - 00:37:11:19]
+ many other
+
+[00:37:11:19 - 00:37:12:19]
+ digits
+
+[00:37:12:19 - 00:37:13:19]
+ here
+
+[00:37:13:19 - 00:37:14:19]
+ 10 to
+
+[00:37:14:19 - 00:37:15:19]
+ the
+
+[00:37:15:19 - 00:37:16:19]
+ minus
+
+[00:37:16:19 - 00:37:17:19]
+ 23
+
+[00:37:17:19 - 00:37:18:19]
+ Joules
+
+[00:37:18:19 - 00:37:19:19]
+ per Kelvin.
+
+[00:37:19:19 - 00:37:20:19]
+ So it has
+
+[00:37:20:19 - 00:37:21:19]
+ units of
+
+[00:37:21:19 - 00:37:22:19]
+ energy
+
+[00:37:22:19 - 00:37:25:01]
+ per temperature.
+
+[00:37:25:01 - 00:37:26:01]
+ OK.
+
+[00:37:26:01 - 00:37:27:01]
+ And that's
+
+[00:37:27:01 - 00:37:28:01]
+ the Boltzmann
+
+[00:37:28:01 - 00:37:29:01]
+ constant
+
+[00:37:29:01 - 00:37:31:17]
+ and this
+
+[00:37:31:17 - 00:37:32:17]
+ is
+
+[00:37:32:17 - 00:37:33:17]
+ the
+
+[00:37:33:17 - 00:37:35:17]
+ equation.
+
+[00:37:35:17 - 00:37:36:17]
+ I need
+
+[00:37:36:17 - 00:37:37:17]
+ another piece
+
+[00:37:37:17 - 00:37:40:20]
+ of paper
+
+[00:37:40:20 - 00:37:41:20]
+ running out
+
+[00:37:41:20 - 00:37:46:05]
+ of papers
+
+[00:37:46:05 - 00:37:47:05]
+ here.
+
+[00:37:47:05 - 00:37:48:05]
+ This is
+
+[00:37:48:05 - 00:37:49:05]
+ there are
+
+[00:37:49:05 - 00:37:50:05]
+ there are
+
+[00:37:50:05 - 00:37:51:05]
+ more sophisticated
+
+[00:37:51:05 - 00:37:53:29]
+ derivations
+
+[00:37:53:29 - 00:37:54:29]
+ of these
+
+[00:37:54:29 - 00:37:55:29]
+ but this
+
+[00:37:55:29 - 00:37:56:29]
+ is a
+
+[00:37:56:29 - 00:37:57:29]
+ quick
+
+[00:37:57:29 - 00:37:58:29]
+ and
+
+[00:37:58:29 - 00:37:59:29]
+ semi
+
+[00:37:59:29 - 00:38:00:29]
+ is not
+
+[00:38:00:29 - 00:38:01:29]
+ empirical
+
+[00:38:01:29 - 00:38:02:29]
+ semi
+
+[00:38:02:29 - 00:38:03:29]
+ analytical
+
+[00:38:03:29 - 00:38:04:29]
+ if you want
+
+[00:38:04:29 - 00:38:05:29]
+ is not
+
+[00:38:05:29 - 00:38:06:29]
+ is not
+
+[00:38:06:29 - 00:38:07:29]
+ the most
+
+[00:38:07:29 - 00:38:08:29]
+ sophisticated
+
+[00:38:08:29 - 00:38:09:29]
+ derivation
+
+[00:38:09:29 - 00:38:12:29]
+ is
+
+[00:38:12:29 - 00:38:13:29]
+ we
+
+[00:38:13:29 - 00:38:14:29]
+ have this
+
+[00:38:14:29 - 00:38:15:29]
+ relational
+
+[00:38:15:29 - 00:38:16:29]
+ SKB
+
+[00:38:16:29 - 00:38:17:29]
+ logarithm
+
+[00:38:17:29 - 00:38:18:29]
+ of Omega
+
+[00:38:18:29 - 00:38:19:29]
+ and we
+
+[00:38:19:29 - 00:38:20:29]
+ know that
+
+[00:38:20:29 - 00:38:21:29]
+ the second
+
+[00:38:21:29 - 00:38:22:29]
+ law of
+
+[00:38:22:29 - 00:38:23:29]
+ thermodynamics
+
+[00:38:23:29 - 00:38:24:29]
+ requires
+
+[00:38:24:29 - 00:38:25:29]
+ the entropy
+
+[00:38:25:29 - 00:38:26:29]
+ to remain
+
+[00:38:26:29 - 00:38:27:29]
+ constant
+
+[00:38:27:29 - 00:38:28:29]
+ or increase
+
+[00:38:28:29 - 00:38:29:29]
+ over time.
+
+[00:38:29:29 - 00:38:30:29]
+ So the
+
+[00:38:30:29 - 00:38:31:29]
+ question is
+
+[00:38:31:29 - 00:38:32:29]
+ why entropy
+
+[00:38:32:29 - 00:38:33:29]
+ increases
+
+[00:38:33:29 - 00:38:34:29]
+ now
+
+[00:38:34:29 - 00:38:35:29]
+ and for
+
+[00:38:35:29 - 00:38:36:29]
+ an
+
+[00:38:36:29 - 00:38:37:29]
+ isolated
+
+[00:38:37:29 - 00:38:38:29]
+ system
+
+[00:38:38:29 - 00:38:39:29]
+ the
+
+[00:38:39:29 - 00:38:40:29]
+ the
+
+[00:38:40:29 - 00:38:44:10]
+ the
+
+[00:38:44:10 - 00:38:45:10]
+ the
+
+[00:38:45:10 - 00:38:46:10]
+ the
+
+[00:38:46:10 - 00:38:47:10]
+ evolution
+
+[00:38:47:10 - 00:38:48:10]
+ to
+
+[00:38:48:10 - 00:38:49:10]
+ equilibrium
+
+[00:38:49:10 - 00:38:50:10]
+ is to
+
+[00:38:50:10 - 00:38:51:10]
+ macrostates
+
+[00:38:51:10 - 00:38:52:10]
+ that
+
+[00:38:52:10 - 00:38:53:10]
+ have
+
+[00:38:53:10 - 00:38:54:10]
+ the
+
+[00:38:54:10 - 00:38:55:10]
+ largest
+
+[00:38:55:10 - 00:38:56:10]
+ omega
+
+[00:38:56:10 - 00:38:57:10]
+ OK
+
+[00:38:57:10 - 00:38:58:10]
+ or
+
+[00:38:58:10 - 00:38:59:10]
+ macro
+
+[00:38:59:10 - 00:39:00:10]
+ states
+
+[00:39:00:10 - 00:39:01:10]
+ that
+
+[00:39:01:10 - 00:39:02:10]
+ contain
+
+[00:39:02:10 - 00:39:03:10]
+ the
+
+[00:39:03:10 - 00:39:04:10]
+ largest
+
+[00:39:04:10 - 00:39:05:10]
+ number
+
+[00:39:05:10 - 00:39:06:10]
+ of microstates
+
+[00:39:06:10 - 00:39:07:10]
+ if you
+
+[00:39:07:10 - 00:39:08:10]
+ want
+
+[00:39:08:10 - 00:39:09:10]
+ OK
+
+[00:39:09:10 - 00:39:10:10]
+ the
+
+[00:39:10:10 - 00:39:11:10]
+ largest
+
+[00:39:11:10 - 00:39:12:10]
+ macro
+
+[00:39:12:10 - 00:39:23:26]
+ larger or equal to omega initial. Or the number of microstates in the final macrostate is
+
+[00:39:23:26 - 00:39:37:20]
+ larger than the number of microstates in the initial macrostate. And this is why we equated
+
+[00:39:37:20 - 00:39:43:19]
+ this to the maximum disorder if you want, because it is more positions, more microstates
+
+[00:39:43:19 - 00:39:54:09]
+ where particles can occupy and take positions. It means more disorder, it means larger number
+
+[00:39:54:09 - 00:40:08:01]
+ of microstates. So, because S equals KB ln omega, from here we deduce that S final must
+
+[00:40:08:01 - 00:40:16:04]
+ be larger or equal to S initial. It's straightforward.
+
+[00:40:16:04 - 00:40:18:04]
+ Or dS is greater than or equal to KB ln omega.
+
+[00:40:18:07 - 00:40:32:07]
+ Second law of thermodynamics dS, larger and equal to zero is positive, always increases
+
+[00:40:32:07 - 00:40:36:25]
+ or remains constant. Why am I touching on this? Because we are going to discuss the
+
+[00:40:36:25 - 00:40:46:22]
+ second law of infodynamics very soon, which will show that dS info evolves exactly the
+
+[00:40:46:22 - 00:40:55:14]
+ opposite. The changing information.
+
+[00:40:55:14 - 00:41:00:03]
+ Since dS is exactly the opposite of dS, exactly the opposite of the thermodynamic entropy
+
+[00:41:00:03 - 00:41:04:26]
+ or Boltzmann entropy if you want. It decreases over time, and they kind of balance each other.
+
+[00:41:04:26 - 00:41:15:09]
+ We are going to touch on this very soon. But this is what I wanted to explain today, and
+
+[00:41:15:09 - 00:41:31:00]
+ the reason I wanted to do this is to clarify the fact that this thermodynamic macrostate,
+
+[00:41:31:06 - 00:41:35:22]
+ And microstates and macrostates and microstates, it's a complicated business.
+
+[00:41:36:12 - 00:41:44:19]
+ The thermodynamic macrostate can have, yes, many microstates, but actually it can have
+
+[00:41:44:19 - 00:41:51:15]
+ many Boltzmann macrostates, and each Boltzmann macrostate is described by a distribution
+
+[00:41:51:15 - 00:41:59:08]
+ like this, and to each distribution one can compute using multinomial coefficients the
+
+[00:41:59:08 - 00:42:04:03]
+ number of microstates, and that's how they scale.
+
+[00:42:04:22 - 00:42:10:19]
+ So, the thermodynamic macrostate contains many Boltzmann macrostates, and each Boltzmann
+
+[00:42:10:19 - 00:42:14:00]
+ macrostate contains many, many microstates.
+
+[00:42:14:25 - 00:42:21:26]
+ And at equilibrium, the most probable state is the Boltzmann distribution that has the
+
+[00:42:21:26 - 00:42:23:12]
+ largest number of microstates.
+
+[00:42:24:23 - 00:42:26:05]
+ That's how you should see it.
+
+[00:42:26:15 - 00:42:29:03]
+ Now, let's go back.
+
+[00:42:29:08 - 00:42:32:20]
+ Now to the comparison between Boltzmann and Shannon.
+
+[00:42:33:20 - 00:42:43:06]
+ And I, again, I draw, I drafted a table here, and I think this will nail it completely and
+
+[00:42:43:06 - 00:42:48:14]
+ clarify the distinctions between Boltzmann entropy and Shannon entropy.
+
+[00:42:49:10 - 00:42:56:17]
+ There are some people that, is this Sabine Hassel, oh my God, I can't remember her name,
+
+[00:42:57:26 - 00:42:59:02]
+ Hasselhoff something.
+
+[00:42:59:08 - 00:43:04:19]
+ I don't know, some Sabine, some YouTuber scientist lady with a big number of followers.
+
+[00:43:05:16 - 00:43:10:07]
+ She claimed that there is no difference between Shannon entropy and Boltzmann entropy.
+
+[00:43:10:07 - 00:43:22:12]
+ So, this is for her and for people that think like her to clearly show the distinction between
+
+[00:43:22:12 - 00:43:22:22]
+ the two.
+
+[00:43:22:26 - 00:43:27:04]
+ So, on the left I have Boltzmann entropy, on the right column I have Shannon entropy.
+
+[00:43:27:04 - 00:43:34:10]
+ Boltzmann entropy refers to gas, gas particles, particles, physical states, whatever, elements
+
+[00:43:34:10 - 00:43:41:18]
+ in a crystal, you know, anything that is some kind of physical entities.
+
+[00:43:41:18 - 00:43:46:22]
+ And they can occupy different states, different positions, they can have different energies,
+
+[00:43:46:22 - 00:43:47:29]
+ different momentum and so on.
+
+[00:43:47:29 - 00:43:55:13]
+ Shannon entropy, it's a collection of letters, information states, a message, or so on.
+
+[00:43:55:13 - 00:43:56:13]
+ Okay?
+
+[00:43:56:13 - 00:44:03:25]
+ In Boltzmann Entropy N is the number of single particle microstates in the phase space.
+
+[00:44:03:25 - 00:44:08:21]
+ In Shannon Entropy N is the number of letters in a message or the number of information
+
+[00:44:08:21 - 00:44:11:04]
+ states if you want.
+
+[00:44:11:04 - 00:44:13:04]
+ Very different things.
+
+[00:44:13:04 - 00:44:28:19]
+ The distribution N1, N2 and L is the L cell distribution.
+
+[00:44:28:19 - 00:44:37:07]
+ This would correspond in Shannon Entropy to X1, X2, XL or an L letters alphabet.
+
+[00:44:37:07 - 00:44:42:24]
+ So how many distinct letters do we have in a message?
+
+[00:44:42:24 - 00:44:43:04]
+ What is our alphabet?
+
+[00:44:43:04 - 00:44:50:20]
+ These are the distributions in cells, these are the letters in alphabet.
+
+[00:44:50:20 - 00:44:57:04]
+ The probability distribution P1, P2, PL in Boltzmann is probability distribution over
+
+[00:44:57:04 - 00:45:03:12]
+ cells, in Shannon Entropy is probability distribution over letters.
+
+[00:45:03:12 - 00:45:07:04]
+ What is the probability that letter XA appears in a message?
+
+[00:45:07:04 - 00:45:12:24]
+ It would be XI, it would be PI.
+
+[00:45:12:24 - 00:45:16:27]
+ That would be the probability and so on and so on.
+
+[00:45:16:27 - 00:45:26:03]
+ And then you define the probability that a microstate occurs in cell J is PJ is NJ divided
+
+[00:45:26:03 - 00:45:37:14]
+ by N. Probability that a letter XJ occurs in a given message is PJ is NJ is how many
+
+[00:45:37:14 - 00:45:42:24]
+ times the letter appears in the message divided by all the letters of the message.
+
+[00:45:42:24 - 00:45:46:06]
+ So that's how you define them.
+
+[00:45:46:06 - 00:45:53:26]
+ The number of microstates product N, capital PJ is the number of microstates in cell WJ.
+
+[00:45:53:26 - 00:46:01:24]
+ The number NPJ is the number of XJ letters in a message.
+
+[00:46:01:24 - 00:46:10:20]
+ And then finally the Boltzmann Entropy is Boltzmann constant times logarithm of the
+
+[00:46:10:20 - 00:46:12:14]
+ number of microstates.
+
+[00:46:12:14 - 00:46:19:13]
+ And it can be expanded using the multinomial coefficients and some algebra.
+
+[00:46:19:13 - 00:46:22:13]
+ It can be expanded to look like this.
+
+[00:46:22:13 - 00:46:26:13]
+ It has units of Joule per Kelvin and it looks like this.
+
+[00:46:26:13 - 00:46:34:11]
+ The Shannon Information Entropy has units of bits, by assuming we selected this B logarithm
+
+[00:46:34:11 - 00:46:37:18]
+ here as base 2.
+
+[00:46:37:18 - 00:46:39:20]
+ And it looks like this.
+
+[00:46:39:20 - 00:46:41:00]
+ The formula looks like this.
+
+[00:46:41:00 - 00:46:42:00]
+ Indeed.
+
+[00:46:42:00 - 00:46:46:10]
+ Similar to the Boltzmann but it's not the same units, not quite the same.
+
+[00:46:46:10 - 00:46:49:26]
+ And actually these quantities, as you can see in the table, they refer to very different
+
+[00:46:49:26 - 00:46:52:22]
+ entities, very different things.
+
+[00:46:52:22 - 00:46:57:13]
+ Distribution in the cells of particles, this is letters in a message and so on.
+
+[00:46:57:13 - 00:47:00:22]
+ And with this I'm closing this discussion.
+
+[00:47:00:22 - 00:47:09:24]
+ I hope I convinced you guys that there is a very big distinction between Boltzmann and
+
+[00:47:09:24 - 00:47:10:24]
+ Shannon Entropy.
+
+[00:47:10:24 - 00:47:11:24]
+ Although they are...
+
+[00:47:11:24 - 00:47:17:14]
+ They are connected to each other and I managed to derive a relationship between the two.
+
+[00:47:17:14 - 00:47:19:07]
+ But they are not the same thing.
+
+[00:47:19:07 - 00:47:20:07]
+ Okay.
+
+[00:47:20:07 - 00:47:21:07]
+ Thank you.
+
+[00:47:21:07 - 00:47:27:17]
+ And we are going to move into more information physics topics in the next lectures.
+
+[00:47:27:17 - 00:47:32:05]
+ I'm going to discuss the mass energy information equivalence principle, second law of information
+
+[00:47:32:05 - 00:47:38:04]
+ dynamics, the information catastrophe and many, many, many interesting subjects.
+
+[00:47:38:04 - 00:47:38:24]
+ So stay with me and I'll see you next time.
+
+[00:47:41:24 - 00:47:43:02]
+ Thank you.
+
