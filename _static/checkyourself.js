@@ -251,13 +251,21 @@
  * progressive-enhancement contract — the markup carries a static description
  * that stands on its own where this file never loads.
  *
- * Currently one explorer: "info-function", for I(p) = log_b(1/p).
+ * Config-driven so a new explorer is a table entry, not another copy of the
+ * slider/canvas plumbing. Each entry supplies its own curve, axis label,
+ * readout rows and running commentary; everything else is shared.
+ *
+ *   fn(p, base)   the curve, in the currently selected base
+ *   yMax(base)    top of the y axis
+ *   pMin/pMax     domain of the slider
+ *   pStart        opening value
+ *   rows(p, base) readout as [label, value] pairs
+ *   note(p, base) one line of commentary under the readout
  * =================================================================== */
 
 (function () {
   "use strict";
 
-  var P_MIN = 0.01;          // left edge of the domain; I(p) diverges at 0
   var BASES = [
     { key: "2", label: "bits",  value: 2 },
     { key: "e", label: "nats",  value: Math.E },
@@ -267,6 +275,72 @@
   function info(p, base) {
     return Math.log(1 / p) / Math.log(base);
   }
+
+  /* Binary entropy. The limit of p*log(p) as p -> 0 is 0, so the endpoints
+   * are defined rather than NaN — which is the boundary case Section 6 makes. */
+  function binaryEntropy(p, base) {
+    if (p <= 0 || p >= 1) return 0;
+    var q = 1 - p;
+    return -(p * Math.log(p) + q * Math.log(q)) / Math.log(base);
+  }
+
+  var EXPLORERS = {
+    "info-function": {
+      fn: info,
+      pMin: 0.01,
+      pMax: 1,
+      pStart: 0.25,
+      step: 0.005,
+      yLabel: "I(p)",
+      yMax: function (base) { return Math.ceil(info(0.01, base)); },
+      rows: function (p, base) {
+        return [
+          ["p", p.toFixed(3)],
+          ["1 / p", (1 / p).toFixed(3)],
+          ["I(p)", info(p, base.value).toFixed(4) + " " + base.label]
+        ];
+      },
+      note: function (p) {
+        if (p > 0.995) {
+          return "A certain event. You learn nothing from being told it happened — I(1) = 0, which is Shannon's third axiom.";
+        }
+        if (p < 0.05) {
+          return "A rare event, and a very informative one. As p falls toward 0 the information grows without bound.";
+        }
+        return "Halve p and I(p) rises by exactly one bit — that constant step is what makes the function logarithmic.";
+      }
+    },
+
+    "binary-entropy": {
+      fn: binaryEntropy,
+      pMin: 0,
+      pMax: 1,
+      pStart: 0.5,
+      step: 0.005,
+      yLabel: "H(p)",
+      yMax: function (base) { return binaryEntropy(0.5, base); },
+      rows: function (p, base) {
+        return [
+          ["p", p.toFixed(3)],
+          ["1 - p", (1 - p).toFixed(3)],
+          ["H", binaryEntropy(p, base.value).toFixed(4) + " " + base.label]
+        ];
+      },
+      note: function (p, base) {
+        var peak = binaryEntropy(0.5, base.value).toFixed(4);
+        if (p <= 0.005 || p >= 0.995) {
+          return "One outcome is certain, so there is no uncertainty to measure and H = 0. Both ends of the curve touch zero.";
+        }
+        if (Math.abs(p - 0.5) < 0.02) {
+          return "The peak. A uniform distribution is the most uncertain one, and here H reaches its maximum of " + peak + " " + base.label + ".";
+        }
+        if (Math.abs(p - 0.9) < 0.02 || Math.abs(p - 0.1) < 0.02) {
+          return "This is the biased coin from the cell above — the 90/10 split, worth about 0.469 bits against the fair coin's 1.";
+        }
+        return "Away from the peak the outcome is more predictable, so each observation carries less information.";
+      }
+    }
+  };
 
   function css(node, name, fallback) {
     var v = getComputedStyle(node).getPropertyValue(name);
@@ -282,19 +356,20 @@
 
   function buildExplorer(node) {
     if (node.dataset.explorerReady) return;
+    var cfg = EXPLORERS[node.getAttribute("data-explore")];
+    if (!cfg) return;
     node.dataset.explorerReady = "1";
 
     var baseIndex = 0;
-    var p = 0.25;            // matches the worked value in the cell above
+    var p = cfg.pStart;
 
-    /* --- controls --- */
     var controls = el("div", "cyux-controls");
 
     var slider = document.createElement("input");
     slider.type = "range";
-    slider.min = String(P_MIN);
-    slider.max = "1";
-    slider.step = "0.005";
+    slider.min = String(cfg.pMin);
+    slider.max = String(cfg.pMax);
+    slider.step = String(cfg.step);
     slider.value = String(p);
     slider.className = "cyux-slider";
     slider.setAttribute("aria-label", "probability p");
@@ -309,19 +384,14 @@
     var baseBtns = BASES.map(function (b, i) {
       var btn = el("button", "cyux-base", b.label);
       btn.type = "button";
-      btn.addEventListener("click", function () {
-        baseIndex = i;
-        render();
-      });
+      btn.addEventListener("click", function () { baseIndex = i; render(); });
       baseRow.appendChild(btn);
       return btn;
     });
     controls.appendChild(baseRow);
 
-    /* --- readout --- */
     var readout = el("div", "cyux-readout");
 
-    /* --- plot --- */
     var canvas = document.createElement("canvas");
     canvas.className = "cyux-canvas";
     canvas.setAttribute("role", "img");
@@ -353,11 +423,12 @@
       var plotW = w - padL - padR;
       var plotH = h - padT - padB;
 
-      var yMax = Math.ceil(info(P_MIN, base.value));
-      var X = function (pv) { return padL + pv * plotW; };
+      var yMax = cfg.yMax(base.value);
+      var X = function (pv) {
+        return padL + ((pv - cfg.pMin) / (cfg.pMax - cfg.pMin)) * plotW;
+      };
       var Y = function (iv) { return padT + plotH - (iv / yMax) * plotH; };
 
-      /* axes */
       ctx.globalAlpha = 0.45;
       ctx.strokeStyle = ink;
       ctx.lineWidth = 1;
@@ -367,28 +438,31 @@
       ctx.lineTo(padL + plotW, padT + plotH);
       ctx.stroke();
 
-      /* ticks */
       ctx.globalAlpha = 0.7;
       ctx.fillStyle = ink;
       ctx.font = "11px ui-monospace, Menlo, Consolas, monospace";
       ctx.textAlign = "center";
       ctx.textBaseline = "top";
       [0, 0.25, 0.5, 0.75, 1].forEach(function (t) {
-        ctx.fillText(t.toFixed(2), X(t), padT + plotH + 7);
+        var pv = cfg.pMin + t * (cfg.pMax - cfg.pMin);
+        ctx.fillText(pv.toFixed(2), X(pv), padT + plotH + 7);
       });
+
       ctx.textAlign = "right";
       ctx.textBaseline = "middle";
-      for (var t = 0; t <= yMax; t += Math.max(1, Math.round(yMax / 4))) {
-        ctx.fillText(String(t), padL - 7, Y(t));
+      var steps = 4;
+      for (var s = 0; s <= steps; s++) {
+        var yv = (yMax / steps) * s;
+        var label = yMax >= 3 ? yv.toFixed(0) : yv.toFixed(2);
+        ctx.fillText(label, padL - 7, Y(yv));
         ctx.globalAlpha = 0.14;
         ctx.beginPath();
-        ctx.moveTo(padL, Y(t));
-        ctx.lineTo(padL + plotW, Y(t));
+        ctx.moveTo(padL, Y(yv));
+        ctx.lineTo(padL + plotW, Y(yv));
         ctx.stroke();
         ctx.globalAlpha = 0.7;
       }
 
-      /* axis titles */
       ctx.globalAlpha = 0.75;
       ctx.textAlign = "center";
       ctx.textBaseline = "bottom";
@@ -396,24 +470,24 @@
       ctx.save();
       ctx.translate(11, padT + plotH / 2);
       ctx.rotate(-Math.PI / 2);
-      ctx.fillText("I(p)  " + base.label, 0, 0);
+      ctx.fillText(cfg.yLabel + "  " + base.label, 0, 0);
       ctx.restore();
 
-      /* the curve */
       ctx.globalAlpha = 1;
       ctx.strokeStyle = accent;
       ctx.lineWidth = 2;
       ctx.beginPath();
-      for (var i = 0; i <= 240; i++) {
-        var pv = P_MIN + (1 - P_MIN) * (i / 240);
-        var iv = info(pv, base.value);
-        if (i === 0) ctx.moveTo(X(pv), Y(iv));
-        else ctx.lineTo(X(pv), Y(iv));
+      var started = false;
+      for (var i = 0; i <= 300; i++) {
+        var pv2 = cfg.pMin + (cfg.pMax - cfg.pMin) * (i / 300);
+        var iv = cfg.fn(pv2, base.value);
+        if (!isFinite(iv)) continue;
+        if (!started) { ctx.moveTo(X(pv2), Y(iv)); started = true; }
+        else ctx.lineTo(X(pv2), Y(iv));
       }
       ctx.stroke();
 
-      /* marker + guides */
-      var iNow = info(p, base.value);
+      var iNow = cfg.fn(p, base.value);
       ctx.strokeStyle = accent;
       ctx.globalAlpha = 0.45;
       ctx.setLineDash([3, 3]);
@@ -433,8 +507,8 @@
 
       canvas.setAttribute(
         "aria-label",
-        "Plot of information against probability. At p = " + p.toFixed(3) +
-        ", I(p) = " + iNow.toFixed(3) + " " + base.label + "."
+        "Plot of " + cfg.yLabel + " against probability. At p = " + p.toFixed(3) +
+        ", " + cfg.yLabel + " = " + iNow.toFixed(3) + " " + base.label + "."
       );
     }
 
@@ -447,30 +521,13 @@
       });
 
       readout.innerHTML = "";
-      var rows = [
-        ["p", p.toFixed(3)],
-        ["1 / p", (1 / p).toFixed(3)],
-        ["I(p)", info(p, base.value).toFixed(4) + " " + base.label]
-      ];
-      rows.forEach(function (r) {
+      cfg.rows(p, base).forEach(function (r) {
         var cell = el("div", "cyux-cell");
         cell.appendChild(el("span", "cyux-cell-key", r[0]));
         cell.appendChild(el("span", "cyux-cell-val", r[1]));
         readout.appendChild(cell);
       });
-
-      var note = el("p", "cyux-note");
-      if (p > 0.995) {
-        note.textContent =
-          "A certain event. You learn nothing from being told it happened — I(1) = 0, which is Shannon's third axiom.";
-      } else if (p < 0.05) {
-        note.textContent =
-          "A rare event, and a very informative one. As p falls toward 0 the information grows without bound.";
-      } else {
-        note.textContent =
-          "Halve p and I(p) rises by exactly one bit — that constant step is what makes the function logarithmic.";
-      }
-      readout.appendChild(note);
+      readout.appendChild(el("p", "cyux-note", cfg.note(p, base)));
 
       drawPlot();
     }
@@ -488,7 +545,7 @@
   }
 
   function init() {
-    var nodes = document.querySelectorAll("[data-explore='info-function']");
+    var nodes = document.querySelectorAll("[data-explore]");
     Array.prototype.forEach.call(nodes, buildExplorer);
   }
 
