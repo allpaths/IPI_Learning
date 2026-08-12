@@ -1,0 +1,191 @@
+/* "Check your Understanding" exercise blocks.
+ *
+ * Progressive enhancement: the markup in the notebook is a plain <details>
+ * element holding the question text, hints and solution. Without JavaScript
+ * (JupyterLab, Colab, or a browser with JS off) it still opens and reads as a
+ * static question-and-answer. checkyourself.js upgrades it in place into a
+ * graded widget with submit / retry / reveal.
+ *
+ * Colours reuse the --ipi-* tokens defined in custom.css.
+ */
+
+:root {
+  --cyu-ok:     #1bd169;
+  --cyu-warn:   #e8a33d;
+  --cyu-err:    #e2564c;
+  --cyu-line:   rgba(127, 127, 127, 0.35);
+  --cyu-tint:   rgba(27, 209, 105, 0.07);
+}
+
+details.cyu {
+  border: 1px solid var(--cyu-line);
+  border-left: 3px solid var(--ipi-green, #1bd169);
+  border-radius: 6px;
+  margin: 1.25rem 0 1.75rem 0;
+  padding: 0;
+  background: var(--cyu-tint);
+}
+
+details.cyu > summary {
+  cursor: pointer;
+  padding: 0.65rem 0.9rem;
+  font-weight: 600;
+  list-style: none;
+  user-select: none;
+}
+
+/* Replace the default disclosure marker with a +/- that we control. */
+details.cyu > summary::-webkit-details-marker { display: none; }
+details.cyu > summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.1em;
+  font-weight: 700;
+  color: var(--ipi-green, #1bd169);
+}
+details.cyu[open] > summary::before { content: "\2212"; }  /* minus */
+
+details.cyu > summary:hover { background: rgba(27, 209, 105, 0.10); }
+
+.cyu-body { padding: 0 0.9rem 0.9rem 0.9rem; }
+
+.cyu-intro {
+  margin: 0 0 1rem 0;
+  font-size: 0.94em;
+  opacity: 0.85;
+}
+
+/* --- one question ------------------------------------------------------ */
+
+.cyu-q {
+  border-top: 1px solid var(--cyu-line);
+  padding-top: 0.9rem;
+  margin-top: 0.9rem;
+}
+.cyu-q:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+
+.cyu-tier {
+  display: inline-block;
+  font-size: 0.72em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--cyu-line);
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.cyu-prompt { margin: 0.3rem 0 0.7rem 0; }
+
+.cyu-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: rgba(127, 127, 127, 0.12);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  margin: 0.5rem 0 0.75rem 0;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* --- inputs ------------------------------------------------------------ */
+
+.cyu-choices { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.75rem; }
+
+.cyu-choice {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--cyu-line);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cyu-choice:hover { background: rgba(127, 127, 127, 0.10); }
+.cyu-choice input { margin: 0; flex: none; }
+.cyu-choice.is-right { border-color: var(--cyu-ok); background: rgba(27, 209, 105, 0.12); }
+.cyu-choice.is-wrong { border-color: var(--cyu-err); background: rgba(226, 86, 76, 0.10); }
+
+.cyu-entry { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
+
+.cyu-entry input[type="text"] {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95em;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--cyu-line);
+  border-radius: 5px;
+  background: transparent;
+  color: inherit;
+  min-width: 8rem;
+}
+.cyu-entry input[type="text"]:focus {
+  outline: 2px solid var(--ipi-green, #1bd169);
+  outline-offset: 1px;
+}
+.cyu-entry .cyu-unit { opacity: 0.7; font-size: 0.9em; }
+
+/* --- buttons ----------------------------------------------------------- */
+
+.cyu-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+
+.cyu-btn {
+  font: inherit;
+  font-size: 0.88em;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 5px;
+  border: 1px solid var(--ipi-green, #1bd169);
+  background: var(--ipi-green, #1bd169);
+  color: #04240f;
+  cursor: pointer;
+}
+.cyu-btn:hover { filter: brightness(1.08); }
+.cyu-btn:disabled { opacity: 0.45; cursor: default; filter: none; }
+
+.cyu-btn--ghost {
+  background: transparent;
+  color: inherit;
+  border-color: var(--cyu-line);
+}
+.cyu-btn--ghost:hover { background: rgba(127, 127, 127, 0.12); }
+
+/* --- feedback ---------------------------------------------------------- */
+
+.cyu-feedback {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 5px;
+  border-left: 3px solid var(--cyu-line);
+  font-size: 0.94em;
+  background: rgba(127, 127, 127, 0.09);
+}
+.cyu-feedback[data-state="right"] { border-left-color: var(--cyu-ok);   background: rgba(27, 209, 105, 0.12); }
+.cyu-feedback[data-state="hint"]  { border-left-color: var(--cyu-warn); background: rgba(232, 163, 61, 0.12); }
+.cyu-feedback[data-state="wrong"] { border-left-color: var(--cyu-err);  background: rgba(226, 86, 76, 0.10); }
+
+.cyu-feedback .cyu-label { font-weight: 700; display: block; margin-bottom: 0.2rem; }
+.cyu-feedback p { margin: 0.35rem 0 0 0; }
+.cyu-feedback code {
+  background: rgba(127, 127, 127, 0.18);
+  padding: 0.05em 0.35em;
+  border-radius: 3px;
+}
+
+/* The static fallback: shown when JS has not upgraded the block. */
+.cyu-fallback { font-size: 0.94em; }
+.cyu-fallback > details {
+  margin: 0.4rem 0;
+  border-left: 2px solid var(--cyu-line);
+  padding-left: 0.7rem;
+}
+.cyu-fallback > details > summary { cursor: pointer; font-weight: 600; }
+
+/* Once JS takes over, the static fallback is redundant. */
+.cyu-live .cyu-fallback { display: none; }
+
+@media print {
+  details.cyu { break-inside: avoid; }
+  details.cyu[open] .cyu-fallback { display: block; }
+}
