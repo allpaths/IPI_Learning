@@ -339,6 +339,87 @@
         }
         return "Away from the peak the outcome is more predictable, so each observation carries less information.";
       }
+    },
+
+    /* Omega = U^m against m. The count explodes; its logarithm does not. */
+    "omega-growth": {
+      fn: function (m) { return m * Math.log(4) / Math.log(2); },
+      pMin: 1, pMax: 12, pStart: 3, step: 1,
+      xLabel: "m", yLabel: "log2(Omega)", bases: false,
+      yMax: function () { return 24; },
+      rows: function (m) {
+        var omega = Math.pow(4, m);
+        return [
+          ["m", String(m)],
+          ["Omega = 4^m", omega.toLocaleString()],
+          ["log2(Omega)", (m * 2).toFixed(0) + " bits"]
+        ];
+      },
+      note: function (m) {
+        if (m === 3) {
+          return "m = 3 is a codon: 4^3 = 64 blocks, which is exactly the size of the genetic code.";
+        }
+        if (m >= 10) {
+          return "Over a million distinct blocks — yet the entropy ceiling has only reached " + (m * 2) + " bits. That gap is the whole point.";
+        }
+        return "The block count multiplies by 4 with every step in m, while the ceiling log2(Omega) = m log2(U) only adds 2 bits. Exponential count, linear entropy.";
+      }
+    },
+
+    /* Multinomial coefficient for a 2-symbol message of N = 10. */
+    "multinomial-peak": {
+      fn: function (nA) {
+        var N = 10, k = Math.round(nA), r = 1;
+        for (var i = 1; i <= k; i++) r = r * (N - k + i) / i;
+        return Math.log(r) / Math.log(2);
+      },
+      pMin: 0, pMax: 10, pStart: 5, step: 1,
+      xLabel: "n_A", yLabel: "log2(Omega)", bases: false,
+      yMax: function () { return 8; },
+      rows: function (nA) {
+        var N = 10, k = Math.round(nA), r = 1;
+        for (var i = 1; i <= k; i++) r = r * (N - k + i) / i;
+        return [
+          ["composition", k + " A, " + (N - k) + " B"],
+          ["Omega", Math.round(r).toLocaleString()],
+          ["log2(Omega)", (Math.log(r) / Math.log(2)).toFixed(3) + " bits"]
+        ];
+      },
+      note: function (nA) {
+        var k = Math.round(nA);
+        if (k === 0 || k === 10) {
+          return "Only one arrangement exists — every character is the same, so there is nothing to permute and Omega = 1.";
+        }
+        if (k === 5) {
+          return "The peak. An even split has the most arrangements (252), which is why the uniform macrostate dominates.";
+        }
+        return "Away from the even split there are fewer distinct arrangements, so this macrostate occupies less of the space.";
+      }
+    },
+
+    /* Landauer bound against temperature. */
+    "landauer-T": {
+      fn: function (T) { return 1.380649e-23 * T * Math.log(2) / 1e-21; },
+      pMin: 0, pMax: 1000, pStart: 300, step: 5,
+      xLabel: "T (K)", yLabel: "energy (zJ)", bases: false,
+      yMax: function () { return 10; },
+      rows: function (T) {
+        var E = 1.380649e-23 * T * Math.log(2);
+        return [
+          ["T", T.toFixed(0) + " K"],
+          ["k_B T ln2", E.toExponential(3) + " J"],
+          ["m = E/c^2", (E / 8.987551787e16).toExponential(3) + " kg"]
+        ];
+      },
+      note: function (T) {
+        if (T < 5) {
+          return "Approaching absolute zero the cost of erasure vanishes — and so, on the proposed principle, does the mass of a bit.";
+        }
+        if (Math.abs(T - 300) < 10) {
+          return "Room temperature: about 2.87e-21 J per erasure, and a proposed mass of 3.19e-38 kg per stored bit.";
+        }
+        return "Both the energy and the proposed mass are strictly linear in T — the whole curve is one straight line through the origin.";
+      }
     }
   };
 
@@ -374,21 +455,28 @@
     slider.className = "cyux-slider";
     slider.setAttribute("aria-label", "probability p");
 
+    var xLabel = cfg.xLabel || "probability  p";
+    slider.setAttribute("aria-label", xLabel);
+
     var sliderRow = el("div", "cyux-row");
-    sliderRow.appendChild(el("label", "cyux-key", "probability  p"));
+    sliderRow.appendChild(el("label", "cyux-key", xLabel));
     sliderRow.appendChild(slider);
     controls.appendChild(sliderRow);
 
-    var baseRow = el("div", "cyux-row cyux-row--bases");
-    baseRow.appendChild(el("span", "cyux-key", "units"));
-    var baseBtns = BASES.map(function (b, i) {
-      var btn = el("button", "cyux-base", b.label);
-      btn.type = "button";
-      btn.addEventListener("click", function () { baseIndex = i; render(); });
-      baseRow.appendChild(btn);
-      return btn;
-    });
-    controls.appendChild(baseRow);
+    /* Base toggle only where changing units is part of the lesson. */
+    var baseBtns = [];
+    if (cfg.bases !== false) {
+      var baseRow = el("div", "cyux-row cyux-row--bases");
+      baseRow.appendChild(el("span", "cyux-key", "units"));
+      baseBtns = BASES.map(function (b, i) {
+        var btn = el("button", "cyux-base", b.label);
+        btn.type = "button";
+        btn.addEventListener("click", function () { baseIndex = i; render(); });
+        baseRow.appendChild(btn);
+        return btn;
+      });
+      controls.appendChild(baseRow);
+    }
 
     var readout = el("div", "cyux-readout");
 
@@ -443,9 +531,10 @@
       ctx.font = "11px ui-monospace, Menlo, Consolas, monospace";
       ctx.textAlign = "center";
       ctx.textBaseline = "top";
+      var wholeX = cfg.pMax - cfg.pMin >= 5;   // integer-ish domains (m, T)
       [0, 0.25, 0.5, 0.75, 1].forEach(function (t) {
         var pv = cfg.pMin + t * (cfg.pMax - cfg.pMin);
-        ctx.fillText(pv.toFixed(2), X(pv), padT + plotH + 7);
+        ctx.fillText(wholeX ? pv.toFixed(0) : pv.toFixed(2), X(pv), padT + plotH + 7);
       });
 
       ctx.textAlign = "right";
@@ -466,11 +555,11 @@
       ctx.globalAlpha = 0.75;
       ctx.textAlign = "center";
       ctx.textBaseline = "bottom";
-      ctx.fillText("p", padL + plotW / 2, h - 1);
+      ctx.fillText(cfg.xLabel || "p", padL + plotW / 2, h - 1);
       ctx.save();
       ctx.translate(11, padT + plotH / 2);
       ctx.rotate(-Math.PI / 2);
-      ctx.fillText(cfg.yLabel + "  " + base.label, 0, 0);
+      ctx.fillText(cfg.bases === false ? cfg.yLabel : cfg.yLabel + "  " + base.label, 0, 0);
       ctx.restore();
 
       ctx.globalAlpha = 1;
