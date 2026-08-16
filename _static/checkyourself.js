@@ -420,8 +420,133 @@
         }
         return "Both the energy and the proposed mass are strictly linear in T — the whole curve is one straight line through the origin.";
       }
+    },
+
+    /* Part 4: how the step size inflates the block count. N = 30, m = 6. */
+    "overlap-factor": {
+      fn: function (SS) { return 1 + (30 - 6) / Math.max(1, SS); },
+      pMin: 1, pMax: 6, pStart: 1, step: 1,
+      xLabel: "step size  SS", yLabel: "N_m", bases: false,
+      yMax: function () { return 25; },
+      rows: function (SS) {
+        var s = Math.max(1, Math.round(SS));
+        var Nm = 1 + (30 - 6) / s;
+        return [
+          ["N_m", Nm.toFixed(0) + " blocks"],
+          ["slots read", (Nm * 6).toFixed(0) + " of 30"],
+          ["each character read", (Nm * 6 / 30).toFixed(1) + "x"]
+        ];
+      },
+      note: function (SS) {
+        var s = Math.max(1, Math.round(SS));
+        if (s === 6) {
+          return "SS = m. The blocks tile the message exactly — 30 slots for 30 characters, every one read once. No inflation.";
+        }
+        if (s === 1) {
+          return "Maximum overlap. 150 slots for a 30-character message, so each character is counted five times over — this is what inflates the total, and what Part 5 opens by correcting.";
+        }
+        return "Between the extremes. Overlapping windows re-read characters, so the block count and the total information both rise without any new data arriving.";
+      }
+    },
+
+    /* Part 5: what a sample of a given size can possibly show. */
+    "sampling-ceiling": {
+      fn: function (n) { return Math.min(Math.log(Math.max(2, n)) / Math.log(2), 6); },
+      pMin: 2, pMax: 256, pStart: 16, step: 2,
+      xLabel: "codons sampled  N_m", yLabel: "max measurable", bases: false,
+      yMax: function () { return 6; },
+      rows: function (n) {
+        var k = Math.max(2, Math.round(n));
+        var ceil = Math.min(Math.log(k) / Math.log(2), 6);
+        return [
+          ["N_m", k + " codons"],
+          ["log2(N_m)", (Math.log(k) / Math.log(2)).toFixed(2) + " bits"],
+          ["of the 6-bit ceiling", (ceil / 6 * 100).toFixed(0) + "%"]
+        ];
+      },
+      note: function (n) {
+        var k = Math.max(2, Math.round(n));
+        if (k <= 20) {
+          return "The lecture's segment gives 16 codons, so no measurement from it can exceed log2(16) = 4 bits — two thirds of the true ceiling, before the genome is even considered.";
+        }
+        if (k >= 64) {
+          return "Past 64 samples the ceiling is no longer the binding constraint, and a measurement starts to say something about the sequence rather than the sample.";
+        }
+        return "Still sample-limited. Until N_m passes 64 the arithmetic caps what any estimate can report, whatever the underlying source does.";
+      }
+    },
+
+    /* Part 7: Stirling's relative error, for the AAB distribution. */
+    "stirling-error": {
+      fn: function (N) { return stirlingErrorPct(N); },
+      pMin: 30, pMax: 800, pStart: 50, step: 5,
+      xLabel: "message length  N", yLabel: "error (%)", bases: false,
+      yMax: function () { return 10; },
+      rows: function (N) {
+        var k = Math.round(N);
+        return [
+          ["N", String(k)],
+          ["N x H", (k * H_AAB).toFixed(2) + " bits"],
+          ["Stirling error", stirlingErrorPct(k).toFixed(3) + " %"]
+        ];
+      },
+      note: function (N) {
+        var k = Math.round(N);
+        if (k <= 60) {
+          return "At short lengths Stirling is visibly loose — the approximation is asymptotic, and this is the regime where it has not yet earned its keep.";
+        }
+        if (k >= 300) {
+          return "Under a tenth of a percent. For any message of realistic length the approximation is effectively exact, which is what licenses the bridge.";
+        }
+        return "The error falls roughly as 1/N. Every extra character makes the approximation better, and nothing about it is tuned — it simply converges.";
+      }
+    },
+
+    /* Part 8: S grows with the system, H does not. */
+    "extensive-intensive": {
+      fn: function (N) { return N * 1.380649e-23 * 2 * Math.log(2) / 1e-20; },
+      pMin: 0, pMax: 10000, pStart: 1000, step: 100,
+      xLabel: "system size  N", yLabel: "S (10^-20 J/K)", bases: false,
+      yMax: function () { return 20; },
+      rows: function (N) {
+        var S = N * 1.380649e-23 * 2 * Math.log(2);
+        return [
+          ["N", Math.round(N).toLocaleString() + " characters"],
+          ["H", "2.000 bits/character"],
+          ["S", S.toExponential(3) + " J/K"]
+        ];
+      },
+      note: function (N) {
+        if (N < 200) {
+          return "Small system, small S — but H is already 2 bits and will not move again however far you drag.";
+        }
+        return "S has been climbing in a straight line while H has not shifted at all. That is the whole distinction: S is extensive, H is intensive, and only k_B carries the units.";
+      }
     }
   };
+
+  /* --- support for stirling-error ------------------------------------- */
+
+  var H_AAB = -(2 / 3 * Math.log(2 / 3) + 1 / 3 * Math.log(1 / 3)) / Math.log(2);
+  var logFactMemo = [0, 0];
+
+  function log2Factorial(k) {
+    for (var i = logFactMemo.length; i <= k; i++) {
+      logFactMemo[i] = logFactMemo[i - 1] + Math.log(i) / Math.log(2);
+    }
+    return logFactMemo[k];
+  }
+
+  /* Exact log2(Omega) from the multinomial, against the N*H approximation. */
+  function stirlingErrorPct(N) {
+    var n = Math.round(N);
+    var nA = Math.round(2 * n / 3);
+    var nB = n - nA;
+    var exact = log2Factorial(n) - log2Factorial(nA) - log2Factorial(nB);
+    var approx = n * H_AAB;
+    if (approx === 0) return 0;
+    return Math.abs(approx - exact) / approx * 100;
+  }
 
   function css(node, name, fallback) {
     var v = getComputedStyle(node).getPropertyValue(name);
