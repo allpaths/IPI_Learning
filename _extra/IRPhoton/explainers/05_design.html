@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experimental design: a study companion</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{
+  --ipi-green:#1bd169; --ipi-green-bright:#5fff8f; --ipi-green-pale:#9dff95;
+  --ipi-dark:#0a1408; --text:#222832; --muted:#5b6470; --line:rgba(127,127,127,.35);
+  --cyu-ok:#1bd169; --cyu-warn:#e8a33d; --cyu-err:#e2564c; --cyu-tint:rgba(27,209,105,.07);
+  --code-bg:#f6f8fa;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Lato,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--text);line-height:1.65;background:#fff;font-size:16.5px}
+a{color:#0a7a3c} a:hover{color:var(--ipi-green)}
+.topbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e6e8eb;padding:.45rem 1.2rem;display:flex;gap:1rem;align-items:center;font-size:.88rem;color:var(--muted)}
+.topbar .brand{font-weight:700;color:var(--text)} .topbar .brand span{color:var(--ipi-green)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:2.5rem;max-width:1180px;margin:0 auto;padding:1.5rem 1.5rem 4rem}
+main{min-width:0}
+aside.toc{position:sticky;top:3.2rem;align-self:start;max-height:calc(100vh - 4rem);overflow:auto;font-size:.86rem;border-left:1px solid #e6e8eb;padding-left:1rem}
+aside.toc .toc-title{font-weight:700;margin-bottom:.4rem;display:flex;gap:.4rem;align-items:center}
+aside.toc ul{list-style:none;padding-left:0;margin:0} aside.toc ul ul{padding-left:.9rem}
+aside.toc a{color:var(--muted);text-decoration:none;display:block;padding:.15rem 0} aside.toc a:hover{color:var(--ipi-green)}
+@media (max-width:960px){.layout{grid-template-columns:1fr} aside.toc{display:none}}
+h1{font-size:2.1rem;line-height:1.25;margin:.2rem 0 1rem} h2{font-size:1.55rem;margin:2.6rem 0 .8rem;padding-bottom:.25rem;border-bottom:1px solid #e6e8eb} h3{font-size:1.18rem;margin:1.8rem 0 .5rem}
+.headerlink{opacity:0;margin-left:.3rem;text-decoration:none;color:var(--muted)} h2:hover .headerlink,h3:hover .headerlink{opacity:1}
+/* hero */
+.ipi-hero{position:relative;margin:0 0 2rem;padding:2.6rem 1.5rem 2.3rem;border-radius:10px;overflow:hidden;text-align:center;background:var(--ipi-dark);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.ipi-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.45) 0%,rgba(0,0,0,.82) 90%);pointer-events:none;z-index:1}
+.ipi-hero>*{position:relative;z-index:2}
+.ipi-hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.ipi-hero h1{color:#fff;font-weight:600;margin:0 0 .5rem;text-shadow:0 0 18px rgba(95,255,143,.45),0 0 8px rgba(0,0,0,.6);border:none}
+.ipi-hero-subtitle{color:#fff;font-weight:300;max-width:760px;margin:0 auto;line-height:1.55}
+.ipi-hero-tag{display:inline-block;margin-top:1rem;padding:.25rem .75rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ipi-green-pale);border:1px solid rgba(27,209,105,.5);border-radius:999px}
+/* cards & callouts */
+.ipi-card{padding:1rem 1.3rem;margin:1.2rem 0;border-left:4px solid var(--ipi-green);background:linear-gradient(90deg,rgba(27,209,105,.07) 0%,rgba(27,209,105,.02) 50%,transparent 100%);border-radius:4px}
+.ipi-card-title{font-weight:700;color:#119a4c;text-transform:uppercase;font-size:.8rem;letter-spacing:.04em;margin:0 0 .3rem}
+.ipi-card p{margin:.3rem 0}
+.callout{border:1px solid var(--line);border-left:4px solid var(--cyu-warn);background:rgba(232,163,61,.08);padding:.8rem 1.1rem;border-radius:5px;margin:1.2rem 0}
+.callout.danger{border-left-color:var(--cyu-err);background:rgba(226,86,76,.07)}
+.callout .ct{font-weight:700;display:block;margin-bottom:.2rem}
+blockquote.nav{margin:1rem 0;padding:.5rem 1rem;border-left:3px solid var(--line);color:var(--muted);font-size:.93rem}
+.draft{border:1px solid #d6dbe0;background:#fbfcfd;border-radius:6px;padding:.9rem 1.2rem;margin:1rem 0;font-family:Georgia,"Times New Roman",serif;font-size:1rem}
+.draft .dl{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+.eqbox{border:1.5px solid var(--ipi-green);border-radius:6px;padding:.3rem .8rem;margin:1rem auto;max-width:560px;background:rgba(27,209,105,.04);text-align:center}
+/* tables */
+table{border-collapse:collapse;margin:1rem 0;width:100%;font-size:.94rem}
+th,td{border-bottom:1px solid #e3e6ea;padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:rgba(27,209,105,.08);border-bottom:2px solid var(--ipi-green)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+/* notebook-style code cells */
+.cell{margin:1rem 0;border:1px solid #e3e6ea;border-radius:6px;overflow:hidden}
+.cell .in{background:var(--code-bg);padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid #6aa3ff}
+.cell .out{padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid var(--ipi-green);background:#fff}
+.kw{color:#a626a4}.st{color:#50a14f}.cm{color:#8a919b;font-style:italic}.nu{color:#986801}
+/* figure */
+.ipi-figure{margin:1.8rem auto;text-align:center}
+.ipi-figure img{max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+.ipi-figure figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem;font-style:italic}
+/* details / CYU (mirrors checkyourself.css) */
+details.cyu{border:1px solid var(--line);border-left:3px solid var(--ipi-green);border-radius:6px;margin:1.25rem 0 1.75rem;background:var(--cyu-tint)}
+details.cyu>summary{cursor:pointer;padding:.65rem .9rem;font-weight:600;list-style:none;user-select:none}
+details.cyu>summary::-webkit-details-marker{display:none}
+details.cyu>summary::before{content:"+";display:inline-block;width:1.1em;font-weight:700;color:var(--ipi-green)}
+details.cyu[open]>summary::before{content:"\2212"}
+details.cyu>summary:hover{background:rgba(27,209,105,.10)}
+details.cyu--explore{border-left-color:var(--cyu-warn)} details.cyu--explore>summary::before{color:var(--cyu-warn)}
+.cyu-body{padding:0 .9rem .9rem}
+.cyu-intro{margin:0 0 1rem;font-size:.94em;opacity:.85}
+.cyu-q{border-top:1px solid var(--line);padding-top:.9rem;margin-top:.9rem}.cyu-q:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.cyu-tier{display:inline-block;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:.12rem .5rem;border-radius:999px;border:1px solid var(--line);margin-bottom:.5rem;opacity:.8}
+.cyu-choices{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem}
+.cyu-choice{display:flex;align-items:baseline;gap:.55rem;padding:.35rem .55rem;border:1px solid var(--line);border-radius:5px;cursor:pointer;background:#fff}
+.cyu-choice.is-right{border-color:var(--cyu-ok);background:rgba(27,209,105,.12)}.cyu-choice.is-wrong{border-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+.cyu-entry{display:flex;gap:.5rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.cyu-entry input{font-family:ui-monospace,Menlo,Consolas,monospace;padding:.4rem .55rem;border:1px solid var(--line);border-radius:5px;min-width:8rem}
+.cyu-btn{font:inherit;font-size:.88em;font-weight:600;padding:.35rem .85rem;border-radius:5px;border:1px solid var(--ipi-green);background:var(--ipi-green);color:#04240f;cursor:pointer}
+.cyu-btn--ghost{background:transparent;color:inherit;border-color:var(--line)}
+.cyu-feedback{margin-top:.75rem;padding:.6rem .75rem;border-radius:5px;border-left:3px solid var(--line);font-size:.94em;background:rgba(127,127,127,.09)}
+.cyu-feedback[data-state=right]{border-left-color:var(--cyu-ok);background:rgba(27,209,105,.12)}
+.cyu-feedback[data-state=hint]{border-left-color:var(--cyu-warn);background:rgba(232,163,61,.12)}
+.cyu-feedback[data-state=wrong]{border-left-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+/* explorer */
+.cyux-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin:.4rem 0}
+.cyux-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em;opacity:.75;min-width:8rem}
+.cyux-row input[type=range]{flex:1 1 14rem;accent-color:var(--ipi-green)}
+.cyux-base{font:inherit;font-size:.82em;font-weight:600;padding:.22rem .7rem;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.cyux-base.is-on{border-color:var(--ipi-green);background:var(--ipi-green);color:#04240f}
+.cyux-readout{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding:.6rem .75rem;border-radius:5px;background:rgba(127,127,127,.09);margin:.8rem 0}
+.cyux-cell{display:flex;gap:.45rem;align-items:baseline}
+.cyux-cell-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82em;opacity:.7}
+.cyux-cell-val{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700}
+canvas#lamplot{max-width:100%;background:#fff;border:1px solid #e3e6ea;border-radius:5px}
+/* referee Q&A */
+details.ref{border:1px solid #e3e6ea;border-radius:6px;margin:.6rem 0;background:#fff}
+details.ref>summary{cursor:pointer;padding:.6rem .9rem;font-weight:600}
+details.ref>div{padding:0 1rem .8rem}
+.standing{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.1rem .5rem;border-radius:999px;border:1px solid}
+.s-est{color:#0f8a43;border-color:#1bd169;background:rgba(27,209,105,.10)}
+.s-prop{color:#9a6312;border-color:#e8a33d;background:rgba(232,163,61,.12)}
+.s-assm{color:#a8332b;border-color:#e2564c;background:rgba(226,86,76,.10)}
+footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-size:.85rem;border-top:1px solid #e6e8eb}
+.ln{color:#a3abb5;user-select:none}
+.lx{color:#a626a4}
+.ipi-figure img{max-width:min(100%,560px)}
+</style>
+</head>
+<body>
+<div class="topbar"><span class="brand"><a href="../../index.html" style="color:inherit;text-decoration:none">IPI Learning</a> <span>·</span> <a href="../index.html" style="color:inherit;text-decoration:none">IRPhoton</a></span><span>Manuscript in preparation, not peer reviewed · Section IV of VI</span></div>
+<div class="layout">
+<main id="main-content">
+<div class="ipi-hero"><canvas id="rain" aria-hidden="true"></canvas>
+  <h1>Section IV — Experimental design</h1>
+  <p class="ipi-hero-subtitle">The apparatus piece by piece: slow-positron source, thin film on silicon, gamma-ray shell, far-infrared cavity and bolometer. Every term defined.</p>
+  <span class="ipi-hero-tag">about 15 minutes · paragraph by paragraph · real script output · referee prep</span>
+</div>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <strong>05 · IV. Design (current)</strong> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<h2 id="where">Where this section fits<a class="headerlink" href="#where">#</a></h2>
+<p>Section III said <em>what</em> to do. Section IV says <em>with what</em>: a positron source, a target film, a gamma-ray detector and a far-infrared detector. Each subsection explains one piece in plain terms and gives the one or two numbers that matter for the estimates in Section V.</p>
+<div class="callout"><span class="ct">⚠ Geant4 numbers were not re-run for this paper</span>Three numbers in this section come from the Geant4 Monte Carlo model (stopping depth, the cavity's collected fraction 0.984, and the gamma response). The model was not rebuilt or re-run for this paper; the values are copied from the archived runs and from the scripts that hard-code them (<code>ps_formation.py</code> lists the stopping depths). The stopping depth at 100 eV is also below the energy range where Geant4's positron transport is reliable, so it is indicative only. The paper and Supplement S2 say both things.</div>
+
+<h2 id="walk">Paragraph by paragraph<a class="headerlink" href="#walk">#</a></h2>
+<h3 id="source">A. Slow-positron source<a class="headerlink" href="#source">#</a></h3>
+<div class="draft"><span class="dl">Paper · IV.A, paragraph 1</span>Positrons from a radioactive source such as \(^{22}\)Na are emitted with energies up to about 0.5 MeV. To obtain a slow beam, they are passed through a moderator … The fraction is typically about \(10^{-4}\). A \(^{22}\)Na source of 1 GBq emits about \(9\times10^8\) positrons per second, so it yields of order \(10^5\) slow positrons per second.</div>
+<p>Radioactive sources make <em>fast</em> positrons. To get slow ones, you let them stop in a moderator (usually tungsten). Tungsten has a negative work function for positrons, meaning a positron that wanders back to the surface after stopping is pushed <em>out</em> with a few eV. Only about one in ten thousand does that. So even a strong source gives about 10⁵ slow positrons per second.</p>
+<div class="draft"><span class="dl">Paper · IV.A, paragraph 2</span>Reactor- and accelerator-based facilities … At the reactor source NEPOMUC … the measured primary beam is \(9\times10^8\) positrons per second at 1 keV, and a remoderated beam of \(4.5\times10^7\) per second is available at 20–200 eV with a diameter below 2 mm. … We use its rate as the reference case.</div>
+<p>Big facilities make positrons from gamma rays (pair production) and get far more. NEPOMUC at the Munich research reactor is the example used. Two beams matter: the primary beam (brighter, but at 1 keV, so it would have to be slowed down) and the remoderated beam (fainter, but already at the right energy). The paper uses the remoderated rate, 4.5×10⁷ s⁻¹, as its reference because it needs no assumptions about slowing the beam.</p>
+<p><strong>Chopping</strong> (paragraph 3) is done electrically, by deflecting the beam or switching the target voltage, a few hertz to a few hundred hertz.</p>
+
+<h3 id="target">B. Target<a class="headerlink" href="#target">#</a></h3>
+<div class="draft"><span class="dl">Paper · IV.B, paragraph 1</span>The target is an aluminum film of thickness \(d = 5\) nm. Its thickness is set by two competing needs. Positrons must stop inside it, and the infrared photons generated inside must get out. … A Geant4 Monte Carlo model … gives a mean stopping depth of 1.4 nm and a 90th percentile of 1.7 nm. These values are indicative only …</div>
+<p>The trade-off: thick enough to stop the positrons, thin enough to let the light out (metal films are mirrors in the far infrared; Section V.C quantifies this). At 100 eV the positrons stop within about 2 nm, so 5 nm gives a margin of about three. A positron then lives a few hundred picoseconds, long after it has cooled to the film temperature, which is what the prediction needs.</p>
+<div class="draft"><span class="dl">Paper · IV.B, paragraph 2</span>The film must also hold its temperature while the beam deposits energy in it. Because the beam is chopped, any heating is chopped too … We therefore assume the film is deposited on a high-resistivity silicon substrate about 0.5 mm thick …</div>
+<p>A subtle point. The beam heats the film a little every time it is on. That makes the film's glow flicker in step with the beam, which the lock-in would <em>keep</em>. A 5 nm film alone can't carry the heat away fast enough, so the design puts it on a silicon wafer clamped to the cold stage. The Supplement (S6) finds the flicker is then about six times below the tolerable level at 150 K. Silicon barely affects how light escapes the film (S3).</p>
+<p>Paragraph 3: a 1% error in temperature shifts the predicted wavelength by 1%, small compared with the 10% band.</p>
+
+<h3 id="gamma">C. Gamma-ray detection<a class="headerlink" href="#gamma">#</a></h3>
+<div class="draft"><span class="dl">Paper · IV.C</span>A shell of scintillation detectors surrounds the target … Cerium bromide (CeBr\(_3\)) detectors combine good energy resolution with fast timing … The gamma-ray count measures the annihilation rate \(R\) … It can also monitor positronium. … The spin-1 state (ortho-positronium) decays to three gamma photons …</div>
+<p>The gamma shell counts annihilations. That gives \(R\), and the ratio of three-photon to two-photon events tells you how many positrons formed positronium, a key systematic (Section V).</p>
+
+<h3 id="ir">D. Far-infrared detection<a class="headerlink" href="#ir">#</a></h3>
+<div class="draft"><span class="dl">Paper · IV.D, paragraphs 1–2</span>The predicted photons have no known preferred direction … so the film sits inside a closed, reflective collecting cavity … In the Geant4 geometry the cavity collects 98.4% … The detector is a bolometer … A transition-edge sensor (TES) … Far-infrared TES bolometers with NEP ≈ 3×10⁻¹⁹ W/√Hz have been demonstrated. … the noise in this experiment is set instead by the film's own thermal emission …</div>
+<p>Since nobody knows which way the photons go, collect them all: a mirror-lined cavity around the film funnels light into a light pipe, through a cold filter for one band, onto a bolometer. A bolometer is a thermometer for light: it absorbs radiation and measures the tiny warming. A TES reads that warming from a superconducting film sitting right at its transition. Modern ones are so quiet that they are not the limit here; the film's own glow is.</p>
+<div class="draft"><span class="dl">Paper · IV.D, paragraph 3</span>The cavity walls are held at 4–10 K. Their own emission in the signal bands is then at most about 1% of the film's; at 20 K it would add more than half again to the thermal power in the 77 K band.</div>
+<p>The walls must be colder than the film, or they glow in the signal band too. The cell below and Supplement S5 give the numbers. A cold wall has a bonus: positrons that bounce off the film and annihilate on the wall would (if M/E/I holds) emit at the <em>wall's</em> wavelength, 1.4 mm or longer, far from both bands.</p>
+
+<h2 id="symbols">Symbols and acronyms<a class="headerlink" href="#symbols">#</a></h2>
+<table>
+<tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>moderator; work function</td><td>Material that re-emits stopped positrons slowly; the energy needed to leave a surface (negative = pushed out)</td></tr>
+<tr><td>NEPOMUC</td><td>NEutron induced POsitron source MUniCh, at the FRM II research reactor, Garching</td></tr>
+<tr><td>remoderated beam</td><td>A beam slowed a second time for better quality, at lower rate</td></tr>
+<tr><td>Geant4</td><td>A standard Monte Carlo toolkit for particles passing through matter</td></tr>
+<tr><td>CeBr\(_3\)</td><td>Cerium bromide, a scintillator crystal for gamma rays</td></tr>
+<tr><td>ortho-/para-positronium</td><td>Spin-1 / spin-0 states; ortho decays to three gammas, para to two</td></tr>
+<tr><td>bolometer; TES</td><td>Radiation detector that measures heating; transition-edge sensor, a superconducting bolometer thermometer</td></tr>
+<tr><td>NEP</td><td>Noise-equivalent power: the signal power equal to the noise in a 1 Hz output bandwidth (W/√Hz)</td></tr>
+<tr><td>\(f_\mathrm{coll}\)</td><td>Fraction of photons leaving the film that the cavity delivers to its exit (0.984)</td></tr>
+</table>
+
+<h2 id="numbers">Worked numbers<a class="headerlink" href="#numbers">#</a></h2>
+<p>The stopping depths used by the scripts (Geant4 values, hard-coded in <code>ps_formation.py</code>) and the wall-line wavelengths:</p>
+<div class="cell"><div class="in"><span class="cm"># scripts/explainer_build/cells/c05_design.py</span>
+<span class="cm"># Design numbers (Sec. IV): stopping depths used, and the cavity-wall check</span>
+<span class="kw">import</span> sys; sys.path.insert(0, &quot;../../simulation&quot;)
+<span class="kw">from</span> ps_formation <span class="kw">import</span> BEAM_EV, MEAN_DEPTH_NM     <span class="cm"> # Geant4 results, hard-coded in the script</span>
+<span class="kw">for</span> E, d <span class="kw">in</span> zip(BEAM_EV, MEAN_DEPTH_NM):
+    <span class="kw">print</span>(f&quot;  {E:7.0f} eV  -&gt;  mean stopping depth {d:7.2f} nm&quot;)
+<span class="kw">from</span> scipy.constants <span class="kw">import</span> h, c, k as kB
+<span class="kw">import</span> math
+<span class="kw">for</span> Tw <span class="kw">in</span> (4, 10, 20):  <span class="cm"> # wavelength of the line back-scattered positrons would make on the wall</span>
+    <span class="kw">print</span>(f&quot;wall at {Tw:2d} K: back-scatter line at {h*c/(1.509*kB*Tw*math.log(2))*1e6:6.0f} um&quot;)</div><div class="out">       20 eV  -&gt;  mean stopping depth    0.42 nm
+       50 eV  -&gt;  mean stopping depth    0.81 nm
+      100 eV  -&gt;  mean stopping depth    1.41 nm
+      200 eV  -&gt;  mean stopping depth    2.73 nm
+      500 eV  -&gt;  mean stopping depth    7.42 nm
+     1000 eV  -&gt;  mean stopping depth   17.85 nm
+     2000 eV  -&gt;  mean stopping depth   45.15 nm
+     5000 eV  -&gt;  mean stopping depth  175.24 nm
+    10000 eV  -&gt;  mean stopping depth  492.02 nm
+wall at  4 K: back-scatter line at   3439 um
+wall at 10 K: back-scatter line at   1376 um
+wall at 20 K: back-scatter line at    688 um</div></div>
+<p>And the cavity-wall and heating estimates, as printed by <code>background_estimates.py</code> (excerpt):</p>
+<div class="cell"><div class="in"><span class="cm"># real output of scripts/simulation/background_estimates.py (saved in outputs/background_estimates_output.txt), excerpt</span></div><div class="out">(2) T=77 K R=4.5e+07: P_heat=7.21e-10 W, dP_th/dT=5.39e-09 W/K, dT_max=2.36e-08 K, G_min=3.06e-02 W/K
+(2) T=77 K R=1.0e+08: P_heat=1.60e-09 W, dP_th/dT=5.39e-09 W/K, dT_max=5.24e-08 K, G_min=3.06e-02 W/K
+(2) T=150 K R=4.5e+07: P_heat=7.21e-10 W, dP_th/dT=3.98e-08 W/K, dT_max=6.21e-09 K, G_min=1.16e-01 W/K
+(2) T=150 K R=1.0e+08: P_heat=1.60e-09 W, dP_th/dT=3.98e-08 W/K, dT_max=1.38e-08 K, G_min=1.16e-01 W/K
+    free-standing 5 nm film, radial conduction (r -&gt; 5r): G ~ 3.9e-06 W/K (upper bound)
+    0.5 mm Si substrate: G ~ 24 W/K; gamma energy deposited ~3524 eV per annihilation
+    T=77 K R=4.5e+07: total heating 2.61e-08 W -&gt; dT ~ 1.1e-09 K (limit 2.4e-08 K, margin x21.3)
+    T=77 K R=1.0e+08: total heating 5.81e-08 W -&gt; dT ~ 2.5e-09 K (limit 5.2e-08 K, margin x21.3)
+    T=150 K R=4.5e+07: total heating 2.61e-08 W -&gt; dT ~ 1.1e-09 K (limit 6.2e-09 K, margin x5.6)
+    T=150 K R=1.0e+08: total heating 5.81e-08 W -&gt; dT ~ 2.5e-09 K (limit 1.4e-08 K, margin x5.6)</div></div>
+
+<h2 id="standing">Assumed vs established<a class="headerlink" href="#standing">#</a></h2>
+<table>
+<tr><th>Statement</th><th>Standing</th><th>Basis</th></tr>
+<tr><td>Moderator efficiency ~10⁻⁴</td><td><span class="standing s-est">literature</span></td><td>Vopson 2022; Vehanen &amp; Mäkinen 1985</td></tr>
+<tr><td>NEPOMUC 4.5×10⁷ s⁻¹ remoderated, 9×10⁸ s⁻¹ primary</td><td><span class="standing s-est">literature</span></td><td>Hugenschmidt et al. 2012 (measured)</td></tr>
+<tr><td>Stopping depth 1.4 nm at 100 eV</td><td><span class="standing s-prop">Geant4, indicative</span></td><td>below Geant4's reliable range; not re-run</td></tr>
+<tr><td>Collected fraction 0.984</td><td><span class="standing s-prop">Geant4</span></td><td>essentially geometric coverage 0.983; not re-run</td></tr>
+<tr><td>Silicon substrate keeps heating below the signal</td><td><span class="standing s-prop">estimate</span></td><td>Supplement S6; positron transport into Si not modeled</td></tr>
+<tr><td>Wall at ≤10 K is negligible</td><td><span class="standing s-prop">estimate</span></td><td>assumed wall emissivity 0.01</td></tr>
+<tr><td>TES NEP 3×10⁻¹⁹ W/√Hz exists</td><td><span class="standing s-est">literature</span></td><td>Williams et al. 2020 (measured, 60–110 µm)</td></tr>
+</table>
+
+<h2 id="referee">Questions a referee might ask<a class="headerlink" href="#referee">#</a></h2>
+<details class="ref"><summary>Q1. Vopson proposed a tabletop ²²Na experiment. Why move to a reactor facility?</summary><div><p><strong>Honest answer:</strong> the rate. With ~10⁵ slow positrons per second, Table II gives 12 years at 77 K. The facility beam brings that to 30 minutes. The tabletop version is still useful for the bench tests in Section VI, just not for the detection.</p></div></details>
+<details class="ref"><summary>Q2. Your stopping depth comes from Geant4 below its validity range. Can the film thickness be trusted?</summary><div><p><strong>Honest answer:</strong> only roughly, which is why the film is 5 nm, about three times the estimated range, and why the paper flags it. If positrons go deeper than expected, they still annihilate in the film (they diffuse ~150 nm before annihilating anyway); the main risk is a thicker film being needed, which lowers escape roughly as 1/d.</p></div></details>
+<details class="ref"><summary>Q3. Doesn't the silicon substrate change the physics: positrons could annihilate in silicon?</summary><div><p><strong>Honest answer:</strong> yes, some may cross the interface; the paper says this is not modeled. They would annihilate at the same temperature (the substrate is in contact with the film), so the wavelength is unchanged; the escape of light from inside silicon would differ. A measurement of the annihilation-site fractions on the real sample would settle it.</p></div></details>
+<details class="ref"><summary>Q4. Why trust that the detector isn't the limit?</summary><div><p><strong>Honest answer:</strong> the film's photon noise is ~10⁻¹⁴ W/√Hz, and the script uses a detector NEP of 10⁻¹⁷, thirty times worse than demonstrated devices (3×10⁻¹⁹), and it still contributes nothing. The real question is optical efficiency (η = 0.5, assumed), not detector noise.</p></div></details>
+
+<h2 id="cyu">Check your Understanding<a class="headerlink" href="#cyu">#</a></h2>
+<details class="cyu" open><summary>Check your Understanding</summary><div class="cyu-body">
+<p class="cyu-intro">Four questions on the apparatus.</p>
+<div class="cyu-q" data-type="numeric" data-answer="9e4" data-tol="1.5e4" data-unit="per s"
+ data-hint="1 GBq = 10⁹ decays/s; 90% emit a positron; one in 10⁴ comes out slow."
+ data-explain="10⁹ × 0.9 × 10⁻⁴ = 9 × 10⁴ slow positrons per second.">
+<span class="cyu-tier">Warm-up</span><p>How many slow positrons per second does a 1 GBq ²²Na source give with a 10⁻⁴ moderator?</p></div>
+<div class="cyu-q" data-type="mcq" data-answer="2" data-choices="To make the film colder|To stop the positrons|To carry away beam heat so the film's glow doesn't flicker with the beam|To improve infrared escape"
+ data-hint="What happens to the film's thermal emission if its temperature follows the chopping?"
+ data-explain="Chopped heating gives a chopped change in thermal emission, which passes the lock-in. The substrate conducts the heat away.">
+<span class="cyu-tier">At this level</span><p>Why is the film put on a silicon substrate?</p></div>
+<div class="cyu-q" data-type="numeric" data-answer="1376" data-tol="20" data-unit="µm"
+ data-hint="λT = 13 756 µm K; divide by 10 K."
+ data-explain="13 756 / 10 ≈ 1376 µm, far from 92 and 179 µm.">
+<span class="cyu-tier">At this level</span><p>At what wavelength would back-scattered positrons annihilating on a 10 K wall radiate, if M/E/I holds?</p></div>
+<div class="cyu-q" data-type="mcq" data-answer="0" data-choices="The film's own thermal emission|The bolometer's NEP|The QED soft-photon background|Cosmic rays"
+ data-hint="Compare 10⁻¹⁴ W/√Hz with 3×10⁻¹⁹ W/√Hz."
+ data-explain="The film's in-band thermal photon noise (~10⁻¹⁴ W/√Hz) dominates by orders of magnitude.">
+<span class="cyu-tier">Stretch</span><p>What sets the noise floor of the infrared measurement?</p></div>
+</div></details>
+
+<h2 id="summary">Key takeaways<a class="headerlink" href="#summary">#</a></h2>
+<ul>
+<li>A facility slow-positron beam (reference: NEPOMUC remoderated, 4.5×10⁷ s⁻¹ at 20–200 eV) replaces the ²²Na source.</li>
+<li>Target: 5 nm Al on silicon, at 77 K and 150 K; thin for escape, on a substrate for heat.</li>
+<li>Gamma shell: counts \(R\), monitors positronium.</li>
+<li>Far-IR: 4π cavity at 4–10 K, cold 10% filters, TES bolometer; the film's glow, not the detector, sets the noise.</li>
+<li>Geant4 inputs (depth, collection) were not re-run and are flagged.</li>
+</ul>
+
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <strong>05 · IV. Design (current)</strong> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+</main>
+<aside class="toc"><div class="toc-title">☰ Contents</div>
+<ul><li><a href="#where">Where this section fits</a></li><li><a href="#walk">Paragraph by paragraph</a><ul><li><a href="#source">A. Slow-positron source</a></li><li><a href="#target">B. Target</a></li><li><a href="#gamma">C. Gamma-ray detection</a></li><li><a href="#ir">D. Far-infrared detection</a></li></ul></li><li><a href="#symbols">Symbols and acronyms</a></li><li><a href="#numbers">Worked numbers</a></li><li><a href="#standing">Assumed vs established</a></li><li><a href="#referee">Questions a referee might ask</a></li><li><a href="#cyu">Check your Understanding</a></li><li><a href="#summary">Key takeaways</a></li></ul></aside>
+</div>
+<footer>Companion to <code>manuscript/main.tex</code> · numbers from <code>scripts/simulation/</code> and <code>scripts/explainer_build/cells/</code> (real outputs pasted) · styled after the IPI_Learning study companion.</footer>
+<script>
+(function(){
+"use strict";
+/* ---- digital rain (as on IPI_Learning landing hero) ---- */
+var cv=document.getElementById("rain");
+if(cv && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)){
+  var ctx=cv.getContext("2d"),FS=15,cols,drops,CH="01010101010110ABCDEF0123456789";
+  function rs(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;cols=Math.ceil(cv.width/FS);drops=[];for(var i=0;i<cols;i++)drops[i]=Math.random()*-40;}
+  rs();addEventListener("resize",rs);
+  ctx.fillStyle="#0a1408";ctx.fillRect(0,0,cv.width,cv.height);
+  setInterval(function(){ctx.fillStyle="rgba(10,20,8,0.08)";ctx.fillRect(0,0,cv.width,cv.height);ctx.font=FS+"px monospace";
+    for(var i=0;i<cols;i++){var ch=CH[Math.floor(Math.random()*CH.length)],y=drops[i]*FS;ctx.fillStyle="#1bd169";ctx.fillText(ch,i*FS,y);
+      if(y>cv.height&&Math.random()>0.975)drops[i]=0;drops[i]+=1;}},72);
+}
+/* ---- check your understanding (same behaviour as checkyourself.js: hint, then explanation) ---- */
+document.querySelectorAll(".cyu-q").forEach(function(q){
+  var type=q.dataset.type,ans=parseFloat(q.dataset.answer),fb=document.createElement("div");fb.className="cyu-feedback";fb.hidden=true;
+  var tries=0,get,choices=[];
+  if(type==="mcq"){var wrap=document.createElement("div");wrap.className="cyu-choices";var nm="q"+Math.random().toString(36).slice(2,8);
+    q.dataset.choices.split("|").forEach(function(txt,i){var lab=document.createElement("label");lab.className="cyu-choice";var r=document.createElement("input");r.type="radio";r.name=nm;r.value=i;lab.appendChild(r);lab.appendChild(document.createTextNode(txt));wrap.appendChild(lab);choices.push(lab);});
+    q.appendChild(wrap);get=function(){var s=q.querySelector("input:checked");return s?parseInt(s.value):null;};}
+  else{var en=document.createElement("div");en.className="cyu-entry";var inp=document.createElement("input");inp.type="text";inp.placeholder="your answer";en.appendChild(inp);
+    var u=document.createElement("span");u.textContent=q.dataset.unit||"";u.style.opacity=.7;en.appendChild(u);q.appendChild(en);get=function(){var v=parseFloat(inp.value.replace(/,/g,""));return isNaN(v)?null:v;};}
+  var act=document.createElement("div");act.style.display="flex";act.style.gap=".5rem";
+  var sb=document.createElement("button");sb.className="cyu-btn";sb.textContent="Check";var rv=document.createElement("button");rv.className="cyu-btn cyu-btn--ghost";rv.textContent="Reveal answer";
+  act.appendChild(sb);act.appendChild(rv);q.appendChild(act);q.appendChild(fb);
+  function show(st,lab,body){fb.hidden=false;fb.dataset.state=st;fb.innerHTML="<strong>"+lab+"</strong><br>"+body;}
+  sb.onclick=function(){var v=get();if(v===null){show("hint","Nothing to check yet","Pick an option or type a number.");return;}
+    var ok=type==="mcq"?v===ans:Math.abs(v-ans)<=parseFloat(q.dataset.tol||"0.01");
+    choices.forEach(function(c,i){c.classList.remove("is-right","is-wrong");if(type==="mcq"&&i===v)c.classList.add(ok?"is-right":"is-wrong");});
+    if(ok){show("right","Correct",q.dataset.explain);}else{tries++;show(tries>1?"wrong":"hint",tries>1?"Not quite":"Not yet",q.dataset.hint);}};
+  rv.onclick=function(){show("right","Answer",q.dataset.explain);if(type==="mcq")choices[ans].classList.add("is-right");};
+});
+})();
+</script>
+</body>
+</html>

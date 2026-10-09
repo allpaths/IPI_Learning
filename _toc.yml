@@ -1,25 +1,38 @@
 # Table of contents for Jupyter Book.
-# Listed chapters appear in the sidebar in this order; the same order drives
-# the auto-generated "previous / next" buttons at the bottom of each page.
+# The sidebar is split into parts (captions). Chapters appear in the order
+# listed; the same order drives the auto-generated "previous / next" buttons.
+#
+# - "Vopson Lecture Series": one chapter per video. Add new videos (Part 10,
+#   11, ...) at the end of this part, above the IRPhoton part.
+# - "IRPhoton": a separate project, not part of the lecture series. Its
+#   explainers are standalone HTML pages copied verbatim from
+#   _extra/IRPhoton/explainers/ (see html_extra_path in _config.yml);
+#   only the landing page is a book page.
 
 format: jb-book
 root: index
-chapters:
-  - file: Video_01/Shannon_Entropy
-    title: "Part 1 — Introduction to Shannon's Information Theory"
-  - file: Video_02/Information_Entropy_Examples
-    title: "Part 2 — Information Entropy: Worked Examples"
-  - file: Video_03/Information_Entropy_of_m_blocks
-    title: "Part 3 — Information Entropy of m-Blocks"
-  - file: Video_04/Information_Entropy_of_m_blocks_Examples
-    title: "Part 4 — m-Blocks: Worked Examples"
-  - file: Video_05/Information_Entropy_of_a_Genome
-    title: "Part 5 — Information Entropy of a Genome"
-  - file: Video_06/Information_Microstates
-    title: "Part 6 — The Information Microstates"
-  - file: Video_07/Shannon_and_Boltzmann
-    title: "Part 7 — Link Between Shannon and Boltzmann Entropies"
-  - file: Video_08/Shannon_vs_Boltzmann
-    title: "Part 8 — Shannon vs Boltzmann Entropy"
-  - file: Video_09/Landauer_and_MEI
-    title: "Part 9 — Landauer's Principle and M/E/I Equivalence"
+parts:
+  - caption: "Vopson Lecture Series"
+    chapters:
+      - file: Video_01/Shannon_Entropy
+        title: "Part 1 — Introduction to Shannon's Information Theory"
+      - file: Video_02/Information_Entropy_Examples
+        title: "Part 2 — Information Entropy: Worked Examples"
+      - file: Video_03/Information_Entropy_of_m_blocks
+        title: "Part 3 — Information Entropy of m-Blocks"
+      - file: Video_04/Information_Entropy_of_m_blocks_Examples
+        title: "Part 4 — m-Blocks: Worked Examples"
+      - file: Video_05/Information_Entropy_of_a_Genome
+        title: "Part 5 — Information Entropy of a Genome"
+      - file: Video_06/Information_Microstates
+        title: "Part 6 — The Information Microstates"
+      - file: Video_07/Shannon_and_Boltzmann
+        title: "Part 7 — Link Between Shannon and Boltzmann Entropies"
+      - file: Video_08/Shannon_vs_Boltzmann
+        title: "Part 8 — Shannon vs Boltzmann Entropy"
+      - file: Video_09/Landauer_and_MEI
+        title: "Part 9 — Landauer's Principle and M/E/I Equivalence"
+  - caption: "IRPhoton: A Proposed Test of M/E/I"
+    chapters:
+      - file: IRPhoton/index
+        title: "IRPhoton — Overview and Explainers"

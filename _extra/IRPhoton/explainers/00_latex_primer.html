@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LaTeX primer for the IRPhoton manuscript: a study companion</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{
+  --ipi-green:#1bd169; --ipi-green-bright:#5fff8f; --ipi-green-pale:#9dff95;
+  --ipi-dark:#0a1408; --text:#222832; --muted:#5b6470; --line:rgba(127,127,127,.35);
+  --cyu-ok:#1bd169; --cyu-warn:#e8a33d; --cyu-err:#e2564c; --cyu-tint:rgba(27,209,105,.07);
+  --code-bg:#f6f8fa;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Lato,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--text);line-height:1.65;background:#fff;font-size:16.5px}
+a{color:#0a7a3c} a:hover{color:var(--ipi-green)}
+.topbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e6e8eb;padding:.45rem 1.2rem;display:flex;gap:1rem;align-items:center;font-size:.88rem;color:var(--muted)}
+.topbar .brand{font-weight:700;color:var(--text)} .topbar .brand span{color:var(--ipi-green)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:2.5rem;max-width:1180px;margin:0 auto;padding:1.5rem 1.5rem 4rem}
+main{min-width:0}
+aside.toc{position:sticky;top:3.2rem;align-self:start;max-height:calc(100vh - 4rem);overflow:auto;font-size:.86rem;border-left:1px solid #e6e8eb;padding-left:1rem}
+aside.toc .toc-title{font-weight:700;margin-bottom:.4rem;display:flex;gap:.4rem;align-items:center}
+aside.toc ul{list-style:none;padding-left:0;margin:0} aside.toc ul ul{padding-left:.9rem}
+aside.toc a{color:var(--muted);text-decoration:none;display:block;padding:.15rem 0} aside.toc a:hover{color:var(--ipi-green)}
+@media (max-width:960px){.layout{grid-template-columns:1fr} aside.toc{display:none}}
+h1{font-size:2.1rem;line-height:1.25;margin:.2rem 0 1rem} h2{font-size:1.55rem;margin:2.6rem 0 .8rem;padding-bottom:.25rem;border-bottom:1px solid #e6e8eb} h3{font-size:1.18rem;margin:1.8rem 0 .5rem}
+.headerlink{opacity:0;margin-left:.3rem;text-decoration:none;color:var(--muted)} h2:hover .headerlink,h3:hover .headerlink{opacity:1}
+/* hero */
+.ipi-hero{position:relative;margin:0 0 2rem;padding:2.6rem 1.5rem 2.3rem;border-radius:10px;overflow:hidden;text-align:center;background:var(--ipi-dark);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.ipi-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.45) 0%,rgba(0,0,0,.82) 90%);pointer-events:none;z-index:1}
+.ipi-hero>*{position:relative;z-index:2}
+.ipi-hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.ipi-hero h1{color:#fff;font-weight:600;margin:0 0 .5rem;text-shadow:0 0 18px rgba(95,255,143,.45),0 0 8px rgba(0,0,0,.6);border:none}
+.ipi-hero-subtitle{color:#fff;font-weight:300;max-width:760px;margin:0 auto;line-height:1.55}
+.ipi-hero-tag{display:inline-block;margin-top:1rem;padding:.25rem .75rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ipi-green-pale);border:1px solid rgba(27,209,105,.5);border-radius:999px}
+/* cards & callouts */
+.ipi-card{padding:1rem 1.3rem;margin:1.2rem 0;border-left:4px solid var(--ipi-green);background:linear-gradient(90deg,rgba(27,209,105,.07) 0%,rgba(27,209,105,.02) 50%,transparent 100%);border-radius:4px}
+.ipi-card-title{font-weight:700;color:#119a4c;text-transform:uppercase;font-size:.8rem;letter-spacing:.04em;margin:0 0 .3rem}
+.ipi-card p{margin:.3rem 0}
+.callout{border:1px solid var(--line);border-left:4px solid var(--cyu-warn);background:rgba(232,163,61,.08);padding:.8rem 1.1rem;border-radius:5px;margin:1.2rem 0}
+.callout.danger{border-left-color:var(--cyu-err);background:rgba(226,86,76,.07)}
+.callout .ct{font-weight:700;display:block;margin-bottom:.2rem}
+blockquote.nav{margin:1rem 0;padding:.5rem 1rem;border-left:3px solid var(--line);color:var(--muted);font-size:.93rem}
+.draft{border:1px solid #d6dbe0;background:#fbfcfd;border-radius:6px;padding:.9rem 1.2rem;margin:1rem 0;font-family:Georgia,"Times New Roman",serif;font-size:1rem}
+.draft .dl{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+.eqbox{border:1.5px solid var(--ipi-green);border-radius:6px;padding:.3rem .8rem;margin:1rem auto;max-width:560px;background:rgba(27,209,105,.04);text-align:center}
+/* tables */
+table{border-collapse:collapse;margin:1rem 0;width:100%;font-size:.94rem}
+th,td{border-bottom:1px solid #e3e6ea;padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:rgba(27,209,105,.08);border-bottom:2px solid var(--ipi-green)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+/* notebook-style code cells */
+.cell{margin:1rem 0;border:1px solid #e3e6ea;border-radius:6px;overflow:hidden}
+.cell .in{background:var(--code-bg);padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid #6aa3ff}
+.cell .out{padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid var(--ipi-green);background:#fff}
+.kw{color:#a626a4}.st{color:#50a14f}.cm{color:#8a919b;font-style:italic}.nu{color:#986801}
+/* figure */
+.ipi-figure{margin:1.8rem auto;text-align:center}
+.ipi-figure img{max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+.ipi-figure figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem;font-style:italic}
+/* details / CYU (mirrors checkyourself.css) */
+details.cyu{border:1px solid var(--line);border-left:3px solid var(--ipi-green);border-radius:6px;margin:1.25rem 0 1.75rem;background:var(--cyu-tint)}
+details.cyu>summary{cursor:pointer;padding:.65rem .9rem;font-weight:600;list-style:none;user-select:none}
+details.cyu>summary::-webkit-details-marker{display:none}
+details.cyu>summary::before{content:"+";display:inline-block;width:1.1em;font-weight:700;color:var(--ipi-green)}
+details.cyu[open]>summary::before{content:"\2212"}
+details.cyu>summary:hover{background:rgba(27,209,105,.10)}
+details.cyu--explore{border-left-color:var(--cyu-warn)} details.cyu--explore>summary::before{color:var(--cyu-warn)}
+.cyu-body{padding:0 .9rem .9rem}
+.cyu-intro{margin:0 0 1rem;font-size:.94em;opacity:.85}
+.cyu-q{border-top:1px solid var(--line);padding-top:.9rem;margin-top:.9rem}.cyu-q:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.cyu-tier{display:inline-block;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:.12rem .5rem;border-radius:999px;border:1px solid var(--line);margin-bottom:.5rem;opacity:.8}
+.cyu-choices{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem}
+.cyu-choice{display:flex;align-items:baseline;gap:.55rem;padding:.35rem .55rem;border:1px solid var(--line);border-radius:5px;cursor:pointer;background:#fff}
+.cyu-choice.is-right{border-color:var(--cyu-ok);background:rgba(27,209,105,.12)}.cyu-choice.is-wrong{border-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+.cyu-entry{display:flex;gap:.5rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.cyu-entry input{font-family:ui-monospace,Menlo,Consolas,monospace;padding:.4rem .55rem;border:1px solid var(--line);border-radius:5px;min-width:8rem}
+.cyu-btn{font:inherit;font-size:.88em;font-weight:600;padding:.35rem .85rem;border-radius:5px;border:1px solid var(--ipi-green);background:var(--ipi-green);color:#04240f;cursor:pointer}
+.cyu-btn--ghost{background:transparent;color:inherit;border-color:var(--line)}
+.cyu-feedback{margin-top:.75rem;padding:.6rem .75rem;border-radius:5px;border-left:3px solid var(--line);font-size:.94em;background:rgba(127,127,127,.09)}
+.cyu-feedback[data-state=right]{border-left-color:var(--cyu-ok);background:rgba(27,209,105,.12)}
+.cyu-feedback[data-state=hint]{border-left-color:var(--cyu-warn);background:rgba(232,163,61,.12)}
+.cyu-feedback[data-state=wrong]{border-left-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+/* explorer */
+.cyux-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin:.4rem 0}
+.cyux-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em;opacity:.75;min-width:8rem}
+.cyux-row input[type=range]{flex:1 1 14rem;accent-color:var(--ipi-green)}
+.cyux-base{font:inherit;font-size:.82em;font-weight:600;padding:.22rem .7rem;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.cyux-base.is-on{border-color:var(--ipi-green);background:var(--ipi-green);color:#04240f}
+.cyux-readout{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding:.6rem .75rem;border-radius:5px;background:rgba(127,127,127,.09);margin:.8rem 0}
+.cyux-cell{display:flex;gap:.45rem;align-items:baseline}
+.cyux-cell-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82em;opacity:.7}
+.cyux-cell-val{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700}
+canvas#lamplot{max-width:100%;background:#fff;border:1px solid #e3e6ea;border-radius:5px}
+/* referee Q&A */
+details.ref{border:1px solid #e3e6ea;border-radius:6px;margin:.6rem 0;background:#fff}
+details.ref>summary{cursor:pointer;padding:.6rem .9rem;font-weight:600}
+details.ref>div{padding:0 1rem .8rem}
+.standing{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.1rem .5rem;border-radius:999px;border:1px solid}
+.s-est{color:#0f8a43;border-color:#1bd169;background:rgba(27,209,105,.10)}
+.s-prop{color:#9a6312;border-color:#e8a33d;background:rgba(232,163,61,.12)}
+.s-assm{color:#a8332b;border-color:#e2564c;background:rgba(226,86,76,.10)}
+footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-size:.85rem;border-top:1px solid #e6e8eb}
+.ln{color:#a3abb5;user-select:none}
+.lx{color:#a626a4}
+.ipi-figure img{max-width:min(100%,560px)}
+</style>
+</head>
+<body>
+<div class="topbar"><span class="brand"><a href="../../index.html" style="color:inherit;text-decoration:none">IPI Learning</a> <span>·</span> <a href="../index.html" style="color:inherit;text-decoration:none">IRPhoton</a></span><span>Manuscript in preparation, not peer reviewed · LaTeX primer</span></div>
+<div class="layout">
+<main id="main-content">
+
+<div class="ipi-hero"><canvas id="rain" aria-hidden="true"></canvas>
+  <h1>00 — A LaTeX Primer for This Paper</h1>
+  <p class="ipi-hero-subtitle">Everything you need to read, edit and compile <code style="color:#9dff95">manuscript/main.tex</code>: the structure of the file, maths, figures, tables, citations, and three ways to turn it into a PDF. Every example on this page is copied from the real manuscript.</p>
+  <span class="ipi-hero-tag">about 23 minutes · real snippets · cheat sheet at the end</span>
+</div>
+
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <strong>00 · LaTeX primer (current)</strong> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+
+<div class="ipi-card"><p class="ipi-card-title">How to read this page</p>
+<p>Code cells with a blue edge are <strong>LaTeX source</strong>, copied from <code>main.tex</code> or <code>references.bib</code> (the line numbers are real). Cells with a green edge show <strong>what the PDF prints</strong>. If you only have five minutes, read §1, §2 and §7 (compiling), then keep the cheat sheet in §9 open while you edit.</p></div>
+
+<!-- ================================================================ -->
+<h2 id="why">1. LaTeX vs Word: why switch<a class="headerlink" href="#why">#</a></h2>
+<p>In Word you format the page directly: you see what you get. In LaTeX you write <strong>plain text with markup</strong> (<code>\section{...}</code>, <code>\cite{...}</code>, <code>$...$</code>), and a program, the <em>compiler</em>, lays out the page for you. You lose live preview. In return you get several things that matter for a physics paper:</p>
+<table>
+<tr><th>Task</th><th>Word</th><th>LaTeX (this paper)</th></tr>
+<tr><td>Journal format</td><td>Match fonts, headings, captions by hand.</td><td>One line, <code>\documentclass[aip,adv,...]{revtex4-2}</code>, gives AIP Advances' own layout.</td></tr>
+<tr><td>Equations</td><td>Equation editor; numbering by hand or by fields that break.</td><td>Typeset to publication quality; numbered automatically.</td></tr>
+<tr><td>Cross-references</td><td>"Eq. (4)" typed by hand; goes stale when you add an equation.</td><td><code>Eq.~\eqref{eq:lambda}</code> always prints the right number.</td></tr>
+<tr><td>References</td><td>Numbered by hand or by a plug-in; easy to get out of order.</td><td>BibTeX numbers them in citation order and formats them in AIP style (§6).</td></tr>
+<tr><td>Version control</td><td>Binary <code>.docx</code>; diffs are unreadable.</td><td>Plain text; every change shows up line by line in Git.</td></tr>
+<tr><td>Submission</td><td>AIP accepts Word.</td><td>AIP accepts LaTeX and provides the official REVTeX template; it is the normal route for physics papers.</td></tr>
+</table>
+<p>The price: you will see error messages, and you need to compile to see the result. Overleaf (§7) makes both nearly painless.</p>
+
+<!-- ================================================================ -->
+<h2 id="structure">2. The structure of main.tex<a class="headerlink" href="#structure">#</a></h2>
+<p>Every LaTeX file has two parts. The <strong>preamble</strong> (everything before <code>\begin{document}</code>) chooses the document class and loads packages. The <strong>body</strong> (between <code>\begin{document}</code> and <code>\end{document}</code>) is the paper. Here is our preamble:</p>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln">  12 </span><span class="lx">\documentclass</span>[aip,adv,preprint,amsmath,amssymb]{revtex4-2}
+<span class="ln">  13 </span>
+<span class="ln">  14 </span><span class="lx">\usepackage</span>{graphicx}   <span class="cm">% \includegraphics</span>
+<span class="ln">  15 </span><span class="lx">\usepackage</span>{dcolumn}    <span class="cm">% decimal-aligned columns (AIP template default)</span>
+<span class="ln">  16 </span><span class="lx">\usepackage</span>{bm}         <span class="cm">% bold math</span>
+<span class="ln">  17 </span><span class="lx">\usepackage</span>[separate-uncertainty=true,per-mode=symbol]{siunitx} <span class="cm">% units: \SI{45.9}{\micro\metre}</span>
+<span class="ln">  18 </span><span class="lx">\sisetup</span>{range-phrase=--, range-units=single}
+<span class="ln">  19 </span><span class="lx">\usepackage</span>[hidelinks]{hyperref} <span class="cm">% clickable refs/DOIs; load last</span>
+<span class="ln">  20 </span><span class="cm">% NOTE: with revtex4-2 + hyperref, nameref prints a benign warning</span>
+<span class="ln">  21 </span><span class="cm">% &quot;The definition of \label has changed&quot; -- harmless; it</span>
+<span class="ln">  22 </span><span class="cm">% appears even in a minimal revtex4-2 aip/adv file that loads hyperref.</span>
+<span class="ln">  23 </span>
+<span class="ln">   ⋮</span>
+<span class="ln">  25 </span><span class="lx">\newcommand</span>{<span class="lx">\kb</span>}{k_b}                 <span class="cm">% Boltzmann constant, Vopson&#x27;s notation</span>
+<span class="ln">  26 </span><span class="lx">\newcommand</span>{<span class="lx">\eminus</span>}{e^{-}}
+<span class="ln">  27 </span><span class="lx">\newcommand</span>{<span class="lx">\eplus</span>}{e^{+}}</div></div>
+<ul>
+<li><strong><code>revtex4-2</code></strong> is the class used by AIP and APS journals. <code>aip</code> selects AIP Publishing's style, <code>adv</code> selects <em>AIP Advances</em> in particular, and <code>preprint</code> gives the double-spaced single-column layout AIP asks for at submission. Swap <code>preprint</code> for <code>reprint</code> to preview the two-column journal look (and check length); swap back before submitting.</li>
+<li><strong><code>\usepackage{...}</code></strong> loads extra tools. <code>siunitx</code> typesets numbers with units; <code>hyperref</code> makes every reference clickable and should be loaded last.</li>
+<li><strong><code>\newcommand</code></strong> defines shortcuts. <code>\kb</code> prints Vopson's \(k_b\). Changing the notation everywhere is a one-line edit.</li>
+<li><strong><code>%</code></strong> starts a comment. Everything after it on the line is ignored. Lines starting with <code>%%</code> are notes for the author; they never appear in the PDF (they are omitted from the snippets on this page).</li>
+</ul>
+<p>The body opens with the <strong>front matter</strong>: title, author, abstract. REVTeX collects these and prints them when it reaches <code>\maketitle</code>:</p>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln">  35 </span>
+<span class="ln">  36 </span><span class="lx">\title</span>[Detecting information energy photons from positron annihilation]<span class="cm">%</span>
+<span class="ln">  37 </span>      {Design of an experiment to detect information energy photons
+<span class="ln">  38 </span>       from electron--positron annihilation}
+<span class="ln">  39 </span>
+<span class="ln">  40 </span><span class="lx">\author</span>{Jeff Dillon}
+<span class="ln">  41 </span><span class="lx">\email</span>[Author to whom correspondence should be addressed: ]{jeff@sumoverpaths.ai}
+<span class="ln">   ⋮</span>
+<span class="ln">  48 </span><span class="lx">\affiliation</span>{Information Physics Institute, Gosport, Hampshire, United Kingdom}
+<span class="ln">  49 </span>
+<span class="ln">  50 </span><span class="lx">\date</span>{<span class="lx">\today</span>}
+<span class="ln">  51 </span>
+<span class="ln">  52 </span><span class="lx">\begin</span>{abstract}
+<span class="ln">  53 </span>The mass--energy--information equivalence principle proposes that a
+<span class="ln">  54 </span>stored bit of information has an equivalent mass. Vopson has suggested
+<span class="ln">  55 </span>a direct test: when an electron and a positron annihilate, the
+<span class="ln">  56 </span>information they carry is erased, and if the principle holds, its
+<span class="ln">  57 </span>energy should leave as two infrared photons besides the two
+<span class="ln">  58 </span>511~keV gamma photons. The predicted wavelength is inversely
+<span class="ln">  59 </span>proportional to the temperature of the annihilation site, about
+<span class="ln">  60 </span>179~<span class="lx">\textmu</span> m at 77~K and 92~<span class="lx">\textmu</span> m at 150~K for 1.509 bits per
+<span class="ln">  61 </span>particle. We turn that proposal into a design and estimate its
+<span class="ln">  62 </span>response. A chopped slow-positron beam is implanted at
+<span class="ln">  63 </span>100~eV into a 5~nm aluminum film held at 77~K and then at 150~K,
+<span class="ln">  64 </span>inside a cold cavity viewed by a far-infrared bolometer and surrounded
+<span class="ln">  65 </span>by gamma-ray detectors. The signature is a line that
+<span class="ln">  66 </span>moves between two filter bands when the film temperature changes. Only about 7\% of the infrared photons escape the reflective
+<span class="ln">  67 </span>metal film, and we assume that about 15\% of positrons leave the film as
+<span class="ln">  68 </span>positronium. The noise is set by the film&#x27;s own thermal emission, so
+<span class="ln">  69 </span>colder operation is faster. The quantum electrodynamic soft-photon
+<span class="ln">  70 </span>background in the band is at least four orders of magnitude below
+<span class="ln">  71 </span>the predicted signal. A 5$<span class="lx">\sigma</span>$ detection then takes
+<span class="ln">  72 </span>about 30~min at 77~K and 4~h at 150~K at the slow-positron rate of
+<span class="ln">  73 </span>$4.5<span class="lx">\times</span>10^{7}$~s$^{-1}$ available at a reactor-based facility, but
+<span class="ln">  74 </span>years with a laboratory $^{22}$Na source.
+<span class="ln">  75 </span><span class="lx">\end</span>{abstract}
+<span class="ln">  76 </span>
+<span class="ln">  77 </span><span class="lx">\maketitle</span></div></div>
+<p>The optional <code>[...]</code> after <code>\email</code> sets the footnote text, which is how AIP marks the corresponding author. The rest of the body is <code>\section</code> / <code>\subsection</code> commands and ordinary paragraphs. A blank line starts a new paragraph; single line breaks in the source are ignored, so you can wrap lines wherever you like.</p>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln">  80 </span><span class="lx">\section</span>{Introduction}<span class="lx">\label</span>{sec:intro}
+<span class="ln">   ⋮</span>
+<span class="ln"> 136 </span><span class="lx">\section</span>{The prediction}<span class="lx">\label</span>{sec:prediction}
+<span class="ln">   ⋮</span>
+<span class="ln"> 138 </span><span class="lx">\subsection</span>{Information content of the electron and positron}<span class="lx">\label</span>{sec:info}
+<span class="ln">   ⋮</span>
+<span class="ln"> 166 </span><span class="lx">\subsection</span>{Erasure by annihilation}<span class="lx">\label</span>{sec:erasure}
+<span class="ln">   ⋮</span>
+<span class="ln"> 190 </span><span class="lx">\subsection</span>{Energy and wavelength of the information energy photons}<span class="lx">\label</span>{sec:wavelength}
+<span class="ln">   ⋮</span>
+<span class="ln"> 266 </span><span class="lx">\subsection</span>{Assumptions}<span class="lx">\label</span>{sec:assumptions}
+<span class="ln">   ⋮</span>
+<span class="ln"> 311 </span><span class="lx">\section</span>{Experimental protocol}<span class="lx">\label</span>{sec:protocol}
+<span class="ln">   ⋮</span>
+<span class="ln"> 381 </span><span class="lx">\section</span>{Experimental design}<span class="lx">\label</span>{sec:design}
+<span class="ln">   ⋮</span>
+<span class="ln"> 387 </span><span class="lx">\subsection</span>{Slow-positron source}<span class="lx">\label</span>{sec:source}
+<span class="ln">   ⋮</span>
+<span class="ln"> 417 </span><span class="lx">\subsection</span>{Target}<span class="lx">\label</span>{sec:target}
+<span class="ln">   ⋮</span>
+<span class="ln"> 454 </span><span class="lx">\subsection</span>{Gamma-ray detection}<span class="lx">\label</span>{sec:gamma}
+<span class="ln">   ⋮</span>
+<span class="ln"> 470 </span><span class="lx">\subsection</span>{Far-infrared detection}<span class="lx">\label</span>{sec:ir}
+<span class="ln">   ⋮</span>
+<span class="ln"> 506 </span><span class="lx">\section</span>{Expected response}<span class="lx">\label</span>{sec:response}
+<span class="ln">   ⋮</span>
+<span class="ln"> 508 </span><span class="lx">\subsection</span>{How the estimates are made}<span class="lx">\label</span>{sec:methods}
+<span class="ln">   ⋮</span>
+<span class="ln"> 547 </span><span class="lx">\subsection</span>{Signal and background spectra}<span class="lx">\label</span>{sec:background}
+<span class="ln">   ⋮</span>
+<span class="ln"> 606 </span><span class="lx">\subsection</span>{Losses in the target}<span class="lx">\label</span>{sec:losses}
+<span class="ln">   ⋮</span>
+<span class="ln"> 682 </span><span class="lx">\subsection</span>{Noise and time to a detection}<span class="lx">\label</span>{sec:sensitivity}
+<span class="ln">   ⋮</span>
+<span class="ln"> 777 </span><span class="lx">\subsection</span>{Systematic effects}<span class="lx">\label</span>{sec:systematics}
+<span class="ln">   ⋮</span>
+<span class="ln"> 796 </span><span class="lx">\subsection</span>{What a result would mean}<span class="lx">\label</span>{sec:meaning}
+<span class="ln">   ⋮</span>
+<span class="ln"> 820 </span><span class="lx">\section</span>{Conclusions}<span class="lx">\label</span>{sec:conclusions}</div></div>
+<p>REVTeX numbers sections with Roman numerals (I, II, …) and subsections with letters (A, B, …), as AIP does. You never type the numbers.</p>
+<p>The end of the file holds the AIP back matter (a pointer to the Supplementary Material, Author Declarations, Data Availability) and one line that pulls in the reference list:</p>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln"> 872 </span><span class="lx">\section*</span>{Author Declarations}
+<span class="ln"> 873 </span><span class="lx">\subsection*</span>{Conflict of Interest}
+<span class="ln"> 874 </span>The author has no conflicts to disclose.
+<span class="ln"> 875 </span>
+<span class="ln"> 876 </span><span class="lx">\subsection*</span>{Author Contributions}
+<span class="ln"> 877 </span><span class="lx">\textbf</span>{Jeff Dillon:} Conceptualization (lead); Methodology (lead);
+<span class="ln"> 878 </span>Software (lead); Formal analysis (lead); Investigation (lead);
+<span class="ln"> 879 </span>Visualization (lead); Writing -- original draft (lead);
+<span class="ln"> 880 </span>Writing -- review \&amp; editing (lead).
+<span class="ln"> 881 </span>
+<span class="ln"> 882 </span><span class="lx">\section*</span>{Data Availability}
+<span class="ln">   ⋮</span>
+<span class="ln"> 887 </span>The data that support the findings of this study are available from
+<span class="ln"> 888 </span>the corresponding author upon reasonable request.
+<span class="ln"> 889 </span>
+<span class="ln"> 890 </span><span class="lx">\bibliography</span>{references}
+<span class="ln"> 891 </span>
+<span class="ln"> 892 </span><span class="lx">\end</span>{document}</div></div>
+
+<!-- ================================================================ -->
+<h2 id="math">3. Maths: inline, display, numbered<a class="headerlink" href="#math">#</a></h2>
+<h3 id="math-inline">Inline maths: <code>$...$</code></h3>
+<p>Anything between single dollar signs is set as maths inside the sentence:</p>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln">  82 </span>Landauer&#x27;s principle states that erasing information costs energy: at
+<span class="ln">  83 </span>least $<span class="lx">\kb</span> T<span class="lx">\ln</span> 2$ per bit at temperature $T$, released as
+<span class="ln">  84 </span>heat.<span class="lx">\cite</span>{landauer1961} The mass--energy--information (M/E/I)</div></div>
+<div class="cell"><div class="out">Landauer's principle states that erasing information costs energy: at
+least k_b T ln 2 per bit at temperature T, released as heat.¹</div></div>
+<p>Note <code>\ln</code> (an upright "ln", not italic <em>l·n</em>) and the superscript citation number placed <em>after</em> the punctuation: that is AIP house style.</p>
+<h3 id="math-display">Numbered display equations</h3>
+<p>A displayed, numbered equation uses the <code>equation</code> environment. The <code>\label</code> gives it a name you can refer to later:</p>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln"> 179 </span>Vopson&#x27;s 2022 protocol [Eq.~(10) of Ref.~<span class="lx">\onlinecite</span>{vopson2022}] writes
+<span class="ln"> 180 </span>the annihilation as
+<span class="ln"> 181 </span><span class="lx">\begin</span>{equation}
+<span class="ln"> 182 </span>  m_{<span class="lx">\eminus</span>}c^{2} + m_{<span class="lx">\eplus</span>}c^{2}
+<span class="ln"> 183 </span>  + I_{<span class="lx">\eminus</span>}<span class="lx">\kb</span> T<span class="lx">\ln</span> 2 + I_{<span class="lx">\eplus</span>}<span class="lx">\kb</span> T<span class="lx">\ln</span> 2
+<span class="ln"> 184 </span>  = <span class="lx">\gamma</span> + <span class="lx">\gamma</span> + <span class="lx">\nu</span>^{+} + <span class="lx">\nu</span>^{-} ,
+<span class="ln"> 185 </span>  <span class="lx">\label</span>{eq:balance}
+<span class="ln"> 186 </span><span class="lx">\end</span>{equation}
+<span class="ln"> 187 </span>where $<span class="lx">\nu</span>^{+}$ and $<span class="lx">\nu</span>^{-}$ are the two additional <span class="lx">\emph</span>{information
+<span class="ln"> 188 </span>energy photons}.</div></div>
+<p>Useful pieces: <code>^{...}</code> superscript, <code>_{...}</code> subscript, <code>\frac{a}{b}</code> fraction, <code>\nu</code> ν, <code>\gamma</code> γ, <code>\,</code> a thin space, <code>\mathrm{bit}</code> an upright subscript (a label, not a variable):</p>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln"> 147 </span>mass,<span class="lx">\cite</span>{vopson2019,vopson2022}
+<span class="ln"> 148 </span><span class="lx">\begin</span>{equation}
+<span class="ln"> 149 </span>  m_{<span class="lx">\mathrm</span>{bit}} = <span class="lx">\frac</span>{<span class="lx">\kb</span> T<span class="lx">\ln</span> 2}{c^{2}} .
+<span class="ln"> 150 </span>  <span class="lx">\label</span>{eq:mbit}
+<span class="ln"> 151 </span><span class="lx">\end</span>{equation}</div></div>
+<p>The full stop or comma that ends the sentence goes <em>inside</em> the equation. For an unnumbered display, use <code>\begin{equation*}</code> or <code>\[ ... \]</code>.</p>
+<h3 id="math-ref">Referring to equations: <code>\label</code> and <code>\eqref</code></h3>
+<p>Never type an equation number. Write <code>\eqref{name}</code> and LaTeX fills it in, with parentheses:</p>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln"> 199 </span>and wavelength [Eq.~(11) of Ref.~<span class="lx">\onlinecite</span>{vopson2022}]
+<span class="ln"> 200 </span><span class="lx">\begin</span>{equation}
+<span class="ln"> 201 </span>  <span class="lx">\lambda</span> = <span class="lx">\frac</span>{hc}{I\,<span class="lx">\kb</span> T<span class="lx">\ln</span> 2} .
+<span class="ln"> 202 </span>  <span class="lx">\label</span>{eq:lambda}
+<span class="ln"> 203 </span><span class="lx">\end</span>{equation}
+<span class="ln">   ⋮</span>
+<span class="ln"> 204 </span>Equation~<span class="lx">\eqref</span>{eq:energy} is simply the Landauer energy per bit
+<span class="ln">   ⋮</span>
+<span class="ln"> 211 </span>The useful feature of Eq.~<span class="lx">\eqref</span>{eq:lambda} is its dependence on
+<span class="ln">   ⋮</span>
+<span class="ln"> 230 </span>  photon, from Eqs.~<span class="lx">\eqref</span>{eq:energy} and <span class="lx">\eqref</span>{eq:lambda}, for
+<span class="ln">   ⋮</span>
+<span class="ln"> 258 </span>  target temperature, from Eq.~<span class="lx">\eqref</span>{eq:lambda}, for 1, 1.509 and
+<span class="ln">   ⋮</span>
+<span class="ln"> 329 </span>  on $<span class="lx">\lambda</span>_1$, the prediction of Eq.~<span class="lx">\eqref</span>{eq:lambda} at the film
+<span class="ln">   ⋮</span>
+<span class="ln"> 451 </span>Eq.~<span class="lx">\eqref</span>{eq:lambdaT}, a 1\% temperature error shifts the predicted
+<span class="ln">   ⋮</span>
+<span class="ln"> 571 </span><span class="lx">\SI</span>{11.7}{<span class="lx">\electronvolt</span>}. Equation~<span class="lx">\eqref</span>{eq:softphoton} then gives
+<span class="ln">   ⋮</span>
+<span class="ln"> 601 </span>  Eq.~<span class="lx">\eqref</span>{eq:softphoton}]. Signal and background are both model
+<span class="ln">   ⋮</span>
+<span class="ln"> 672 </span>  with the thin-film form of Eq.~<span class="lx">\eqref</span>{eq:absorptivity} for comparison.
+<span class="ln">   ⋮</span>
+<span class="ln"> 740 </span>  line, from Eqs.~<span class="lx">\eqref</span>{eq:psig}--<span class="lx">\eqref</span>{eq:tau} with a 10\% band, both
+<span class="ln">   ⋮</span>
+<span class="ln"> 760 </span>Equations~<span class="lx">\eqref</span>{eq:psig}--<span class="lx">\eqref</span>{eq:tau} show how $<span class="lx">\tau</span>$ depends on
+<span class="ln">   ⋮</span>
+<span class="ln"> 767 </span>sits at the same point on it [Eq.~<span class="lx">\eqref</span>{eq:occupation}], but it reduces
+<span class="ln">   ⋮</span>
+<span class="ln"> 801 </span>intensity consistent with Eq.~<span class="lx">\eqref</span>{eq:psig}. The product $<span class="lx">\lambda</span> T$
+<span class="ln">   ⋮</span>
+<span class="ln"> 803 </span>Eq.~<span class="lx">\eqref</span>{eq:lambdaT}, $I = hc/(<span class="lx">\kb</span><span class="lx">\lambda</span> T<span class="lx">\ln</span>2)$. Further checks</div></div>
+<p>If you insert a new equation before Eq. (4), every number and every reference to it updates on the next compile. The <code>~</code> is a <strong>non-breaking space</strong>: it stops "Eq." being left alone at the end of a line. The same pattern works for sections (<code>Sec.~\ref{sec:design}</code>), tables and figures.</p>
+<h3 id="math-units">Numbers with units: siunitx</h3>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln"> 205 </span>multiplied by the number of bits. At <span class="lx">\SI</span>{300}{<span class="lx">\kelvin</span>} one bit
+<span class="ln"> 206 </span>corresponds to <span class="lx">\SI</span>{17.9}{<span class="lx">\milli</span><span class="lx">\electronvolt</span>}, so a 1.509-bit particle
+<span class="ln"> 207 </span>releases a <span class="lx">\SI</span>{27.0}{<span class="lx">\milli</span><span class="lx">\electronvolt</span>} photon with
+<span class="ln"> 208 </span>$<span class="lx">\lambda</span> = <span class="lx">\SI</span>{45.9}{<span class="lx">\micro</span><span class="lx">\metre</span>}$, in the far infrared. That is about
+<span class="ln">   ⋮</span>
+<span class="ln"> 226 </span>roughly <span class="lx">\SIrange</span>{25}{75}{<span class="lx">\micro</span><span class="lx">\metre</span>} given there.
+<span class="ln">   ⋮</span>
+<span class="ln"> 408 </span><span class="lx">\SIrange</span>{20}{200}{<span class="lx">\electronvolt</span>} with a diameter below
+<span class="ln">   ⋮</span>
+<span class="ln"> 496 </span>The cavity walls are held at <span class="lx">\SIrange</span>{4}{10}{<span class="lx">\kelvin</span>}. Their own
+<span class="ln">   ⋮</span>
+<span class="ln"> 838 </span>temperature control at <span class="lx">\SIrange</span>{77}{150}{<span class="lx">\kelvin</span>}; a collecting cavity
+<span class="ln"> 839 </span>at <span class="lx">\SIrange</span>{4}{10}{<span class="lx">\kelvin</span>}; cold band-pass filters at the two predicted</div></div>
+<p><code>\SI{value}{unit}</code> gives the correct upright units and a proper thin space ("45.9 µm"); <code>\si{...}</code> is a unit on its own; <code>\SIrange</code> writes "25–75 µm". Prefixes are words: <code>\micro</code>, <code>\milli</code>, <code>\kilo</code>, <code>\tera</code>. This avoids pasting a "µ" character, a common source of errors (§8).</p>
+
+<!-- ================================================================ -->
+<h2 id="floats">4. Figures<a class="headerlink" href="#floats">#</a></h2>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln"> 254 </span><span class="lx">\begin</span>{figure}
+<span class="ln"> 255 </span>  <span class="lx">\centering</span>
+<span class="ln"> 256 </span>  <span class="lx">\includegraphics</span>[width=3.37in]{figures/fig_wavelength_vs_T}
+<span class="ln"> 257 </span>  <span class="lx">\caption</span>{Predicted wavelength of the information energy photons versus
+<span class="ln"> 258 </span>  target temperature, from Eq.~<span class="lx">\eqref</span>{eq:lambda}, for 1, 1.509 and
+<span class="ln"> 259 </span>  3~bits per particle [after Fig.~2 of Ref.~<span class="lx">\onlinecite</span>{vopson2022}].
+<span class="ln"> 260 </span>  Open circles mark the temperatures in Table~<span class="lx">\ref</span>{tab:prediction}. On
+<span class="ln"> 261 </span>  logarithmic axes the $1/T$ dependence appears as a straight line of
+<span class="ln"> 262 </span>  slope $-1$.}
+<span class="ln"> 263 </span>  <span class="lx">\label</span>{fig:lambda}
+<span class="ln"> 264 </span><span class="lx">\end</span>{figure}</div></div>
+<ul>
+<li><code>figure</code> is a <strong>float</strong>: LaTeX moves it to where it fits best (often the top of the next page). This is normal; AIP repositions figures in production anyway. Refer to it by label (<code>Fig.~\ref{fig:lambda}</code>), never as "the figure below".</li>
+<li><code>\includegraphics</code> is given the file name <em>without an extension</em>. pdfLaTeX picks up <code>figures/fig_wavelength_vs_T.pdf</code>, the vector version, so lines and lettering stay sharp at any zoom. The 600 dpi PNG next to it is for systems that need a raster file.</li>
+<li><code>width=3.37in</code> is the single-column width of an AIP journal page. The figure was drawn at exactly that size with 8–9 pt lettering, so it is not scaled and the text stays at least 8 pt, as AIP requires.</li>
+<li>The <code>\label</code> goes <em>after</em> <code>\caption</code>; otherwise the reference picks up the wrong number.</li>
+</ul>
+
+<h2 id="tables">5. Tables<a class="headerlink" href="#tables">#</a></h2>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln"> 228 </span><span class="lx">\begin</span>{table}
+<span class="ln"> 229 </span>  <span class="lx">\caption</span>{Predicted energy and wavelength of each information energy
+<span class="ln"> 230 </span>  photon, from Eqs.~<span class="lx">\eqref</span>{eq:energy} and <span class="lx">\eqref</span>{eq:lambda}, for
+<span class="ln"> 231 </span>  $I = 1.509$~bits.}
+<span class="ln"> 232 </span>  <span class="lx">\label</span>{tab:prediction}
+<span class="ln"> 233 </span>  <span class="lx">\begin</span>{ruledtabular}
+<span class="ln"> 234 </span>  <span class="lx">\begin</span>{tabular}{
+<span class="ln"> 235 </span>      S[table-format=3.0]
+<span class="ln"> 236 </span>      S[table-format=2.3]
+<span class="ln"> 237 </span>      S[table-format=2.3]
+<span class="ln"> 238 </span>      S[table-format=4.1]
+<span class="ln"> 239 </span>      S[table-format=1.3]}
+<span class="ln"> 240 </span>    {$T$ (<span class="lx">\si</span>{<span class="lx">\kelvin</span>})} &amp;
+<span class="ln"> 241 </span>    {$<span class="lx">\kb</span> T<span class="lx">\ln</span> 2$ per bit (<span class="lx">\si</span>{<span class="lx">\milli</span><span class="lx">\electronvolt</span>})} &amp;
+<span class="ln"> 242 </span>    {$h<span class="lx">\nu</span>$ (<span class="lx">\si</span>{<span class="lx">\milli</span><span class="lx">\electronvolt</span>})} &amp;
+<span class="ln"> 243 </span>    {$<span class="lx">\lambda</span>$ (<span class="lx">\si</span>{<span class="lx">\micro</span><span class="lx">\metre</span>})} &amp;
+<span class="ln"> 244 </span>    {$<span class="lx">\nu</span>$ (<span class="lx">\si</span>{<span class="lx">\tera</span><span class="lx">\hertz</span>})} \\
+<span class="ln"> 245 </span>    <span class="lx">\colrule</span>
+<span class="ln"> 246 </span>      4 &amp;  0.239 &amp;  0.361 &amp; 3439   &amp; 0.087 \\
+<span class="ln"> 247 </span>     77 &amp;  4.60  &amp;  6.94  &amp;  178.6 &amp; 1.68  \\
+<span class="ln"> 248 </span>    150 &amp;  8.96  &amp; 13.52  &amp;   91.7 &amp; 3.27  \\
+<span class="ln"> 249 </span>    300 &amp; 17.92  &amp; 27.04  &amp;   45.9 &amp; 6.54  \\
+<span class="ln"> 250 </span>  <span class="lx">\end</span>{tabular}
+<span class="ln"> 251 </span>  <span class="lx">\end</span>{ruledtabular}
+<span class="ln"> 252 </span><span class="lx">\end</span>{table}</div></div>
+<ul>
+<li>Columns are separated by <code>&amp;</code>; each row ends with <code>\\</code>.</li>
+<li><code>ruledtabular</code> is REVTeX's wrapper. It draws the double rules at top and bottom and stretches the table to the column width, as in AIP journals. <code>\colrule</code> draws the line under the header.</li>
+<li>The column type <code>S[table-format=4.1]</code> (from siunitx) <strong>aligns numbers on the decimal point</strong>: up to 4 digits before the point and 1 after. That is why 3439 sits to the left of 178.6 in the PDF. Header cells are wrapped in <code>{...}</code> so siunitx treats them as text.</li>
+<li>The caption goes <em>above</em> a table (AIP style); REVTeX prints "TABLE I." with a Roman numeral.</li>
+</ul>
+
+<!-- ================================================================ -->
+<h2 id="cite">6. Citations with BibTeX<a class="headerlink" href="#cite">#</a></h2>
+<p>The references live in a separate database, <code>references.bib</code>. Each entry has a <strong>key</strong> (here <code>vopson2022</code>) and fields. All 22 entries in this paper were checked against Crossref, including the DOI:</p>
+<div class="cell"><div class="in"><span class="cm">% manuscript/references.bib</span>
+<span class="ln">  50 </span>@article{vopson2022,
+<span class="ln">  51 </span>  author  = {Vopson, Melvin M.},
+<span class="ln">  52 </span>  title   = {Experimental protocol for testing the mass--energy--information equivalence principle},
+<span class="ln">  53 </span>  journal = {AIP Advances},
+<span class="ln">  54 </span>  volume  = {12},
+<span class="ln">  55 </span>  number  = {3},
+<span class="ln">  56 </span>  pages   = {035311},
+<span class="ln">  57 </span>  year    = {2022},
+<span class="ln">  58 </span>  doi     = {10.1063/5.0087175}
+<span class="ln">  59 </span>}</div></div>
+<p>In the text you cite by key. <code>\cite</code> gives AIP's superscript number; <code>\onlinecite</code> gives the bare number for use in a sentence ("Ref. 4"):</p>
+<div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln"> 141 </span>dissipates at least $<span class="lx">\kb</span> T<span class="lx">\ln</span> 2$ of energy.<span class="lx">\cite</span>{landauer1961} This
+<span class="ln"> 142 </span>bound has been tested with a colloidal particle in an optical
+<span class="ln"> 143 </span>trap<span class="lx">\cite</span>{berut2012} and in a feedback trap,<span class="lx">\cite</span>{jun2014} and with
+<span class="ln"> 144 </span>nanomagnetic memory bits.<span class="lx">\cite</span>{hong2016} The
+<span class="ln"> 145 </span>mass--energy--information (M/E/I) equivalence principle goes one step
+<span class="ln"> 146 </span>further. It proposes that a stored bit carries an equivalent
+<span class="ln"> 147 </span>mass,<span class="lx">\cite</span>{vopson2019,vopson2022}
+<span class="ln">   ⋮</span>
+<span class="ln"> 159 </span>Following Ref.~<span class="lx">\onlinecite</span>{vopson2022}, we assume that the positron
+<span class="ln">   ⋮</span>
+<span class="ln"> 179 </span>Vopson&#x27;s 2022 protocol [Eq.~(10) of Ref.~<span class="lx">\onlinecite</span>{vopson2022}] writes</div></div>
+<p>At the end, <code>\bibliography{references}</code> asks BibTeX to print the list. REVTeX's <code>aip</code> option selects AIP's own bibliography style, <code>aipnum4-2</code>, automatically, so there is no <code>\bibliographystyle</code> line to get wrong.</p>
+<h3 id="cite-why">Why the numbering can't go wrong</h3>
+<ol>
+<li><strong>Numbers are assigned on every compile, in order of first citation.</strong> <code>aipnum4-2</code> is an "unsorted" style: the first key BibTeX meets in the text becomes [1], the next new one [2], and so on. In the paper that gives Landauer 1, Vopson 2019 2, Vopson 2021 3, Vopson 2022 4 (all cited in the Introduction), then Bérut 5, Jun 6, Hong 7 (first cited in Section II), and so on, exactly what the PDF shows.</li>
+<li><strong>Adding or moving a citation renumbers everything, text and list together.</strong> When the Introduction was written, Vopson 2021 moved from [5] to [3] and Bérut from [2] to [5], in the text and the list, with no hand edits. With hand-numbered references in Word, that is precisely where mistakes creep in.</li>
+<li><strong>Only cited entries are printed.</strong> An entry in <code>references.bib</code> that is never <code>\cite</code>d does not appear, and a reference you stop citing disappears from the list.</li>
+<li><strong>Formatting is uniform.</strong> Author initials, bold volume, page range and year follow AIP's style for every entry, because the style file formats them, not you.</li>
+</ol>
+<div class="callout"><span class="ct">⚠ The one rule</span>A typo in a key (<code>\cite{vopson2023}</code>) does not stop the PDF. It prints <strong>?</strong> or <strong>[vopson2023]</strong> and a "Citation undefined" warning. Search the PDF for "?" before you send it anywhere.</div>
+
+<!-- ================================================================ -->
+<h2 id="compile">7. Compiling: three ways<a class="headerlink" href="#compile">#</a></h2>
+<p>"Compiling" means running pdfLaTeX, then BibTeX (to build the reference list), then pdfLaTeX twice more (to settle all numbers and cross-references). You never need to do this by hand: Overleaf, latexmk and LaTeX Workshop all run the whole sequence for you.</p>
+
+<h3 id="compile-overleaf">A. Overleaf (recommended)</h3>
+<p>Overleaf is LaTeX in the browser: nothing to install, a full TeX Live with REVTeX already included, and a PDF preview next to the source. AIP's author instructions point authors to its AIP template there.</p>
+<ol>
+<li>Zip the <code>manuscript/</code> folder (it must contain <code>main.tex</code>, <code>references.bib</code> and the <code>figures/</code> folder).</li>
+<li>Go to <a href="https://www.overleaf.com">overleaf.com</a>, sign in (a free account is enough), and click <strong>New Project → Upload Project</strong>. Choose the zip.</li>
+<li>Overleaf opens the project. If it asks, set the main document: <strong>Menu → Main document → main.tex</strong>. While you are there, check <strong>Compiler → pdfLaTeX</strong>.</li>
+<li>Click <strong>Recompile</strong>. The PDF appears on the right in a few seconds.</li>
+<li>Click the <strong>log icon</strong> next to Recompile to see errors and warnings. Each one links to the line that caused it.</li>
+<li>Edit, then Recompile (or press <kbd>Ctrl</kbd>+<kbd>S</kbd> / <kbd>⌘</kbd>+<kbd>S</kbd>). Double-click in the PDF to jump to the source line.</li>
+<li>To get files back: <strong>Menu → Download → Source</strong> (zip) or the PDF download button. Copy them back into your local <code>manuscript/</code> folder so it stays the master copy.</li>
+</ol>
+
+<h3 id="compile-local">B. Local install: TeX Live or MiKTeX, with latexmk</h3>
+<ul>
+<li><strong>macOS:</strong> install <a href="https://tug.org/mactex/">MacTeX</a> (the macOS build of TeX Live).</li>
+<li><strong>Linux:</strong> install TeX Live from your package manager. On Debian/Ubuntu, this paper compiled with <code>texlive-latex-extra texlive-publishers texlive-science latexmk</code> (REVTeX is in <code>texlive-publishers</code>).</li>
+<li><strong>Windows:</strong> install <a href="https://miktex.org/">MiKTeX</a> (installs missing packages on first use) or <a href="https://tug.org/texlive/">TeX Live</a>. latexmk is a Perl script; with MiKTeX you may also need <a href="https://strawberryperl.com/">Strawberry Perl</a>.</li>
+</ul>
+<p>Then, in a terminal:</p>
+<div class="cell"><div class="in">cd manuscript
+latexmk -pdf main.tex       <span class="cm"># runs pdflatex, bibtex, pdflatex as often as needed -> main.pdf</span>
+latexmk -pvc -pdf main.tex  <span class="cm"># optional: watch mode, recompiles every time you save</span>
+latexmk -c                  <span class="cm"># delete .aux/.log/... build files (keeps main.pdf)</span></div></div>
+<p>Without latexmk, the manual sequence is <code>pdflatex main</code>, <code>bibtex main</code>, <code>pdflatex main</code>, <code>pdflatex main</code>.</p>
+
+<h3 id="compile-vscode">C. VS Code with LaTeX Workshop</h3>
+<ol>
+<li>Install a TeX distribution as in B.</li>
+<li>In VS Code, open the Extensions panel and install <strong>LaTeX Workshop</strong> (by James Yu).</li>
+<li><strong>File → Open Folder…</strong> and choose <code>manuscript</code>. Open <code>main.tex</code>.</li>
+<li>Save the file. LaTeX Workshop builds automatically with its default <em>latexmk</em> recipe. (Or use the TeX icon in the sidebar → <strong>Build LaTeX project</strong>.)</li>
+<li>Click <strong>View LaTeX PDF</strong> (the icon at the top right of the editor) to open the PDF in a tab. <kbd>Ctrl</kbd>+click in the PDF jumps to the source; errors appear in the <strong>Problems</strong> panel.</li>
+</ol>
+
+<!-- ================================================================ -->
+<h2 id="errors">8. Common errors and what they mean<a class="headerlink" href="#errors">#</a></h2>
+<p>LaTeX errors look alarming but are usually one-character fixes. Read the <strong>first</strong> error only; later ones are often knock-on effects. The log gives the line number as <code>l.134</code>.</p>
+<table>
+<tr><th>Message</th><th>Usual cause</th><th>Fix</th></tr>
+<tr><td><code>Undefined control sequence</code></td><td>A typo in a command (<code>\eqrf</code>) or a command from a package that isn't loaded.</td><td>Correct the spelling or add the <code>\usepackage</code>.</td></tr>
+<tr><td><code>Missing $ inserted</code></td><td>Maths outside <code>$...$</code>, typically <code>_</code> or <code>^</code> in plain text (e.g. typing m_e in a sentence).</td><td>Wrap in <code>$...$</code>, or escape the character as <code>\_</code>.</td></tr>
+<tr><td>Strange output or <code>Misplaced alignment tab character &amp;</code></td><td>One of the special characters <code># $ % &amp; _ { } ~ ^ \</code> typed as text. A bare <code>%</code> silently comments out the rest of the line.</td><td>Escape: <code>\%</code>, <code>\&amp;</code>, <code>\#</code>, <code>\_</code>.</td></tr>
+<tr><td><code>Citation `xyz' undefined</code>; <strong>?</strong> in the PDF</td><td>Key misspelt, entry missing from <code>references.bib</code>, or BibTeX not run yet.</td><td>Check the key; compile again with latexmk / Recompile.</td></tr>
+<tr><td><code>Reference `eq:xyz' undefined</code>; <strong>??</strong> in the PDF</td><td>Label misspelt, or only one pass run.</td><td>Check the <code>\label</code>; compile again.</td></tr>
+<tr><td><code>File `figures/...' not found</code></td><td>Wrong path or name; on Overleaf the <code>figures/</code> folder wasn't uploaded.</td><td>Paths are relative to <code>main.tex</code> and case-sensitive.</td></tr>
+<tr><td><code>Unicode character µ (U+00B5) not set up for use with LaTeX</code></td><td>A symbol pasted from Word or a web page.</td><td>Use <code>\si{\micro\metre}</code>, <code>$\mu$</code>, <code>--</code> for an en dash, <code>``...''</code> for quotes.</td></tr>
+<tr><td><code>Runaway argument</code> / <code>File ended while scanning</code></td><td>A missing closing <code>}</code>.</td><td>Look just above the reported line for the unmatched brace.</td></tr>
+<tr><td><code>Overfull \hbox</code> (warning)</td><td>A line that sticks into the margin, often a long URL or an unbreakable formula.</td><td>Rephrase or allow a break (e.g. <code>\allowbreak</code> after an underscore in a file name); the current files have none.</td></tr>
+</table>
+<div class="callout"><span class="ct">ℹ Two harmless warnings</span><code>Package nameref Warning: The definition of \label has changed!</code> appears whenever REVTeX 4.2 and hyperref are used together; we checked that a minimal five-line <code>aip,adv</code> file prints it too. It doesn't affect the output. BibTeX's <code>Warning--jnrlst (dependency: not reversed) set 1</code> also appears for that minimal file: it comes from the AIP bibliography style itself, not from our references.</div>
+
+<!-- ================================================================ -->
+<h2 id="cheat">9. Cheat sheet<a class="headerlink" href="#cheat">#</a></h2>
+<table>
+<tr><th>You want</th><th>Write</th><th>Example from main.tex</th></tr>
+<tr><td>Section / subsection</td><td><code>\section{Title}\label{sec:x}</code></td><td><code>\subsection{Assumptions}\label{sec:assumptions}</code></td></tr>
+<tr><td>Inline maths</td><td><code>$...$</code></td><td><code>$\kb T\ln 2$</code></td></tr>
+<tr><td>Numbered equation</td><td><code>\begin{equation} ... \label{eq:x} \end{equation}</code></td><td><code>\lambda = \frac{hc}{I\,\kb T\ln 2}</code></td></tr>
+<tr><td>Refer to an equation</td><td><code>Eq.~\eqref{eq:x}</code></td><td><code>Eq.~\eqref{eq:lambda}</code> → Eq. (4)</td></tr>
+<tr><td>Refer to section / table / figure</td><td><code>Sec.~\ref{}</code>, <code>Table~\ref{}</code>, <code>Fig.~\ref{}</code></td><td><code>Table~\ref{tab:prediction}</code> → Table I</td></tr>
+<tr><td>Superscript citation</td><td><code>text,\cite{key}</code></td><td><code>energy,\cite{landauer1961}</code></td></tr>
+<tr><td>Several citations</td><td><code>\cite{a,b}</code></td><td><code>\cite{vopson2019,vopson2022}</code> → <sup>2,4</sup></td></tr>
+<tr><td>"Ref. N" in a sentence</td><td><code>Ref.~\onlinecite{key}</code></td><td><code>Following Ref.~\onlinecite{vopson2022}</code></td></tr>
+<tr><td>Number with unit</td><td><code>\SI{num}{unit}</code></td><td><code>\SI{511}{\kilo\electronvolt}</code></td></tr>
+<tr><td>Greek / symbols</td><td><code>\lambda \nu \gamma \sim \approx \times</code></td><td><code>$2\times10^{7}$</code></td></tr>
+<tr><td>Upright text in maths</td><td><code>\mathrm{...}</code></td><td><code>m_{\mathrm{bit}}</code></td></tr>
+<tr><td>Emphasis / bold</td><td><code>\emph{...}</code>, <code>\textbf{...}</code></td><td><code>\emph{information energy photons}</code></td></tr>
+<tr><td>Numbered list</td><td><code>\begin{enumerate} \item ... \end{enumerate}</code></td><td>the five assumptions in II.D</td></tr>
+<tr><td>Dashes and quotes</td><td><code>-</code> hyphen, <code>--</code> en dash, <code>---</code> em dash, <code>``...''</code></td><td><code>Electron--positron</code></td></tr>
+<tr><td>Non-breaking space</td><td><code>~</code></td><td><code>1.509~bits</code></td></tr>
+<tr><td>Comment</td><td><code>% ...</code></td><td><code>%% a note to yourself</code></td></tr>
+<tr><td>Special characters</td><td><code>\% \&amp; \# \_ \$</code></td><td><code>review \&amp; editing</code></td></tr>
+<tr><td>Compile</td><td><code>latexmk -pdf main.tex</code></td><td>or Overleaf → Recompile</td></tr>
+</table>
+
+<!-- ================================================================ -->
+<h2 id="cyu">Check your Understanding<a class="headerlink" href="#cyu">#</a></h2>
+<details class="cyu" open><summary>Check your Understanding</summary><div class="cyu-body">
+<p class="cyu-intro">Four quick questions. Answers are checked in your browser.</p>
+<div class="cyu-q" data-type="mcq" data-answer="2" data-choices="Retype every equation number after it|Nothing changes until you renumber by hand|Recompile: all numbers and every \eqref update automatically|LaTeX reports an error"
+ data-hint="What does \label + \eqref buy you?"
+ data-explain="Numbers are assigned on each compile, so inserting an equation renumbers the rest and every \eqref follows.">
+<span class="cyu-tier">Warm-up</span><p>You insert a new numbered equation at the start of Sec. II.C. What do you have to do to keep the references to Eq. (4) correct?</p></div>
+<div class="cyu-q" data-type="mcq" data-answer="1" data-choices="It keeps the number 1 it has now|It becomes reference 1 and the others shift up by one|It goes to the end of the list as reference 6|It only appears if you edit references.bib"
+ data-hint="aipnum4-2 numbers references in order of first citation."
+ data-explain="The first key cited in the text becomes [1]. Every other reference shifts up by one, in the text and in the list, on the next compile.">
+<span class="cyu-tier">At this level</span><p>You add a new reference to the first sentence of the Introduction. What number does it get?</p></div>
+<div class="cyu-q" data-type="mcq" data-answer="3" data-choices="The figure file is missing|The class option is wrong|The \label is before \caption|The \cite key does not exist in references.bib, or BibTeX has not run"
+ data-hint="A question mark is LaTeX saying 'I don't know this number yet'."
+ data-explain="A '?' for a citation means the key is unknown: check the spelling against references.bib and recompile.">
+<span class="cyu-tier">At this level</span><p>The PDF shows a superscript <strong>?</strong> where a citation should be. Most likely cause?</p></div>
+<div class="cyu-q" data-type="mcq" data-answer="0" data-choices="Change preprint to reprint and recompile|Change aip to aps|Delete \maketitle|Change revtex4-2 to article"
+ data-hint="Which class option controls the layout rather than the journal?"
+ data-explain="preprint ↔ reprint switches between submission layout and journal two-column layout. Switch back to preprint before submitting.">
+<span class="cyu-tier">Stretch</span><p>You want to see roughly how many journal pages the paper will fill. What do you change?</p></div>
+</div></details>
+
+<h2 id="next">Where to go next<a class="headerlink" href="#next">#</a></h2>
+<ul>
+<li>The reading guide for all companions: <a href="index.html">index</a>.</li>
+<li>The physics, section by section: start with <a href="02_introduction.html">Section I — Introduction</a>.</li>
+<li>Where the 1.509 bits per particle comes from: <a href="01_bits_per_particle.html">bits-per-particle background</a>.</li>
+<li>The Supplementary Material is a second file, <code>supplementary.tex</code>, with the same class and bibliography; compile it the same way (<code>latexmk -pdf supplementary.tex</code>).</li>
+<li>The official reference for every REVTeX/AIP option: the <em>Author's Guide to AIP Substyles for REVTeX 4.2</em> (<code>aipguide4-2.pdf</code>, on <a href="https://ctan.org/pkg/revtex">CTAN</a>).</li>
+</ul>
+
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <strong>00 · LaTeX primer (current)</strong> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+</main>
+
+<aside class="toc"><div class="toc-title">☰ Contents</div>
+<ul>
+<li><a href="#why">1. LaTeX vs Word</a></li>
+<li><a href="#structure">2. Structure of main.tex</a></li>
+<li><a href="#math">3. Maths</a><ul><li><a href="#math-inline">Inline</a></li><li><a href="#math-display">Numbered display</a></li><li><a href="#math-ref">\label and \eqref</a></li><li><a href="#math-units">Units (siunitx)</a></li></ul></li>
+<li><a href="#floats">4. Figures</a></li>
+<li><a href="#tables">5. Tables</a></li>
+<li><a href="#cite">6. Citations (BibTeX)</a><ul><li><a href="#cite-why">Why numbering can't go wrong</a></li></ul></li>
+<li><a href="#compile">7. Compiling</a><ul><li><a href="#compile-overleaf">A. Overleaf</a></li><li><a href="#compile-local">B. TeX Live / MiKTeX</a></li><li><a href="#compile-vscode">C. VS Code</a></li></ul></li>
+<li><a href="#errors">8. Common errors</a></li>
+<li><a href="#cheat">9. Cheat sheet</a></li>
+<li><a href="#cyu">Check your Understanding</a></li>
+</ul></aside>
+</div>
+<footer>LaTeX primer for <code>manuscript/main.tex</code> (REVTeX 4.2, <code>aip,adv</code>) · all snippets are copied from the manuscript and <code>references.bib</code> by <code>make_explainers.py</code> · styled after the IPI_Learning study companion.</footer>
+
+<script>
+(function(){
+"use strict";
+/* ---- digital rain (as on IPI_Learning landing hero) ---- */
+var cv=document.getElementById("rain");
+if(cv && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)){
+  var ctx=cv.getContext("2d"),FS=15,cols,drops,CH="01010101010110ABCDEF0123456789";
+  function rs(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;cols=Math.ceil(cv.width/FS);drops=[];for(var i=0;i<cols;i++)drops[i]=Math.random()*-40;}
+  rs();addEventListener("resize",rs);
+  ctx.fillStyle="#0a1408";ctx.fillRect(0,0,cv.width,cv.height);
+  setInterval(function(){ctx.fillStyle="rgba(10,20,8,0.08)";ctx.fillRect(0,0,cv.width,cv.height);ctx.font=FS+"px monospace";
+    for(var i=0;i<cols;i++){var ch=CH[Math.floor(Math.random()*CH.length)],y=drops[i]*FS;ctx.fillStyle="#1bd169";ctx.fillText(ch,i*FS,y);
+      if(y>cv.height&&Math.random()>0.975)drops[i]=0;drops[i]+=1;}},72);
+}
+/* ---- check your understanding (same behaviour as checkyourself.js: hint, then explanation) ---- */
+document.querySelectorAll(".cyu-q").forEach(function(q){
+  var type=q.dataset.type,ans=parseFloat(q.dataset.answer),fb=document.createElement("div");fb.className="cyu-feedback";fb.hidden=true;
+  var tries=0,get,choices=[];
+  if(type==="mcq"){var wrap=document.createElement("div");wrap.className="cyu-choices";var nm="q"+Math.random().toString(36).slice(2,8);
+    q.dataset.choices.split("|").forEach(function(txt,i){var lab=document.createElement("label");lab.className="cyu-choice";var r=document.createElement("input");r.type="radio";r.name=nm;r.value=i;lab.appendChild(r);lab.appendChild(document.createTextNode(txt));wrap.appendChild(lab);choices.push(lab);});
+    q.appendChild(wrap);get=function(){var s=q.querySelector("input:checked");return s?parseInt(s.value):null;};}
+  else{var en=document.createElement("div");en.className="cyu-entry";var inp=document.createElement("input");inp.type="text";inp.placeholder="your answer";en.appendChild(inp);
+    var u=document.createElement("span");u.textContent=q.dataset.unit||"";u.style.opacity=.7;en.appendChild(u);q.appendChild(en);get=function(){var v=parseFloat(inp.value.replace(/,/g,""));return isNaN(v)?null:v;};}
+  var act=document.createElement("div");act.style.display="flex";act.style.gap=".5rem";
+  var sb=document.createElement("button");sb.className="cyu-btn";sb.textContent="Check";var rv=document.createElement("button");rv.className="cyu-btn cyu-btn--ghost";rv.textContent="Reveal answer";
+  act.appendChild(sb);act.appendChild(rv);q.appendChild(act);q.appendChild(fb);
+  function show(st,lab,body){fb.hidden=false;fb.dataset.state=st;fb.innerHTML="<strong>"+lab+"</strong><br>"+body;}
+  sb.onclick=function(){var v=get();if(v===null){show("hint","Nothing to check yet","Pick an option or type a number.");return;}
+    var ok=type==="mcq"?v===ans:Math.abs(v-ans)<=parseFloat(q.dataset.tol||"0.01");
+    choices.forEach(function(c,i){c.classList.remove("is-right","is-wrong");if(type==="mcq"&&i===v)c.classList.add(ok?"is-right":"is-wrong");});
+    if(ok){show("right","Correct",q.dataset.explain);}else{tries++;show(tries>1?"wrong":"hint",tries>1?"Not quite":"Not yet",q.dataset.hint);}};
+  rv.onclick=function(){show("right","Answer",q.dataset.explain);if(type==="mcq")choices[ans].classList.add("is-right");};
+});
+})();
+</script>
+</body>
+</html>

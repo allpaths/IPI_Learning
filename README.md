@@ -22,6 +22,13 @@ All lecture content originates with Dr. Vopson; this repository contains noteboo
 | 8 | [Shannon vs Boltzmann Entropy](Video_08/) | `Video_08/` | [Watch →](https://youtu.be/nPj7nbQQUtU) |
 | 9 | [Landauer's Principle and M/E/I Equivalence](Video_09/) | `Video_09/` | [Watch →](https://youtu.be/7UcpUISMxtQ) |
 
+## IRPhoton explainers
+
+A separate section of the site, **IRPhoton: A Proposed Test of M/E/I**, hosts study companions to a manuscript in preparation (not peer reviewed) on an experimental design for detecting the infrared photons predicted by Vopson's M/E/I protocol. It is not part of the lecture series.
+
+- `IRPhoton/index.md` is the landing page (a normal book page, listed in `_toc.yml`).
+- `_extra/IRPhoton/explainers/*.html` are standalone, self-contained HTML pages (embedded figures, MathJax from a CDN, inline JS). Sphinx copies them verbatim to `IRPhoton/explainers/` in the built site via `html_extra_path` in `_config.yml`; they are not parsed by Jupyter Book. They are generated from the manuscript project, so edit them there and copy them in rather than editing here.
+
 ## Running Locally
 
 ```bash
@@ -62,6 +69,8 @@ Colab buttons follow the same tag (Colab caches less aggressively, so this matte
 IPI_Learning/
 ├── README.md                         ← this file (developer-facing)
 ├── index.md                          ← landing page for the published site
+├── IRPhoton/index.md                 ← landing page for the IRPhoton explainers
+├── _extra/IRPhoton/explainers/       ← standalone explainer pages, copied verbatim into the site
 ├── _config.yml                       ← Jupyter Book configuration
 ├── _toc.yml                          ← published site table of contents
 ├── requirements.txt                  ← shared Python dependencies

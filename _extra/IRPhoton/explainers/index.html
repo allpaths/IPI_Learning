@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IRPhoton paper companions: reading guide</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{
+  --ipi-green:#1bd169; --ipi-green-bright:#5fff8f; --ipi-green-pale:#9dff95;
+  --ipi-dark:#0a1408; --text:#222832; --muted:#5b6470; --line:rgba(127,127,127,.35);
+  --cyu-ok:#1bd169; --cyu-warn:#e8a33d; --cyu-err:#e2564c; --cyu-tint:rgba(27,209,105,.07);
+  --code-bg:#f6f8fa;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Lato,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--text);line-height:1.65;background:#fff;font-size:16.5px}
+a{color:#0a7a3c} a:hover{color:var(--ipi-green)}
+.topbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e6e8eb;padding:.45rem 1.2rem;display:flex;gap:1rem;align-items:center;font-size:.88rem;color:var(--muted)}
+.topbar .brand{font-weight:700;color:var(--text)} .topbar .brand span{color:var(--ipi-green)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:2.5rem;max-width:1180px;margin:0 auto;padding:1.5rem 1.5rem 4rem}
+main{min-width:0}
+aside.toc{position:sticky;top:3.2rem;align-self:start;max-height:calc(100vh - 4rem);overflow:auto;font-size:.86rem;border-left:1px solid #e6e8eb;padding-left:1rem}
+aside.toc .toc-title{font-weight:700;margin-bottom:.4rem;display:flex;gap:.4rem;align-items:center}
+aside.toc ul{list-style:none;padding-left:0;margin:0} aside.toc ul ul{padding-left:.9rem}
+aside.toc a{color:var(--muted);text-decoration:none;display:block;padding:.15rem 0} aside.toc a:hover{color:var(--ipi-green)}
+@media (max-width:960px){.layout{grid-template-columns:1fr} aside.toc{display:none}}
+h1{font-size:2.1rem;line-height:1.25;margin:.2rem 0 1rem} h2{font-size:1.55rem;margin:2.6rem 0 .8rem;padding-bottom:.25rem;border-bottom:1px solid #e6e8eb} h3{font-size:1.18rem;margin:1.8rem 0 .5rem}
+.headerlink{opacity:0;margin-left:.3rem;text-decoration:none;color:var(--muted)} h2:hover .headerlink,h3:hover .headerlink{opacity:1}
+/* hero */
+.ipi-hero{position:relative;margin:0 0 2rem;padding:2.6rem 1.5rem 2.3rem;border-radius:10px;overflow:hidden;text-align:center;background:var(--ipi-dark);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.ipi-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.45) 0%,rgba(0,0,0,.82) 90%);pointer-events:none;z-index:1}
+.ipi-hero>*{position:relative;z-index:2}
+.ipi-hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.ipi-hero h1{color:#fff;font-weight:600;margin:0 0 .5rem;text-shadow:0 0 18px rgba(95,255,143,.45),0 0 8px rgba(0,0,0,.6);border:none}
+.ipi-hero-subtitle{color:#fff;font-weight:300;max-width:760px;margin:0 auto;line-height:1.55}
+.ipi-hero-tag{display:inline-block;margin-top:1rem;padding:.25rem .75rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ipi-green-pale);border:1px solid rgba(27,209,105,.5);border-radius:999px}
+/* cards & callouts */
+.ipi-card{padding:1rem 1.3rem;margin:1.2rem 0;border-left:4px solid var(--ipi-green);background:linear-gradient(90deg,rgba(27,209,105,.07) 0%,rgba(27,209,105,.02) 50%,transparent 100%);border-radius:4px}
+.ipi-card-title{font-weight:700;color:#119a4c;text-transform:uppercase;font-size:.8rem;letter-spacing:.04em;margin:0 0 .3rem}
+.ipi-card p{margin:.3rem 0}
+.callout{border:1px solid var(--line);border-left:4px solid var(--cyu-warn);background:rgba(232,163,61,.08);padding:.8rem 1.1rem;border-radius:5px;margin:1.2rem 0}
+.callout.danger{border-left-color:var(--cyu-err);background:rgba(226,86,76,.07)}
+.callout .ct{font-weight:700;display:block;margin-bottom:.2rem}
+blockquote.nav{margin:1rem 0;padding:.5rem 1rem;border-left:3px solid var(--line);color:var(--muted);font-size:.93rem}
+.draft{border:1px solid #d6dbe0;background:#fbfcfd;border-radius:6px;padding:.9rem 1.2rem;margin:1rem 0;font-family:Georgia,"Times New Roman",serif;font-size:1rem}
+.draft .dl{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+.eqbox{border:1.5px solid var(--ipi-green);border-radius:6px;padding:.3rem .8rem;margin:1rem auto;max-width:560px;background:rgba(27,209,105,.04);text-align:center}
+/* tables */
+table{border-collapse:collapse;margin:1rem 0;width:100%;font-size:.94rem}
+th,td{border-bottom:1px solid #e3e6ea;padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:rgba(27,209,105,.08);border-bottom:2px solid var(--ipi-green)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+/* notebook-style code cells */
+.cell{margin:1rem 0;border:1px solid #e3e6ea;border-radius:6px;overflow:hidden}
+.cell .in{background:var(--code-bg);padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid #6aa3ff}
+.cell .out{padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid var(--ipi-green);background:#fff}
+.kw{color:#a626a4}.st{color:#50a14f}.cm{color:#8a919b;font-style:italic}.nu{color:#986801}
+/* figure */
+.ipi-figure{margin:1.8rem auto;text-align:center}
+.ipi-figure img{max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+.ipi-figure figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem;font-style:italic}
+/* details / CYU (mirrors checkyourself.css) */
+details.cyu{border:1px solid var(--line);border-left:3px solid var(--ipi-green);border-radius:6px;margin:1.25rem 0 1.75rem;background:var(--cyu-tint)}
+details.cyu>summary{cursor:pointer;padding:.65rem .9rem;font-weight:600;list-style:none;user-select:none}
+details.cyu>summary::-webkit-details-marker{display:none}
+details.cyu>summary::before{content:"+";display:inline-block;width:1.1em;font-weight:700;color:var(--ipi-green)}
+details.cyu[open]>summary::before{content:"\2212"}
+details.cyu>summary:hover{background:rgba(27,209,105,.10)}
+details.cyu--explore{border-left-color:var(--cyu-warn)} details.cyu--explore>summary::before{color:var(--cyu-warn)}
+.cyu-body{padding:0 .9rem .9rem}
+.cyu-intro{margin:0 0 1rem;font-size:.94em;opacity:.85}
+.cyu-q{border-top:1px solid var(--line);padding-top:.9rem;margin-top:.9rem}.cyu-q:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.cyu-tier{display:inline-block;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:.12rem .5rem;border-radius:999px;border:1px solid var(--line);margin-bottom:.5rem;opacity:.8}
+.cyu-choices{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem}
+.cyu-choice{display:flex;align-items:baseline;gap:.55rem;padding:.35rem .55rem;border:1px solid var(--line);border-radius:5px;cursor:pointer;background:#fff}
+.cyu-choice.is-right{border-color:var(--cyu-ok);background:rgba(27,209,105,.12)}.cyu-choice.is-wrong{border-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+.cyu-entry{display:flex;gap:.5rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.cyu-entry input{font-family:ui-monospace,Menlo,Consolas,monospace;padding:.4rem .55rem;border:1px solid var(--line);border-radius:5px;min-width:8rem}
+.cyu-btn{font:inherit;font-size:.88em;font-weight:600;padding:.35rem .85rem;border-radius:5px;border:1px solid var(--ipi-green);background:var(--ipi-green);color:#04240f;cursor:pointer}
+.cyu-btn--ghost{background:transparent;color:inherit;border-color:var(--line)}
+.cyu-feedback{margin-top:.75rem;padding:.6rem .75rem;border-radius:5px;border-left:3px solid var(--line);font-size:.94em;background:rgba(127,127,127,.09)}
+.cyu-feedback[data-state=right]{border-left-color:var(--cyu-ok);background:rgba(27,209,105,.12)}
+.cyu-feedback[data-state=hint]{border-left-color:var(--cyu-warn);background:rgba(232,163,61,.12)}
+.cyu-feedback[data-state=wrong]{border-left-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+/* explorer */
+.cyux-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin:.4rem 0}
+.cyux-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em;opacity:.75;min-width:8rem}
+.cyux-row input[type=range]{flex:1 1 14rem;accent-color:var(--ipi-green)}
+.cyux-base{font:inherit;font-size:.82em;font-weight:600;padding:.22rem .7rem;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.cyux-base.is-on{border-color:var(--ipi-green);background:var(--ipi-green);color:#04240f}
+.cyux-readout{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding:.6rem .75rem;border-radius:5px;background:rgba(127,127,127,.09);margin:.8rem 0}
+.cyux-cell{display:flex;gap:.45rem;align-items:baseline}
+.cyux-cell-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82em;opacity:.7}
+.cyux-cell-val{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700}
+canvas#lamplot{max-width:100%;background:#fff;border:1px solid #e3e6ea;border-radius:5px}
+/* referee Q&A */
+details.ref{border:1px solid #e3e6ea;border-radius:6px;margin:.6rem 0;background:#fff}
+details.ref>summary{cursor:pointer;padding:.6rem .9rem;font-weight:600}
+details.ref>div{padding:0 1rem .8rem}
+.standing{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.1rem .5rem;border-radius:999px;border:1px solid}
+.s-est{color:#0f8a43;border-color:#1bd169;background:rgba(27,209,105,.10)}
+.s-prop{color:#9a6312;border-color:#e8a33d;background:rgba(232,163,61,.12)}
+.s-assm{color:#a8332b;border-color:#e2564c;background:rgba(226,86,76,.10)}
+footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-size:.85rem;border-top:1px solid #e6e8eb}
+.ln{color:#a3abb5;user-select:none}
+.lx{color:#a626a4}
+.ipi-figure img{max-width:min(100%,560px)}
+</style>
+</head>
+<body>
+<div class="topbar"><span class="brand"><a href="../../index.html" style="color:inherit;text-decoration:none">IPI Learning</a> <span>·</span> <a href="../index.html" style="color:inherit;text-decoration:none">IRPhoton</a></span><span>Manuscript in preparation, not peer reviewed · reading guide</span></div>
+<div class="layout">
+<main id="main-content">
+<div class="ipi-hero"><canvas id="rain" aria-hidden="true"></canvas>
+  <h1>Reading guide</h1>
+  <p class="ipi-hero-subtitle">Study companions to <em>Design of an experiment to detect information energy photons from electron–positron annihilation</em>: one per section, plus a LaTeX primer and a background page.</p>
+  <span class="ipi-hero-tag">9 companions · about 143 minutes in total</span>
+</div>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<h2 id="order">Recommended reading order<a class="headerlink" href="#order">#</a></h2>
+<p>The companions follow the manuscript section by section. Each one quotes the paper paragraph by paragraph, defines every symbol and acronym, pastes the real output of the scripts that produced its numbers, separates what is assumed from what is established, and ends with referee questions and self-check questions. Reading times are estimates (about 200 words per minute plus time for code cells and questions).</p>
+<table><tr><th class="num">#</th><th>Companion</th><th>Why read it</th><th class="num">Time</th></tr>
+<tr><td class="num">1</td><td><a href="02_introduction.html">02 · I. Introduction</a></td><td>Start here: the idea, the obstacle, and the scope.</td><td class="num">10 min</td></tr>
+<tr><td class="num">2</td><td><a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a></td><td>Background: where the 1.509 bits per particle comes from (optional on a first read).</td><td class="num">25 min</td></tr>
+<tr><td class="num">3</td><td><a href="03_prediction.html">03 · II. Prediction</a></td><td>The prediction: \(\lambda T = 13.76\) mm K and the five assumptions.</td><td class="num">25 min</td></tr>
+<tr><td class="num">4</td><td><a href="04_protocol.html">04 · III. Protocol</a></td><td>The seven steps and why two temperatures make it a test.</td><td class="num">11 min</td></tr>
+<tr><td class="num">5</td><td><a href="05_design.html">05 · IV. Design</a></td><td>The apparatus, term by term.</td><td class="num">15 min</td></tr>
+<tr><td class="num">6</td><td><a href="06_expected_response.html">06 · V. Expected response</a></td><td>The numbers: background, losses, noise, Table II. The longest page.</td><td class="num">20 min</td></tr>
+<tr><td class="num">7</td><td><a href="07_conclusions.html">07 · VI. Conclusions</a></td><td>Requirements and next steps.</td><td class="num">6 min</td></tr>
+<tr><td class="num">8</td><td><a href="08_supplement.html">08 · Supplement</a></td><td>For referee preparation: inputs ledger, Geant4 limits, derivations.</td><td class="num">8 min</td></tr>
+<tr><td class="num">9</td><td><a href="00_latex_primer.html">00 · LaTeX primer</a></td><td>Whenever you need to edit or compile the LaTeX source.</td><td class="num">23 min</td></tr>
+<tr><td></td><td><strong>All companions</strong></td><td></td><td class="num"><strong>143 min</strong></td></tr></table>
+<div class="ipi-card"><p class="ipi-card-title">Short on time?</p><p>Read 02, 04 and the "Worked numbers" and "Assumed vs established" parts of 06. That covers the argument and every headline number in about 40 minutes.</p></div>
+<h2 id="sources">Where the numbers come from<a class="headerlink" href="#sources">#</a></h2>
+<p>Every number in the paper is printed by a script in <code>scripts/</code>: <code>compute_prediction.py</code> (Section II), and in <code>scripts/simulation/</code>: <code>ir_escape.py</code>, <code>ps_formation.py</code>, <code>sensitivity.py</code>, <code>background_estimates.py</code>. Their outputs are saved in <code>scripts/simulation/outputs/</code>. Numbers from the Geant4 model (collected fraction, stopping depths, gamma response) were <strong>not</strong> re-run for this paper; the companions flag them wherever they appear.</p>
+</main>
+<aside class="toc"><div class="toc-title">☰ Contents</div>
+<ul><li><a href="#order">Recommended reading order</a></li><li><a href="#sources">Where the numbers come from</a></li></ul></aside>
+</div>
+<footer>Reading guide for <code>explainers/</code> · styled after the IPI_Learning study companion.</footer>
+<script>
+(function(){
+"use strict";
+/* ---- digital rain (as on IPI_Learning landing hero) ---- */
+var cv=document.getElementById("rain");
+if(cv && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)){
+  var ctx=cv.getContext("2d"),FS=15,cols,drops,CH="01010101010110ABCDEF0123456789";
+  function rs(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;cols=Math.ceil(cv.width/FS);drops=[];for(var i=0;i<cols;i++)drops[i]=Math.random()*-40;}
+  rs();addEventListener("resize",rs);
+  ctx.fillStyle="#0a1408";ctx.fillRect(0,0,cv.width,cv.height);
+  setInterval(function(){ctx.fillStyle="rgba(10,20,8,0.08)";ctx.fillRect(0,0,cv.width,cv.height);ctx.font=FS+"px monospace";
+    for(var i=0;i<cols;i++){var ch=CH[Math.floor(Math.random()*CH.length)],y=drops[i]*FS;ctx.fillStyle="#1bd169";ctx.fillText(ch,i*FS,y);
+      if(y>cv.height&&Math.random()>0.975)drops[i]=0;drops[i]+=1;}},72);
+}
+})();
+</script>
+</body>
+</html>

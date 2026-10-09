@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introduction: a study companion</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{
+  --ipi-green:#1bd169; --ipi-green-bright:#5fff8f; --ipi-green-pale:#9dff95;
+  --ipi-dark:#0a1408; --text:#222832; --muted:#5b6470; --line:rgba(127,127,127,.35);
+  --cyu-ok:#1bd169; --cyu-warn:#e8a33d; --cyu-err:#e2564c; --cyu-tint:rgba(27,209,105,.07);
+  --code-bg:#f6f8fa;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Lato,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--text);line-height:1.65;background:#fff;font-size:16.5px}
+a{color:#0a7a3c} a:hover{color:var(--ipi-green)}
+.topbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e6e8eb;padding:.45rem 1.2rem;display:flex;gap:1rem;align-items:center;font-size:.88rem;color:var(--muted)}
+.topbar .brand{font-weight:700;color:var(--text)} .topbar .brand span{color:var(--ipi-green)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:2.5rem;max-width:1180px;margin:0 auto;padding:1.5rem 1.5rem 4rem}
+main{min-width:0}
+aside.toc{position:sticky;top:3.2rem;align-self:start;max-height:calc(100vh - 4rem);overflow:auto;font-size:.86rem;border-left:1px solid #e6e8eb;padding-left:1rem}
+aside.toc .toc-title{font-weight:700;margin-bottom:.4rem;display:flex;gap:.4rem;align-items:center}
+aside.toc ul{list-style:none;padding-left:0;margin:0} aside.toc ul ul{padding-left:.9rem}
+aside.toc a{color:var(--muted);text-decoration:none;display:block;padding:.15rem 0} aside.toc a:hover{color:var(--ipi-green)}
+@media (max-width:960px){.layout{grid-template-columns:1fr} aside.toc{display:none}}
+h1{font-size:2.1rem;line-height:1.25;margin:.2rem 0 1rem} h2{font-size:1.55rem;margin:2.6rem 0 .8rem;padding-bottom:.25rem;border-bottom:1px solid #e6e8eb} h3{font-size:1.18rem;margin:1.8rem 0 .5rem}
+.headerlink{opacity:0;margin-left:.3rem;text-decoration:none;color:var(--muted)} h2:hover .headerlink,h3:hover .headerlink{opacity:1}
+/* hero */
+.ipi-hero{position:relative;margin:0 0 2rem;padding:2.6rem 1.5rem 2.3rem;border-radius:10px;overflow:hidden;text-align:center;background:var(--ipi-dark);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.ipi-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.45) 0%,rgba(0,0,0,.82) 90%);pointer-events:none;z-index:1}
+.ipi-hero>*{position:relative;z-index:2}
+.ipi-hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.ipi-hero h1{color:#fff;font-weight:600;margin:0 0 .5rem;text-shadow:0 0 18px rgba(95,255,143,.45),0 0 8px rgba(0,0,0,.6);border:none}
+.ipi-hero-subtitle{color:#fff;font-weight:300;max-width:760px;margin:0 auto;line-height:1.55}
+.ipi-hero-tag{display:inline-block;margin-top:1rem;padding:.25rem .75rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ipi-green-pale);border:1px solid rgba(27,209,105,.5);border-radius:999px}
+/* cards & callouts */
+.ipi-card{padding:1rem 1.3rem;margin:1.2rem 0;border-left:4px solid var(--ipi-green);background:linear-gradient(90deg,rgba(27,209,105,.07) 0%,rgba(27,209,105,.02) 50%,transparent 100%);border-radius:4px}
+.ipi-card-title{font-weight:700;color:#119a4c;text-transform:uppercase;font-size:.8rem;letter-spacing:.04em;margin:0 0 .3rem}
+.ipi-card p{margin:.3rem 0}
+.callout{border:1px solid var(--line);border-left:4px solid var(--cyu-warn);background:rgba(232,163,61,.08);padding:.8rem 1.1rem;border-radius:5px;margin:1.2rem 0}
+.callout.danger{border-left-color:var(--cyu-err);background:rgba(226,86,76,.07)}
+.callout .ct{font-weight:700;display:block;margin-bottom:.2rem}
+blockquote.nav{margin:1rem 0;padding:.5rem 1rem;border-left:3px solid var(--line);color:var(--muted);font-size:.93rem}
+.draft{border:1px solid #d6dbe0;background:#fbfcfd;border-radius:6px;padding:.9rem 1.2rem;margin:1rem 0;font-family:Georgia,"Times New Roman",serif;font-size:1rem}
+.draft .dl{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+.eqbox{border:1.5px solid var(--ipi-green);border-radius:6px;padding:.3rem .8rem;margin:1rem auto;max-width:560px;background:rgba(27,209,105,.04);text-align:center}
+/* tables */
+table{border-collapse:collapse;margin:1rem 0;width:100%;font-size:.94rem}
+th,td{border-bottom:1px solid #e3e6ea;padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:rgba(27,209,105,.08);border-bottom:2px solid var(--ipi-green)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+/* notebook-style code cells */
+.cell{margin:1rem 0;border:1px solid #e3e6ea;border-radius:6px;overflow:hidden}
+.cell .in{background:var(--code-bg);padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid #6aa3ff}
+.cell .out{padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid var(--ipi-green);background:#fff}
+.kw{color:#a626a4}.st{color:#50a14f}.cm{color:#8a919b;font-style:italic}.nu{color:#986801}
+/* figure */
+.ipi-figure{margin:1.8rem auto;text-align:center}
+.ipi-figure img{max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+.ipi-figure figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem;font-style:italic}
+/* details / CYU (mirrors checkyourself.css) */
+details.cyu{border:1px solid var(--line);border-left:3px solid var(--ipi-green);border-radius:6px;margin:1.25rem 0 1.75rem;background:var(--cyu-tint)}
+details.cyu>summary{cursor:pointer;padding:.65rem .9rem;font-weight:600;list-style:none;user-select:none}
+details.cyu>summary::-webkit-details-marker{display:none}
+details.cyu>summary::before{content:"+";display:inline-block;width:1.1em;font-weight:700;color:var(--ipi-green)}
+details.cyu[open]>summary::before{content:"\2212"}
+details.cyu>summary:hover{background:rgba(27,209,105,.10)}
+details.cyu--explore{border-left-color:var(--cyu-warn)} details.cyu--explore>summary::before{color:var(--cyu-warn)}
+.cyu-body{padding:0 .9rem .9rem}
+.cyu-intro{margin:0 0 1rem;font-size:.94em;opacity:.85}
+.cyu-q{border-top:1px solid var(--line);padding-top:.9rem;margin-top:.9rem}.cyu-q:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.cyu-tier{display:inline-block;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:.12rem .5rem;border-radius:999px;border:1px solid var(--line);margin-bottom:.5rem;opacity:.8}
+.cyu-choices{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem}
+.cyu-choice{display:flex;align-items:baseline;gap:.55rem;padding:.35rem .55rem;border:1px solid var(--line);border-radius:5px;cursor:pointer;background:#fff}
+.cyu-choice.is-right{border-color:var(--cyu-ok);background:rgba(27,209,105,.12)}.cyu-choice.is-wrong{border-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+.cyu-entry{display:flex;gap:.5rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.cyu-entry input{font-family:ui-monospace,Menlo,Consolas,monospace;padding:.4rem .55rem;border:1px solid var(--line);border-radius:5px;min-width:8rem}
+.cyu-btn{font:inherit;font-size:.88em;font-weight:600;padding:.35rem .85rem;border-radius:5px;border:1px solid var(--ipi-green);background:var(--ipi-green);color:#04240f;cursor:pointer}
+.cyu-btn--ghost{background:transparent;color:inherit;border-color:var(--line)}
+.cyu-feedback{margin-top:.75rem;padding:.6rem .75rem;border-radius:5px;border-left:3px solid var(--line);font-size:.94em;background:rgba(127,127,127,.09)}
+.cyu-feedback[data-state=right]{border-left-color:var(--cyu-ok);background:rgba(27,209,105,.12)}
+.cyu-feedback[data-state=hint]{border-left-color:var(--cyu-warn);background:rgba(232,163,61,.12)}
+.cyu-feedback[data-state=wrong]{border-left-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+/* explorer */
+.cyux-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin:.4rem 0}
+.cyux-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em;opacity:.75;min-width:8rem}
+.cyux-row input[type=range]{flex:1 1 14rem;accent-color:var(--ipi-green)}
+.cyux-base{font:inherit;font-size:.82em;font-weight:600;padding:.22rem .7rem;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.cyux-base.is-on{border-color:var(--ipi-green);background:var(--ipi-green);color:#04240f}
+.cyux-readout{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding:.6rem .75rem;border-radius:5px;background:rgba(127,127,127,.09);margin:.8rem 0}
+.cyux-cell{display:flex;gap:.45rem;align-items:baseline}
+.cyux-cell-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82em;opacity:.7}
+.cyux-cell-val{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700}
+canvas#lamplot{max-width:100%;background:#fff;border:1px solid #e3e6ea;border-radius:5px}
+/* referee Q&A */
+details.ref{border:1px solid #e3e6ea;border-radius:6px;margin:.6rem 0;background:#fff}
+details.ref>summary{cursor:pointer;padding:.6rem .9rem;font-weight:600}
+details.ref>div{padding:0 1rem .8rem}
+.standing{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.1rem .5rem;border-radius:999px;border:1px solid}
+.s-est{color:#0f8a43;border-color:#1bd169;background:rgba(27,209,105,.10)}
+.s-prop{color:#9a6312;border-color:#e8a33d;background:rgba(232,163,61,.12)}
+.s-assm{color:#a8332b;border-color:#e2564c;background:rgba(226,86,76,.10)}
+footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-size:.85rem;border-top:1px solid #e6e8eb}
+.ln{color:#a3abb5;user-select:none}
+.lx{color:#a626a4}
+.ipi-figure img{max-width:min(100%,560px)}
+</style>
+</head>
+<body>
+<div class="topbar"><span class="brand"><a href="../../index.html" style="color:inherit;text-decoration:none">IPI Learning</a> <span>·</span> <a href="../index.html" style="color:inherit;text-decoration:none">IRPhoton</a></span><span>Manuscript in preparation, not peer reviewed · Section I of VI</span></div>
+<div class="layout">
+<main id="main-content">
+<div class="ipi-hero"><canvas id="rain" aria-hidden="true"></canvas>
+  <h1>Section I — Introduction</h1>
+  <p class="ipi-hero-subtitle">What the idea is, why it can't be weighed, what Vopson proposed, what this paper adds, and what it does not claim.</p>
+  <span class="ipi-hero-tag">about 10 minutes · paragraph by paragraph · real script output · referee prep</span>
+</div>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <strong>02 · I. Introduction (current)</strong> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<h2 id="where">Where this section fits<a class="headerlink" href="#where">#</a></h2>
+<p>The Introduction is the paper's map. In five paragraphs it says what the idea is, why the obvious test (weighing) can't work, what Vopson proposed instead, what this paper adds, and what it does <em>not</em> claim. Everything after it fills in one of those promises.</p>
+<div class="ipi-card"><p class="ipi-card-title">How to read this page</p>
+<p>Grey serif boxes quote the paper (shortened with …). Under each one is a plain-language unpacking. Code cells show the script that produced each number with its real output. The expandable blocks at the end are for checking yourself.</p></div>
+
+<h2 id="walk">Paragraph by paragraph<a class="headerlink" href="#walk">#</a></h2>
+<h3 id="p1">Paragraph 1: the idea<a class="headerlink" href="#p1">#</a></h3>
+<div class="draft"><span class="dl">Paper · I, paragraph 1</span>Landauer's principle states that erasing information costs energy: at least \(k_bT\ln2\) per bit at temperature \(T\), released as heat [1]. The mass–energy–information (M/E/I) equivalence principle takes this a step further. … This is a proposal, not an established result, and it needs an experiment.</div>
+<p>Two layers. The bottom layer, Landauer's principle, is established: wiping a memory bit has a minimum energy cost, and that has been measured (Section II cites three experiments). The top layer, M/E/I, is Vopson's proposal that the bit's energy also counts as <em>mass</em>, and that particles carry a few bits about themselves. The last sentence sets the tone of the whole paper: the proposal is treated as a hypothesis to test, not a fact.</p>
+
+<h3 id="p2">Paragraph 2: why weighing fails, and Vopson's alternative<a class="headerlink" href="#p2">#</a></h3>
+<div class="draft"><span class="dl">Paper · I, paragraph 2</span>Weighing the effect is not practical. The information mass of an electron would be about \(2\times10^7\) times smaller than its rest mass [4]. … Vopson assumed it leaves as two low-energy photons, one per particle … information energy photons. … He also noted two open questions: the photons might be strongly absorbed in the sample, and the erased information might be carried by the gamma photons instead.</div>
+<p>The number \(2\times10^7\) is just 511 keV divided by 27 meV (cell below). Since no balance can see a change of one part in twenty million in an electron's mass, the paper follows Vopson's trick: destroy the particle and look for where its information energy goes. The paragraph ends by repeating Vopson's own two caveats. Both come back later: absorption becomes the escape problem of Section V, and the "gamma-imprint" alternative becomes a limit on what a null result can mean.</p>
+
+<h3 id="p3">Paragraph 3: what this paper adds<a class="headerlink" href="#p3">#</a></h3>
+<div class="draft"><span class="dl">Paper · I, paragraph 3</span>This paper keeps Vopson's line of argument and protocol and asks what an apparatus that carries it out would need. … The temperature dependence of the wavelength is the signature … The main obstacles are that a thin metal film lets out only a few percent of the photons generated inside it, and that the film's own thermal radiation sets the noise. The required positron rate is beyond a laboratory source but within reach of existing slow-positron facilities.</div>
+<p>This is the paper's contribution in one paragraph: not new theory, but the engineering question "if you built it, what would you see, and how long would it take?" It previews the three findings that the rest of the paper supports with numbers.</p>
+
+<h3 id="p4">Paragraph 4: scope and roadmap<a class="headerlink" href="#p4">#</a></h3>
+<div class="draft"><span class="dl">Paper · I, paragraph 4</span>This is a design study, and its estimates rest on assumptions that we state as we go. The experiment tests one reading of M/E/I, in which information mass is real energy that must be radiated at annihilation …</div>
+<p>Two honesty markers: (1) no data, only estimates; (2) the test is of one specific reading of M/E/I plus Vopson's assumptions about how the energy comes out. Section II lists those assumptions and Section V.E spells out what a null result would and would not mean.</p>
+
+<h2 id="symbols">Symbols and acronyms<a class="headerlink" href="#symbols">#</a></h2>
+<table>
+<tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>\(k_b\)</td><td>Boltzmann's constant, \(1.381\times10^{-23}\) J/K (Vopson's notation)</td></tr>
+<tr><td>\(k_bT\ln2\)</td><td>Landauer energy: the minimum heat released when one bit is erased at temperature \(T\)</td></tr>
+<tr><td>M/E/I</td><td>Mass–energy–information equivalence principle (Vopson 2019)</td></tr>
+<tr><td>bit</td><td>One binary choice; the unit of information</td></tr>
+<tr><td>positron, \(e^+\)</td><td>The electron's antiparticle</td></tr>
+<tr><td>annihilation</td><td>\(e^+ + e^- \to\) radiation, normally two 511 keV gamma photons</td></tr>
+<tr><td>information energy photons, \(\nu^+,\nu^-\)</td><td>The two extra photons M/E/I predicts at annihilation (Vopson's name)</td></tr>
+<tr><td>moderator</td><td>A material that turns fast positrons into slow ones (Section IV)</td></tr>
+<tr><td>\(^{22}\)Na</td><td>Sodium-22, a radioactive isotope that emits positrons; the usual laboratory source</td></tr>
+</table>
+
+<h2 id="numbers">Worked numbers<a class="headerlink" href="#numbers">#</a></h2>
+<p>The two numbers the Introduction leans on: the size of the effect, and why a laboratory source is too weak.</p>
+<div class="cell"><div class="in"><span class="cm"># scripts/explainer_build/cells/c02_scale.py</span>
+<span class="cm"># How small is an electron&#x27;s information mass? (Sec. I, paragraph 2)</span>
+<span class="kw">from</span> scipy.constants <span class="kw">import</span> k as kB, c, m_e, e
+<span class="kw">import</span> math
+I, T = 1.509, 300.0
+E_info = I * kB * T * math.log(2)         <span class="cm"> # J, Eq. (3)</span>
+<span class="kw">print</span>(f&quot;information energy per particle at 300 K: {E_info/e*1e3:.2f} meV&quot;)
+<span class="kw">print</span>(f&quot;electron rest energy: {m_e*c**2/e/1e3:.1f} keV&quot;)
+<span class="kw">print</span>(f&quot;rest mass / information mass: {m_e*c**2/E_info:.2e}&quot;)
+<span class="cm"># A laboratory 22Na source (Sec. IV A): 1 GBq, 90% beta+ branch, moderator efficiency 1e-4</span>
+<span class="kw">print</span>(f&quot;slow positrons <span class="kw">from</span> 1 GBq of 22Na: {1e9*0.90*1e-4:.1e} per second&quot;)</div><div class="out">information energy per particle at 300 K: 27.04 meV
+electron rest energy: 511.0 keV
+rest mass / information mass: 1.89e+07
+slow positrons from 1 GBq of 22Na: 9.0e+04 per second</div></div>
+<p>The 9×10⁴ per second from a strong laboratory source is the "of order 10⁵" in Section IV.A. Table II shows that this gives a detection time of years.</p>
+
+<h2 id="standing">Assumed vs established<a class="headerlink" href="#standing">#</a></h2>
+<table>
+<tr><th>Statement in Section I</th><th>Standing</th><th>Basis</th></tr>
+<tr><td>Erasing a bit costs at least \(k_bT\ln2\)</td><td><span class="standing s-est">established</span></td><td>Landauer 1961; experiments by Bérut 2012, Jun 2014, Hong 2016</td></tr>
+<tr><td>A bit has an equivalent mass</td><td><span class="standing s-prop">proposal</span></td><td>Vopson 2019</td></tr>
+<tr><td>Particles store about 1.509 bits</td><td><span class="standing s-prop">estimate</span></td><td>Vopson 2021</td></tr>
+<tr><td>The energy leaves as two infrared photons</td><td><span class="standing s-assm">assumption</span></td><td>Vopson 2022 calls it "a strong assumption"</td></tr>
+<tr><td>Thin metal films let out only a few percent</td><td><span class="standing s-est">computed</span></td><td>Section V.C, <code>ir_escape.py</code> (standard optics; should be measured)</td></tr>
+<tr><td>Facility beams are bright enough</td><td><span class="standing s-est">computed</span></td><td>Table II, <code>sensitivity.py</code>, under stated assumptions</td></tr>
+</table>
+
+<h2 id="referee">Questions a referee might ask<a class="headerlink" href="#referee">#</a></h2>
+<details class="ref"><summary>Q1. Isn't this just a re-run of Vopson's 2022 paper?</summary><div><p><strong>Honest answer:</strong> the idea and protocol are Vopson's, and the paper says so in its first paragraphs. What is new is the quantitative design: each element specified, losses and noise estimated, and a time-to-detection table. That is a fair contribution for AIP Advances, but it should be presented as a design study, which is what the Introduction does.</p></div></details>
+<details class="ref"><summary>Q2. Why should anyone build an experiment for an unconfirmed proposal?</summary><div><p><strong>Honest answer:</strong> because the test is fairly specific and fairly cheap once a beamline exists, and a null result is informative about the literal-energy reading. The paper doesn't argue that M/E/I is likely to be right; it argues the test is feasible.</p></div></details>
+<details class="ref"><summary>Q3. The Introduction says "a few percent" escape. Isn't that a reason to give up?</summary><div><p><strong>Honest answer:</strong> it costs a factor of about 15 in signal. In time it costs less than you might expect: the noise is the film's own thermal emission, whose emissivity is the same small number, so the noise power drops too, and the time to 5σ grows by only about 15 rather than 15² ≈ 220. Table II already includes it. The times at a facility are still minutes to hours. The bigger uncertainty is whether the photons exist at all.</p></div></details>
+
+<h2 id="cyu">Check your Understanding<a class="headerlink" href="#cyu">#</a></h2>
+<details class="cyu" open><summary>Check your Understanding</summary><div class="cyu-body">
+<p class="cyu-intro">Three questions on the Introduction's logic.</p>
+<div class="cyu-q" data-type="numeric" data-answer="1.9e7" data-tol="0.2e7" data-unit=""
+ data-hint="Divide the electron rest energy (511 keV) by the information energy at 300 K (27 meV)."
+ data-explain="511 000 eV / 0.02704 eV = 1.89 × 10⁷. That is why weighing is hopeless.">
+<span class="cyu-tier">Warm-up</span><p>Roughly how many times smaller than the electron's rest mass is its information mass at 300 K? (Enter a number like 1e7.)</p></div>
+<div class="cyu-q" data-type="mcq" data-answer="2" data-choices="Measure the mass of a cold electron|Measure Landauer heat in a memory chip|Annihilate the particle and look for photons whose wavelength follows the temperature|Look for a shift in the 511 keV gamma energy"
+ data-hint="Which option makes the information leave as something you can detect?"
+ data-explain="Annihilation removes the particle and with it the information; M/E/I then predicts extra photons at a wavelength set by T.">
+<span class="cyu-tier">At this level</span><p>What is Vopson's proposed route to a test?</p></div>
+<div class="cyu-q" data-type="mcq" data-answer="1" data-choices="It would disprove M/E/I completely|It bears on the literal-energy reading together with the stated assumptions|It proves the photons are absorbed in the film"
+ data-hint="Re-read paragraph 4 and the Assumptions list in Section II."
+ data-explain="A null result constrains the literal-energy reading plus assumptions 1–5, not every reading of M/E/I.">
+<span class="cyu-tier">Stretch</span><p>What would a null result bear on?</p></div>
+</div></details>
+
+<h2 id="summary">Key takeaways<a class="headerlink" href="#summary">#</a></h2>
+<ul>
+<li>The idea (M/E/I) is a proposal; Landauer's principle beneath it is established.</li>
+<li>The effect is twenty million times too small to weigh, so the test destroys the particle instead.</li>
+<li>The paper's contribution is the design and its numbers, not new theory.</li>
+<li>Scope is stated up front: one reading of M/E/I, under explicit assumptions.</li>
+</ul>
+
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <strong>02 · I. Introduction (current)</strong> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+</main>
+<aside class="toc"><div class="toc-title">☰ Contents</div>
+<ul><li><a href="#where">Where this section fits</a></li><li><a href="#walk">Paragraph by paragraph</a><ul><li><a href="#p1">Paragraph 1: the idea</a></li><li><a href="#p2">Paragraph 2: why weighing fails, and Vopson's alternative</a></li><li><a href="#p3">Paragraph 3: what this paper adds</a></li><li><a href="#p4">Paragraph 4: scope and roadmap</a></li></ul></li><li><a href="#symbols">Symbols and acronyms</a></li><li><a href="#numbers">Worked numbers</a></li><li><a href="#standing">Assumed vs established</a></li><li><a href="#referee">Questions a referee might ask</a></li><li><a href="#cyu">Check your Understanding</a></li><li><a href="#summary">Key takeaways</a></li></ul></aside>
+</div>
+<footer>Companion to <code>manuscript/main.tex</code> · numbers from <code>scripts/simulation/</code> and <code>scripts/explainer_build/cells/</code> (real outputs pasted) · styled after the IPI_Learning study companion.</footer>
+<script>
+(function(){
+"use strict";
+/* ---- digital rain (as on IPI_Learning landing hero) ---- */
+var cv=document.getElementById("rain");
+if(cv && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)){
+  var ctx=cv.getContext("2d"),FS=15,cols,drops,CH="01010101010110ABCDEF0123456789";
+  function rs(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;cols=Math.ceil(cv.width/FS);drops=[];for(var i=0;i<cols;i++)drops[i]=Math.random()*-40;}
+  rs();addEventListener("resize",rs);
+  ctx.fillStyle="#0a1408";ctx.fillRect(0,0,cv.width,cv.height);
+  setInterval(function(){ctx.fillStyle="rgba(10,20,8,0.08)";ctx.fillRect(0,0,cv.width,cv.height);ctx.font=FS+"px monospace";
+    for(var i=0;i<cols;i++){var ch=CH[Math.floor(Math.random()*CH.length)],y=drops[i]*FS;ctx.fillStyle="#1bd169";ctx.fillText(ch,i*FS,y);
+      if(y>cv.height&&Math.random()>0.975)drops[i]=0;drops[i]+=1;}},72);
+}
+/* ---- check your understanding (same behaviour as checkyourself.js: hint, then explanation) ---- */
+document.querySelectorAll(".cyu-q").forEach(function(q){
+  var type=q.dataset.type,ans=parseFloat(q.dataset.answer),fb=document.createElement("div");fb.className="cyu-feedback";fb.hidden=true;
+  var tries=0,get,choices=[];
+  if(type==="mcq"){var wrap=document.createElement("div");wrap.className="cyu-choices";var nm="q"+Math.random().toString(36).slice(2,8);
+    q.dataset.choices.split("|").forEach(function(txt,i){var lab=document.createElement("label");lab.className="cyu-choice";var r=document.createElement("input");r.type="radio";r.name=nm;r.value=i;lab.appendChild(r);lab.appendChild(document.createTextNode(txt));wrap.appendChild(lab);choices.push(lab);});
+    q.appendChild(wrap);get=function(){var s=q.querySelector("input:checked");return s?parseInt(s.value):null;};}
+  else{var en=document.createElement("div");en.className="cyu-entry";var inp=document.createElement("input");inp.type="text";inp.placeholder="your answer";en.appendChild(inp);
+    var u=document.createElement("span");u.textContent=q.dataset.unit||"";u.style.opacity=.7;en.appendChild(u);q.appendChild(en);get=function(){var v=parseFloat(inp.value.replace(/,/g,""));return isNaN(v)?null:v;};}
+  var act=document.createElement("div");act.style.display="flex";act.style.gap=".5rem";
+  var sb=document.createElement("button");sb.className="cyu-btn";sb.textContent="Check";var rv=document.createElement("button");rv.className="cyu-btn cyu-btn--ghost";rv.textContent="Reveal answer";
+  act.appendChild(sb);act.appendChild(rv);q.appendChild(act);q.appendChild(fb);
+  function show(st,lab,body){fb.hidden=false;fb.dataset.state=st;fb.innerHTML="<strong>"+lab+"</strong><br>"+body;}
+  sb.onclick=function(){var v=get();if(v===null){show("hint","Nothing to check yet","Pick an option or type a number.");return;}
+    var ok=type==="mcq"?v===ans:Math.abs(v-ans)<=parseFloat(q.dataset.tol||"0.01");
+    choices.forEach(function(c,i){c.classList.remove("is-right","is-wrong");if(type==="mcq"&&i===v)c.classList.add(ok?"is-right":"is-wrong");});
+    if(ok){show("right","Correct",q.dataset.explain);}else{tries++;show(tries>1?"wrong":"hint",tries>1?"Not quite":"Not yet",q.dataset.hint);}};
+  rv.onclick=function(){show("right","Answer",q.dataset.explain);if(type==="mcq")choices[ans].classList.add("is-right");};
+});
+})();
+</script>
+</body>
+</html>

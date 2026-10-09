@@ -25,6 +25,7 @@ exclude_patterns:
   - ".venv/**"
   - "venv/**"
   - ".github/**"
+  - "_extra/**"
 
 # Link "open on GitHub" / "edit" / repository buttons in the top-right.
 #
@@ -64,6 +65,10 @@ sphinx:
   config:
     html_show_copyright: true
     html_static_path: ["_static"]
+    # Files under _extra/ are copied verbatim into the site root, keeping
+    # their folders: _extra/IRPhoton/explainers/*.html is published at
+    # IRPhoton/explainers/*.html. Used for the standalone IRPhoton explainers.
+    html_extra_path: ["_extra"]
     html_css_files: ["custom.css", "checkyourself.css"]
     html_js_files: ["matrix_rain.js", "checkyourself.js"]
     # Suppress the "headings start at H2" warning — the H1 lives inside the

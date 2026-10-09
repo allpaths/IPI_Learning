@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conclusions: a study companion</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{
+  --ipi-green:#1bd169; --ipi-green-bright:#5fff8f; --ipi-green-pale:#9dff95;
+  --ipi-dark:#0a1408; --text:#222832; --muted:#5b6470; --line:rgba(127,127,127,.35);
+  --cyu-ok:#1bd169; --cyu-warn:#e8a33d; --cyu-err:#e2564c; --cyu-tint:rgba(27,209,105,.07);
+  --code-bg:#f6f8fa;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Lato,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--text);line-height:1.65;background:#fff;font-size:16.5px}
+a{color:#0a7a3c} a:hover{color:var(--ipi-green)}
+.topbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e6e8eb;padding:.45rem 1.2rem;display:flex;gap:1rem;align-items:center;font-size:.88rem;color:var(--muted)}
+.topbar .brand{font-weight:700;color:var(--text)} .topbar .brand span{color:var(--ipi-green)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:2.5rem;max-width:1180px;margin:0 auto;padding:1.5rem 1.5rem 4rem}
+main{min-width:0}
+aside.toc{position:sticky;top:3.2rem;align-self:start;max-height:calc(100vh - 4rem);overflow:auto;font-size:.86rem;border-left:1px solid #e6e8eb;padding-left:1rem}
+aside.toc .toc-title{font-weight:700;margin-bottom:.4rem;display:flex;gap:.4rem;align-items:center}
+aside.toc ul{list-style:none;padding-left:0;margin:0} aside.toc ul ul{padding-left:.9rem}
+aside.toc a{color:var(--muted);text-decoration:none;display:block;padding:.15rem 0} aside.toc a:hover{color:var(--ipi-green)}
+@media (max-width:960px){.layout{grid-template-columns:1fr} aside.toc{display:none}}
+h1{font-size:2.1rem;line-height:1.25;margin:.2rem 0 1rem} h2{font-size:1.55rem;margin:2.6rem 0 .8rem;padding-bottom:.25rem;border-bottom:1px solid #e6e8eb} h3{font-size:1.18rem;margin:1.8rem 0 .5rem}
+.headerlink{opacity:0;margin-left:.3rem;text-decoration:none;color:var(--muted)} h2:hover .headerlink,h3:hover .headerlink{opacity:1}
+/* hero */
+.ipi-hero{position:relative;margin:0 0 2rem;padding:2.6rem 1.5rem 2.3rem;border-radius:10px;overflow:hidden;text-align:center;background:var(--ipi-dark);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.ipi-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.45) 0%,rgba(0,0,0,.82) 90%);pointer-events:none;z-index:1}
+.ipi-hero>*{position:relative;z-index:2}
+.ipi-hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.ipi-hero h1{color:#fff;font-weight:600;margin:0 0 .5rem;text-shadow:0 0 18px rgba(95,255,143,.45),0 0 8px rgba(0,0,0,.6);border:none}
+.ipi-hero-subtitle{color:#fff;font-weight:300;max-width:760px;margin:0 auto;line-height:1.55}
+.ipi-hero-tag{display:inline-block;margin-top:1rem;padding:.25rem .75rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ipi-green-pale);border:1px solid rgba(27,209,105,.5);border-radius:999px}
+/* cards & callouts */
+.ipi-card{padding:1rem 1.3rem;margin:1.2rem 0;border-left:4px solid var(--ipi-green);background:linear-gradient(90deg,rgba(27,209,105,.07) 0%,rgba(27,209,105,.02) 50%,transparent 100%);border-radius:4px}
+.ipi-card-title{font-weight:700;color:#119a4c;text-transform:uppercase;font-size:.8rem;letter-spacing:.04em;margin:0 0 .3rem}
+.ipi-card p{margin:.3rem 0}
+.callout{border:1px solid var(--line);border-left:4px solid var(--cyu-warn);background:rgba(232,163,61,.08);padding:.8rem 1.1rem;border-radius:5px;margin:1.2rem 0}
+.callout.danger{border-left-color:var(--cyu-err);background:rgba(226,86,76,.07)}
+.callout .ct{font-weight:700;display:block;margin-bottom:.2rem}
+blockquote.nav{margin:1rem 0;padding:.5rem 1rem;border-left:3px solid var(--line);color:var(--muted);font-size:.93rem}
+.draft{border:1px solid #d6dbe0;background:#fbfcfd;border-radius:6px;padding:.9rem 1.2rem;margin:1rem 0;font-family:Georgia,"Times New Roman",serif;font-size:1rem}
+.draft .dl{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+.eqbox{border:1.5px solid var(--ipi-green);border-radius:6px;padding:.3rem .8rem;margin:1rem auto;max-width:560px;background:rgba(27,209,105,.04);text-align:center}
+/* tables */
+table{border-collapse:collapse;margin:1rem 0;width:100%;font-size:.94rem}
+th,td{border-bottom:1px solid #e3e6ea;padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:rgba(27,209,105,.08);border-bottom:2px solid var(--ipi-green)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+/* notebook-style code cells */
+.cell{margin:1rem 0;border:1px solid #e3e6ea;border-radius:6px;overflow:hidden}
+.cell .in{background:var(--code-bg);padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid #6aa3ff}
+.cell .out{padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid var(--ipi-green);background:#fff}
+.kw{color:#a626a4}.st{color:#50a14f}.cm{color:#8a919b;font-style:italic}.nu{color:#986801}
+/* figure */
+.ipi-figure{margin:1.8rem auto;text-align:center}
+.ipi-figure img{max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+.ipi-figure figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem;font-style:italic}
+/* details / CYU (mirrors checkyourself.css) */
+details.cyu{border:1px solid var(--line);border-left:3px solid var(--ipi-green);border-radius:6px;margin:1.25rem 0 1.75rem;background:var(--cyu-tint)}
+details.cyu>summary{cursor:pointer;padding:.65rem .9rem;font-weight:600;list-style:none;user-select:none}
+details.cyu>summary::-webkit-details-marker{display:none}
+details.cyu>summary::before{content:"+";display:inline-block;width:1.1em;font-weight:700;color:var(--ipi-green)}
+details.cyu[open]>summary::before{content:"\2212"}
+details.cyu>summary:hover{background:rgba(27,209,105,.10)}
+details.cyu--explore{border-left-color:var(--cyu-warn)} details.cyu--explore>summary::before{color:var(--cyu-warn)}
+.cyu-body{padding:0 .9rem .9rem}
+.cyu-intro{margin:0 0 1rem;font-size:.94em;opacity:.85}
+.cyu-q{border-top:1px solid var(--line);padding-top:.9rem;margin-top:.9rem}.cyu-q:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.cyu-tier{display:inline-block;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:.12rem .5rem;border-radius:999px;border:1px solid var(--line);margin-bottom:.5rem;opacity:.8}
+.cyu-choices{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem}
+.cyu-choice{display:flex;align-items:baseline;gap:.55rem;padding:.35rem .55rem;border:1px solid var(--line);border-radius:5px;cursor:pointer;background:#fff}
+.cyu-choice.is-right{border-color:var(--cyu-ok);background:rgba(27,209,105,.12)}.cyu-choice.is-wrong{border-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+.cyu-entry{display:flex;gap:.5rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.cyu-entry input{font-family:ui-monospace,Menlo,Consolas,monospace;padding:.4rem .55rem;border:1px solid var(--line);border-radius:5px;min-width:8rem}
+.cyu-btn{font:inherit;font-size:.88em;font-weight:600;padding:.35rem .85rem;border-radius:5px;border:1px solid var(--ipi-green);background:var(--ipi-green);color:#04240f;cursor:pointer}
+.cyu-btn--ghost{background:transparent;color:inherit;border-color:var(--line)}
+.cyu-feedback{margin-top:.75rem;padding:.6rem .75rem;border-radius:5px;border-left:3px solid var(--line);font-size:.94em;background:rgba(127,127,127,.09)}
+.cyu-feedback[data-state=right]{border-left-color:var(--cyu-ok);background:rgba(27,209,105,.12)}
+.cyu-feedback[data-state=hint]{border-left-color:var(--cyu-warn);background:rgba(232,163,61,.12)}
+.cyu-feedback[data-state=wrong]{border-left-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+/* explorer */
+.cyux-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin:.4rem 0}
+.cyux-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em;opacity:.75;min-width:8rem}
+.cyux-row input[type=range]{flex:1 1 14rem;accent-color:var(--ipi-green)}
+.cyux-base{font:inherit;font-size:.82em;font-weight:600;padding:.22rem .7rem;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.cyux-base.is-on{border-color:var(--ipi-green);background:var(--ipi-green);color:#04240f}
+.cyux-readout{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding:.6rem .75rem;border-radius:5px;background:rgba(127,127,127,.09);margin:.8rem 0}
+.cyux-cell{display:flex;gap:.45rem;align-items:baseline}
+.cyux-cell-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82em;opacity:.7}
+.cyux-cell-val{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700}
+canvas#lamplot{max-width:100%;background:#fff;border:1px solid #e3e6ea;border-radius:5px}
+/* referee Q&A */
+details.ref{border:1px solid #e3e6ea;border-radius:6px;margin:.6rem 0;background:#fff}
+details.ref>summary{cursor:pointer;padding:.6rem .9rem;font-weight:600}
+details.ref>div{padding:0 1rem .8rem}
+.standing{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.1rem .5rem;border-radius:999px;border:1px solid}
+.s-est{color:#0f8a43;border-color:#1bd169;background:rgba(27,209,105,.10)}
+.s-prop{color:#9a6312;border-color:#e8a33d;background:rgba(232,163,61,.12)}
+.s-assm{color:#a8332b;border-color:#e2564c;background:rgba(226,86,76,.10)}
+footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-size:.85rem;border-top:1px solid #e6e8eb}
+.ln{color:#a3abb5;user-select:none}
+.lx{color:#a626a4}
+.ipi-figure img{max-width:min(100%,560px)}
+</style>
+</head>
+<body>
+<div class="topbar"><span class="brand"><a href="../../index.html" style="color:inherit;text-decoration:none">IPI Learning</a> <span>·</span> <a href="../index.html" style="color:inherit;text-decoration:none">IRPhoton</a></span><span>Manuscript in preparation, not peer reviewed · Section VI of VI</span></div>
+<div class="layout">
+<main id="main-content">
+<div class="ipi-hero"><canvas id="rain" aria-hidden="true"></canvas>
+  <h1>Section VI — Conclusions</h1>
+  <p class="ipi-hero-subtitle">What was found, what it takes to build, and the three next steps that test the weakest assumptions first.</p>
+  <span class="ipi-hero-tag">about 6 minutes · paragraph by paragraph · real script output · referee prep</span>
+</div>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <strong>07 · VI. Conclusions (current)</strong> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<h2 id="where">Where this section fits<a class="headerlink" href="#where">#</a></h2>
+<p>The Conclusions restate the prediction and the main results, list what is needed to build the experiment, and name three next steps that would test the weakest assumptions before anyone asks for beam time.</p>
+
+<h2 id="walk">Paragraph by paragraph<a class="headerlink" href="#walk">#</a></h2>
+<h3 id="p1">Paragraph 1: what was found<a class="headerlink" href="#p1">#</a></h3>
+<div class="draft"><span class="dl">Paper · VI, paragraph 1</span>… predicts that each electron–positron annihilation at temperature \(T\) releases two photons with \(\lambda T = 13.76\) mm K for 1.509 bits per particle. … The signature is a line that moves from 179 µm to 92 µm when the annihilation site is warmed from 77 K to 150 K. Its main limitation is the film itself, which lets out only about 7% of the photons and whose thermal emission sets the noise. Under the stated assumptions, a 5σ detection would take tens of minutes to hours at an existing slow-positron facility.</div>
+<p>One prediction, one signature, one limitation, one feasibility statement. Note "under the stated assumptions": the conclusion doesn't outrun the estimates.</p>
+<h3 id="p2">Paragraph 2: what you need<a class="headerlink" href="#p2">#</a></h3>
+<div class="draft"><span class="dl">Paper · VI, paragraph 2</span>Building the experiment requires a slow-positron beam of at least \(10^7\) positrons per second at about 100 eV; a nanometer-thin aluminum film on a conducting substrate with calibrated temperature control at 77–150 K; a collecting cavity at 4–10 K; cold band-pass filters …; a far-infrared bolometer; and a gamma-ray detector shell …</div>
+<p>A shopping list. The 10⁷ threshold comes from Table II: at 10⁷ s⁻¹ the 77 K run takes about 10 hours, a reasonable beam-time block. The cell below inverts Eq. (11) to show what rate gives a detection in 1 or 8 hours.</p>
+<h3 id="p3">Paragraph 3: next steps<a class="headerlink" href="#p3">#</a></h3>
+<div class="draft"><span class="dl">Paper · VI, paragraph 3</span>Three steps would test the main assumptions before beam time is requested. The first is a bench measurement of the far-infrared emissivity of the actual film on its substrate … The second is a measurement of the back-scattered and positronium fractions for 100 eV positrons on the same film … The third is contact with a slow-positron facility …</div>
+<p>Ordered from cheapest to hardest. Measuring emissivity needs no positrons at all, just a far-IR spectrometer and a cryostat, and directly checks \(f_\mathrm{esc}\) (by Kirchhoff, emissivity = escape). The positron measurements check \(f_\mathrm{imp}\) and \(f_\mathrm{film}\). The facility conversation checks whether the cavity and bolometer can be fitted to a real beamline.</p>
+
+<h2 id="numbers">Worked numbers<a class="headerlink" href="#numbers">#</a></h2>
+<div class="cell"><div class="in"><span class="cm"># scripts/explainer_build/cells/c07_rate.py</span>
+<span class="cm"># What beam rate gives a 5-sigma detection in a given time? (Sec. VI)</span>
+<span class="kw">import</span> sys, os; sys.path.insert(0, &quot;../../simulation&quot;)
+<span class="kw">import</span> sensitivity as S
+<span class="kw">for</span> T <span class="kw">in</span> (77.0, 150.0):
+    b = S.budget(T)
+    <span class="kw">for</span> hours <span class="kw">in</span> (1, 8):
+       <span class="cm"> # tau = (s^2/2) NEP^2/(kappa R p)^2  -&gt;  R = s NEP / (kappa p sqrt(2 tau))</span>
+        R = S.SIGMA * b[&quot;NEP&quot;] / (S.KAPPA * b[&quot;Psig_per_R&quot;] * (2 * hours * 3600) ** 0.5)
+        <span class="kw">print</span>(f&quot;T = {T:.0f} K: 5 sigma <span class="kw">in</span> {hours} h needs R = {R:.1e} positrons/s&quot;)</div><div class="out">T = 77 K: 5 sigma in 1 h needs R = 3.2e+07 positrons/s
+T = 77 K: 5 sigma in 8 h needs R = 1.1e+07 positrons/s
+T = 150 K: 5 sigma in 1 h needs R = 8.7e+07 positrons/s
+T = 150 K: 5 sigma in 8 h needs R = 3.1e+07 positrons/s</div></div>
+<p>So "at least 10⁷" is the rate where a full working day suffices at 77 K; a few ×10⁷ gives an hour.</p>
+
+<h2 id="symbols">Symbols and acronyms<a class="headerlink" href="#symbols">#</a></h2>
+<table>
+<tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>5σ</td><td>A signal five times the noise standard deviation; the usual discovery threshold</td></tr>
+<tr><td>emissivity</td><td>How well a surface radiates compared with a perfect black body (= absorptivity, Kirchhoff)</td></tr>
+<tr><td>beam time</td><td>A scheduled allocation at a shared facility, awarded by proposal</td></tr>
+</table>
+
+<h2 id="standing">Assumed vs established<a class="headerlink" href="#standing">#</a></h2>
+<table>
+<tr><th>Conclusion</th><th>Standing</th></tr>
+<tr><td>\(\lambda T = 13.76\) mm K</td><td><span class="standing s-prop">prediction</span> (arithmetic from M/E/I + assumptions)</td></tr>
+<tr><td>~7% escape</td><td><span class="standing s-prop">computed, to be measured</span></td></tr>
+<tr><td>Minutes to hours at a facility</td><td><span class="standing s-prop">estimate</span> (depends on assumed η, f_imp, f_film)</td></tr>
+<tr><td>Years with ²²Na</td><td><span class="standing s-est">robust</span> (survives factors of several)</td></tr>
+</table>
+
+<h2 id="referee">Questions a referee might ask<a class="headerlink" href="#referee">#</a></h2>
+<details class="ref"><summary>Q1. You've designed an experiment but not done it. What is the publishable result?</summary><div><p><strong>Honest answer:</strong> a quantitative, falsifiable design: the observable, its signature, the dominant noise, and the resources needed, with every input traceable to a script. AIP Advances publishes such studies; the value is that someone with a beamline can decide whether it's worth doing.</p></div></details>
+<details class="ref"><summary>Q2. Have you contacted a facility?</summary><div><p><strong>Honest answer:</strong> not yet; the paper lists it as a next step.</p></div></details>
+
+<h2 id="cyu">Check your Understanding<a class="headerlink" href="#cyu">#</a></h2>
+<details class="cyu" open><summary>Check your Understanding</summary><div class="cyu-body">
+<div class="cyu-q" data-type="mcq" data-answer="0" data-choices="Bench emissivity measurement of the film|Positronium fraction at 100 eV|Facility integration|Building a TES"
+ data-hint="Which needs no positrons at all?"
+ data-explain="The emissivity measurement needs only a cryostat and a far-IR spectrometer, and checks the biggest loss.">
+<span class="cyu-tier">Warm-up</span><p>Which next step is cheapest?</p></div>
+<div class="cyu-q" data-type="numeric" data-answer="3.2e7" data-tol="0.3e7" data-unit="per s"
+ data-hint="See the cell output for 77 K, 1 h."
+ data-explain="About 3.2 × 10⁷ positrons per second at 77 K.">
+<span class="cyu-tier">At this level</span><p>What beam rate gives a 5σ detection in one hour at 77 K?</p></div>
+</div></details>
+
+<h2 id="summary">Key takeaways<a class="headerlink" href="#summary">#</a></h2>
+<ul>
+<li>Signature: a line that jumps from 179 µm to 92 µm between 77 K and 150 K.</li>
+<li>Needs ≥10⁷ slow positrons/s, a 5 nm Al film on silicon, a 4–10 K cavity, cold filters, a bolometer, a gamma shell.</li>
+<li>Next: measure emissivity, then positron fractions, then talk to a facility.</li>
+</ul>
+
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <strong>07 · VI. Conclusions (current)</strong> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+</main>
+<aside class="toc"><div class="toc-title">☰ Contents</div>
+<ul><li><a href="#where">Where this section fits</a></li><li><a href="#walk">Paragraph by paragraph</a><ul><li><a href="#p1">Paragraph 1: what was found</a></li><li><a href="#p2">Paragraph 2: what you need</a></li><li><a href="#p3">Paragraph 3: next steps</a></li></ul></li><li><a href="#numbers">Worked numbers</a></li><li><a href="#symbols">Symbols and acronyms</a></li><li><a href="#standing">Assumed vs established</a></li><li><a href="#referee">Questions a referee might ask</a></li><li><a href="#cyu">Check your Understanding</a></li><li><a href="#summary">Key takeaways</a></li></ul></aside>
+</div>
+<footer>Companion to <code>manuscript/main.tex</code> · numbers from <code>scripts/simulation/</code> and <code>scripts/explainer_build/cells/</code> (real outputs pasted) · styled after the IPI_Learning study companion.</footer>
+<script>
+(function(){
+"use strict";
+/* ---- digital rain (as on IPI_Learning landing hero) ---- */
+var cv=document.getElementById("rain");
+if(cv && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)){
+  var ctx=cv.getContext("2d"),FS=15,cols,drops,CH="01010101010110ABCDEF0123456789";
+  function rs(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;cols=Math.ceil(cv.width/FS);drops=[];for(var i=0;i<cols;i++)drops[i]=Math.random()*-40;}
+  rs();addEventListener("resize",rs);
+  ctx.fillStyle="#0a1408";ctx.fillRect(0,0,cv.width,cv.height);
+  setInterval(function(){ctx.fillStyle="rgba(10,20,8,0.08)";ctx.fillRect(0,0,cv.width,cv.height);ctx.font=FS+"px monospace";
+    for(var i=0;i<cols;i++){var ch=CH[Math.floor(Math.random()*CH.length)],y=drops[i]*FS;ctx.fillStyle="#1bd169";ctx.fillText(ch,i*FS,y);
+      if(y>cv.height&&Math.random()>0.975)drops[i]=0;drops[i]+=1;}},72);
+}
+/* ---- check your understanding (same behaviour as checkyourself.js: hint, then explanation) ---- */
+document.querySelectorAll(".cyu-q").forEach(function(q){
+  var type=q.dataset.type,ans=parseFloat(q.dataset.answer),fb=document.createElement("div");fb.className="cyu-feedback";fb.hidden=true;
+  var tries=0,get,choices=[];
+  if(type==="mcq"){var wrap=document.createElement("div");wrap.className="cyu-choices";var nm="q"+Math.random().toString(36).slice(2,8);
+    q.dataset.choices.split("|").forEach(function(txt,i){var lab=document.createElement("label");lab.className="cyu-choice";var r=document.createElement("input");r.type="radio";r.name=nm;r.value=i;lab.appendChild(r);lab.appendChild(document.createTextNode(txt));wrap.appendChild(lab);choices.push(lab);});
+    q.appendChild(wrap);get=function(){var s=q.querySelector("input:checked");return s?parseInt(s.value):null;};}
+  else{var en=document.createElement("div");en.className="cyu-entry";var inp=document.createElement("input");inp.type="text";inp.placeholder="your answer";en.appendChild(inp);
+    var u=document.createElement("span");u.textContent=q.dataset.unit||"";u.style.opacity=.7;en.appendChild(u);q.appendChild(en);get=function(){var v=parseFloat(inp.value.replace(/,/g,""));return isNaN(v)?null:v;};}
+  var act=document.createElement("div");act.style.display="flex";act.style.gap=".5rem";
+  var sb=document.createElement("button");sb.className="cyu-btn";sb.textContent="Check";var rv=document.createElement("button");rv.className="cyu-btn cyu-btn--ghost";rv.textContent="Reveal answer";
+  act.appendChild(sb);act.appendChild(rv);q.appendChild(act);q.appendChild(fb);
+  function show(st,lab,body){fb.hidden=false;fb.dataset.state=st;fb.innerHTML="<strong>"+lab+"</strong><br>"+body;}
+  sb.onclick=function(){var v=get();if(v===null){show("hint","Nothing to check yet","Pick an option or type a number.");return;}
+    var ok=type==="mcq"?v===ans:Math.abs(v-ans)<=parseFloat(q.dataset.tol||"0.01");
+    choices.forEach(function(c,i){c.classList.remove("is-right","is-wrong");if(type==="mcq"&&i===v)c.classList.add(ok?"is-right":"is-wrong");});
+    if(ok){show("right","Correct",q.dataset.explain);}else{tries++;show(tries>1?"wrong":"hint",tries>1?"Not quite":"Not yet",q.dataset.hint);}};
+  rv.onclick=function(){show("right","Answer",q.dataset.explain);if(type==="mcq")choices[ans].classList.add("is-right");};
+});
+})();
+</script>
+</body>
+</html>

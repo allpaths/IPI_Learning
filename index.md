@@ -74,6 +74,16 @@ All lecture content, derivations, worked examples, and presenter screenshots in 
 
 ---
 
+## IRPhoton: A Proposed Test of M/E/I
+
+A separate project, not part of the lecture series: study companions to a
+manuscript in preparation (not peer reviewed) that turns Dr. Vopson's 2022
+proposal, detecting infrared "information energy photons" from
+electron–positron annihilation, into an experimental design.
+**[Overview and explainers →](IRPhoton/index.md)**
+
+---
+
 ## How to Use This Site
 
 ### 📖 Read

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where 1.509 bits per particle comes from: a study companion</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{
+  --ipi-green:#1bd169; --ipi-green-bright:#5fff8f; --ipi-green-pale:#9dff95;
+  --ipi-dark:#0a1408; --text:#222832; --muted:#5b6470; --line:rgba(127,127,127,.35);
+  --cyu-ok:#1bd169; --cyu-warn:#e8a33d; --cyu-err:#e2564c; --cyu-tint:rgba(27,209,105,.07);
+  --code-bg:#f6f8fa;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Lato,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--text);line-height:1.65;background:#fff;font-size:16.5px}
+a{color:#0a7a3c} a:hover{color:var(--ipi-green)}
+.topbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e6e8eb;padding:.45rem 1.2rem;display:flex;gap:1rem;align-items:center;font-size:.88rem;color:var(--muted)}
+.topbar .brand{font-weight:700;color:var(--text)} .topbar .brand span{color:var(--ipi-green)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:2.5rem;max-width:1180px;margin:0 auto;padding:1.5rem 1.5rem 4rem}
+main{min-width:0}
+aside.toc{position:sticky;top:3.2rem;align-self:start;max-height:calc(100vh - 4rem);overflow:auto;font-size:.86rem;border-left:1px solid #e6e8eb;padding-left:1rem}
+aside.toc .toc-title{font-weight:700;margin-bottom:.4rem;display:flex;gap:.4rem;align-items:center}
+aside.toc ul{list-style:none;padding-left:0;margin:0} aside.toc ul ul{padding-left:.9rem}
+aside.toc a{color:var(--muted);text-decoration:none;display:block;padding:.15rem 0} aside.toc a:hover{color:var(--ipi-green)}
+@media (max-width:960px){.layout{grid-template-columns:1fr} aside.toc{display:none}}
+h1{font-size:2.1rem;line-height:1.25;margin:.2rem 0 1rem} h2{font-size:1.55rem;margin:2.6rem 0 .8rem;padding-bottom:.25rem;border-bottom:1px solid #e6e8eb} h3{font-size:1.18rem;margin:1.8rem 0 .5rem}
+.headerlink{opacity:0;margin-left:.3rem;text-decoration:none;color:var(--muted)} h2:hover .headerlink,h3:hover .headerlink{opacity:1}
+/* hero */
+.ipi-hero{position:relative;margin:0 0 2rem;padding:2.6rem 1.5rem 2.3rem;border-radius:10px;overflow:hidden;text-align:center;background:var(--ipi-dark);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.ipi-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.45) 0%,rgba(0,0,0,.82) 90%);pointer-events:none;z-index:1}
+.ipi-hero>*{position:relative;z-index:2}
+.ipi-hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.ipi-hero h1{color:#fff;font-weight:600;margin:0 0 .5rem;text-shadow:0 0 18px rgba(95,255,143,.45),0 0 8px rgba(0,0,0,.6);border:none}
+.ipi-hero-subtitle{color:#fff;font-weight:300;max-width:760px;margin:0 auto;line-height:1.55}
+.ipi-hero-tag{display:inline-block;margin-top:1rem;padding:.25rem .75rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ipi-green-pale);border:1px solid rgba(27,209,105,.5);border-radius:999px}
+/* cards & callouts */
+.ipi-card{padding:1rem 1.3rem;margin:1.2rem 0;border-left:4px solid var(--ipi-green);background:linear-gradient(90deg,rgba(27,209,105,.07) 0%,rgba(27,209,105,.02) 50%,transparent 100%);border-radius:4px}
+.ipi-card-title{font-weight:700;color:#119a4c;text-transform:uppercase;font-size:.8rem;letter-spacing:.04em;margin:0 0 .3rem}
+.ipi-card p{margin:.3rem 0}
+.callout{border:1px solid var(--line);border-left:4px solid var(--cyu-warn);background:rgba(232,163,61,.08);padding:.8rem 1.1rem;border-radius:5px;margin:1.2rem 0}
+.callout.danger{border-left-color:var(--cyu-err);background:rgba(226,86,76,.07)}
+.callout .ct{font-weight:700;display:block;margin-bottom:.2rem}
+blockquote.nav{margin:1rem 0;padding:.5rem 1rem;border-left:3px solid var(--line);color:var(--muted);font-size:.93rem}
+.draft{border:1px solid #d6dbe0;background:#fbfcfd;border-radius:6px;padding:.9rem 1.2rem;margin:1rem 0;font-family:Georgia,"Times New Roman",serif;font-size:1rem}
+.draft .dl{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+.eqbox{border:1.5px solid var(--ipi-green);border-radius:6px;padding:.3rem .8rem;margin:1rem auto;max-width:560px;background:rgba(27,209,105,.04);text-align:center}
+/* tables */
+table{border-collapse:collapse;margin:1rem 0;width:100%;font-size:.94rem}
+th,td{border-bottom:1px solid #e3e6ea;padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:rgba(27,209,105,.08);border-bottom:2px solid var(--ipi-green)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+/* notebook-style code cells */
+.cell{margin:1rem 0;border:1px solid #e3e6ea;border-radius:6px;overflow:hidden}
+.cell .in{background:var(--code-bg);padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid #6aa3ff}
+.cell .out{padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;white-space:pre;overflow-x:auto;border-left:3px solid var(--ipi-green);background:#fff}
+.kw{color:#a626a4}.st{color:#50a14f}.cm{color:#8a919b;font-style:italic}.nu{color:#986801}
+/* figure */
+.ipi-figure{margin:1.8rem auto;text-align:center}
+.ipi-figure img{max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+.ipi-figure figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem;font-style:italic}
+/* details / CYU (mirrors checkyourself.css) */
+details.cyu{border:1px solid var(--line);border-left:3px solid var(--ipi-green);border-radius:6px;margin:1.25rem 0 1.75rem;background:var(--cyu-tint)}
+details.cyu>summary{cursor:pointer;padding:.65rem .9rem;font-weight:600;list-style:none;user-select:none}
+details.cyu>summary::-webkit-details-marker{display:none}
+details.cyu>summary::before{content:"+";display:inline-block;width:1.1em;font-weight:700;color:var(--ipi-green)}
+details.cyu[open]>summary::before{content:"\2212"}
+details.cyu>summary:hover{background:rgba(27,209,105,.10)}
+details.cyu--explore{border-left-color:var(--cyu-warn)} details.cyu--explore>summary::before{color:var(--cyu-warn)}
+.cyu-body{padding:0 .9rem .9rem}
+.cyu-intro{margin:0 0 1rem;font-size:.94em;opacity:.85}
+.cyu-q{border-top:1px solid var(--line);padding-top:.9rem;margin-top:.9rem}.cyu-q:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.cyu-tier{display:inline-block;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:.12rem .5rem;border-radius:999px;border:1px solid var(--line);margin-bottom:.5rem;opacity:.8}
+.cyu-choices{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem}
+.cyu-choice{display:flex;align-items:baseline;gap:.55rem;padding:.35rem .55rem;border:1px solid var(--line);border-radius:5px;cursor:pointer;background:#fff}
+.cyu-choice.is-right{border-color:var(--cyu-ok);background:rgba(27,209,105,.12)}.cyu-choice.is-wrong{border-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+.cyu-entry{display:flex;gap:.5rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.cyu-entry input{font-family:ui-monospace,Menlo,Consolas,monospace;padding:.4rem .55rem;border:1px solid var(--line);border-radius:5px;min-width:8rem}
+.cyu-btn{font:inherit;font-size:.88em;font-weight:600;padding:.35rem .85rem;border-radius:5px;border:1px solid var(--ipi-green);background:var(--ipi-green);color:#04240f;cursor:pointer}
+.cyu-btn--ghost{background:transparent;color:inherit;border-color:var(--line)}
+.cyu-feedback{margin-top:.75rem;padding:.6rem .75rem;border-radius:5px;border-left:3px solid var(--line);font-size:.94em;background:rgba(127,127,127,.09)}
+.cyu-feedback[data-state=right]{border-left-color:var(--cyu-ok);background:rgba(27,209,105,.12)}
+.cyu-feedback[data-state=hint]{border-left-color:var(--cyu-warn);background:rgba(232,163,61,.12)}
+.cyu-feedback[data-state=wrong]{border-left-color:var(--cyu-err);background:rgba(226,86,76,.10)}
+/* explorer */
+.cyux-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin:.4rem 0}
+.cyux-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em;opacity:.75;min-width:8rem}
+.cyux-row input[type=range]{flex:1 1 14rem;accent-color:var(--ipi-green)}
+.cyux-base{font:inherit;font-size:.82em;font-weight:600;padding:.22rem .7rem;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.cyux-base.is-on{border-color:var(--ipi-green);background:var(--ipi-green);color:#04240f}
+.cyux-readout{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding:.6rem .75rem;border-radius:5px;background:rgba(127,127,127,.09);margin:.8rem 0}
+.cyux-cell{display:flex;gap:.45rem;align-items:baseline}
+.cyux-cell-key{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82em;opacity:.7}
+.cyux-cell-val{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:700}
+canvas#lamplot{max-width:100%;background:#fff;border:1px solid #e3e6ea;border-radius:5px}
+/* referee Q&A */
+details.ref{border:1px solid #e3e6ea;border-radius:6px;margin:.6rem 0;background:#fff}
+details.ref>summary{cursor:pointer;padding:.6rem .9rem;font-weight:600}
+details.ref>div{padding:0 1rem .8rem}
+.standing{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.1rem .5rem;border-radius:999px;border:1px solid}
+.s-est{color:#0f8a43;border-color:#1bd169;background:rgba(27,209,105,.10)}
+.s-prop{color:#9a6312;border-color:#e8a33d;background:rgba(232,163,61,.12)}
+.s-assm{color:#a8332b;border-color:#e2564c;background:rgba(226,86,76,.10)}
+footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-size:.85rem;border-top:1px solid #e6e8eb}
+.ln{color:#a3abb5;user-select:none}
+.lx{color:#a626a4}
+.ipi-figure img{max-width:min(100%,560px)}
+</style>
+</head>
+<body>
+<div class="topbar"><span class="brand"><a href="../../index.html" style="color:inherit;text-decoration:none">IPI Learning</a> <span>·</span> <a href="../index.html" style="color:inherit;text-decoration:none">IRPhoton</a></span><span>Manuscript in preparation, not peer reviewed · background to Section II</span></div>
+<div class="layout">
+<main id="main-content">
+
+<div class="ipi-hero"><canvas id="rain" aria-hidden="true"></canvas>
+  <h1>Where 1.509 bits per particle comes from</h1>
+  <p class="ipi-hero-subtitle">A worked companion to Vopson, "Estimation of the information contained in the visible matter of the universe," AIP Advances 11, 105317 (2021): the Shannon entropy behind the number Section II relies on, reproduced step by step, with an honest look at what it does and does not mean.</p>
+  <span class="ipi-hero-tag">study companion · worked numbers · referee prep</span>
+</div>
+
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <strong>01 · Background: 1.509 bits (current)</strong> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+
+<h2 id="where">Where this fits<a class="headerlink" href="#where">#</a></h2>
+<p>Section II predicts that an annihilating electron–positron pair emits two <em>information energy photons</em> with wavelength \(\lambda = hc/(I\,k_bT\ln2)\). Everything about <em>where</em> that line sits depends on one input: \(I\), the number of bits each particle is supposed to hold. The manuscript takes \(I = 1.509\) bits and cites it directly to Vopson 2021, ref. [3]:</p>
+<div class="draft"><span class="dl">Manuscript · II.A, paragraph 2</span>Using Shannon's information theory, an earlier estimate found that each stable elementary particle in the visible matter of the universe stores about \(I = 1.509\) bits of information about itself [3]. This figure is the average information content per particle over the relative abundances of up quarks, down quarks and electrons [3]. That estimate excluded antiparticles. Following [4], we assume that the positron carries the same amount as the electron …</div>
+<p>This page unpacks that sentence. It does four things:</p>
+<ol>
+<li>explains the formula, Shannon entropy;</li>
+<li>shows which particles were counted and why;</li>
+<li>reproduces 1.509 with a short script;</li>
+<li>lists what a referee could fairly question.</li>
+</ol>
+<p>It also briefly covers the paper's second result, about 6 × 10<sup>80</sup> bits in the visible universe, which Section II does not use.</p>
+
+<div class="ipi-card"><p class="ipi-card-title">How to read this page</p>
+<p>Grey serif boxes contain the paper's own wording. Green-bordered boxes hold the key equations. Each code cell is a real script with its real output pasted underneath, as on the IPI_Learning notebook pages. All the numbers are re-checked against the paper by <code>verify_vopson2021.py</code>, whose output is in <code>verify_vopson2021_output.txt</code>. The expandable blocks are for checking yourself.</p></div>
+
+<!-- ================================================================ -->
+<h2 id="s1">1. Shannon entropy in one page<a class="headerlink" href="#s1">#</a></h2>
+<p>Shannon (1948) asked how much information you gain when you learn the outcome of a random event. His answer is that a rare outcome tells you more than a common one. One outcome of probability \(p\) carries \(-\log_2 p\) bits; this is called its <em>surprisal</em>. Averaged over all the possible outcomes, that gives the <strong>Shannon entropy</strong>, which is Vopson 2021's Eq. (4) with base 2:</p>
+<div class="eqbox">\[ H(X) = -\sum_{j=1}^{n} p_j \log_2 p_j \quad \text{bits} \]</div>
+<table>
+<tr><th>Symbol</th><th>Plain meaning</th></tr>
+<tr><td>\(X\)</td><td>The set of possible outcomes. Here these are the <em>kinds</em> of particle you might pick out of the universe.</td></tr>
+<tr><td>\(p_j\)</td><td>The probability of outcome \(j\), here the fraction of all particles that are of kind \(j\). The probabilities add up to 1.</td></tr>
+<tr><td>\(-\log_2 p_j\)</td><td>The surprisal of that outcome: how many yes/no questions it takes to pin it down.</td></tr>
+<tr><td>\(H\)</td><td>The <em>average</em> surprisal: the average number of bits needed to say which kind of particle you picked.</td></tr>
+</table>
+<p><strong>Three anchor cases.</strong></p>
+<ul>
+<li>A fair coin has two equally likely outcomes, so \(H = 1\) bit. That is the definition of a bit.</li>
+<li>Three equally likely kinds give \(H = \log_2 3 = 1.585\) bits, the maximum possible for three kinds.</li>
+<li>Any lopsided mix gives less, because the common outcome is unsurprising.</li>
+</ul>
+<div class="cell"><div class="in"><span class="kw">import</span> math
+<span class="kw">def</span> H(probs):                      <span class="cm"> # Shannon entropy in bits, Vopson 2021 Eq. (4) with b = 2</span>
+    <span class="kw">return</span> -sum(p*math.log2(p) <span class="kw">for</span> p <span class="kw">in</span> probs)
+
+<span class="kw">print</span>(&quot;fair coin {1/2, 1/2}      :&quot;, H([0.5, 0.5]), &quot;bit&quot;)
+<span class="kw">print</span>(&quot;three equal types         :&quot;, round(H([1/3]*3), 4), &quot;bits  = log2(3)&quot;)
+<span class="kw">print</span>(&quot;biased coin {0.9, 0.1}    :&quot;, round(H([0.9, 0.1]), 4), &quot;bits&quot;)</div>
+<div class="out">fair coin {1/2, 1/2}      : 1.0 bit
+three equal types         : 1.585 bits  = log2(3)
+biased coin {0.9, 0.1}    : 0.469 bits</div></div>
+<p><strong>The key move in Vopson 2021</strong> is to treat "observing a particle" as the random event. The probabilities are the cosmic abundances of each particle type. The entropy \(H\) is then read as "the information each particle stores about itself". Section 6 comes back to whether that reading is justified.</p>
+
+<!-- ================================================================ -->
+<h2 id="s2">2. Which particles are counted, and why<a class="headerlink" href="#s2">#</a></h2>
+<p>The Standard Model has 30 particles and antiparticles. Vopson 2021 keeps only the ones that, in its argument, make up today's visible matter and can <em>store</em> information:</p>
+<table>
+<tr><th>Group</th><th>Counted?</th><th>Reason given in Vopson 2021</th></tr>
+<tr><td>Force carriers (photon, gluon, W, Z) and the Higgs</td><td>✘</td><td>Postulated to <em>transfer</em> information "via waveform", not store it. Only "stable" particles with "a non-zero rest mass" are taken to store information (Sec. I).</td></tr>
+<tr><td>Unstable particles (muon, tau, heavy quarks, …)</td><td>✘</td><td>Their lifetimes are so short that their share of the observable universe is negligible.</td></tr>
+<tr><td>Antiparticles (including the positron)</td><td>✘</td><td>Excluded explicitly: "Excluding the bosons, the anti-particles and all the unstable elementary particles…" (Sec. II).</td></tr>
+<tr><td>Neutrinos</td><td>✘</td><td>"We also ignored … all neutrinos" (Sec. IV).</td></tr>
+<tr><td>Electron</td><td>✔</td><td>Stable, massive, and present in every atom.</td></tr>
+<tr><td>Proton and neutron (step 1)</td><td>✔</td><td>Make up every nucleus. Counted first as if they were elementary.</td></tr>
+<tr><td>Up and down quarks (step 2)</td><td>✔</td><td>Replace the proton (2 up + 1 down) and the neutron (1 up + 2 down), because those two "are in fact not elementary particles".</td></tr>
+</table>
+<p>So the calculation is done twice:</p>
+<ul>
+<li>first over the set {p<sup>+</sup>, e<sup>−</sup>, n<sup>0</sup>}, which gives <strong>1.288 bits</strong>;</li>
+<li>then over {up quark, down quark, e<sup>−</sup>}, which gives <strong>1.509 bits</strong>.</li>
+</ul>
+<p>Section II uses the second number.</p>
+
+<!-- ================================================================ -->
+<h2 id="s3">3. The probabilities<a class="headerlink" href="#s3">#</a></h2>
+<p><strong>Where the counts come from.</strong></p>
+<ul>
+<li>Vopson starts from the abundance of the chemical elements by <em>weight</em>: about 75% hydrogen, 23% helium and 2% heavier elements. His source is Mathematica's ElementData, ref. 36 of the paper.</li>
+<li>He converts this to abundance by <em>number of atoms</em>: 92.68% hydrogen and 7.15% helium.</li>
+<li>He then adds up the electrons, protons and neutrons in every element.</li>
+</ul>
+<p>The full element table is in the paper's supplementary material, which is not in our files, so I take his totals as printed. A cross-check with hydrogen and helium alone gives 106.98 electrons and 14.3 neutrons per 100 atoms. The heavy elements, only 0.17% of atoms, supply the remaining 1.3 of each, which is plausible.</p>
+<table>
+<tr><th>Per 100 atoms</th><th class="num">Count</th><th class="num">Probability</th><th>Note</th></tr>
+<tr><td colspan="4"><strong>Step 1: {p<sup>+</sup>, e<sup>−</sup>, n<sup>0</sup>}</strong></td></tr>
+<tr><td>electrons</td><td class="num">108.27</td><td class="num">0.466</td><td>one per proton (neutral matter)</td></tr>
+<tr><td>protons</td><td class="num">108.27</td><td class="num">0.466</td><td></td></tr>
+<tr><td>neutrons</td><td class="num">15.6</td><td class="num">0.067</td><td>mostly from helium</td></tr>
+<tr><td>total</td><td class="num">232.14</td><td class="num">1</td><td></td></tr>
+<tr><td colspan="4"><strong>Step 2: {up, down, e<sup>−</sup>}</strong></td></tr>
+<tr><td>up quarks</td><td class="num">232.15</td><td class="num">0.483</td><td>216.55 in protons + 15.6 in neutrons</td></tr>
+<tr><td>down quarks</td><td class="num">139.48</td><td class="num">0.29</td><td>108.27 in protons + 31.21 in neutrons</td></tr>
+<tr><td>electrons</td><td class="num">108.27</td><td class="num">0.225</td><td></td></tr>
+<tr><td>total</td><td class="num">479.9</td><td class="num">1</td><td></td></tr>
+</table>
+<p><small>The paper's 216.55 and 31.21 are 0.01 above 2 × 108.27 = 216.54 and 2 × 15.6 = 31.20. This is probably rounding in the unpublished supplement, and it makes no difference to the result.</small></p>
+<p>The universe is mostly hydrogen, so the mix is close to "one proton, one electron": 2 up : 1 down : 1 electron. That alone gives \(H = 1.5\) bits exactly, which is why the answer lands so close to 1.5.</p>
+
+<!-- ================================================================ -->
+<h2 id="s4">4. Reproducing 1.509, step by step<a class="headerlink" href="#s4">#</a></h2>
+<div class="eqbox" style="max-width:780px">\[ H_{pen} = -\left(P_{p^+}\log_2 P_{p^+} + P_{e^-}\log_2 P_{e^-} + P_{n^0}\log_2 P_{n^0}\right) \qquad \text{(Vopson 2021, Eq. 6)} \]
+\[ H_{uqdqe} = -\left(P_{uq}\log_2 P_{uq} + P_{dq}\log_2 P_{dq} + P_{e^-}\log_2 P_{e^-}\right) \qquad \text{(Eq. 7)} \]</div>
+<div class="cell"><div class="in"><span class="kw">import</span> math
+H = <span class="kw">lambda</span> ps: -sum(p*math.log2(p) <span class="kw">for</span> p <span class="kw">in</span> ps)
+
+<span class="cm"># Step 1: electrons, protons, neutrons per 100 atoms (Vopson 2021, Sec. II)</span>
+n_e, n_p, n_n = 108.27, 108.27, 15.6
+tot = n_e + n_p + n_n
+P_pen = [n_p/tot, n_e/tot, n_n/tot]
+<span class="kw">print</span>(f&quot;step 1: total = {tot:.2f}   P = {[round(p,3) <span class="kw">for</span> p <span class="kw">in</span> P_pen]}&quot;)
+<span class="kw">print</span>(f&quot;        H_pen = {H(P_pen):.4f} bits      (paper: 1.288)&quot;)
+
+<span class="cm"># Step 2: replace each proton by 2 up + 1 down quark, each neutron by 1 up + 2 down</span>
+uq = 216.55 + 15.6       <span class="cm"> # up quarks in protons + in neutrons   (paper: 232.15)</span>
+dq = 108.27 + 31.21      <span class="cm"> # down quarks in protons + in neutrons (paper: 139.48)</span>
+N  = uq + dq + n_e       <span class="cm"> # + electrons                           (paper: 479.9)</span>
+P  = [uq/N, dq/N, n_e/N]
+<span class="kw">print</span>(f&quot;step 2: uq = {uq:.2f}  dq = {dq:.2f}  N = {N:.2f}&quot;)
+<span class="kw">print</span>(f&quot;        P = {[round(p,4) <span class="kw">for</span> p <span class="kw">in</span> P]}   (paper: 0.483, 0.29, 0.225)&quot;)
+<span class="kw">print</span>(f&quot;        H_uqdqe, full precision      = {H(P):.4f} bits&quot;)
+<span class="kw">print</span>(f&quot;        H_uqdqe, paper&#x27;s printed P&#x27;s = {H([0.483, 0.29, 0.225]):.4f} bits -&gt; {H([0.483, 0.29, 0.225]):.3f}&quot;)
+<span class="kw">print</span>(&quot;match 1.509:&quot;, round(H([0.483, 0.29, 0.225]), 3) == 1.509)</div>
+<div class="out">step 1: total = 232.14   P = [0.466, 0.466, 0.067]
+        H_pen = 1.2882 bits      (paper: 1.288)
+step 2: uq = 232.15  dq = 139.48  N = 479.90
+        P = [0.4837, 0.2906, 0.2256]   (paper: 0.483, 0.29, 0.225)
+        H_uqdqe, full precision      = 1.5096 bits
+        H_uqdqe, paper&#x27;s printed P&#x27;s = 1.5092 bits -&gt; 1.509
+match 1.509: True</div></div>
+<p><strong>Result.</strong> 1.288 and <strong>1.509</strong> are both reproduced.</p>
+<div class="callout"><span class="ct">A rounding detail worth knowing</span>Using the paper's printed probabilities {0.483, 0.29, 0.225} gives 1.5092, i.e. <strong>1.509</strong> exactly. Carrying the counts at full precision gives 1.5096, which would round to 1.510. The difference is 0.03%. It moves λT from 13.756 to 13.750 mm K, which is invisible in Table 1 of Section II. Keep 1.509 because that is the published value, but don't claim four significant figures of physics for it.</div>
+<p><strong>Worked by hand for step 2</strong>, using the printed probabilities:</p>
+<ul>
+<li>−0.483 log₂0.483 = 0.507</li>
+<li>−0.29 log₂0.29 = 0.518</li>
+<li>−0.225 log₂0.225 = 0.484</li>
+</ul>
+<p>The sum is 1.509 bits.</p>
+
+<details class="cyu cyu--explore" open><summary>Explore: change the particle mix and watch the bits change</summary><div class="cyu-body">
+<p class="cyu-intro">Set how many up quarks, down quarks and electrons there are in a sample, or tap a preset. The page recomputes \(H\), the electron's own surprisal, and the predicted Section II wavelength at 300 K if that \(H\) were used as \(I\). This shows how much 1.509 depends on <em>which population</em> you average over. The default uses the paper's counts at full precision, so it reads 1.5096 rather than the published 1.509 (see the rounding note above).</p>
+<div class="cyux-row"><span class="cyux-key">up quarks</span><input id="uS" type="range" min="0" max="300" step="any" value="232.15"><span id="uV" class="cyux-cell-val"></span></div>
+<div class="cyux-row"><span class="cyux-key">down quarks</span><input id="dS" type="range" min="0" max="300" step="any" value="139.48"><span id="dV" class="cyux-cell-val"></span></div>
+<div class="cyux-row"><span class="cyux-key">electrons</span><input id="eS" type="range" min="0" max="300" step="any" value="108.27"><span id="eV" class="cyux-cell-val"></span></div>
+<div class="cyux-row"><span class="cyux-key">presets</span>
+ <button class="cyux-base is-on" data-m="232.15,139.48,108.27">Universe (Vopson 2021)</button><button class="cyux-base" data-m="2,1,1">pure hydrogen</button><button class="cyux-base" data-m="6,6,2">helium-4</button><button class="cyux-base" data-m="40,41,13">aluminium-27 target</button><button class="cyux-base" data-m="1,1,1">equal shares</button></div>
+<div class="cyux-readout">
+ <div class="cyux-cell"><span class="cyux-cell-key">P(up, down, e)</span><span class="cyux-cell-val" id="rP"></span></div>
+ <div class="cyux-cell"><span class="cyux-cell-key">H (bits/particle)</span><span class="cyux-cell-val" id="rH"></span></div>
+ <div class="cyux-cell"><span class="cyux-cell-key">electron surprisal −log₂P(e)</span><span class="cyux-cell-val" id="rS"></span></div>
+ <div class="cyux-cell"><span class="cyux-cell-key">λ at 300 K using H</span><span class="cyux-cell-val" id="rL"></span></div>
+</div>
+<noscript><p><em>The explorer needs JavaScript. Reference values from <code>verify_vopson2021.py</code>: universe 1.509 bits (45.9 µm at 300 K); pure hydrogen 1.500; helium-4 1.449; aluminium-27 1.441 (48.0 µm); equal shares 1.585 (the maximum). The electron's own surprisal in the universe mix is 2.148 bits (32.2 µm).</em></p></noscript>
+</div></details>
+
+<!-- ================================================================ -->
+<h2 id="s5e">5. The second result: about 6 × 10<sup>80</sup> bits in the visible universe<a class="headerlink" href="#s5e">#</a></h2>
+<p>The paper then multiplies bits per particle by the number of particles. That number of particles is a modern version of the <strong>Eddington number</strong>. Eddington (1938) put the count of protons at 136 × 2<sup>256</sup> ≈ 1.57 × 10<sup>79</sup>. The chain of steps is:</p>
+<ol>
+<li><strong>Critical density.</strong> \(\rho_c = 3H^2/8\pi G\), with Hubble parameter \(H = 2.2\times10^{-18}\) s<sup>−1</sup> (Eq. 8).</li>
+<li><strong>Mass of ordinary matter.</strong> The baryon fraction is \(\Omega_b = 0.0485\). The observable universe is a sphere of radius \(L_u = 4.4\times10^{26}\) m (46.5 billion light-years). Together these give \(M_b = \Omega_b\rho_c \cdot \tfrac43\pi L_u^3 = H^2\Omega_b L_u^3/2G\) (Eq. 9).</li>
+<li><strong>Average particle mass.</strong> The electron/proton/neutron mix gives \(m_{b,\text{eff}} = 0.466\,m_e + 0.466\,m_p + 0.067\,m_n\) (Eq. 10). Then \(N_b = M_b/m_{b,\text{eff}}\) (Eq. 11).</li>
+<li><strong>Count elementary particles.</strong> Each nucleon is three quarks, so \(N_{tot} = N_b\,[P_{e^-} + 3(P_{p^+}+P_{n^0})] \approx 4\times10^{80}\) (Eq. 13).</li>
+<li><strong>Bits.</strong> \(N_{bits} = N_{tot}\times 1.509 = 6.036\times10^{80}\) bits.</li>
+</ol>
+<div class="cell"><div class="in"><span class="kw">import</span> math
+Hub, G, Om_b, L_u = 2.2e-18, 6.674e-11, 0.0485, 44e25     <span class="cm"> # s^-1, SI, -, m  (Vopson 2021, Sec. III)</span>
+m_e, m_p, m_n = 9.109e-31, 1.672e-27, 1.675e-27             <span class="cm"> # kg</span>
+P_e, P_p, P_n = 0.466, 0.466, 0.067
+
+rho_c = 3*Hub**2/(8*math.pi*G)                <span class="cm"> # Eq. (8)</span>
+V_u   = 4/3*math.pi*L_u**3
+M_b   = Hub**2*Om_b*L_u**3/(2*G)              <span class="cm"> # Eq. (9) = Om_b * rho_c * V_u</span>
+m_eff = P_e*m_e + P_p*m_p + P_n*m_n           <span class="cm"> # Eq. (10)</span>
+N_b   = M_b/m_eff                             <span class="cm"> # Eq. (11)</span>
+N_tot = N_b*(P_e + 3*(P_p + P_n))             <span class="cm"> # Eq. (13): electrons + 3 quarks per nucleon</span>
+<span class="kw">print</span>(f&quot;rho_c = {rho_c:.3e} kg/m^3   (paper prints 9.6e-27)&quot;)
+<span class="kw">print</span>(f&quot;V_u   = {V_u:.3e} m^3        (paper: 4e80)&quot;)
+<span class="kw">print</span>(f&quot;N_b   = {N_b:.3e}            (paper: 1.93e80)&quot;)
+<span class="kw">print</span>(f&quot;N_tot = {N_tot:.3e}            (paper: 4e80)&quot;)
+<span class="kw">print</span>(f&quot;N_bits = N_tot x 1.509 = {N_tot*1.509:.2e}   (paper: 4e80 x 1.509 = {4e80*1.509:.3e})&quot;)
+<span class="kw">print</span>(f&quot;Eddington&#x27;s own number 136 x 2^256 = {136*2**256:.3e} protons&quot;)</div>
+<div class="out">rho_c = 8.656e-27 kg/m^3   (paper prints 9.6e-27)
+V_u   = 3.568e+80 m^3        (paper: 4e80)
+N_b   = 1.680e+80            (paper: 1.93e80)
+N_tot = 3.469e+80            (paper: 4e80)
+N_bits = N_tot x 1.509 = 5.23e+80   (paper: 4e80 x 1.509 = 6.036e+80)
+Eddington&#x27;s own number 136 x 2^256 = 1.575e+79 protons</div></div>
+<p><strong>What checks and what doesn't:</strong></p>
+<ul>
+<li>The final step is exact: 4 × 10<sup>80</sup> × 1.509 = 6.036 × 10<sup>80</sup>.</li>
+<li>The intermediate numbers are not mutually consistent at the 10–15% level:
+  <ul>
+  <li>With the stated \(H\) and \(G\), \(\rho_c\) comes out as 8.66 × 10<sup>−27</sup> kg m<sup>−3</sup>, not the printed 9.6 × 10<sup>−27</sup>. The printed value corresponds to \(H \approx 2.32\times10^{-18}\) s<sup>−1</sup>.</li>
+  <li>Even with the printed \(\rho_c\), \(N_b\) is 1.86 × 10<sup>80</sup>, not 1.93 × 10<sup>80</sup>.</li>
+  <li>\(N_{tot}\) is rounded up to 4 × 10<sup>80</sup> before the final multiplication.</li>
+  </ul></li>
+<li>Carried through without rounding, the inputs give 5.2–5.8 × 10<sup>80</sup> bits.</li>
+</ul>
+<p>The headline "~6 × 10<sup>80</sup>" survives as an order of magnitude, and Section II does not depend on it. If you ever quote it, say "of order 10<sup>81</sup> bits" or "~6 × 10<sup>80</sup> (Vopson 2021)", and don't present it as a three-figure number.</p>
+
+<!-- ================================================================ -->
+<h2 id="s6">6. What is assumed, and what a referee might question<a class="headerlink" href="#s6">#</a></h2>
+<h3 id="standing">What follows from what</h3>
+<table>
+<tr><th>Claim</th><th>Standing</th><th>Rests on</th></tr>
+<tr><td>Shannon entropy of a probability distribution, \(H=-\sum p\log_2p\)</td><td><span class="standing s-est">established</span></td><td>Shannon 1948; mathematics</td></tr>
+<tr><td>The cosmic abundances, and the 108.27 / 108.27 / 15.6 particle counts</td><td><span class="standing s-est">established data</span>, as compiled</td><td>Element abundances (Mathematica ElementData); the supplement was not checked here</td></tr>
+<tr><td>H = 1.288 bits over {p, e, n}; 1.509 bits over {up, down, e}</td><td><span class="standing s-est">arithmetic</span></td><td>Reproduced above</td></tr>
+<tr><td>Only stable, massive matter particles store information; bosons, antiparticles and neutrinos are excluded</td><td><span class="standing s-assm">postulate</span></td><td>Vopson 2021, Sec. I, motivated by M/E/I</td></tr>
+<tr><td>The population entropy \(H\) is the information <em>each particle stores about itself</em></td><td><span class="standing s-prop">interpretation</span></td><td>Vopson 2021, Sec. II</td></tr>
+<tr><td>The positron stores the same 1.509 bits</td><td><span class="standing s-assm">assumption</span></td><td>Vopson 2022 ("we can assume"); not derived in 2021</td></tr>
+<tr><td>About 6 × 10<sup>80</sup> bits in visible matter</td><td><span class="standing s-prop">estimate</span></td><td>The Eddington-style count above; good to an order of magnitude</td></tr>
+</table>
+
+<h3 id="referee">Questions a referee might ask</h3>
+<p>Here are honest answers, including the uncomfortable ones. Click a question to expand it.</p>
+
+<details class="ref"><summary>Q1. Why should the positron carry 1.509 bits when the derivation is about the populations of <em>matter</em> particles?</summary><div>
+<p><strong>Honest answer:</strong> it isn't derived; it is assumed. Vopson 2021 explicitly leaves out antiparticles, and positrons are essentially absent from the population being averaged. Vopson 2022 says so: "Although the estimation accounted only for stable elementary particles excluding anti-particles, we can assume that the information content of the positron is equal to that of the electron."</p>
+<p>The natural argument for the assumption is <em>symmetry</em>. A positron has the same mass and spin as an electron and the opposite charge, so it is described by the same three degrees of freedom that Vopson 2021 calls the particle's "DNA".</p>
+<p>That argument has a weak point. The 1.509 figure is not a count of degrees of freedom. It is an average over how <em>common</em> each particle type is. If positrons were added to the population at their real cosmic abundance, their surprisal would be enormous but their weight in the average negligible. The average would barely change, and it would say nothing about what a single positron holds.</p>
+<p>The manuscript handles this correctly: it lists the positron value as assumption 1 and points out that the predicted <em>shift</em> λ(T₁)/λ(T₂) = T₂/T₁ does not depend on \(I\).</p></div></details>
+
+<details class="ref"><summary>Q2. Is 1.509 bits a property of a particle, or of a population?</summary><div>
+<p><strong>Honest answer:</strong> mathematically, of a population. Shannon entropy is the <em>average</em> surprisal of a draw from a distribution. Particle by particle the surprisals differ:</p>
+<ul>
+<li>up quark: 1.05 bits;</li>
+<li>down quark: 1.78 bits;</li>
+<li>electron: <strong>2.15</strong> bits.</li>
+</ul>
+<p>If an electron "stored" its own surprisal, Section II would use \(I = 2.15\) and predict 32.2 µm at 300 K instead of 45.9 µm. Vopson 2021 interprets the average as the most efficient compression per particle ("the most effective way that information can be compressed into a p<sup>+</sup>, e<sup>−</sup>, or n<sup>0</sup>"). That is a reasonable reading for encoding a catalogue of particles, but it is an interpretation, not a theorem.</p>
+<p>Expect this question. The defensible reply is that the experiment treats \(I\) as a parameter, and a detected line would <em>measure</em> it.</p></div></details>
+
+<details class="ref"><summary>Q3. The positrons annihilate in an aluminium film, not in "the universe". Shouldn't the population be the target's?</summary><div>
+<p><strong>Honest answer:</strong> the method gives no rule for choosing the population. Applying the same recipe to the particles of the target gives different values:</p>
+<ul>
+<li>aluminium-27: 1.441 bits (λ = 48.0 µm at 300 K);</li>
+<li>natural copper: 1.430 bits;</li>
+<li>pure hydrogen: 1.500 bits.</li>
+</ul>
+<p>Vopson 2022 itself applies the universal 1.509 to a copper sample. The differences are 5% or less, so this is a small effect on where the line sits and no effect on how it shifts with temperature. It is still a sign that the number is a modelling choice rather than a fixed constant. These target values are my calculations with the paper's recipe; they are not in either paper.</p></div></details>
+
+<details class="ref"><summary>Q4. Why stop at quarks? And why exclude photons and neutrinos, which vastly outnumber baryons?</summary><div>
+<p><strong>Honest answer:</strong> both are choices made in the paper.</p>
+<ul>
+<li><strong>Level of description.</strong> Moving from nucleons to quarks changed the answer from 1.288 to 1.509 bits. A finer description (quark colour, spin orientation, sea quarks) or a coarser one (atoms) would change it again. The paper gives no principle that fixes the level.</li>
+<li><strong>Photons and neutrinos.</strong> These are left out by the postulate that only stable, massive matter particles store information. Including the cosmic microwave background photons, roughly 10<sup>9</sup> per baryon, would completely change the distribution.</li>
+</ul>
+<p>Section II should not try to defend these choices. It should cite them as the origin of the estimate and treat \(I\) as an input.</p></div></details>
+
+<details class="ref"><summary>Q5. Vopson 2022 calls 1.509 "the maximum amount of information that could be stored per elementary particle". Is it a maximum?</summary><div>
+<p><strong>Honest answer:</strong> no. For three particle types the maximum Shannon entropy is log₂3 = 1.585 bits, reached when all three are equally common. Vopson 2021 says this itself. The value 1.509 is the entropy of the <em>actual</em> mix, which is below the maximum. The manuscript does not repeat the word "maximum", and it shouldn't.</p></div></details>
+
+<details class="ref"><summary>Q6. Does any of this affect the test in Section II?</summary><div>
+<p><strong>Honest answer:</strong> it affects where the line sits, not how it moves. Plausible alternatives to 1.509 range from about 1.43 bits (local target) to 2.15 bits (electron surprisal). At 300 K that range spans about 32–48 µm. The ratio λ(77 K)/λ(150 K) = 1.948 holds for any \(I\).</p>
+<p>This is why the apparatus should cover a band of wavelengths around 45.9 µm (scaled to each temperature) rather than a single narrow filter. It is also why a detection would be a measurement of \(I\), not merely a confirmation of it.</p></div></details>
+
+<!-- ================================================================ -->
+<h2 id="cyu">Check your Understanding<a class="headerlink" href="#cyu">#</a></h2>
+<details class="cyu" open><summary>Check your Understanding</summary><div class="cyu-body">
+<p class="cyu-intro">Five questions, from the definition of a bit to what the 1.509 figure really means. Answers are graded in your browser.</p>
+
+<div class="cyu-q" data-type="numeric" data-answer="1" data-tol="0.01" data-unit="bits"
+ data-hint="Two outcomes, each with p = 1/2. Use H = −Σ p log₂ p."
+ data-explain="H = −(½ log₂½ + ½ log₂½) = 1 bit. A fair coin is the definition of one bit.">
+<span class="cyu-tier">Warm-up</span><p>What is the Shannon entropy of a fair coin toss?</p></div>
+
+<div class="cyu-q" data-type="numeric" data-answer="1.5" data-tol="0.01" data-unit="bits"
+ data-hint="Hydrogen = 1 proton + 1 electron = 2 up + 1 down + 1 electron, so the probabilities are ½, ¼, ¼."
+ data-explain="H = ½·1 + ¼·2 + ¼·2 = 1.5 bits. The real universe is mostly hydrogen, which is why the answer is so close to 1.5.">
+<span class="cyu-tier">At this level</span><p>A universe made only of hydrogen atoms, counted at the quark level {up, down, electron}: how many bits per particle?</p></div>
+
+<div class="cyu-q" data-type="numeric" data-answer="1.585" data-tol="0.005" data-unit="bits"
+ data-hint="The entropy is largest when all outcomes are equally likely: H_max = log₂ n."
+ data-explain="log₂3 = 1.585 bits. Since 1.509 < 1.585, the 1.509 figure is the entropy of the actual mix, not a maximum.">
+<span class="cyu-tier">At this level</span><p>What is the largest possible entropy for a population with three particle types?</p></div>
+
+<div class="cyu-q" data-type="numeric" data-answer="2.15" data-tol="0.02" data-unit="bits"
+ data-hint="Surprisal = −log₂ p. Electrons are 108.27 of 479.9 particles."
+ data-explain="−log₂(0.2256) = 2.15 bits. One electron is more surprising than the average particle, because electrons are less common than up quarks. The average over all particles (1.509) is not the same as the electron's own value.">
+<span class="cyu-tier">Stretch</span><p>In Vopson's quark-level mix, what is the surprisal of drawing an <em>electron</em>?</p></div>
+
+<div class="cyu-q" data-type="mcq" data-answer="2" data-choices="It was computed from the abundance of positrons in the universe|Positrons are stable, so they were included in the 2021 count|It was assumed in Vopson 2022, by symmetry with the electron; the 2021 estimate excluded antiparticles|It follows from CPT symmetry applied to Shannon entropy"
+ data-hint="Re-read the 'Antiparticles' row of the table in Section 2."
+ data-explain="The 2021 paper excludes antiparticles explicitly. Vopson 2022 assumes I(e⁺) = I(e⁻); the manuscript lists this as assumption 1.">
+<span class="cyu-tier">Stretch</span><p>Where does the positron's 1.509 bits come from?</p></div>
+</div></details>
+
+<!-- ================================================================ -->
+<h2 id="summary">Summary<a class="headerlink" href="#summary">#</a></h2>
+<table>
+<tr><th>Quantity</th><th>Expression</th><th>Value</th></tr>
+<tr><td>Bits per particle over {p, e, n}</td><td>\(-\sum P\log_2P\), with P = {0.466, 0.466, 0.067}</td><td>1.288 bits</td></tr>
+<tr><td>Bits per particle over {up, down, e}</td><td>\(-\sum P\log_2P\), with P = {0.483, 0.29, 0.225}</td><td><strong>1.509 bits</strong> (1.5096 at full precision)</td></tr>
+<tr><td>Maximum for three types</td><td>\(\log_2 3\)</td><td>1.585 bits</td></tr>
+<tr><td>Electron's own surprisal</td><td>\(-\log_2 P_{e^-}\)</td><td>2.15 bits</td></tr>
+<tr><td>Elementary particles in visible matter</td><td>\(N_b[P_e+3(P_p+P_n)]\)</td><td>≈ 4 × 10<sup>80</sup> (paper); 3.5–3.8 × 10<sup>80</sup> recomputed</td></tr>
+<tr><td>Bits in visible matter</td><td>\(N_{tot}\times1.509\)</td><td>6.036 × 10<sup>80</sup> (paper); about 5–6 × 10<sup>80</sup> recomputed</td></tr>
+</table>
+<h3 id="takeaways">Key takeaways</h3>
+<ul>
+<li><strong>1.509 is a Shannon entropy.</strong> It is the average number of bits needed to say whether a particle drawn from visible matter is an up quark, a down quark or an electron.</li>
+<li><strong>It reproduces exactly</strong> from the paper's printed probabilities. Full precision gives 1.5096, which makes no practical difference.</li>
+<li><strong>It reflects a hydrogen-dominated universe.</strong> Pure hydrogen alone gives 1.5.</li>
+<li><strong>The positron value is an assumption.</strong> The 2021 estimate excluded antiparticles, and Vopson 2022 assumes equality with the electron.</li>
+<li><strong>The test in Section II does not hinge on it.</strong> The wavelength ratio between two temperatures is independent of \(I\), and a detection would measure \(I\).</li>
+</ul>
+
+<h3 id="glossary">Glossary</h3>
+<table>
+<tr><td><strong>Shannon entropy</strong></td><td>The average information, in bits, gained by learning the outcome of a random draw.</td></tr>
+<tr><td><strong>surprisal</strong></td><td>The information in one specific outcome: −log₂ p.</td></tr>
+<tr><td><strong>up / down quark</strong></td><td>The constituents of protons (up, up, down) and neutrons (up, down, down).</td></tr>
+<tr><td><strong>abundance by weight vs by number</strong></td><td>Helium is 23% of ordinary matter by mass but only about 7% of the atoms, because each helium atom is about 4 times heavier than a hydrogen atom.</td></tr>
+<tr><td><strong>Eddington number</strong></td><td>An estimate of the number of protons (or particles) in the observable universe.</td></tr>
+<tr><td><strong>critical density</strong></td><td>The density that makes the universe spatially flat: 3H²/8πG.</td></tr>
+<tr><td><strong>Ω<sub>b</sub></strong></td><td>The fraction of the universe's energy density that is in ordinary (baryonic) matter, about 4.85%.</td></tr>
+</table>
+
+<h3 id="refs">Sources</h3>
+<p>
+[3] M. M. Vopson, "Estimation of the information contained in the visible matter of the universe," AIP Advances <strong>11</strong>, 105317 (2021), doi:10.1063/5.0064475.<br>
+[4] M. M. Vopson, "Experimental protocol for testing the mass–energy–information equivalence principle," AIP Advances <strong>12</strong>, 035311 (2022), quoted here for the positron assumption.<br>
+The reference numbers are those of the manuscript.
+</p>
+
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <strong>01 · Background: 1.509 bits (current)</strong> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+</main>
+
+<aside class="toc"><div class="toc-title">☰ Contents</div>
+<ul>
+<li><a href="#where">Where this fits</a></li>
+<li><a href="#s1">1. Shannon entropy</a></li>
+<li><a href="#s2">2. Which particles count</a></li>
+<li><a href="#s3">3. The probabilities</a></li>
+<li><a href="#s4">4. Reproducing 1.509</a></li>
+<li><a href="#s5e">5. ~6 × 10⁸⁰ bits</a></li>
+<li><a href="#s6">6. Assumptions &amp; referee questions</a><ul><li><a href="#standing">What follows from what</a></li><li><a href="#referee">Referee questions</a></li></ul></li>
+<li><a href="#cyu">Check your Understanding</a></li>
+<li><a href="#summary">Summary</a><ul><li><a href="#takeaways">Key takeaways</a></li><li><a href="#glossary">Glossary</a></li><li><a href="#refs">Sources</a></li></ul></li>
+</ul></aside>
+</div>
+<footer>Background companion to Section II of <code>manuscript/main.tex</code> · numbers from <code>verify_vopson2021.py</code> (inputs as printed in Vopson, AIP Advances 11, 105317 (2021)) · styled after the IPI_Learning study companion.</footer>
+
+<script>
+(function(){
+"use strict";
+/* ---- digital rain (as on IPI_Learning landing hero) ---- */
+var cv=document.getElementById("rain");
+if(cv && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)){
+  var ctx=cv.getContext("2d"),FS=15,cols,drops,CH="01010101010110ABCDEF0123456789";
+  function rs(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;cols=Math.ceil(cv.width/FS);drops=[];for(var i=0;i<cols;i++)drops[i]=Math.random()*-40;}
+  rs();addEventListener("resize",rs);
+  ctx.fillStyle="#0a1408";ctx.fillRect(0,0,cv.width,cv.height);
+  setInterval(function(){ctx.fillStyle="rgba(10,20,8,0.08)";ctx.fillRect(0,0,cv.width,cv.height);ctx.font=FS+"px monospace";
+    for(var i=0;i<cols;i++){var ch=CH[Math.floor(Math.random()*CH.length)],y=drops[i]*FS;ctx.fillStyle="#1bd169";ctx.fillText(ch,i*FS,y);
+      if(y>cv.height&&Math.random()>0.975)drops[i]=0;drops[i]+=1;}},72);
+}
+/* ---- explorer: particle mix -> Shannon entropy ---- */
+var hc_k=6.62607015e-34*299792458/1.380649e-23, LN2=Math.log(2);
+var uS=document.getElementById("uS"),dS=document.getElementById("dS"),eS=document.getElementById("eS");
+function upd(){var u=+uS.value,d=+dS.value,el=+eS.value,s=u+d+el;
+  document.getElementById("uV").textContent=u.toFixed(2);document.getElementById("dV").textContent=d.toFixed(2);document.getElementById("eV").textContent=el.toFixed(2);
+  if(s<=0){return;}
+  var P=[u/s,d/s,el/s],Hb=0;P.forEach(function(p){if(p>0)Hb-=p*Math.log2(p);});
+  document.getElementById("rP").textContent=P.map(function(p){return p.toFixed(3);}).join(", ");
+  document.getElementById("rH").textContent=Hb.toFixed(4)+" bits";
+  document.getElementById("rS").textContent=P[2]>0?(-Math.log2(P[2])).toFixed(3)+" bits":"n/a";
+  document.getElementById("rL").textContent=Hb>0?(hc_k/(Hb*300*LN2)*1e6).toFixed(1)+" µm":"n/a";}
+[uS,dS,eS].forEach(function(x){x.addEventListener("input",function(){document.querySelectorAll(".cyux-base[data-m]").forEach(function(b){b.classList.remove("is-on");});upd();});});
+document.querySelectorAll(".cyux-base[data-m]").forEach(function(b){b.addEventListener("click",function(){
+  var m=b.dataset.m.split(",").map(parseFloat);
+  // presets are counts; scale small integer presets so sliders are usable
+  var mx=Math.max.apply(null,m),k=mx<50?240/mx:1;uS.value=m[0]*k;dS.value=m[1]*k;eS.value=m[2]*k;
+  document.querySelectorAll(".cyux-base[data-m]").forEach(function(x){x.classList.remove("is-on");});b.classList.add("is-on");upd();});});
+upd();
+/* ---- check your understanding (same behaviour as checkyourself.js: hint, then explanation) ---- */
+document.querySelectorAll(".cyu-q").forEach(function(q){
+  var type=q.dataset.type,ans=parseFloat(q.dataset.answer),fb=document.createElement("div");fb.className="cyu-feedback";fb.hidden=true;
+  var tries=0,get,choices=[];
+  if(type==="mcq"){var wrap=document.createElement("div");wrap.className="cyu-choices";var nm="q"+Math.random().toString(36).slice(2,8);
+    q.dataset.choices.split("|").forEach(function(txt,i){var lab=document.createElement("label");lab.className="cyu-choice";var r=document.createElement("input");r.type="radio";r.name=nm;r.value=i;lab.appendChild(r);lab.appendChild(document.createTextNode(txt));wrap.appendChild(lab);choices.push(lab);});
+    q.appendChild(wrap);get=function(){var s=q.querySelector("input:checked");return s?parseInt(s.value):null;};}
+  else{var en=document.createElement("div");en.className="cyu-entry";var inp=document.createElement("input");inp.type="text";inp.placeholder="your answer";en.appendChild(inp);
+    var u=document.createElement("span");u.textContent=q.dataset.unit||"";u.style.opacity=.7;en.appendChild(u);q.appendChild(en);get=function(){var v=parseFloat(inp.value.replace(/,/g,""));return isNaN(v)?null:v;};}
+  var act=document.createElement("div");act.style.display="flex";act.style.gap=".5rem";
+  var sb=document.createElement("button");sb.className="cyu-btn";sb.textContent="Check";var rv=document.createElement("button");rv.className="cyu-btn cyu-btn--ghost";rv.textContent="Reveal answer";
+  act.appendChild(sb);act.appendChild(rv);q.appendChild(act);q.appendChild(fb);
+  function show(st,lab,body){fb.hidden=false;fb.dataset.state=st;fb.innerHTML="<strong>"+lab+"</strong><br>"+body;}
+  sb.onclick=function(){var v=get();if(v===null){show("hint","Nothing to check yet","Pick an option or type a number.");return;}
+    var ok=type==="mcq"?v===ans:Math.abs(v-ans)<=parseFloat(q.dataset.tol||"0.01");
+    choices.forEach(function(c,i){c.classList.remove("is-right","is-wrong");if(type==="mcq"&&i===v)c.classList.add(ok?"is-right":"is-wrong");});
+    if(ok){show("right","Correct",q.dataset.explain);}else{tries++;show(tries>1?"wrong":"hint",tries>1?"Not quite":"Not yet",q.dataset.hint);}};
+  rv.onclick=function(){show("right","Answer",q.dataset.explain);if(type==="mcq")choices[ans].classList.add("is-right");};
+});
+})();
+</script>
+</body>
+</html>
