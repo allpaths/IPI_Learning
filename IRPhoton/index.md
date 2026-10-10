@@ -39,14 +39,14 @@ expandable questions) that opens in this tab. Every page links back here.
 <table>
 <thead><tr><th>#</th><th>Explainer</th><th>What it covers</th><th>Time</th></tr></thead>
 <tbody>
-<tr><td>1</td><td><a href="explainers/02_introduction.html">I. Introduction</a></td><td>Start here: the idea, the obstacle and the scope.</td><td style="white-space:nowrap">10 min</td></tr>
+<tr><td>1</td><td><a href="explainers/02_introduction.html">I. Introduction</a></td><td>Start here: the idea, the obstacle and the scope.</td><td style="white-space:nowrap">13 min</td></tr>
 <tr><td>2</td><td><a href="explainers/01_bits_per_particle.html">Background: 1.509 bits per particle</a></td><td>Where the information content of a particle comes from (optional on a first read).</td><td style="white-space:nowrap">25 min</td></tr>
-<tr><td>3</td><td><a href="explainers/03_prediction.html">II. The prediction</a></td><td>The line at λT = 13.76 mm·K and the five assumptions behind it.</td><td style="white-space:nowrap">25 min</td></tr>
+<tr><td>3</td><td><a href="explainers/03_prediction.html">II. The prediction</a></td><td>The line at λT = 13.76 mm·K and the five assumptions behind it.</td><td style="white-space:nowrap">27 min</td></tr>
 <tr><td>4</td><td><a href="explainers/04_protocol.html">III. Experimental protocol</a></td><td>The seven steps, and why two temperatures make it a test.</td><td style="white-space:nowrap">11 min</td></tr>
-<tr><td>5</td><td><a href="explainers/05_design.html">IV. Experimental design</a></td><td>Positron source, target film, gamma and far-infrared detectors.</td><td style="white-space:nowrap">15 min</td></tr>
+<tr><td>5</td><td><a href="explainers/05_design.html">IV. Experimental design</a></td><td>Positron source, target film, gamma and far-infrared detectors.</td><td style="white-space:nowrap">17 min</td></tr>
 <tr><td>6</td><td><a href="explainers/06_expected_response.html">V. Expected response</a></td><td>Backgrounds, losses, noise and the time to a 5σ detection.</td><td style="white-space:nowrap">20 min</td></tr>
 <tr><td>7</td><td><a href="explainers/07_conclusions.html">VI. Conclusions</a></td><td>Requirements and next steps.</td><td style="white-space:nowrap">6 min</td></tr>
-<tr><td>8</td><td><a href="explainers/08_supplement.html">Supplementary material</a></td><td>Inputs ledger, Geant4 limits and derivations.</td><td style="white-space:nowrap">8 min</td></tr>
+<tr><td>8</td><td><a href="explainers/08_supplement.html">Supplementary material</a></td><td>Inputs ledger, Geant4 limits and derivations.</td><td style="white-space:nowrap">11 min</td></tr>
 <tr><td>9</td><td><a href="explainers/00_latex_primer.html">LaTeX primer</a></td><td>How the manuscript source is laid out and compiled (for editors of the source).</td><td style="white-space:nowrap">23 min</td></tr>
 </tbody>
 </table>
@@ -73,3 +73,12 @@ requires. Jeff Dillon is responsible for the content.
 - M. M. Vopson, "Experimental protocol for testing the mass–energy–information
   equivalence principle," *AIP Advances* **12**, 035311 (2022).
   [doi:10.1063/5.0087175](https://doi.org/10.1063/5.0087175)
+
+Published critiques of the principle, cited in the manuscript's Introduction:
+
+- D. Lairez, "On the supposed mass of entropy and that of information,"
+  *Entropy* **26**, 337 (2024).
+  [doi:10.3390/e26040337](https://doi.org/10.3390/e26040337)
+- D. Lairez, "Disentangling Brillouin's negentropy law of information and
+  Landauer's law on data erasure," *Entropy* **28**, 37 (2025).
+  [doi:10.3390/e28010037](https://doi.org/10.3390/e28010037)
