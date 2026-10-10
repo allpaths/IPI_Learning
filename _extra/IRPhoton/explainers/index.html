@@ -118,7 +118,7 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 <div class="ipi-hero"><canvas id="rain" aria-hidden="true"></canvas>
   <h1>Reading guide</h1>
   <p class="ipi-hero-subtitle">Study companions to <em>Design of an experiment to detect information energy photons from electron–positron annihilation</em>: one per section, plus a LaTeX primer and a background page.</p>
-  <span class="ipi-hero-tag">9 companions · about 153 minutes in total</span>
+  <span class="ipi-hero-tag">9 companions · about 157 minutes in total</span>
 </div>
 <blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
 <h2 id="order">Recommended reading order<a class="headerlink" href="#order">#</a></h2>
@@ -128,15 +128,15 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 <tr><td class="num">2</td><td><a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a></td><td>Background: where the 1.509 bits per particle comes from (optional on a first read).</td><td class="num">25 min</td></tr>
 <tr><td class="num">3</td><td><a href="03_prediction.html">03 · II. Prediction</a></td><td>The prediction: \(\lambda T = 13.76\) mm K and the five assumptions.</td><td class="num">27 min</td></tr>
 <tr><td class="num">4</td><td><a href="04_protocol.html">04 · III. Protocol</a></td><td>The seven steps and why two temperatures make it a test.</td><td class="num">11 min</td></tr>
-<tr><td class="num">5</td><td><a href="05_design.html">05 · IV. Design</a></td><td>The apparatus, term by term.</td><td class="num">17 min</td></tr>
+<tr><td class="num">5</td><td><a href="05_design.html">05 · IV. Design</a></td><td>The apparatus, term by term.</td><td class="num">19 min</td></tr>
 <tr><td class="num">6</td><td><a href="06_expected_response.html">06 · V. Expected response</a></td><td>The numbers: background, losses, noise, Table II. The longest page.</td><td class="num">20 min</td></tr>
 <tr><td class="num">7</td><td><a href="07_conclusions.html">07 · VI. Conclusions</a></td><td>Requirements and next steps.</td><td class="num">6 min</td></tr>
-<tr><td class="num">8</td><td><a href="08_supplement.html">08 · Supplement</a></td><td>For referee preparation: inputs ledger, Geant4 limits, derivations.</td><td class="num">11 min</td></tr>
+<tr><td class="num">8</td><td><a href="08_supplement.html">08 · Supplement</a></td><td>For referee preparation: inputs ledger, Geant4 limits, derivations.</td><td class="num">13 min</td></tr>
 <tr><td class="num">9</td><td><a href="00_latex_primer.html">00 · LaTeX primer</a></td><td>Whenever you need to edit or compile the LaTeX source.</td><td class="num">23 min</td></tr>
-<tr><td></td><td><strong>All companions</strong></td><td></td><td class="num"><strong>153 min</strong></td></tr></table>
+<tr><td></td><td><strong>All companions</strong></td><td></td><td class="num"><strong>157 min</strong></td></tr></table>
 <div class="ipi-card"><p class="ipi-card-title">Short on time?</p><p>Read 02, 04 and the "Worked numbers" and "Assumed vs established" parts of 06. That covers the argument and every headline number in about 40 minutes.</p></div>
 <h2 id="sources">Where the numbers come from<a class="headerlink" href="#sources">#</a></h2>
-<p>Every number in the paper is printed by a script in <code>scripts/</code>: <code>compute_prediction.py</code> (Section II), and in <code>scripts/simulation/</code>: <code>ir_escape.py</code>, <code>ps_formation.py</code>, <code>sensitivity.py</code>, <code>background_estimates.py</code>. Their outputs are saved in <code>scripts/simulation/outputs/</code>. Numbers from the Geant4 model (collected fraction, stopping depths, gamma response) were <strong>not</strong> re-run for this paper; the companions flag them wherever they appear.</p>
+<p>Every number in the paper is printed by a script in <code>scripts/</code>: <code>compute_prediction.py</code> (Section II), and in <code>scripts/simulation/</code>: <code>ir_escape.py</code>, <code>ps_formation.py</code>, <code>sensitivity.py</code>, <code>background_estimates.py</code>. Their outputs are saved in <code>scripts/simulation/outputs/</code>. Numbers from the Geant4 model (collected fraction, stopping depths, gamma response, three-photon monitor) come from a re-run with Geant4 11.4.2; the companions flag them wherever they appear, and the 100 eV stopping depth is indicative only.</p>
 </main>
 <aside class="toc"><div class="toc-title">☰ Contents</div>
 <ul><li><a href="#order">Recommended reading order</a></li><li><a href="#sources">Where the numbers come from</a></li></ul></aside>
