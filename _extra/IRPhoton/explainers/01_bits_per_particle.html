@@ -112,7 +112,7 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 </style>
 </head>
 <body>
-<div class="topbar"><span class="brand"><a href="../../index.html" style="color:inherit;text-decoration:none">IPI Learning</a> <span>·</span> <a href="../index.html" style="color:inherit;text-decoration:none">IRPhoton</a></span><span>Manuscript in preparation, not peer reviewed · background to Section II</span></div>
+<div class="topbar"><span class="brand">IRPhoton <span>·</span> Paper Companion</span><span>Background to Section II · the 1.509-bit input</span></div>
 <div class="layout">
 <main id="main-content">
 
@@ -122,11 +122,11 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
   <span class="ipi-hero-tag">study companion · worked numbers · referee prep</span>
 </div>
 
-<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <strong>01 · Background: 1.509 bits (current)</strong> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <strong>01 · Background: 1.509 bits (current)</strong> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
 
 <h2 id="where">Where this fits<a class="headerlink" href="#where">#</a></h2>
-<p>Section II predicts that an annihilating electron–positron pair emits two <em>information energy photons</em> with wavelength \(\lambda = hc/(I\,k_bT\ln2)\). Everything about <em>where</em> that line sits depends on one input: \(I\), the number of bits each particle is supposed to hold. The manuscript takes \(I = 1.509\) bits and cites it directly to Vopson 2021, ref. [3]:</p>
-<div class="draft"><span class="dl">Manuscript · II.A, paragraph 2</span>Using Shannon's information theory, an earlier estimate found that each stable elementary particle in the visible matter of the universe stores about \(I = 1.509\) bits of information about itself [3]. This figure is the average information content per particle over the relative abundances of up quarks, down quarks and electrons [3]. That estimate excluded antiparticles. Following [6], we assume that the positron carries the same amount as the electron …</div>
+<p>Section II predicts that an annihilating electron–positron pair emits two <em>information energy photons</em> with wavelength \(\lambda = hc/(I\,k_bT\ln2)\). Everything about <em>where</em> that line sits depends on one input: \(I\), the number of bits each particle is supposed to hold. The draft takes \(I = 1.509\) bits and cites it directly to Vopson 2021, ref. [3]:</p>
+<div class="draft"><span class="dl">Draft · II.A, paragraph 2</span>Using Shannon's information theory, an earlier estimate found that each stable elementary particle in the visible matter of the universe stores about \(I = 1.509\) bits of information about itself [3]. This figure is the average information content per particle over the relative abundances of up quarks, down quarks and electrons [3]. That estimate excluded antiparticles. Following [6], we assume that the positron carries the same amount as the electron …</div>
 <p>This page unpacks that sentence. It does four things:</p>
 <ol>
 <li>explains the formula, Shannon entropy;</li>
@@ -337,7 +337,7 @@ Eddington&#x27;s own number 136 x 2^256 = 1.575e+79 protons</div></div>
 <p><strong>Honest answer:</strong> it isn't derived; it is assumed. Vopson 2021 explicitly leaves out antiparticles, and positrons are essentially absent from the population being averaged. Vopson 2022 says so: "Although the estimation accounted only for stable elementary particles excluding anti-particles, we can assume that the information content of the positron is equal to that of the electron."</p>
 <p>The natural argument for the assumption is <em>symmetry</em>. A positron has the same mass and spin as an electron and the opposite charge, so it is described by the same three degrees of freedom that Vopson 2021 calls the particle's "DNA".</p>
 <p>That argument has a weak point. The 1.509 figure is not a count of degrees of freedom. It is an average over how <em>common</em> each particle type is. If positrons were added to the population at their real cosmic abundance, their surprisal would be enormous but their weight in the average negligible. The average would barely change, and it would say nothing about what a single positron holds.</p>
-<p>The manuscript handles this correctly: it lists the positron value as assumption 1 and points out that the predicted <em>shift</em> λ(T₁)/λ(T₂) = T₂/T₁ does not depend on \(I\).</p></div></details>
+<p>The draft handles this correctly: it lists the positron value as assumption 1 and points out that the predicted <em>shift</em> λ(T₁)/λ(T₂) = T₂/T₁ does not depend on \(I\).</p></div></details>
 
 <details class="ref"><summary>Q2. Is 1.509 bits a property of a particle, or of a population?</summary><div>
 <p><strong>Honest answer:</strong> mathematically, of a population. Shannon entropy is the <em>average</em> surprisal of a draw from a distribution. Particle by particle the surprisals differ:</p>
@@ -367,7 +367,7 @@ Eddington&#x27;s own number 136 x 2^256 = 1.575e+79 protons</div></div>
 <p>Section II should not try to defend these choices. It should cite them as the origin of the estimate and treat \(I\) as an input.</p></div></details>
 
 <details class="ref"><summary>Q5. Vopson 2022 calls 1.509 "the maximum amount of information that could be stored per elementary particle". Is it a maximum?</summary><div>
-<p><strong>Honest answer:</strong> no. For three particle types the maximum Shannon entropy is log₂3 = 1.585 bits, reached when all three are equally common. Vopson 2021 says this itself. The value 1.509 is the entropy of the <em>actual</em> mix, which is below the maximum. The manuscript does not repeat the word "maximum", and it shouldn't.</p></div></details>
+<p><strong>Honest answer:</strong> no. For three particle types the maximum Shannon entropy is log₂3 = 1.585 bits, reached when all three are equally common. Vopson 2021 says this itself. The value 1.509 is the entropy of the <em>actual</em> mix, which is below the maximum. The draft does not repeat the word "maximum", and it shouldn't.</p></div></details>
 
 <details class="ref"><summary>Q6. Does any of this affect the test in Section II?</summary><div>
 <p><strong>Honest answer:</strong> it affects where the line sits, not how it moves. Plausible alternatives to 1.509 range from about 1.43 bits (local target) to 2.15 bits (electron surprisal). At 300 K that range spans about 32–48 µm. The ratio λ(77 K)/λ(150 K) = 1.948 holds for any \(I\).</p>
@@ -400,7 +400,7 @@ Eddington&#x27;s own number 136 x 2^256 = 1.575e+79 protons</div></div>
 
 <div class="cyu-q" data-type="mcq" data-answer="2" data-choices="It was computed from the abundance of positrons in the universe|Positrons are stable, so they were included in the 2021 count|It was assumed in Vopson 2022, by symmetry with the electron; the 2021 estimate excluded antiparticles|It follows from CPT symmetry applied to Shannon entropy"
  data-hint="Re-read the 'Antiparticles' row of the table in Section 2."
- data-explain="The 2021 paper excludes antiparticles explicitly. Vopson 2022 assumes I(e⁺) = I(e⁻); the manuscript lists this as assumption 1.">
+ data-explain="The 2021 paper excludes antiparticles explicitly. Vopson 2022 assumes I(e⁺) = I(e⁻); the draft lists this as assumption 1.">
 <span class="cyu-tier">Stretch</span><p>Where does the positron's 1.509 bits come from?</p></div>
 </div></details>
 
@@ -442,7 +442,7 @@ Eddington&#x27;s own number 136 x 2^256 = 1.575e+79 protons</div></div>
 The reference numbers are those of the manuscript.
 </p>
 
-<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <strong>01 · Background: 1.509 bits (current)</strong> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <strong>01 · Background: 1.509 bits (current)</strong> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
 </main>
 
 <aside class="toc"><div class="toc-title">☰ Contents</div>

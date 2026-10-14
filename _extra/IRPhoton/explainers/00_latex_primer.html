@@ -112,7 +112,7 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 </style>
 </head>
 <body>
-<div class="topbar"><span class="brand"><a href="../../index.html" style="color:inherit;text-decoration:none">IPI Learning</a> <span>·</span> <a href="../index.html" style="color:inherit;text-decoration:none">IRPhoton</a></span><span>Manuscript in preparation, not peer reviewed · LaTeX primer</span></div>
+<div class="topbar"><span class="brand">IRPhoton <span>·</span> Paper Companion</span><span>AIP Advances manuscript · LaTeX primer</span></div>
 <div class="layout">
 <main id="main-content">
 
@@ -122,7 +122,7 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
   <span class="ipi-hero-tag">about 23 minutes · real snippets · cheat sheet at the end</span>
 </div>
 
-<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <strong>00 · LaTeX primer (current)</strong> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="index.html">Reading guide</a> · <strong>00 · LaTeX primer (current)</strong> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
 
 <div class="ipi-card"><p class="ipi-card-title">How to read this page</p>
 <p>Code cells with a blue edge are <strong>LaTeX source</strong>, copied from <code>main.tex</code> or <code>references.bib</code> (the line numbers are real). Cells with a green edge show <strong>what the PDF prints</strong>. If you only have five minutes, read §1, §2 and §7 (compiling), then keep the cheat sheet in §9 open while you edit.</p></div>
@@ -157,7 +157,7 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 <span class="ln">  21 </span><span class="cm">% &quot;The definition of \label has changed&quot; -- harmless; it</span>
 <span class="ln">  22 </span><span class="cm">% appears even in a minimal revtex4-2 aip/adv file that loads hyperref.</span>
 <span class="ln">  23 </span>
-<span class="ln">   ⋮</span>
+<span class="ln">  24 </span><span class="cm">%% Notation shared by the whole paper (Vopson&#x27;s symbols).</span>
 <span class="ln">  25 </span><span class="lx">\newcommand</span>{<span class="lx">\kb</span>}{k_b}                 <span class="cm">% Boltzmann constant, Vopson&#x27;s notation</span>
 <span class="ln">  26 </span><span class="lx">\newcommand</span>{<span class="lx">\eminus</span>}{e^{-}}
 <span class="ln">  27 </span><span class="lx">\newcommand</span>{<span class="lx">\eplus</span>}{e^{+}}</div></div>
@@ -165,10 +165,11 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 <li><strong><code>revtex4-2</code></strong> is the class used by AIP and APS journals. <code>aip</code> selects AIP Publishing's style, <code>adv</code> selects <em>AIP Advances</em> in particular, and <code>preprint</code> gives the double-spaced single-column layout AIP asks for at submission. Swap <code>preprint</code> for <code>reprint</code> to preview the two-column journal look (and check length); swap back before submitting.</li>
 <li><strong><code>\usepackage{...}</code></strong> loads extra tools. <code>siunitx</code> typesets numbers with units; <code>hyperref</code> makes every reference clickable and should be loaded last.</li>
 <li><strong><code>\newcommand</code></strong> defines shortcuts. <code>\kb</code> prints Vopson's \(k_b\). Changing the notation everywhere is a one-line edit.</li>
-<li><strong><code>%</code></strong> starts a comment. Everything after it on the line is ignored. Lines starting with <code>%%</code> are notes for the author; they never appear in the PDF (they are omitted from the snippets on this page).</li>
+<li><strong><code>%</code></strong> starts a comment. Everything after it on the line is ignored. The manuscript uses <code>%% NOTE</code> and <code>%% TODO (Jeff)</code> comments for decisions still open (affiliation, acknowledgment, AI-tool name, data link); they never appear in the PDF, so search the source for <code>TODO</code> before submitting.</li>
 </ul>
 <p>The body opens with the <strong>front matter</strong>: title, author, abstract. REVTeX collects these and prints them when it reaches <code>\maketitle</code>:</p>
 <div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
+<span class="ln">  34 </span><span class="cm">%% \preprint{Draft for AIP Advances}   % optional running label; not needed for submission</span>
 <span class="ln">  35 </span>
 <span class="ln">  36 </span><span class="lx">\title</span>[Detecting information energy photons from positron annihilation]<span class="cm">%</span>
 <span class="ln">  37 </span>      {Design of an experiment to detect information energy photons
@@ -176,7 +177,12 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 <span class="ln">  39 </span>
 <span class="ln">  40 </span><span class="lx">\author</span>{Jeff Dillon}
 <span class="ln">  41 </span><span class="lx">\email</span>[Author to whom correspondence should be addressed: ]{jeff@sumoverpaths.ai}
-<span class="ln">   ⋮</span>
+<span class="ln">  42 </span><span class="cm">%% ---------------------------------------------------------------------</span>
+<span class="ln">  43 </span><span class="cm">%% NOTE (Jeff): AFFILIATION. Only the Information Physics Institute is</span>
+<span class="ln">  44 </span><span class="cm">%% listed (location from its website and ROR record 05y04vm71).</span>
+<span class="ln">  45 </span><span class="cm">%% The University of Portsmouth has been DELIBERATELY LEFT OFF pending</span>
+<span class="ln">  46 </span><span class="cm">%% your decision. Do not add it without deciding first (see README.md).</span>
+<span class="ln">  47 </span><span class="cm">%% ---------------------------------------------------------------------</span>
 <span class="ln">  48 </span><span class="lx">\affiliation</span>{Information Physics Institute, Gosport, Hampshire, United Kingdom}
 <span class="ln">  49 </span>
 <span class="ln">  50 </span><span class="lx">\date</span>{<span class="lx">\today</span>}
@@ -196,12 +202,12 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 <span class="ln">  64 </span>inside a cold cavity viewed by a far-infrared bolometer and surrounded
 <span class="ln">  65 </span>by gamma-ray detectors. The signature is a line that
 <span class="ln">  66 </span>moves between two filter bands when the film temperature changes. Only about 7\% of the infrared photons escape the reflective
-<span class="ln">  67 </span>metal film, and we assume that about 15\% of positrons leave the film as
-<span class="ln">  68 </span>positronium. The noise is set by the film&#x27;s own thermal emission, so
+<span class="ln">  67 </span>metal film, and on clean aluminum about half of the positrons leave the
+<span class="ln">  68 </span>film as positronium. The noise is set by the film&#x27;s own thermal emission, so
 <span class="ln">  69 </span>colder operation is faster. The quantum electrodynamic soft-photon
 <span class="ln">  70 </span>background in the band is at least four orders of magnitude below
 <span class="ln">  71 </span>the predicted signal. A 5$<span class="lx">\sigma</span>$ detection then takes
-<span class="ln">  72 </span>about 30~min at 77~K and 4~h at 150~K at the slow-positron rate of
+<span class="ln">  72 </span>about 1.4~h at 77~K and 10~h at 150~K at the slow-positron rate of
 <span class="ln">  73 </span>$4.5<span class="lx">\times</span>10^{7}$~s$^{-1}$ demonstrated at a reactor-based facility, but
 <span class="ln">  74 </span>years with a laboratory $^{22}$Na source.
 <span class="ln">  75 </span><span class="lx">\end</span>{abstract}
@@ -223,52 +229,64 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 <span class="ln">   ⋮</span>
 <span class="ln"> 312 </span><span class="lx">\section</span>{Experimental protocol}<span class="lx">\label</span>{sec:protocol}
 <span class="ln">   ⋮</span>
-<span class="ln"> 382 </span><span class="lx">\section</span>{Experimental design}<span class="lx">\label</span>{sec:design}
+<span class="ln"> 385 </span><span class="lx">\section</span>{Experimental design}<span class="lx">\label</span>{sec:design}
 <span class="ln">   ⋮</span>
-<span class="ln"> 388 </span><span class="lx">\subsection</span>{Slow-positron source}<span class="lx">\label</span>{sec:source}
+<span class="ln"> 391 </span><span class="lx">\subsection</span>{Slow-positron source}<span class="lx">\label</span>{sec:source}
 <span class="ln">   ⋮</span>
-<span class="ln"> 421 </span><span class="lx">\subsection</span>{Target}<span class="lx">\label</span>{sec:target}
+<span class="ln"> 424 </span><span class="lx">\subsection</span>{Target}<span class="lx">\label</span>{sec:target}
 <span class="ln">   ⋮</span>
-<span class="ln"> 458 </span><span class="lx">\subsection</span>{Gamma-ray detection}<span class="lx">\label</span>{sec:gamma}
+<span class="ln"> 463 </span><span class="lx">\subsection</span>{Gamma-ray detection}<span class="lx">\label</span>{sec:gamma}
 <span class="ln">   ⋮</span>
-<span class="ln"> 481 </span><span class="lx">\subsection</span>{Far-infrared detection}<span class="lx">\label</span>{sec:ir}
+<span class="ln"> 493 </span><span class="lx">\subsection</span>{Far-infrared detection}<span class="lx">\label</span>{sec:ir}
 <span class="ln">   ⋮</span>
-<span class="ln"> 517 </span><span class="lx">\section</span>{Expected response}<span class="lx">\label</span>{sec:response}
+<span class="ln"> 529 </span><span class="lx">\section</span>{Expected response}<span class="lx">\label</span>{sec:response}
 <span class="ln">   ⋮</span>
-<span class="ln"> 519 </span><span class="lx">\subsection</span>{How the estimates are made}<span class="lx">\label</span>{sec:methods}
+<span class="ln"> 531 </span><span class="lx">\subsection</span>{How the estimates are made}<span class="lx">\label</span>{sec:methods}
 <span class="ln">   ⋮</span>
-<span class="ln"> 558 </span><span class="lx">\subsection</span>{Signal and background spectra}<span class="lx">\label</span>{sec:background}
+<span class="ln"> 570 </span><span class="lx">\subsection</span>{Signal and background spectra}<span class="lx">\label</span>{sec:background}
 <span class="ln">   ⋮</span>
-<span class="ln"> 617 </span><span class="lx">\subsection</span>{Losses in the target}<span class="lx">\label</span>{sec:losses}
+<span class="ln"> 629 </span><span class="lx">\subsection</span>{Losses in the target}<span class="lx">\label</span>{sec:losses}
 <span class="ln">   ⋮</span>
-<span class="ln"> 695 </span><span class="lx">\subsection</span>{Noise and time to a detection}<span class="lx">\label</span>{sec:sensitivity}
+<span class="ln"> 723 </span><span class="lx">\subsection</span>{Noise and time to a detection}<span class="lx">\label</span>{sec:sensitivity}
 <span class="ln">   ⋮</span>
-<span class="ln"> 790 </span><span class="lx">\subsection</span>{Systematic effects}<span class="lx">\label</span>{sec:systematics}
+<span class="ln"> 822 </span><span class="lx">\subsection</span>{Systematic effects}<span class="lx">\label</span>{sec:systematics}
 <span class="ln">   ⋮</span>
-<span class="ln"> 809 </span><span class="lx">\subsection</span>{What a result would mean}<span class="lx">\label</span>{sec:meaning}
+<span class="ln"> 852 </span><span class="lx">\subsection</span>{What a result would mean}<span class="lx">\label</span>{sec:meaning}
 <span class="ln">   ⋮</span>
-<span class="ln"> 833 </span><span class="lx">\section</span>{Conclusions}<span class="lx">\label</span>{sec:conclusions}</div></div>
+<span class="ln"> 876 </span><span class="lx">\section</span>{Conclusions}<span class="lx">\label</span>{sec:conclusions}</div></div>
 <p>REVTeX numbers sections with Roman numerals (I, II, …) and subsections with letters (A, B, …), as AIP does. You never type the numbers.</p>
-<p>The end of the file holds the AIP back matter (a pointer to the Supplementary Material, Author Declarations, Data Availability) and one line that pulls in the reference list:</p>
+<p>The end of the file holds the AIP back matter (a pointer to the Supplementary Material, an Acknowledgments block that is commented out until Dr. Vopson agrees to it, Author Declarations, Data Availability) and one line that pulls in the reference list:</p>
 <div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
-<span class="ln"> 885 </span><span class="lx">\section*</span>{Author Declarations}
-<span class="ln"> 886 </span><span class="lx">\subsection*</span>{Conflict of Interest}
-<span class="ln"> 887 </span>The author has no conflicts to disclose.
-<span class="ln"> 888 </span>
-<span class="ln"> 889 </span><span class="lx">\subsection*</span>{Author Contributions}
-<span class="ln"> 890 </span><span class="lx">\textbf</span>{Jeff Dillon:} Conceptualization (lead); Methodology (lead);
-<span class="ln"> 891 </span>Software (lead); Formal analysis (lead); Investigation (lead);
-<span class="ln"> 892 </span>Visualization (lead); Writing -- original draft (lead);
-<span class="ln"> 893 </span>Writing -- review \&amp; editing (lead).
-<span class="ln"> 894 </span>
-<span class="ln"> 895 </span><span class="lx">\section*</span>{Data Availability}
-<span class="ln">   ⋮</span>
-<span class="ln"> 900 </span>The data that support the findings of this study are available from
-<span class="ln"> 901 </span>the corresponding author upon reasonable request.
-<span class="ln"> 902 </span>
-<span class="ln"> 903 </span><span class="lx">\bibliography</span>{references}
-<span class="ln"> 904 </span>
-<span class="ln"> 905 </span><span class="lx">\end</span>{document}</div></div>
+<span class="ln"> 923 </span><span class="cm">%% TODO (Jeff): ACKNOWLEDGMENT -- DO NOT UNCOMMENT until Dr. Vopson has</span>
+<span class="ln"> 924 </span><span class="cm">%% given permission to be acknowledged, and has agreed to this wording.</span>
+<span class="ln"> 925 </span><span class="cm">%% Keep it modest: it must not imply that he endorses or has reviewed the</span>
+<span class="ln"> 926 </span><span class="cm">%% design or its conclusions. If he declines, delete this block.</span>
+<span class="ln"> 927 </span><span class="cm">%% \begin{acknowledgments}</span>
+<span class="ln"> 928 </span><span class="cm">%% The author thanks Dr. Melvin M. Vopson for discussions.</span>
+<span class="ln"> 929 </span><span class="cm">%% \end{acknowledgments}</span>
+<span class="ln"> 930 </span><span class="cm">%% =====================================================================</span>
+<span class="ln"> 931 </span>
+<span class="ln"> 932 </span><span class="lx">\section*</span>{Author Declarations}
+<span class="ln"> 933 </span><span class="lx">\subsection*</span>{Conflict of Interest}
+<span class="ln"> 934 </span>The author has no conflicts to disclose.
+<span class="ln"> 935 </span>
+<span class="ln"> 936 </span><span class="lx">\subsection*</span>{Author Contributions}
+<span class="ln"> 937 </span><span class="lx">\textbf</span>{Jeff Dillon:} Conceptualization (lead); Methodology (lead);
+<span class="ln"> 938 </span>Software (lead); Formal analysis (lead); Investigation (lead);
+<span class="ln"> 939 </span>Visualization (lead); Writing -- original draft (lead);
+<span class="ln"> 940 </span>Writing -- review \&amp; editing (lead).
+<span class="ln"> 941 </span>
+<span class="ln"> 942 </span><span class="lx">\section*</span>{Data Availability}
+<span class="ln"> 943 </span><span class="cm">%% TODO (Jeff): if you deposit the scripts publicly, replace this with</span>
+<span class="ln"> 944 </span><span class="cm">%% AIP&#x27;s &quot;openly available&quot; sentence, e.g. &quot;The data that support the</span>
+<span class="ln"> 945 </span><span class="cm">%% findings of this study are openly available in GitHub at</span>
+<span class="ln"> 946 </span><span class="cm">%% https://github.com/[USER]/[REPO].&quot; (a DOI from Zenodo is preferred).</span>
+<span class="ln"> 947 </span>The data that support the findings of this study are available from
+<span class="ln"> 948 </span>the corresponding author upon reasonable request.
+<span class="ln"> 949 </span>
+<span class="ln"> 950 </span><span class="lx">\bibliography</span>{references}
+<span class="ln"> 951 </span>
+<span class="ln"> 952 </span><span class="lx">\end</span>{document}</div></div>
 
 <!-- ================================================================ -->
 <h2 id="math">3. Maths: inline, display, numbered<a class="headerlink" href="#math">#</a></h2>
@@ -321,23 +339,23 @@ least k_b T ln 2 per bit at temperature T, released as heat.¹</div></div>
 <span class="ln">   ⋮</span>
 <span class="ln"> 330 </span>  on $<span class="lx">\lambda</span>_1$, the prediction of Eq.~<span class="lx">\eqref</span>{eq:lambda} at the film
 <span class="ln">   ⋮</span>
-<span class="ln"> 455 </span>Eq.~<span class="lx">\eqref</span>{eq:lambdaT}, a 1\% temperature error shifts the predicted
+<span class="ln"> 460 </span>Eq.~<span class="lx">\eqref</span>{eq:lambdaT}, a 1\% temperature error shifts the predicted
 <span class="ln">   ⋮</span>
-<span class="ln"> 582 </span><span class="lx">\SI</span>{11.7}{<span class="lx">\electronvolt</span>}. Equation~<span class="lx">\eqref</span>{eq:softphoton} then gives
+<span class="ln"> 594 </span><span class="lx">\SI</span>{11.7}{<span class="lx">\electronvolt</span>}. Equation~<span class="lx">\eqref</span>{eq:softphoton} then gives
 <span class="ln">   ⋮</span>
-<span class="ln"> 612 </span>  Eq.~<span class="lx">\eqref</span>{eq:softphoton}]. Signal and background are both model
+<span class="ln"> 624 </span>  Eq.~<span class="lx">\eqref</span>{eq:softphoton}]. Signal and background are both model
 <span class="ln">   ⋮</span>
-<span class="ln"> 685 </span>  with the thin-film form of Eq.~<span class="lx">\eqref</span>{eq:absorptivity} for comparison.
+<span class="ln"> 711 </span>  with the thin-film form of Eq.~<span class="lx">\eqref</span>{eq:absorptivity} for comparison.
 <span class="ln">   ⋮</span>
-<span class="ln"> 753 </span>  line, from Eqs.~<span class="lx">\eqref</span>{eq:psig}--<span class="lx">\eqref</span>{eq:tau} with a 10\% band, both
+<span class="ln"> 784 </span>  line, from Eqs.~<span class="lx">\eqref</span>{eq:psig}--<span class="lx">\eqref</span>{eq:tau} with a 10\% band, both
 <span class="ln">   ⋮</span>
-<span class="ln"> 773 </span>Equations~<span class="lx">\eqref</span>{eq:psig}--<span class="lx">\eqref</span>{eq:tau} show how $<span class="lx">\tau</span>$ depends on
+<span class="ln"> 805 </span>Equations~<span class="lx">\eqref</span>{eq:psig}--<span class="lx">\eqref</span>{eq:tau} show how $<span class="lx">\tau</span>$ depends on
 <span class="ln">   ⋮</span>
-<span class="ln"> 780 </span>sits at the same point on it [Eq.~<span class="lx">\eqref</span>{eq:occupation}], but it reduces
+<span class="ln"> 812 </span>sits at the same point on it [Eq.~<span class="lx">\eqref</span>{eq:occupation}], but it reduces
 <span class="ln">   ⋮</span>
-<span class="ln"> 814 </span>intensity consistent with Eq.~<span class="lx">\eqref</span>{eq:psig}. The product $<span class="lx">\lambda</span> T$
+<span class="ln"> 857 </span>intensity consistent with Eq.~<span class="lx">\eqref</span>{eq:psig}. The product $<span class="lx">\lambda</span> T$
 <span class="ln">   ⋮</span>
-<span class="ln"> 816 </span>Eq.~<span class="lx">\eqref</span>{eq:lambdaT}, $I = hc/(<span class="lx">\kb</span><span class="lx">\lambda</span> T<span class="lx">\ln</span>2)$. Further checks</div></div>
+<span class="ln"> 859 </span>Eq.~<span class="lx">\eqref</span>{eq:lambdaT}, $I = hc/(<span class="lx">\kb</span><span class="lx">\lambda</span> T<span class="lx">\ln</span>2)$. Further checks</div></div>
 <p>If you insert a new equation before Eq. (4), every number and every reference to it updates on the next compile. The <code>~</code> is a <strong>non-breaking space</strong>: it stops "Eq." being left alone at the end of a line. The same pattern works for sections (<code>Sec.~\ref{sec:design}</code>), tables and figures.</p>
 <h3 id="math-units">Numbers with units: siunitx</h3>
 <div class="cell"><div class="in"><span class="cm">% manuscript/main.tex</span>
@@ -348,12 +366,12 @@ least k_b T ln 2 per bit at temperature T, released as heat.¹</div></div>
 <span class="ln">   ⋮</span>
 <span class="ln"> 228 </span>roughly <span class="lx">\SIrange</span>{25}{75}{<span class="lx">\micro</span><span class="lx">\metre</span>} given there.
 <span class="ln">   ⋮</span>
-<span class="ln"> 409 </span><span class="lx">\SIrange</span>{20}{200}{<span class="lx">\electronvolt</span>} with a diameter below
+<span class="ln"> 412 </span><span class="lx">\SIrange</span>{20}{200}{<span class="lx">\electronvolt</span>} with a diameter below
 <span class="ln">   ⋮</span>
-<span class="ln"> 507 </span>The cavity walls are held at <span class="lx">\SIrange</span>{4}{10}{<span class="lx">\kelvin</span>}. Their own
+<span class="ln"> 519 </span>The cavity walls are held at <span class="lx">\SIrange</span>{4}{10}{<span class="lx">\kelvin</span>}. Their own
 <span class="ln">   ⋮</span>
-<span class="ln"> 851 </span>temperature control at <span class="lx">\SIrange</span>{77}{150}{<span class="lx">\kelvin</span>}; a collecting cavity
-<span class="ln"> 852 </span>at <span class="lx">\SIrange</span>{4}{10}{<span class="lx">\kelvin</span>}; cold band-pass filters at the two predicted</div></div>
+<span class="ln"> 894 </span>temperature control at <span class="lx">\SIrange</span>{77}{150}{<span class="lx">\kelvin</span>}; a collecting cavity
+<span class="ln"> 895 </span>at <span class="lx">\SIrange</span>{4}{10}{<span class="lx">\kelvin</span>}; cold band-pass filters at the two predicted</div></div>
 <p><code>\SI{value}{unit}</code> gives the correct upright units and a proper thin space ("45.9 µm"); <code>\si{...}</code> is a unit on its own; <code>\SIrange</code> writes "25–75 µm". Prefixes are words: <code>\micro</code>, <code>\milli</code>, <code>\kilo</code>, <code>\tera</code>. This avoids pasting a "µ" character, a common source of errors (§8).</p>
 
 <!-- ================================================================ -->
@@ -442,7 +460,7 @@ least k_b T ln 2 per bit at temperature T, released as heat.¹</div></div>
 <h3 id="cite-why">Why the numbering can't go wrong</h3>
 <ol>
 <li><strong>Numbers are assigned on every compile, in order of first citation.</strong> <code>aipnum4-2</code> is an "unsorted" style: the first key BibTeX meets in the text becomes [1], the next new one [2], and so on. In the paper that gives Landauer 1, Vopson 2019 2, Vopson 2021 3, Lairez 2024 4, Lairez 2025 5, Vopson 2022 6 (all cited in the Introduction), then Bérut 7, Jun 8, Hong 9 (first cited in Section II), and so on, exactly what the PDF shows.</li>
-<li><strong>Adding or moving a citation renumbers everything, text and list together.</strong> Cite a new reference early in the text and every later number shifts, in the text and the list, with no hand edits. With hand-numbered references in Word, that is precisely where mistakes creep in.</li>
+<li><strong>Adding or moving a citation renumbers everything, text and list together.</strong> When the two Lairez critiques were cited in the Introduction, Vopson 2022 moved from [4] to [6] and every later reference shifted by at least two, in the text and the list, with no hand edits. With hand-numbered references in Word, that is precisely where mistakes creep in.</li>
 <li><strong>Only cited entries are printed.</strong> An entry in <code>references.bib</code> that is never <code>\cite</code>d does not appear, and a reference you stop citing disappears from the list.</li>
 <li><strong>Formatting is uniform.</strong> Author initials, bold volume, page range and year follow AIP's style for every entry, because the style file formats them, not you.</li>
 </ol>
@@ -461,7 +479,7 @@ least k_b T ln 2 per bit at temperature T, released as heat.¹</div></div>
 <li>Click <strong>Recompile</strong>. The PDF appears on the right in a few seconds.</li>
 <li>Click the <strong>log icon</strong> next to Recompile to see errors and warnings. Each one links to the line that caused it.</li>
 <li>Edit, then Recompile (or press <kbd>Ctrl</kbd>+<kbd>S</kbd> / <kbd>⌘</kbd>+<kbd>S</kbd>). Double-click in the PDF to jump to the source line.</li>
-<li>To get files back: <strong>Menu → Download → Source</strong> (zip) or the PDF download button. Copy them back into your local <code>manuscript/</code> folder so it stays the master copy.</li>
+<li>To get files back: <strong>Menu → Download → Source</strong> (zip) or the PDF download button. Copy them back into <code>AIP_rewrite/manuscript/</code> so the local folder stays the master copy.</li>
 </ol>
 
 <h3 id="compile-local">B. Local install: TeX Live or MiKTeX, with latexmk</h3>
@@ -471,7 +489,7 @@ least k_b T ln 2 per bit at temperature T, released as heat.¹</div></div>
 <li><strong>Windows:</strong> install <a href="https://miktex.org/">MiKTeX</a> (installs missing packages on first use) or <a href="https://tug.org/texlive/">TeX Live</a>. latexmk is a Perl script; with MiKTeX you may also need <a href="https://strawberryperl.com/">Strawberry Perl</a>.</li>
 </ul>
 <p>Then, in a terminal:</p>
-<div class="cell"><div class="in">cd manuscript
+<div class="cell"><div class="in">cd AIP_rewrite/manuscript
 latexmk -pdf main.tex       <span class="cm"># runs pdflatex, bibtex, pdflatex as often as needed -> main.pdf</span>
 latexmk -pvc -pdf main.tex  <span class="cm"># optional: watch mode, recompiles every time you save</span>
 latexmk -c                  <span class="cm"># delete .aux/.log/... build files (keeps main.pdf)</span></div></div>
@@ -481,7 +499,7 @@ latexmk -c                  <span class="cm"># delete .aux/.log/... build files 
 <ol>
 <li>Install a TeX distribution as in B.</li>
 <li>In VS Code, open the Extensions panel and install <strong>LaTeX Workshop</strong> (by James Yu).</li>
-<li><strong>File → Open Folder…</strong> and choose <code>manuscript</code>. Open <code>main.tex</code>.</li>
+<li><strong>File → Open Folder…</strong> and choose <code>AIP_rewrite/manuscript</code>. Open <code>main.tex</code>.</li>
 <li>Save the file. LaTeX Workshop builds automatically with its default <em>latexmk</em> recipe. (Or use the TeX icon in the sidebar → <strong>Build LaTeX project</strong>.)</li>
 <li>Click <strong>View LaTeX PDF</strong> (the icon at the top right of the editor) to open the PDF in a tab. <kbd>Ctrl</kbd>+click in the PDF jumps to the source; errors appear in the <strong>Problems</strong> panel.</li>
 </ol>
@@ -522,7 +540,7 @@ latexmk -c                  <span class="cm"># delete .aux/.log/... build files 
 <tr><td>Numbered list</td><td><code>\begin{enumerate} \item ... \end{enumerate}</code></td><td>the five assumptions in II.D</td></tr>
 <tr><td>Dashes and quotes</td><td><code>-</code> hyphen, <code>--</code> en dash, <code>---</code> em dash, <code>``...''</code></td><td><code>Electron--positron</code></td></tr>
 <tr><td>Non-breaking space</td><td><code>~</code></td><td><code>1.509~bits</code></td></tr>
-<tr><td>Comment</td><td><code>% ...</code></td><td><code>%% a note to yourself</code></td></tr>
+<tr><td>Comment / TODO</td><td><code>% ...</code></td><td><code>%% TODO (Jeff): replace the bracketed placeholder ...</code></td></tr>
 <tr><td>Special characters</td><td><code>\% \&amp; \# \_ \$</code></td><td><code>review \&amp; editing</code></td></tr>
 <tr><td>Compile</td><td><code>latexmk -pdf main.tex</code></td><td>or Overleaf → Recompile</td></tr>
 </table>
@@ -558,7 +576,7 @@ latexmk -c                  <span class="cm"># delete .aux/.log/... build files 
 <li>The official reference for every REVTeX/AIP option: the <em>Author's Guide to AIP Substyles for REVTeX 4.2</em> (<code>aipguide4-2.pdf</code>, on <a href="https://ctan.org/pkg/revtex">CTAN</a>).</li>
 </ul>
 
-<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <strong>00 · LaTeX primer (current)</strong> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="index.html">Reading guide</a> · <strong>00 · LaTeX primer (current)</strong> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
 </main>
 
 <aside class="toc"><div class="toc-title">☰ Contents</div>

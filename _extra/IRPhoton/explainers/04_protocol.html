@@ -112,15 +112,15 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 </style>
 </head>
 <body>
-<div class="topbar"><span class="brand"><a href="../../index.html" style="color:inherit;text-decoration:none">IPI Learning</a> <span>·</span> <a href="../index.html" style="color:inherit;text-decoration:none">IRPhoton</a></span><span>Manuscript in preparation, not peer reviewed · Section III of VI</span></div>
+<div class="topbar"><span class="brand">IRPhoton <span>·</span> Paper Companion</span><span>AIP Advances manuscript · Section III of VI</span></div>
 <div class="layout">
 <main id="main-content">
 <div class="ipi-hero"><canvas id="rain" aria-hidden="true"></canvas>
   <h1>Section III — Experimental protocol</h1>
   <p class="ipi-hero-subtitle">The seven steps of the measurement and why comparing two temperatures separates the predicted photons from everything else the beam causes.</p>
-  <span class="ipi-hero-tag">about 11 minutes · paragraph by paragraph · real script output · referee prep</span>
+  <span class="ipi-hero-tag">about 12 minutes · paragraph by paragraph · real script output · referee prep</span>
 </div>
-<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <strong>04 · III. Protocol (current)</strong> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <strong>04 · III. Protocol (current)</strong> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
 <h2 id="where">Where this section fits<a class="headerlink" href="#where">#</a></h2>
 <p>Section II gave a number to look for: a line at \(\lambda = 13.76\ \text{mm K}/T\). Section III says <em>how</em> to look for it, in seven steps taken from Vopson's 2022 paper, and explains why comparing two temperatures is what makes the test work. The apparatus itself comes in Section IV.</p>
 <div class="ipi-card"><p class="ipi-card-title">How to read this page</p>
@@ -145,8 +145,8 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 <p>Only the predicted signal gets "yes" in both columns and stays narrow. That is why the paper calls the temperature shift <em>the signature</em>.</p>
 
 <h3 id="choice">Paragraph 3: why 77 K and 150 K<a class="headerlink" href="#choice">#</a></h3>
-<div class="draft"><span class="dl">Paper · III, last paragraph</span>We take \(T_1 = 77\) K and \(T_2 = 150\) K. The wavelength changes by a factor of 1.95 … so bands of 10% width are well separated. Both are easy to reach with liquid nitrogen and a heater, and both are below about 200 K, above which the fraction of positrons leaving an aluminum surface as positronium rises steeply.</div>
-<p>Three reasons: the bands don't overlap; liquid nitrogen boils at 77 K, so the cold point is nearly free; and staying below 200 K keeps the positronium loss the same at both points, so the only thing that changes between the two measurements is the predicted wavelength (and the photon energy).</p>
+<div class="draft"><span class="dl">Paper · III, last paragraph</span>We take \(T_1 = 77\) K and \(T_2 = 150\) K. The wavelength changes by a factor of 1.95 … so bands of 10% width are well separated. Both are easy to reach with liquid nitrogen and a heater. On a clean aluminum surface the fraction of positrons that leave as positronium is the same at both, because heat releases extra positronium only above room temperature [Mills &amp; Pfeiffer 1985]. … On aluminum with a fraction of a monolayer of oxygen, however, thermally released positronium already grows between about 100 and 230 K [Mills et al. 1991], so the surface must be kept clean, or the fraction measured at both temperatures.</div>
+<p>Three reasons: the bands don't overlap; liquid nitrogen boils at 77 K, so the cold point is nearly free; and on a clean surface the positronium loss is the same at both points, so the only thing that changes between the two measurements is the predicted wavelength (and the photon energy). The catch is the word <em>clean</em>. A little oxygen on the surface makes the positronium loss change between 77 K and 150 K. That is why the paper asks for a clean film, or for the loss to be measured at both temperatures.</p>
 
 <h2 id="symbols">Symbols and acronyms<a class="headerlink" href="#symbols">#</a></h2>
 <table>
@@ -185,7 +185,7 @@ lambda T = 13.76 mm K;  wavelength ratio 150/77 = 1.948</div></div>
 <tr><td>Lock-in rejects un-modulated light on average</td><td><span class="standing s-est">established</span></td><td>standard signal processing</td></tr>
 <tr><td>QED soft-photon background does not move with \(T\)</td><td><span class="standing s-est">estimated</span></td><td>Section V.B: set by the Fermi velocity, thermal share &lt; 0.3%</td></tr>
 <tr><td>The predicted line moves as \(1/T\)</td><td><span class="standing s-prop">prediction</span></td><td>Eq. (5), if M/E/I and the assumptions hold</td></tr>
-<tr><td>Positronium fraction is the same at 77 K and 150 K</td><td><span class="standing s-assm">assumption</span></td><td>Section V.C; checkable via the three-gamma rate</td></tr>
+<tr><td>Positronium fraction is the same at 77 K and 150 K</td><td><span class="standing s-assm">assumption</span></td><td>true for a clean surface (Mills &amp; Pfeiffer 1985); not for a lightly oxidized one (Mills et al. 1991). Section V.C; checkable via the three-gamma rate</td></tr>
 <tr><td>Line is narrower than the 10% band</td><td><span class="standing s-assm">assumption</span></td><td>the theory gives no line width</td></tr>
 </table>
 
@@ -210,20 +210,20 @@ lambda T = 13.76 mm K;  wavelength ratio 150/77 = 1.948</div></div>
  data-hint="n = 1/(2^I − 1) with I = 1.509."
  data-explain="2^1.509 = 2.846, so n = 1/1.846 = 0.542, at any temperature.">
 <span class="cyu-tier">At this level</span><p>What is the thermal occupation n(E_I) at the line, at 150 K?</p></div>
-<div class="cyu-q" data-type="mcq" data-answer="2" data-choices="To make the line brighter|To make the bolometer quieter|To keep the positronium fraction the same at both temperatures|Because 200 K is the boiling point of nitrogen"
- data-hint="What rises steeply above 200 K?"
- data-explain="Positronium emission is thermally activated; below 200 K it is roughly constant, so the expected intensity changes only through the photon energy.">
-<span class="cyu-tier">Stretch</span><p>Why are both temperatures kept below about 200 K?</p></div>
+<div class="cyu-q" data-type="mcq" data-answer="2" data-choices="To make the line brighter|To make the bolometer quieter|To keep the positronium fraction the same at both temperatures|Because room temperature is the boiling point of nitrogen"
+ data-hint="What does heat release from an aluminum surface?"
+ data-explain="On clean aluminum, heat releases extra positronium only above room temperature, so below it the positronium fraction is constant and the expected intensity changes only through the photon energy. On a lightly oxidized surface this is not true.">
+<span class="cyu-tier">Stretch</span><p>Why are both temperatures kept well below room temperature?</p></div>
 </div></details>
 
 <h2 id="summary">Key takeaways<a class="headerlink" href="#summary">#</a></h2>
 <ul>
 <li>Seven steps: slow beam, chop, implant, lock-in, measure at \(T_1\), change \(T\), measure at \(T_2\).</li>
 <li>The lock-in keeps what the beam causes; the temperature change separates the prediction from everything else the beam causes.</li>
-<li>77 K and 150 K give well-separated bands, are easy to reach, and keep positronium constant.</li>
+<li>77 K and 150 K give well-separated bands, are easy to reach, and keep positronium constant on a clean surface.</li>
 </ul>
 
-<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <strong>04 · III. Protocol (current)</strong> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <strong>04 · III. Protocol (current)</strong> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <a href="07_conclusions.html">07 · VI. Conclusions</a> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
 </main>
 <aside class="toc"><div class="toc-title">☰ Contents</div>
 <ul><li><a href="#where">Where this section fits</a></li><li><a href="#walk">Paragraph by paragraph</a><ul><li><a href="#steps">The seven steps</a></li><li><a href="#logic">Why two temperatures</a></li><li><a href="#choice">Paragraph 3: why 77 K and 150 K</a></li></ul></li><li><a href="#symbols">Symbols and acronyms</a></li><li><a href="#numbers">Worked numbers</a></li><li><a href="#standing">Assumed vs established</a></li><li><a href="#referee">Questions a referee might ask</a></li><li><a href="#cyu">Check your Understanding</a></li><li><a href="#summary">Key takeaways</a></li></ul></aside>

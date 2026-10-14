@@ -112,15 +112,15 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 </style>
 </head>
 <body>
-<div class="topbar"><span class="brand"><a href="../../index.html" style="color:inherit;text-decoration:none">IPI Learning</a> <span>·</span> <a href="../index.html" style="color:inherit;text-decoration:none">IRPhoton</a></span><span>Manuscript in preparation, not peer reviewed · Section VI of VI</span></div>
+<div class="topbar"><span class="brand">IRPhoton <span>·</span> Paper Companion</span><span>AIP Advances manuscript · Section VI of VI</span></div>
 <div class="layout">
 <main id="main-content">
 <div class="ipi-hero"><canvas id="rain" aria-hidden="true"></canvas>
   <h1>Section VI — Conclusions</h1>
   <p class="ipi-hero-subtitle">What was found, what it takes to build, and the three next steps that test the weakest assumptions first.</p>
-  <span class="ipi-hero-tag">about 6 minutes · paragraph by paragraph · real script output · referee prep</span>
+  <span class="ipi-hero-tag">about 7 minutes · paragraph by paragraph · real script output · referee prep</span>
 </div>
-<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <strong>07 · VI. Conclusions (current)</strong> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <strong>07 · VI. Conclusions (current)</strong> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
 <h2 id="where">Where this section fits<a class="headerlink" href="#where">#</a></h2>
 <p>The Conclusions restate the prediction and the main results, list what is needed to build the experiment, and name three next steps that would test the weakest assumptions before anyone asks for beam time.</p>
 
@@ -129,11 +129,11 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
 <div class="draft"><span class="dl">Paper · VI, paragraph 1</span>… predicts that each electron–positron annihilation at temperature \(T\) releases two photons with \(\lambda T = 13.76\) mm K for 1.509 bits per particle. … The signature is a line that moves from 179 µm to 92 µm when the annihilation site is warmed from 77 K to 150 K. Its main limitation is the film itself, which lets out only about 7% of the photons and whose thermal emission sets the noise. Under the stated assumptions, a 5σ detection would take tens of minutes to hours at an existing slow-positron facility.</div>
 <p>One prediction, one signature, one limitation, one feasibility statement. Note "under the stated assumptions": the conclusion doesn't outrun the estimates.</p>
 <h3 id="p2">Paragraph 2: what you need<a class="headerlink" href="#p2">#</a></h3>
-<div class="draft"><span class="dl">Paper · VI, paragraph 2</span>Building the experiment requires a slow-positron beam of at least \(10^7\) positrons per second at about 100 eV; a nanometer-thin aluminum film on a conducting substrate with calibrated temperature control at 77–150 K; a collecting cavity at 4–10 K; cold band-pass filters …; a far-infrared bolometer; and a gamma-ray detector shell …</div>
-<p>A shopping list. The 10⁷ threshold comes from Table II: at 10⁷ s⁻¹ the 77 K run takes about 10 hours, a reasonable beam-time block. The cell below inverts Eq. (11) to show what rate gives a detection in 1 or 8 hours.</p>
+<div class="draft"><span class="dl">Paper · VI, paragraph 2</span>Building the experiment requires a slow-positron beam of at least \(10^7\) positrons per second at about 100 eV; a nanometer-thin aluminum film on a high-resistivity silicon substrate with calibrated temperature control at 77–150 K; a collecting cavity at 4–10 K; cold band-pass filters …; a far-infrared bolometer; and a gamma-ray detector shell …</div>
+<p>A shopping list. The 10⁷ threshold comes from Table II: at 10⁷ s⁻¹ the 77 K run takes about a day (1.1 d; it was 10 hours before the positronium fraction was corrected from 15% to 48%), still a feasible beam-time block. The cell below inverts Eq. (11) to show what rate gives a detection in 1 or 8 hours.</p>
 <h3 id="p3">Paragraph 3: next steps<a class="headerlink" href="#p3">#</a></h3>
-<div class="draft"><span class="dl">Paper · VI, paragraph 3</span>Three steps would test the main assumptions before beam time is requested. The first is a bench measurement of the far-infrared emissivity of the actual film on its substrate … The second is a measurement of the back-scattered and positronium fractions for 100 eV positrons on the same film … The third is contact with a slow-positron facility …</div>
-<p>Ordered from cheapest to hardest. Measuring emissivity needs no positrons at all, just a far-IR spectrometer and a cryostat, and directly checks \(f_\mathrm{esc}\) (by Kirchhoff, emissivity = escape). The positron measurements check \(f_\mathrm{imp}\) and \(f_\mathrm{film}\). The facility conversation checks whether the cavity and bolometer can be fitted to a real beamline.</p>
+<div class="draft"><span class="dl">Paper · VI, paragraph 3</span>Three steps would test the main assumptions before beam time is requested. The first is a bench measurement of the far-infrared emissivity of the actual film on its substrate … The second is a measurement of the back-scattered and positronium fractions for 100 eV positrons on the same film, at 77 K and 150 K and after controlled oxygen doses … Next to \(f_\mathrm{esc}\), the positronium fraction is the largest uncertainty: published values for aluminum range from near zero for a thick oxide to about 0.9. The third is contact with a slow-positron facility …</div>
+<p>Ordered from cheapest to hardest. Measuring emissivity needs no positrons at all, just a far-IR spectrometer and a cryostat, and directly checks \(f_\mathrm{esc}\) (by Kirchhoff, emissivity = escape). The positron measurements check \(f_\mathrm{imp}\) and \(f_\mathrm{film}\); after reading Mills's papers, \(f_\mathrm{film}\) is the one most worth checking, because it depends on what is on the film's surface. The facility conversation checks whether the cavity and bolometer can be fitted to a real beamline.</p>
 
 <h2 id="numbers">Worked numbers<a class="headerlink" href="#numbers">#</a></h2>
 <div class="cell"><div class="in"><span class="cm"># scripts/explainer_build/cells/c07_rate.py</span>
@@ -145,11 +145,11 @@ footer{max-width:1180px;margin:0 auto;padding:1.5rem;color:var(--muted);font-siz
     <span class="kw">for</span> hours <span class="kw">in</span> (1, 8):
        <span class="cm"> # tau = (s^2/2) NEP^2/(kappa R p)^2  -&gt;  R = s NEP / (kappa p sqrt(2 tau))</span>
         R = S.SIGMA * b[&quot;NEP&quot;] / (S.KAPPA * b[&quot;Psig_per_R&quot;] * (2 * hours * 3600) ** 0.5)
-        <span class="kw">print</span>(f&quot;T = {T:.0f} K: 5 sigma <span class="kw">in</span> {hours} h needs R = {R:.1e} positrons/s&quot;)</div><div class="out">T = 77 K: 5 sigma in 1 h needs R = 3.2e+07 positrons/s
-T = 77 K: 5 sigma in 8 h needs R = 1.1e+07 positrons/s
-T = 150 K: 5 sigma in 1 h needs R = 8.7e+07 positrons/s
-T = 150 K: 5 sigma in 8 h needs R = 3.1e+07 positrons/s</div></div>
-<p>So "at least 10⁷" is the rate where a full working day suffices at 77 K; a few ×10⁷ gives an hour.</p>
+        <span class="kw">print</span>(f&quot;T = {T:.0f} K: 5 sigma <span class="kw">in</span> {hours} h needs R = {R:.1e} positrons/s&quot;)</div><div class="out">T = 77 K: 5 sigma in 1 h needs R = 5.2e+07 positrons/s
+T = 77 K: 5 sigma in 8 h needs R = 1.9e+07 positrons/s
+T = 150 K: 5 sigma in 1 h needs R = 1.4e+08 positrons/s
+T = 150 K: 5 sigma in 8 h needs R = 5.0e+07 positrons/s</div></div>
+<p>So "at least 10⁷" is roughly the rate where a day or so of beam suffices at 77 K (about 2×10⁷ for 8 hours); about 5×10⁷ gives an hour. These assume the clean-surface positronium fraction of 0.48; a film with more positronium would need more beam.</p>
 
 <h2 id="symbols">Symbols and acronyms<a class="headerlink" href="#symbols">#</a></h2>
 <table>
@@ -170,7 +170,7 @@ T = 150 K: 5 sigma in 8 h needs R = 3.1e+07 positrons/s</div></div>
 
 <h2 id="referee">Questions a referee might ask<a class="headerlink" href="#referee">#</a></h2>
 <details class="ref"><summary>Q1. You've designed an experiment but not done it. What is the publishable result?</summary><div><p><strong>Honest answer:</strong> a quantitative, falsifiable design: the observable, its signature, the dominant noise, and the resources needed, with every input traceable to a script. AIP Advances publishes such studies; the value is that someone with a beamline can decide whether it's worth doing.</p></div></details>
-<details class="ref"><summary>Q2. Have you contacted a facility?</summary><div><p><strong>Honest answer:</strong> not yet; the paper lists it as a next step.</p></div></details>
+<details class="ref"><summary>Q2. Have you contacted a facility?</summary><div><p><strong>Honest answer:</strong> not yet; the paper lists it as a next step. It would be better to have an informal feasibility comment from beamline scientists before submission, if possible.</p></div></details>
 
 <h2 id="cyu">Check your Understanding<a class="headerlink" href="#cyu">#</a></h2>
 <details class="cyu" open><summary>Check your Understanding</summary><div class="cyu-body">
@@ -178,9 +178,9 @@ T = 150 K: 5 sigma in 8 h needs R = 3.1e+07 positrons/s</div></div>
  data-hint="Which needs no positrons at all?"
  data-explain="The emissivity measurement needs only a cryostat and a far-IR spectrometer, and checks the biggest loss.">
 <span class="cyu-tier">Warm-up</span><p>Which next step is cheapest?</p></div>
-<div class="cyu-q" data-type="numeric" data-answer="3.2e7" data-tol="0.3e7" data-unit="per s"
+<div class="cyu-q" data-type="numeric" data-answer="5.2e7" data-tol="0.5e7" data-unit="per s"
  data-hint="See the cell output for 77 K, 1 h."
- data-explain="About 3.2 × 10⁷ positrons per second at 77 K.">
+ data-explain="About 5.2 × 10⁷ positrons per second at 77 K (with 48% positronium).">
 <span class="cyu-tier">At this level</span><p>What beam rate gives a 5σ detection in one hour at 77 K?</p></div>
 </div></details>
 
@@ -191,7 +191,7 @@ T = 150 K: 5 sigma in 8 h needs R = 3.1e+07 positrons/s</div></div>
 <li>Next: measure emissivity, then positron fractions, then talk to a facility.</li>
 </ul>
 
-<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="../../index.html">IPI Learning home</a> · <a href="../index.html">IRPhoton overview</a> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <strong>07 · VI. Conclusions (current)</strong> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
+<blockquote class="nav">🧭 <strong>Navigation</strong> · <a href="index.html">Reading guide</a> · <a href="00_latex_primer.html">00 · LaTeX primer</a> · <a href="01_bits_per_particle.html">01 · Background: 1.509 bits</a> · <a href="02_introduction.html">02 · I. Introduction</a> · <a href="03_prediction.html">03 · II. Prediction</a> · <a href="04_protocol.html">04 · III. Protocol</a> · <a href="05_design.html">05 · IV. Design</a> · <a href="06_expected_response.html">06 · V. Expected response</a> · <strong>07 · VI. Conclusions (current)</strong> · <a href="08_supplement.html">08 · Supplement</a></blockquote>
 </main>
 <aside class="toc"><div class="toc-title">☰ Contents</div>
 <ul><li><a href="#where">Where this section fits</a></li><li><a href="#walk">Paragraph by paragraph</a><ul><li><a href="#p1">Paragraph 1: what was found</a></li><li><a href="#p2">Paragraph 2: what you need</a></li><li><a href="#p3">Paragraph 3: next steps</a></li></ul></li><li><a href="#numbers">Worked numbers</a></li><li><a href="#symbols">Symbols and acronyms</a></li><li><a href="#standing">Assumed vs established</a></li><li><a href="#referee">Questions a referee might ask</a></li><li><a href="#cyu">Check your Understanding</a></li><li><a href="#summary">Key takeaways</a></li></ul></aside>
